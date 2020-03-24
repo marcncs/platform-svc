@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+
+
+<form-bean name="productstructform" type="com.winsafe.drp.dao.ProductStructForm"/>
+<form-bean name="productform" type="com.winsafe.drp.dao.ProductForm"/>
+<form-bean name="validateProduct" type="com.winsafe.drp.dao.ValidateProduct"/>
+<form-bean name="validateProvider" type="com.winsafe.drp.dao.ValidateProvider"/>
+<form-bean name="validatePlinkman" type="com.winsafe.drp.dao.ValidatePlinkman"/>
+<form-bean name="validateCorrelationDocument" type="com.winsafe.drp.dao.ValidateCorrelationDocument"/>
+<form-bean name="validateProductPicture" type="com.winsafe.drp.dao.ValidateProductPicture"/>
+<form-bean name="idcodeUploadForm" type="com.winsafe.drp.dao.IdcodeUploadForm"/>
+
+</form-beans> 
+
+<action-mappings> 
+
+<action path="/purchase/ajaxListProductStructAction" type="com.winsafe.drp.action.purchase.AjaxListProductStructAction" scope="request" validate="false">
+</action>
+
+<action path="/purchase/ajaxFUnitAction" type="com.winsafe.drp.action.purchase.AjaxFUnitAction" scope="request" validate="false">
+</action>
+
+<action path="/purchase/ajaxFUnitIntegralAction" type="com.winsafe.drp.action.purchase.AjaxFUnitIntegralAction" scope="request" validate="false">
+</action>
+
+<action  path="/purchase/toUpdProductStructAction" type="com.winsafe.drp.action.purchase.ToUpdProductStructAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/updproductstruct.jsp"/>
+</action>
+
+<action path="/purchase/updProductStructAction" type="com.winsafe.drp.action.purchase.UpdProductStructAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toAddProductStructAction" type="com.winsafe.drp.action.purchase.ToAddProductStructAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addproductstruct.jsp"/>
+</action>
+
+<action path="/purchase/addProductStructAction" type="com.winsafe.drp.action.purchase.AddProductStructAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delProductStructAction" type="com.winsafe.drp.action.purchase.DelProductStructAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toImportProductAction"  scope="request" forward="/purchase/importproduct.jsp"></action>
+<action name="idcodeUploadForm" path="/purchase/importProductAction" type="com.winsafe.drp.action.purchase.ImportProductAction" scope="request">
+	<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+
+
+<action path="/purchase/ajaxValidateProvideProductAction" type="com.winsafe.drp.action.purchase.AjaxValidateProvideProductAction" scope="request" validate="false">
+</action>
+
+<!-- product start -->
+<action  path="/purchase/ajaxProductAction" type="com.winsafe.drp.action.purchase.AjaxProductAction" scope="request" validate="false">
+</action>
+
+<action  path="/purchase/getProductByRPIDAjax" type="com.winsafe.drp.action.purchase.GetProductByRPIDAjax" scope="request" validate="false">
+</action>
+
+
+<action  path="/purchase/listProductAction" type="com.winsafe.drp.action.purchase.ListProductAction" scope="request" validate="false">
+<forward name="listproduct" path="/purchase/productlist.jsp"/>
+</action>
+
+<action  path="/purchase/toAddProductAction" type="com.winsafe.drp.action.purchase.ToAddProductAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addproduct.jsp"/>
+</action>
+
+<action path="/purchase/ajaxValidateProductIDAction" type="com.winsafe.drp.action.purchase.AjaxValidateProductIDAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/purchase/ajaxProductStructAction" type="com.winsafe.drp.action.purchase.AjaxProductStructAction" scope="request" validate="false">
+</action>
+
+<action path="/purchase/addProductAction" type="com.winsafe.drp.action.purchase.AddProductAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toUpdProductAction" type="com.winsafe.drp.action.purchase.ToUpdProductAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updproduct.jsp"/>
+</action>
+
+<action  path="/purchase/printProductAction" type="com.winsafe.drp.action.purchase.PrintProductAction" scope="request" validate="false">
+</action>
+
+
+<action path="/purchase/updProductAction" type="com.winsafe.drp.action.purchase.UpdProductAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/delProductAction" type="com.winsafe.drp.action.purchase.DelProductAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/productDetailAction" type="com.winsafe.drp.action.purchase.ProductDetailAction" scope="request" validate="false">
+<forward name="listdetail" path="/purchase/productdetail.jsp"/>
+</action>
+
+<action  path="/purchase/productPictureAction" type="com.winsafe.drp.action.purchase.ProductPictureAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/productpicture.jsp"/>
+</action>
+
+
+<action  path="/purchase/listProductPictureAction" type="com.winsafe.drp.action.purchase.ListProductPictureAction" scope="request" validate="false">
+<forward name="list" path="/purchase/productpicturelist.jsp"/>
+</action>
+
+<action  path="/purchase/toUploadProductPictureAction" type="com.winsafe.drp.action.purchase.ToUploadProductPictureAction" scope="request" validate="false">
+<forward name="toupload" path="/purchase/touploadproductpicture.jsp"/>
+</action>
+
+<action name="validateProductPicture"  path="/purchase/uploadProductPictureAction" type="com.winsafe.drp.action.purchase.UploadProductPictureAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/delProductPictureAction" type="com.winsafe.drp.action.purchase.DelProductPictureAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- product end -->
+
+<!-- integral exchange-->
+<action  path="/purchase/listIntegralExchangeAction" type="com.winsafe.drp.action.purchase.ListIntegralExchangeAction" scope="request" validate="false">
+<forward name="list" path="/purchase/integralexchangelist.jsp"/>
+</action>
+
+<action  path="/purchase/toSetIntegralExchangeAction" type="com.winsafe.drp.action.purchase.ToSetIntegralExchangeAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/setintegralexchange.jsp"/>
+</action>
+
+<action  path="/purchase/setIntegralExchangeAction" type="com.winsafe.drp.action.purchase.SetIntegralExchangeAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<!-- Product Price -->
+<action  path="/purchase/listProductPriceAction" type="com.winsafe.drp.action.purchase.ListProductPriceAction" scope="request" validate="false">
+<forward name="list" path="/purchase/productpricelist.jsp"/>
+</action>
+
+<action  path="/purchase/listProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.ListProductPriceHistoryAction" scope="request" validate="false">
+<forward name="list" path="/purchase/productpricehistorylist.jsp"/>
+</action>
+
+<action  path="/purchase/toAddProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.ToAddProductPriceHistoryAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addproductpricehistory.jsp"/>
+</action>
+<action  path="/purchase/addProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.AddProductPriceHistoryAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toUpdProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.ToUpdProductPriceHistoryAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updproductpricehistory.jsp"/>
+</action>
+
+<action  path="/purchase/updProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.UpdProductPriceHistoryAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/delProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.DelProductPriceHistoryAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/excPutProductPriceHistoryAction" type="com.winsafe.drp.action.purchase.ExcPutProductPriceHistoryAction"
+			scope="request" validate="false">
+</action>
+
+<action  path="/purchase/toSetProductPriceAction" type="com.winsafe.drp.action.purchase.ToSetProductPriceAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/setproductprice.jsp"/>
+</action>
+
+<action  path="/purchase/setProductPriceAction" type="com.winsafe.drp.action.purchase.SetProductPriceAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toAppLctProductPriceAction" type="com.winsafe.drp.action.purchase.ToAppLctProductPriceAction" scope="request" validate="false">
+<forward name="toapp" path="/purchase/applctproductprice.jsp"/>
+</action>
+
+<action  path="/purchase/appLctProductPriceAction" type="com.winsafe.drp.action.purchase.AppLctProductPriceAction" scope="request" validate="false">
+<forward name="appprice" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/purchase/listOrganPriceAction" type="com.winsafe.drp.action.purchase.ListOrganPriceAction" scope="request" validate="false">
+<forward name="list" path="/purchase/organpricelist.jsp"/>
+
+</action><action  path="/purchase/listOrganPriceHistoryAction" type="com.winsafe.drp.action.purchase.ListOrganPriceHistoryAction" scope="request" validate="false">
+<forward name="list" path="/purchase/organpricehistorylist.jsp"/>
+</action>
+
+<action  path="/purchase/listProductPriceiiAction" type="com.winsafe.drp.action.purchase.ListProductPriceiiAction" scope="request" validate="false">
+<forward name="list" path="/purchase/productpriceiilist.jsp"/>
+</action>
+
+<action  path="/purchase/toSetProductPriceiiAction" type="com.winsafe.drp.action.purchase.ToSetProductPriceiiAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/setproductpriceii.jsp"/>
+</action>
+
+<action  path="/purchase/setProductPriceiiAction" type="com.winsafe.drp.action.purchase.SetProductPriceiiAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 产品导入
+<action path="/purchase/toImportSimpleProductAction"  scope="request" forward="/purchase/importsimpleproduct.jsp"></action>
+<action name="idcodeUploadForm" path="/purchase/importSimpleProductAction" type="com.winsafe.drp.action.purchase.ImportSimpleProductAction" scope="request">
+	<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+-->
+
+<!-- 产品价格导入-->  
+<action path="/purchase/toImportSimpleProductHistoryAction"  scope="request" forward="/purchase/importproducthistory.jsp"></action>
+<action name="idcodeUploadForm" path="/purchase/importSimpleProductHistoryAction" type="com.winsafe.drp.action.purchase.ImportSimpleProductHistoryAction" scope="request">
+	<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<!-- Product Price end-->
+
+
+
+<action  path="/purchase/toSetOrganPriceAction" type="com.winsafe.drp.action.purchase.ToSetOrganPriceAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/setorganprice.jsp"/>
+</action>
+
+<action  path="/purchase/setOrganPriceAction" type="com.winsafe.drp.action.purchase.SetOrganPriceAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+
+<action  path="/purchase/productIntegralAction" type="com.winsafe.drp.action.purchase.ProductIntegralAction" scope="request" validate="false">
+<forward name="integral" path="/purchase/productintegrallist.jsp"/>
+</action>
+
+
+<action  path="/purchase/toSetProductIntegralAction" type="com.winsafe.drp.action.purchase.ToSetProductIntegralAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/setproductintegral.jsp"/>
+</action>
+
+
+<action  path="/purchase/setProductIntegralAction" type="com.winsafe.drp.action.purchase.SetProductIntegralAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/excPutProductAction" type="com.winsafe.drp.action.purchase.ExcPutProductAction" scope="request" validate="false">
+</action>
+<action path="/purchase/txtPutProductAction" type="com.winsafe.drp.action.purchase.TxtPutProductAction" scope="request" validate="false">
+</action>
+<action path="/purchase/excPutProviderAction" type="com.winsafe.drp.action.purchase.ExcPutProviderAction"
+			scope="request" validate="false">
+		</action>
+<action path="/purchase/printProviderAction" type="com.winsafe.drp.action.purchase.PrintProviderAction"
+			scope="request" validate="false">
+<forward name="toprint" path="/purchase/printprovider.jsp"></forward>		
+</action>
+
+<action path="/purchase/toImportProviderAction"  scope="request" forward="/purchase/importprovider.jsp"></action>
+<action name="idcodeUploadForm" path="/purchase/importProviderAction" type="com.winsafe.drp.action.purchase.ImportProviderAction" scope="request">
+	<forward name="success" path="/sys/lockrecordclose2.jsp"></forward>
+</action>
+
+
+<action  path="/purchase/productProviderCompareAction" type="com.winsafe.drp.action.purchase.ProductProviderCompareAction" scope="request" validate="false">
+<forward name="list" path="/purchase/productprovidercomparelist.jsp"/>
+</action>
+
+<action  path="/purchase/listProductHistoryAction" type="com.winsafe.drp.action.purchase.ListProductHistoryAction" scope="request" validate="false">
+<forward name="list" path="/purchase/producthistorylist.jsp"/>
+</action>
+
+
+<action  path="/purchase/listProviderAction" type="com.winsafe.drp.action.purchase.ListProviderAction" scope="request" validate="false">
+<forward name="listprovide" path="/purchase/providerlist.jsp"/>
+</action>
+
+<action  path="/purchase/toAddProviderAction" type="com.winsafe.drp.action.purchase.ToAddProviderAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addprovider.jsp"/>
+</action>
+
+<action path="/purchase/ajaxValidateProviderIDAction" type="com.winsafe.drp.action.purchase.AjaxValidateProviderIDAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/purchase/listAreasAction" type="com.winsafe.drp.action.sales.ListAreasAction" scope="request" validate="false">
+</action>
+
+<action path="/purchase/ajaxValidateCustomerCcodeAction" type="com.winsafe.drp.action.sales.AjaxValidateCustomerCcodeAction" scope="request" validate="false">
+</action>
+
+<action  path="/purchase/toSelectDitchAction" type="com.winsafe.drp.action.sales.ToSelectDitchAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectditchiframe.jsp"/>
+</action>
+
+<action  path="/purchase/selectDitchAction" type="com.winsafe.drp.action.sales.SelectDitchAction" scope="request" validate="false">
+<forward name="selectditch" path="/purchase/selectditch.jsp"/>
+</action>
+
+<action name="validateProvider" path="/purchase/addProviderAction" type="com.winsafe.drp.action.purchase.AddProviderAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toUpdProviderAction" type="com.winsafe.drp.action.purchase.ToUpdProviderAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updprovider.jsp"/>
+</action>
+
+<action name="validateProvider" path="/purchase/updProviderAction" type="com.winsafe.drp.action.purchase.UpdProviderAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<action  path="/purchase/providerDetailAction" type="com.winsafe.drp.action.purchase.ProviderDetailAction" scope="request" validate="false">
+<forward name="info" path="/purchase/providerdetail.jsp"/>
+</action>
+
+<action path="/purchase/delProviderAction" type="com.winsafe.drp.action.purchase.DelProviderAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/activateCustomerAction" type="com.winsafe.drp.action.sales.ActivateCustomerAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/cancelActivateCustomerAction" type="com.winsafe.drp.action.sales.CancelActivateCustomerAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/listPlinkmanAction" type="com.winsafe.drp.action.purchase.ListPlinkmanAction" scope="request" validate="false">
+<forward name="list" path="/purchase/linkmanlist.jsp"/>
+</action>
+
+<action path="/purchase/toAddPlinkmanAction" type="com.winsafe.drp.action.purchase.ToAddPlinkmanAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addplinkman.jsp"/>
+</action>
+
+<action path="/purchase/addPlinkmanAction" type="com.winsafe.drp.action.purchase.AddPlinkmanAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toUpdPlinkmanAction" type="com.winsafe.drp.action.purchase.ToUpdPlinkmanAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updplinkman.jsp"/>
+</action>
+
+<action path="/purchase/updPlinkmanAction" type="com.winsafe.drp.action.purchase.UpdPlinkmanAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/plinkmanDetailAction" type="com.winsafe.drp.action.purchase.PlinkmanDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/plinkmandetail.jsp"/>
+</action>
+
+<action path="/purchase/delPlinkmanAction" type="com.winsafe.drp.action.purchase.DelPlinkmanAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/listProviderProductAction" type="com.winsafe.drp.action.purchase.ListProviderProductAction" scope="request" validate="false">
+<forward name="list" path="/purchase/providerproductlist.jsp"/>
+</action>
+
+<action path="/purchase/toAddProviderProductAction" type="com.winsafe.drp.action.purchase.ToAddProviderProductAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addprovideproduct.jsp"/>
+</action>
+
+<action path="/purchase/addProviderProductAction" type="com.winsafe.drp.action.purchase.AddProviderProductAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delProductProvideAction" type="com.winsafe.drp.action.purchase.DelProductProvideAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toSelectLockProductAction" type="com.winsafe.drp.action.purchase.ToSelectLockProductAction" scope="request" validate="false">
+<forward name="select" path="/purchase/selectlockproductiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectLockProductAction" type="com.winsafe.drp.action.purchase.SelectLockProductAction" scope="request" validate="false">
+<forward name="select" path="/purchase/selectlockproduct.jsp"/>
+</action>
+
+
+
+
+
+
+
+
+
+
+<action path="/purchase/toAddProductProviderAction" type="com.winsafe.drp.action.purchase.ToAddProductProvideAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addproductprovider.jsp"/>
+</action>
+
+<action path="/purchase/addProductProviderAction" type="com.winsafe.drp.action.purchase.AddProductProviderAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/ajaxValidateProviderProductAction" type="com.winsafe.drp.action.purchase.AjaxValidateProviderProductAction" scope="request" validate="false">
+
+</action>
+
+<action path="/purchase/delProviderProductAction" type="com.winsafe.drp.action.purchase.DelProviderProductAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toSelectSingleProductAction" type="com.winsafe.drp.action.purchase.ToSelectSingleProductAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectsingleproductiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectSingleProductAction" type="com.winsafe.drp.action.purchase.SelectSingleProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/purchase/selectsingleproduct.jsp"/>
+</action>
+
+
+<action  path="/purchase/listDocumentAction" type="com.winsafe.drp.action.purchase.ListDocumentAction" scope="request" validate="false">
+<forward name="documentlist" path="/purchase/documentlist.jsp"/>
+</action>
+
+<action  path="/purchase/toAddDocumentAction" type="com.winsafe.drp.action.purchase.ToAddDocumentAction" scope="request" validate="true">
+<forward name="toadd" path="/purchase/adddocument.jsp"/>
+</action>
+
+<action  path="/purchase/delDocumentAction" type="com.winsafe.drp.action.purchase.DelDocumentAction" scope="request" validate="true">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action input="/purchase/adddocument.jsp" name="validateCorrelationDocument" path="/purchase/addDocumentAction" type="com.winsafe.drp.action.purchase.AddDocumentAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/listPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.ListPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseinvoicelist.jsp"/>
+</action>
+
+<action  path="/purchase/listPurchaseInvoiceAllAction" type="com.winsafe.drp.action.purchase.ListPurchaseInvoiceAllAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseinvoicelistall.jsp"/>
+</action>
+<action  path="/purchase/printPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.PrintPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="toprint" path="/purchase/printpurchaseinvoice.jsp"/>
+</action>
+<action  path="/purchase/excPutPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.ExcPutPurchaseInvoiceAction" scope="request" validate="false">
+</action>
+
+<action  path="/purchase/purchaseInvoiceDetailAction" type="com.winsafe.drp.action.purchase.PurchaseInvoiceDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/purchaseinvoicedetail.jsp"/>
+</action>
+
+<action  path="/purchase/toAddPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.ToAddPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addpurchaseinvoice.jsp"/>
+</action>
+
+<action  path="/purchase/addPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.AddPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toUpdPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.ToUpdPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updpurchaseinvoice.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/purchase/updPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.UpdPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/auditPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.AuditPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.CancelAuditPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delPurchaseInvoiceAction" type="com.winsafe.drp.action.purchase.DelPurchaseInvoiceAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/toSelectPurchaseBillAction" type="com.winsafe.drp.action.purchase.ToSelectPurchaseBillAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectpurchasebilliframe.jsp"/>
+</action>
+
+<action path="/purchase/selectPurchaseBillForInvAction" type="com.winsafe.drp.action.purchase.SelectPurchaseBillForInvAction" scope="request" validate="false">
+<forward name="selectso" path="/purchase/selectpurchasebill.jsp"/>
+</action>
+
+<action path="/purchase/toInputPurchaseBillAction.do" type="com.winsafe.drp.action.purchase.ToInputPurchaseBillAction" scope="request">
+	<forward name="toedit" path="/purchase/purchaseplanproductlist.jsp"/>
+</action>
+
+
+
+
+<action  path="/purchase/listPaymentApplyAction" type="com.winsafe.drp.action.purchase.ListPaymentApplyAction" scope="request" validate="false">
+<forward name="list" path="/purchase/paymentapplylist.jsp"/>
+</action>
+
+<action  path="/purchase/toAddPaymentApplyAction" type="com.winsafe.drp.action.purchase.ToAddPaymentApplyAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addpaymentapply.jsp"/>
+</action>
+
+<action  path="/purchase/addPaymentApplyAction" type="com.winsafe.drp.action.purchase.AddPaymentApplyAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/paymentApplyDetailAction" type="com.winsafe.drp.action.purchase.PaymentApplyDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/paymentapplydetail.jsp"/>
+</action>
+
+<action  path="/purchase/toUpdPaymentApplyAction" type="com.winsafe.drp.action.purchase.ToUpdPaymentApplyAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updpaymentapply.jsp"/>
+</action>
+
+<action  path="/purchase/updPaymentApplyAction" type="com.winsafe.drp.action.purchase.UpdPaymentApplyAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/delPaymentApplyAction" type="com.winsafe.drp.action.purchase.DelPaymentApplyAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/listPurchasePlanAction" type="com.winsafe.drp.action.purchase.ListPurchasePlanAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseplanlist.jsp"/>
+</action>
+
+<action path="/purchase/toAddPurchasePlanAction" type="com.winsafe.drp.action.purchase.ToAddPurchasePlanAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addpurchaseplan.jsp"/>
+</action>
+
+<action path="/purchase/toSelectProductAction" type="com.winsafe.drp.action.purchase.ToSelectProductAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectproductiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectProductAction" type="com.winsafe.drp.action.purchase.SelectProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/purchase/selectproduct.jsp"/>
+</action>
+
+<action path="/purchase/addPurchasePlanAction" type="com.winsafe.drp.action.purchase.AddPurchasePlanAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/purchasePlanAction" type="com.winsafe.drp.action.purchase.PurchasePlanAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/printPurchasePlanAction" type="com.winsafe.drp.action.purchase.PrintPurchasePlanAction" scope="request" validate="false">
+<forward name="toprint" path="/purchase/printlistpurchaseplan.jsp"/>
+</action>
+<action path="/purchase/excPutPurchasePlanAction" type="com.winsafe.drp.action.purchase.ExcPutPurchasePlanAction" scope="request" validate="false">
+</action>
+
+<!--
+
+<action  path="/purchase/purchaseBillToPurchaseIncomeAction" type="com.winsafe.drp.action.purchase.PurchaseBillToPurchaseIncomeAction" scope="request" validate="false">
+<forward name="select" path="/purchase/purchasebilltopurchaseincome.jsp"/>
+</action>
+
+<action  path="/purchase/toPurchaseBillToPurchaseIncomeAction" type="com.winsafe.drp.action.purchase.ToPurchaseBillToPurchaseIncomeAction" scope="request" validate="false">
+<forward name="toaffirm" path="/purchase/topurchasebilltopurchaseincome.jsp"/>
+</action>
+
+<action  path="/purchase/affirmPurchaseBillToProductIncomeAction" type="com.winsafe.drp.action.purchase.AffirmPurchaseBillToProductIncomeAction" scope="request" validate="false">
+<forward name="input" path="/sys/operatorclose.jsp"/>
+</action>
+
+-->
+
+<action path="/purchase/delPurchasePlanAction" type="com.winsafe.drp.action.purchase.DelPurchasePlanAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+<action  path="/purchase/selectPurchasePlanAction" type="com.winsafe.drp.action.purchase.SelectPurchasePlanAction" scope="request" validate="false">
+<forward name="toinput" path="/purchase/frompurchaseplaninput.jsp"/>
+</action>
+
+<action  path="/purchase/toTransPurchaseBillAction" type="com.winsafe.drp.action.purchase.ToTransPurchaseBillAction" scope="request" validate="false">
+<forward name="success" path="/purchase/transpurchasebill.jsp"/>
+</action>
+
+<action  path="/purchase/makePurchaseBillAction" type="com.winsafe.drp.action.purchase.MakePurchaseBillAction" scope="request" validate="false">
+<forward name="make" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/hiddenPurchasePlanAction" type="com.winsafe.drp.action.purchase.HiddenPurchasePlanAction" scope="request" validate="false">
+<forward name="hidden" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toUpdPurchasePlanAction" type="com.winsafe.drp.action.purchase.ToUpdPurchasePlanAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updpurchaseplan.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/purchase/updPurchasePlanAction" type="com.winsafe.drp.action.purchase.UpdPurchasePlanAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toReferPurchasePlanAction" type="com.winsafe.drp.action.purchase.ToReferPurchasePlanAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/referpurchaseplan.jsp"/>
+</action>
+
+<action path="/purchase/referPurchasePlanAction" type="com.winsafe.drp.action.purchase.ReferPurchasePlanAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/purchasePlanDetailAction" type="com.winsafe.drp.action.purchase.PurchasePlanDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/purchaseplandetail.jsp"/>
+</action>
+
+<action path="/purchase/auditPurchasePlanAction" type="com.winsafe.drp.action.purchase.AuditPurchasePlanAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditPurchasePlanAction" type="com.winsafe.drp.action.purchase.CancelAuditPurchasePlanAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/ratifyPurchasePlanAction" type="com.winsafe.drp.action.purchase.RatifyPurchasePlanAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelRatifyPurchasePlanAction" type="com.winsafe.drp.action.purchase.CancelRatifyPurchasePlanAction" scope="request" validate="false">
+<forward name="noratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 实现ajax取产品名 -->
+<action path="/purchase/ajaxProductNameAction" type="com.winsafe.drp.action.purchase.AjaxProductNameAction" scope="request" validate="false">
+</action>
+
+<!-- 实现ajax取产品规格 -->
+<action path="/purchase/ajaxPackSizeNameAction" type="com.winsafe.drp.action.purchase.AjaxPackSizeNameAction" scope="request" validate="false">
+</action>
+
+<action path="/purchase/listPurchaseInquireAction" type="com.winsafe.drp.action.purchase.ListPurchaseInquireAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseinquirelist.jsp"/>
+</action>
+<action path="/purchase/printListPurchaseInquireAction" type="com.winsafe.drp.action.purchase.PrintListPurchaseInquireAction" scope="request" validate="false">
+<forward name="toprint" path="/purchase/printlistpurchaseinquire.jsp"/>
+</action>
+<action path="/purchase/excPutPurchaseInquireAction" type="com.winsafe.drp.action.purchase.ExcPutPurchaseInquireAction" scope="request" validate="false">
+</action>
+<action path="/purchase/listPurchaseInquireAllAction" type="com.winsafe.drp.action.purchase.ListPurchaseInquireAllAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseinquirealllist.jsp"/>
+</action>
+
+<action path="/purchase/listPurchaseInquireForPlanAction" type="com.winsafe.drp.action.purchase.ListPurchaseInquireForPlanAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseinquireforplanlist.jsp"/>
+</action>
+
+<action path="/purchase/toAddPurchaseInquireAction" type="com.winsafe.drp.action.purchase.ToAddPurchaseInquireAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addpurchaseinquire.jsp"/>
+</action>
+
+<action path="/purchase/addPurchaseInquireAction" type="com.winsafe.drp.action.purchase.AddPurchaseInquireAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/auditPurchaseInquireAction" type="com.winsafe.drp.action.purchase.AuditPurchaseInquireAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditPurchaseInquireAction" type="com.winsafe.drp.action.purchase.CancelAuditPurchaseInquireAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<action path="/purchase/toSelectProviderProductAction" type="com.winsafe.drp.action.purchase.ToSelectProviderProductAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectproviderproductiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectProviderProductAction" type="com.winsafe.drp.action.purchase.SelectProviderProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/purchase/selectproviderproduct.jsp"/>
+</action>
+
+<action path="/purchase/toSelectAllProviderProductAction" type="com.winsafe.drp.action.purchase.ToSelectAllProviderProductAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectallproviderproductiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectAllProviderProductAction" type="com.winsafe.drp.action.purchase.SelectAllProviderProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/purchase/selectallproviderproduct.jsp"/>
+</action>
+
+
+
+
+<action  path="/purchase/getPurchaseHistoryChenAjax" type="com.winsafe.drp.action.purchase.GetPurchaseHistoryChenAjax" scope="request" validate="false">
+
+</action>
+
+
+
+<action  path="/purchase/selectPurchaseInquireAction" type="com.winsafe.drp.action.purchase.SelectPurchaseInquireAction" scope="request" validate="false">
+<forward name="toinput" path="/purchase/frompurchaseinquireinput.jsp"/>
+</action>
+
+<action  path="/purchase/purchaseInquireProductListAction" type="com.winsafe.drp.action.purchase.PurchaseInquireProductListAction" scope="request" validate="false">
+<forward name="productlist" path="/purchase/purchaseinquireproductlist.jsp"/>
+</action>
+
+<action  path="/purchase/makePurchaseBillAction" type="com.winsafe.drp.action.purchase.MakePurchaseBillAction" scope="request" validate="false">
+<forward name="make" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/hiddenPurchaseInquireAction" type="com.winsafe.drp.action.purchase.HiddenPurchaseInquireAction" scope="request" validate="false">
+<forward name="hidden" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/hiddenPurchaseOrderAction" type="com.winsafe.drp.action.purchase.HiddenPurchaseOrderAction" scope="request" validate="false">
+<forward name="hidden" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/purchaseInquireDetailAction" type="com.winsafe.drp.action.purchase.PurchaseInquireDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/purchaseinquiredetail.jsp"/>
+</action>
+
+<action path="/purchase/toUpdPurchaseInquireAction" type="com.winsafe.drp.action.purchase.ToUpdPurchaseInquireAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updpurchaseinquire.jsp"/>
+</action>
+
+<action path="/purchase/updPurchaseInquireAction" type="com.winsafe.drp.action.purchase.UpdPurchaseInquireAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/listPurchaseBillAction" type="com.winsafe.drp.action.purchase.ListPurchaseBillAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchasebilllist.jsp"/>
+</action>
+
+<action path="/purchase/listPurchaseBillAllAction" type="com.winsafe.drp.action.purchase.ListPurchaseBillAllAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchasebillalllist.jsp"/>
+</action>
+
+<action path="/purchase/toAddPurchaseBillAction" type="com.winsafe.drp.action.purchase.ToAddPurchaseBillAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addpurchasebill.jsp"/>
+</action>
+<action path="/purchase/printPurchaseBillAction" type="com.winsafe.drp.action.purchase.PrintPurchaseBillAction" scope="request" validate="false">
+<forward name="toprint" path="/purchase/printlistpurchasebill.jsp"/>
+</action>
+<action path="/purchase/excPutPurchaseBillAction" type="com.winsafe.drp.action.purchase.ExcPutPurchaseBillAction" scope="request" validate="false">
+</action>
+
+
+
+<action path="/purchase/toSelectCustomerProvideAction" type="com.winsafe.drp.action.purchase.ToSelectCustomerProvideAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectcustomerprovideiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectCustomerProvideAction" type="com.winsafe.drp.action.purchase.SelectCustomerProvideAction" scope="request" validate="false">
+<forward name="selectprovide" path="/purchase/selectcustomerprovide.jsp"/>
+</action>
+
+
+
+
+<action path="/purchase/addPurchaseBillAction" type="com.winsafe.drp.action.purchase.AddPurchaseBillAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toUpdPurchaseBillAction" type="com.winsafe.drp.action.purchase.ToUpdPurchaseBillAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updpurchasebill.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/purchase/updPurchaseBillAction" type="com.winsafe.drp.action.purchase.UpdPurchaseBillAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/purchaseBillDetailAction" type="com.winsafe.drp.action.purchase.PurchaseBillDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/purchasebilldetail.jsp"/>
+</action>
+
+<action path="/purchase/delPurchaseBillAction" type="com.winsafe.drp.action.purchase.DelPurchaseBillAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+<action path="/purchase/listPurchaseOrderAllAction" type="com.winsafe.drp.action.purchase.ListPurchaseOrderAllAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseorderalllist.jsp"/>
+</action>
+
+<action path="/purchase/listPurchaseOrderByProvideAction" type="com.winsafe.drp.action.purchase.ListPurchaseOrderByProvideAction" scope="request" validate="false">
+<forward name="list" path="/purchase/purchaseorderlistbyprovide.jsp"/>
+</action>
+
+<action path="/purchase/addPurchaseOrderAction" type="com.winsafe.drp.action.purchase.AddPurchaseOrderAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toAddPurchaseOrderAction" type="com.winsafe.drp.action.purchase.ToAddPurchaseOrderAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addpurchaseorder.jsp"/>
+</action>
+
+<action path="/purchase/purchaseOrderDetailAction" type="com.winsafe.drp.action.purchase.PurchaseOrderDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/purchaseorderdetail.jsp"/>
+</action>
+
+<action path="/purchase/toUpdPurchaseOrderAction" type="com.winsafe.drp.action.purchase.ToUpdPurchaseOrderAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updpurchaseorder.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/purchase/updPurchaseOrderAction" type="com.winsafe.drp.action.purchase.UpdPurchaseOrderAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delPurchaseOrderAction" type="com.winsafe.drp.action.purchase.DelPurchaseOrderAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toReferPurchaseOrderAction" type="com.winsafe.drp.action.purchase.ToReferPurchaseOrderAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/referpurchaseorder.jsp"/>
+</action>
+
+<action path="/purchase/referPurchaseOrderAction" type="com.winsafe.drp.action.purchase.ReferPurchaseOrderAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/waitPurchaseOrderAction" type="com.winsafe.drp.action.purchase.WaitPurchaseOrderAction" scope="request" validate="false">
+<forward name="purchasebill" path="/purchase/waitapprovepurchaseorder.jsp"/>
+</action>
+
+<action path="/purchase/toApprovePurchaseOrderAction" type="com.winsafe.drp.action.purchase.ToApprovePurchaseOrderAction" scope="request" validate="false">
+<forward name="toapprove" path="/purchase/approvepurchaseorder.jsp"/>
+</action>
+
+<action path="/purchase/approvePurchaseOrderAction" type="com.winsafe.drp.action.purchase.ApprovePurchaseOrderAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/makePurchaseOrderAction" type="com.winsafe.drp.action.purchase.MakePurchaseOrderAction" scope="request" validate="false">
+<forward name="make" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/selectPurchaseOrderAction" type="com.winsafe.drp.action.purchase.SelectPurchaseOrderAction" scope="request" validate="false">
+<forward name="toinput" path="/purchase/frompurchaseorderinput.jsp"/>
+</action>
+
+<action  path="/purchase/purchaseOrderProductListAction" type="com.winsafe.drp.action.purchase.PurchaseOrderProductListAction" scope="request" validate="false">
+<forward name="productlist" path="/purchase/purchaseorderproductlist.jsp"/>
+</action>
+
+<action path="/purchase/blankoutPurchaseOrderAction" type="com.winsafe.drp.action.purchase.BlankoutPurchaseOrderAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<action path="/purchase/auditPurchaseBillAction" type="com.winsafe.drp.action.purchase.AuditPurchaseBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditPurchaseBillAction" type="com.winsafe.drp.action.purchase.CancelAuditPurchaseBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/ratifyPurchaseBillAction" type="com.winsafe.drp.action.purchase.RatifyPurchaseBillAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelRatifyPurchaseBillAction" type="com.winsafe.drp.action.purchase.CancelRatifyPurchaseBillAction" scope="request" validate="false">
+<forward name="noratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/listAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ListAdsumGoodsAction" scope="request" validate="false">
+<forward name="list" path="/purchase/adsumgoodslist.jsp"/>
+</action>
+
+<action path="/purchase/toAddAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ToAddAdsumGoodsAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addadsumgoods.jsp"/>
+</action>
+
+<action path="/purchase/addAdsumGoodsAction" type="com.winsafe.drp.action.purchase.AddAdsumGoodsAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/adsumGoodsDetailAction" type="com.winsafe.drp.action.purchase.AdsumGoodsDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/adsumgoodsdetail.jsp"/>
+</action>
+
+<action  path="/purchase/selectPurchaseBillAction" type="com.winsafe.drp.action.purchase.SelectPurchaseBillAction" scope="request" validate="false">
+<forward name="toinput" path="/purchase/frompurchasebillinput.jsp"/>
+</action>
+
+<action  path="/purchase/toPurchaseBillToAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ToPurchaseBillToAdsumGoodsAction" scope="request" validate="false">
+<forward name="toaffirm" path="/purchase/topurchasebilltoadsumgoods.jsp"/>
+</action>
+
+<action  path="/purchase/affirmPurchaseBillToAdsumGoodsAction" type="com.winsafe.drp.action.purchase.AffirmPurchaseBillToAdsumGoodsAction" scope="request" validate="false">
+<forward name="input" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/hiddenPurchaseBillAction" type="com.winsafe.drp.action.purchase.HiddenPurchaseBillAction" scope="request" validate="false">
+<forward name="hidden" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/toUpdAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ToUpdAdsumGoodsAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updadsumgoods.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/purchase/updAdsumGoodsAction" type="com.winsafe.drp.action.purchase.UpdAdsumGoodsAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/auditAdsumGoodsAction" type="com.winsafe.drp.action.purchase.AuditAdsumGoodsAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditAdsumGoodsAction" type="com.winsafe.drp.action.purchase.CancelAuditAdsumGoodsAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toReferAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ToReferAdsumGoodsAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/referadsumgoods.jsp"/>
+</action>
+
+<action path="/purchase/referAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ReferAdsumGoodsAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delAdsumGoodsAction" type="com.winsafe.drp.action.purchase.DelAdsumGoodsAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<action path="/purchase/listQualityPassAction" type="com.winsafe.drp.action.purchase.ListQualityPassAction" scope="request" validate="false">
+<forward name="list" path="/purchase/qualitypasslist.jsp"/>
+</action>
+
+<action path="/purchase/selectAdsumGoodsAction" type="com.winsafe.drp.action.purchase.SelectAdsumGoodsAction" scope="request" validate="false">
+<forward name="toinput" path="/purchase/fromadsumgoodsinput.jsp"/>
+</action>
+
+<action path="/purchase/adsumGoodsProductListAction" type="com.winsafe.drp.action.purchase.AdsumGoodsProductListAction" scope="request" validate="false">
+<forward name="productlist" path="/purchase/adsumgoodsproductlist.jsp"/>
+</action>
+
+<action path="/purchase/makeQualityPassAction" type="com.winsafe.drp.action.purchase.MakeQualityPassAction" scope="request" validate="false">
+<forward name="make" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/hiddenAdsumGoodsAction" type="com.winsafe.drp.action.purchase.HiddenAdsumGoodsAction" scope="request" validate="false">
+<forward name="hidden" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toAddQualityPassAction" type="com.winsafe.drp.action.purchase.ToAddQualityPassAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addqualitypass.jsp"/>
+</action>
+
+<action path="/purchase/addQualityPassAction" type="com.winsafe.drp.action.purchase.AddQualityPassAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/qualityPassDetailAction" type="com.winsafe.drp.action.purchase.QualityPassDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/qualitypassdetail.jsp"/>
+</action>
+
+<action path="/purchase/toUpdQualityPassAction" type="com.winsafe.drp.action.purchase.ToUpdQualityPassAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updqualitypass.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/purchase/updQualityPassAction" type="com.winsafe.drp.action.purchase.UpdQualityPassAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/auditQualityPassAction" type="com.winsafe.drp.action.purchase.AuditQualityPassAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditQualityPassAction" type="com.winsafe.drp.action.purchase.CancelAuditQualityPassAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delQualityPassAction" type="com.winsafe.drp.action.purchase.DelQualityPassAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+<action path="/purchase/waitApproveAction" type="com.winsafe.drp.action.purchase.WaitApproveAction" scope="request" validate="false">
+<forward name="waitapprove" path="/purchase/purchasewaitapprovemsg.jsp"/>
+</action>
+
+<action path="/purchase/waitPurchaseBillAction" type="com.winsafe.drp.action.purchase.WaitPurchaseBillAction" scope="request" validate="false">
+<forward name="purchasebill" path="/purchase/waitapprovepurchasebill.jsp"/>
+</action>
+
+
+<action path="/purchase/waitPurchasePlanAction" type="com.winsafe.drp.action.purchase.WaitPurchasePlanAction" scope="request" validate="false">
+<forward name="purchaseplan" path="/purchase/waitapprovepurchaseplan.jsp"/>
+</action>
+
+<action path="/purchase/toApprovePurchasePlanAction" type="com.winsafe.drp.action.purchase.ToApprovePurchasePlanAction" scope="request" validate="false">
+<forward name="toapprove" path="/purchase/approvepurchaseplan.jsp"/>
+</action>
+
+<action path="/purchase/approvePurchasePlanAction" type="com.winsafe.drp.action.purchase.ApprovePurchasePlanAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelApprovePurchasePlanAction" type="com.winsafe.drp.action.purchase.CancelApprovePurchasePlanAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<action path="/purchase/waitAdsumGoodsAction" type="com.winsafe.drp.action.purchase.WaitAdsumGoodsAction" scope="request" validate="false">
+<forward name="adsumgoods" path="/purchase/waitapproveadsumgoods.jsp"/>
+</action>
+
+<action path="/purchase/toApproveAdsumGoodsAction" type="com.winsafe.drp.action.purchase.ToApproveAdsumGoodsAction" scope="request" validate="false">
+<forward name="toapprove" path="/purchase/approveadsumgoods.jsp"/>
+</action>
+
+<action path="/purchase/approveadsumGoodsAction" type="com.winsafe.drp.action.purchase.ApproveAdsumGoodsAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelApproveAdsumGoodsAction" type="com.winsafe.drp.action.purchase.CancelApproveAdsumGoodsAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/purchase/waitPurchaseWithdrawAction" type="com.winsafe.drp.action.purchase.WaitPurchaseWithdrawAction" scope="request" validate="false">
+<forward name="withdraw" path="/purchase/waitapprovepurchasewithdraw.jsp"/>
+</action>
+
+<action path="/purchase/toApprovePurchaseWithdrawAction" type="com.winsafe.drp.action.purchase.ToApprovePurchaseWithdrawAction" scope="request" validate="false">
+<forward name="toapprove" path="/purchase/approvepurchasewithdraw.jsp"/>
+</action>
+
+<action path="/purchase/approvePurchaseWithdrawAction" type="com.winsafe.drp.action.purchase.ApprovePurchaseWithdrawAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelApprovePurchaseWithdrawAction" type="com.winsafe.drp.action.purchase.CancelApprovePurchaseWithdrawAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/delPurchaseWithdrawAction" type="com.winsafe.drp.action.purchase.DelPurchaseWithdrawAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<!-- borrow income start -->
+<action path="/purchase/listBorrowIncomeAction" type="com.winsafe.drp.action.purchase.ListBorrowIncomeAction" scope="request" validate="false">
+<forward name="list" path="/purchase/borrowincomelist.jsp"/>
+</action>
+
+<action path="/purchase/toAddBorrowIncomeAction" type="com.winsafe.drp.action.purchase.ToAddBorrowIncomeAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addborrowincome.jsp"/>
+</action>
+
+<action path="/purchase/addBorrowIncomeAction" type="com.winsafe.drp.action.purchase.AddBorrowIncomeAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toUpdBorrowIncomeAction" type="com.winsafe.drp.action.purchase.ToUpdBorrowIncomeAction" scope="request" validate="false">
+<forward name="toupd" path="/purchase/updborrowincome.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/purchase/updBorrowIncomeAction" type="com.winsafe.drp.action.purchase.UpdBorrowIncomeAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/borrowIncomeDetailAction" type="com.winsafe.drp.action.purchase.BorrowIncomeDetailAction" scope="request" validate="false">
+<forward name="detail" path="/purchase/borrowincomedetail.jsp"/>
+</action>
+
+<action path="/purchase/delBorrowIncomeAction" type="com.winsafe.drp.action.purchase.DelBorrowIncomeAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/transWithdrawBorrowIncomeAction" type="com.winsafe.drp.action.purchase.TransWithdrawBorrowIncomeAction" scope="request" validate="false">
+<forward name="transresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/auditBorrowIncomeAction" type="com.winsafe.drp.action.purchase.AuditBorrowIncomeAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelAuditBorrowIncomeAction" type="com.winsafe.drp.action.purchase.CancelAuditBorrowIncomeAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/backTrackBorrowIncomeAction" type="com.winsafe.drp.action.purchase.BackTrackBorrowIncomeAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/cancelBackTrackBorrowIncomeAction" type="com.winsafe.drp.action.purchase.CancelBackTrackBorrowIncomeAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/purchase/toAddBorrowIncomeIdcodeAction" type="com.winsafe.drp.action.purchase.ToAddBorrowIncomeIdcodeAction" scope="request" validate="false">
+<forward name="toadd" path="/purchase/addborrowincomeidcode.jsp"/>
+</action>
+
+<action path="/purchase/addBorrowIncomeIdcodeAction" type="com.winsafe.drp.action.purchase.AddBorrowIncomeIdcodeAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/purchase/toSelectCustomerAction" type="com.winsafe.drp.action.sales.ToSelectCustomerAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectcustomeriframe.jsp"/>
+</action>
+
+<action  path="/purchase/selectCustomerAction" type="com.winsafe.drp.action.sales.SelectCustomerAction" scope="request" validate="false">
+<forward name="selectcustomer" path="/purchase/selectcustomer.jsp"/>
+</action>
+<!-- borrow income end -->
+
+
+
+
+
+<action path="/purchase/purchasePlanAction" type="com.winsafe.drp.action.purchase.PurchasePlanAction" scope="request" validate="false">
+
+</action>
+
+<action path="/purchase/printPurchaseOrderAction" type="com.winsafe.drp.action.purchase.PrintPurchaseOrderAction" scope="request" validate="false">
+
+</action>
+
+
+<action path="/purchase/purchaseBillAction" type="com.winsafe.drp.action.purchase.PurchaseBillAction" scope="request" validate="false">
+
+</action>
+
+
+
+
+<action path="/purchase/toSelectPurchaseIncomeProductAction" type="com.winsafe.drp.action.purchase.ToSelectPurchaseIncomeProductAction" scope="request" validate="false">
+<forward name="toselect" path="/purchase/selectpurchaseincomeproductiframe.jsp"/>
+</action>
+
+<action path="/purchase/selectPurchaseIncomeProductAction" type="com.winsafe.drp.action.purchase.SelectPurchaseIncomeProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/purchase/selectpurchaseincomeproduct.jsp"/>
+</action>
+<!-- 产品上架(选择机构)richie yu 20100612 start -->
+<action path="/purchase/selectOrganListAction" type="com.winsafe.drp.action.purchase.SelectOrganProductListAction" scope="request" validate="false">
+<forward name="list" path="/purchase/listNotExistOrganProduct.jsp"/>
+</action>
+
+<action path="/purchase/removeOrganListAction" type="com.winsafe.drp.action.purchase.RemoveOrganProductListAction" scope="request" validate="false">
+<forward name="list" path="/purchase/listExistOrganProduct.jsp"/>
+</action>
+
+<action path="/purchase/addOrganProduct" type="com.winsafe.drp.action.purchase.AddOrganProductAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- 产品上架(选择机构)richie yu 20100612 end -->
+</action-mappings>
+
+<message-resources key="purchase" parameter="global.app.purchase.ApplicationResource" />
+
+</struts-config>

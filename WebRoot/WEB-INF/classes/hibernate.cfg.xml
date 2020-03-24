@@ -1,0 +1,577 @@
+<?xml version='1.0' encoding='utf-8'?> 
+<!DOCTYPE hibernate-configuration 
+	PUBLIC	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<!-- <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@10.87.200.28:1521:ORCL</property>
+		<property name="connection.username">DBOBCSRTCI20141114</property>
+		<property name="connection.password">DBOBCSRTCI20141121</property> -->
+	    
+       	<property name="hibernate.connection.provider_class">
+            com.zaxxer.hikari.hibernate.HikariHibernateConnectionProvider
+        </property>
+       	<property name="hibernate.hikari.maximumPoolSize">200</property>
+       	<property name="hibernate.hikari.minimumIdle">10</property>
+       	<property name="hibernate.hikari.idleTimeout">30000</property>
+        
+        <property name="connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="connection.url">jdbc:oracle:thin:@rtci-new-q.cdvhuhr0xpoy.rds.cn-north-1.amazonaws.com.cn:1521:RTCIP</property>
+		<property name="connection.username">MYTNM</property>
+		<property name="connection.password">Happy259</property>
+	    
+       	<!-- <prop key="hibernate.connection.provider_class">
+            com.zaxxer.hikari.hibernate.HikariHibernateConnectionProvider
+        </prop>
+       	<property name="hibernate.c3p0.min_size">10</property>
+       	<property name="hibernate.c3p0.max_size">200</property>
+        <property name="c3p0.acquire_increment">5</property>
+        <property name="hibernate.c3p0.timeout">100</property>
+        <property name="c3p0.maxIdleTime">10000</property>
+        <property name="hibernate.c3p0.max_statements">0</property> -->
+	
+		<!-- <property name="connection.datasource"> 
+			java:comp/env/jdbc/IS
+		</property> -->
+		<property name="show_sql">false</property>
+		<property name="use_outer_join">true</property>
+		<property name="hibernate.jdbc.use_scrollable_resultset">
+			false
+		</property>
+		<property name="format_sql">false</property>
+		<!--	<property name="hibernate.hbm2ddl.auto">create</property>-->
+
+		<property name="hibernate.dialect">
+			org.hibernate.dialect.Oracle10gDialect
+		</property>
+		<!--
+			<property name="hibernate.cache.provider_class">
+			org.hibernate.cache.OSCacheProvider </property>
+		-->
+
+		<!-- 组件与数据库表映射文件 -->
+		<!--
+			<mapping resource="map/AdjustCIntegral.hbm.xml" /> <mapping
+			resource="map/AdjustCIntegralDetail.hbm.xml" /> <mapping
+			resource="map/AdjustOIntegral.hbm.xml" /> <mapping
+			resource="map/AdjustOIntegralDetail.hbm.xml" /> <mapping
+			resource="map/Affiche.hbm.xml" /> <mapping
+			resource="map/AfficheBrowse.hbm.xml"></mapping> <mapping
+			resource="map/AlterMoveApply.hbm.xml" /> <mapping
+			resource="map/AlterMoveApplyDetail.hbm.xml" /> <mapping
+			resource="map/ApproveFlow.hbm.xml" /> <mapping
+			resource="map/ApproveFlowDetail.hbm.xml" /> <mapping
+			resource="map/ApproveFlowLog.hbm.xml" /> <mapping
+			resource="map/Assemble.hbm.xml" /> <mapping
+			resource="map/AssembleDetail.hbm.xml" />
+		-->
+		<mapping resource="map/SuggestionBox.hbm.xml" />
+		<mapping resource="map/Affiche.hbm.xml" />
+		<mapping resource="map/AssembleRelation.hbm.xml" />
+		<mapping resource="map/AssembleRelationDetail.hbm.xml" />
+		<mapping resource="map/AmountInventory.hbm.xml" />
+		<mapping resource="map/AmountInventoryDetail.hbm.xml" />
+		<!--
+			<mapping resource="map/Bank.hbm.xml" />
+		-->
+		<mapping resource="map/BaseResource.hbm.xml" />
+		<mapping resource="map/BarcodeInventory.hbm.xml" />
+		<mapping resource="map/BarcodeInventoryDetail.hbm.xml" />
+		<mapping resource="map/BarcodeInventoryDAll.hbm.xml" />
+		<mapping resource="map/BarcodeInventoryIdcode.hbm.xml" />
+		<mapping resource="map/BarcodeUpload.hbm.xml" />
+
+		<!--
+			<mapping resource="map/BorrowIncome.hbm.xml" /> <mapping
+			resource="map/BorrowIncomeDetail.hbm.xml" /> <mapping
+			resource="map/BorrowIncomeIdcode.hbm.xml" /> <mapping
+			resource="map/CAddr.hbm.xml" /> <mapping
+			resource="map/CalendarAwake.hbm.xml" /> <mapping
+			resource="map/CallCenterEvent.hbm.xml" /> <mapping
+			resource="map/Car.hbm.xml" />
+		-->
+		<mapping resource="map/CartonCode.hbm.xml" />
+
+		<!--
+			<mapping resource="map/CashBank.hbm.xml" /> <mapping
+			resource="map/CashBankAdjust.hbm.xml" /> <mapping
+			resource="map/CashWasteBook.hbm.xml" /> <mapping
+			resource="map/CheckImport.hbm.xml" /> <mapping
+			resource="map/CIntegral.hbm.xml" /> <mapping
+			resource="map/CIntegralDeal.hbm.xml" />
+		-->
+		<mapping resource="map/CodeRule.hbm.xml" />
+		<mapping resource="map/CodeRuleUpload.hbm.xml" />
+		<mapping resource="map/CodeUnit.hbm.xml" />
+		<mapping resource="map/CommonCodeLog.hbm.xml" />
+
+		<!--
+			<mapping resource="map/ConsignMachin.hbm.xml" /> <mapping
+			resource="map/ConsignMachinDetail.hbm.xml" /> <mapping
+			resource="map/ContactDitch.hbm.xml" /> <mapping
+			resource="map/ContactLog.hbm.xml" /> <mapping
+			resource="map/CorrelationDocument.hbm.xml" />
+		-->
+		<mapping resource="map/CountryArea.hbm.xml" />
+		<mapping resource="map/CovertCodeBean.hbm.xml" />
+
+		<!--
+			<mapping resource="map/CTitle.hbm.xml" /> <mapping
+			resource="map/Customer.hbm.xml" />
+		-->
+		<mapping resource="map/CustomerMatchOrder.hbm.xml" />
+		<!--
+			<mapping resource="map/CustomerSort.hbm.xml" /> <mapping
+			resource="map/DailyProductOut.hbm.xml" /> <mapping
+			resource="map/DemandPrice.hbm.xml" /> <mapping
+			resource="map/DemandPriceDetail.hbm.xml" />
+		-->
+		<mapping resource="map/Dept.hbm.xml" />
+
+		<!--
+			<mapping resource="map/Ditch.hbm.xml" /> <mapping
+			resource="map/Doc.hbm.xml" /> <mapping resource="map/DocSort.hbm.xml"
+			/> <mapping resource="map/DocSortVisit.hbm.xml" /> <mapping
+			resource="map/DrawShipmentBill.hbm.xml" /> <mapping
+			resource="map/DrawShipmentBillDetail.hbm.xml" /> <mapping
+			resource="map/DrawShipmentBillIdcode.hbm.xml" /> <mapping
+			resource="map/Equip.hbm.xml" /> <mapping
+			resource="map/EquipDetail.hbm.xml" />
+		-->
+		<mapping resource="map/ExportAssign.hbm.xml" />
+		<mapping resource="map/FleeProduct.hbm.xml" />
+		<mapping resource="map/FUnit.hbm.xml" />
+		<mapping resource="map/FwmCreate.hbm.xml" />
+
+		<!--
+			<mapping resource="map/GatherNotify.hbm.xml" /> <mapping
+			resource="map/Hap.hbm.xml" /> <mapping
+			resource="map/HarmShipmentBill.hbm.xml" /> <mapping
+			resource="map/HarmShipmentBillDetail.hbm.xml" /> <mapping
+			resource="map/HarmShipmentIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/ICode.hbm.xml" />
+		<mapping resource="map/Idcode.hbm.xml" />
+		<!--
+			<mapping resource="map/IdcodeDetail.hbm.xml" /> <mapping
+			resource="map/IdcodeReset.hbm.xml" /> <mapping
+			resource="map/IdcodeResetDetail.hbm.xml" />
+		-->
+		<mapping resource="map/IdcodeUpload.hbm.xml" />
+		<!--
+			<mapping resource="map/IncomeLog.hbm.xml" /> <mapping
+			resource="map/IncomeLogDetail.hbm.xml" /> <mapping
+			resource="map/IntegralDetail.hbm.xml" />
+		-->
+		<mapping resource="map/IntegralExchange.hbm.xml" />
+		<!--
+			<mapping resource="map/IntegralI.hbm.xml" /> <mapping
+			resource="map/IntegralO.hbm.xml" /> <mapping
+			resource="map/IntegralOrder.hbm.xml" /> <mapping
+			resource="map/IntegralOrderDetail.hbm.xml" />
+		-->
+		<mapping resource="map/IntegralRule.hbm.xml" />
+		<!-- 
+			<mapping resource="map/IntegralWasteBook.hbm.xml" />
+		-->
+		<mapping resource="map/InventoryReport.hbm.xml" />
+		<mapping resource="map/Invoice.hbm.xml" />
+		<mapping resource="map/InvoiceConf.hbm.xml" />
+		<!--
+			<mapping resource="map/Largess.hbm.xml" />
+		-->
+		<mapping resource="map/LeftMenu.hbm.xml" />
+		<mapping resource="map/Linkman.hbm.xml" />
+		<!--
+			<mapping resource="map/Loan.hbm.xml" /> <mapping
+			resource="map/LoanObject.hbm.xml" /> <mapping
+			resource="map/LoanOut.hbm.xml" /> <mapping
+			resource="map/LoanOutDetail.hbm.xml" /> <mapping
+			resource="map/LoanOutIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/MakeConf.hbm.xml" />
+		<!--
+			<mapping resource="map/MemberGrade.hbm.xml" /> <mapping
+			resource="map/MemberGradeRule.hbm.xml" />
+		-->
+		<mapping resource="map/Menu.hbm.xml" />
+		<!--
+			<mapping resource="map/MobileArea.hbm.xml" />
+		-->
+		<mapping resource="map/MoveApply.hbm.xml" />
+		<mapping resource="map/MoveApplyDetail.hbm.xml" />
+		<!--
+			<mapping resource="map/MoveCanuseOrgan.hbm.xml" />
+		-->
+		<mapping resource="map/Msg.hbm.xml" />
+		<mapping resource="map/MsgTemplate.hbm.xml" />
+		<mapping resource="map/MsgReceive.hbm.xml" />
+		<!--
+			<mapping resource="map/ObjIntegral.hbm.xml" /> <mapping
+			resource="map/OIntegral.hbm.xml" /> <mapping
+			resource="map/OIntegralDeal.hbm.xml" /> <mapping
+			resource="map/OIntegralSett.hbm.xml" />
+		-->
+		<mapping resource="map/Olinkman.hbm.xml" />
+		<mapping resource="map/Operate.hbm.xml" />
+		<mapping resource="map/Organ.hbm.xml" />
+		<!--
+			<mapping resource="map/OrganAnnunciator.hbm.xml" /> <mapping
+			resource="map/OrganArea.hbm.xml" />
+		-->
+		<mapping resource="map/OrganAwake.hbm.xml" />
+		<!--
+			<mapping resource="map/OrganGrade.hbm.xml" /> <mapping
+			resource="map/OrganInvoice.hbm.xml" /> <mapping
+			resource="map/OrganInvoiceDetail.hbm.xml" /> <mapping
+			resource="map/OrganPrice.hbm.xml" /> <mapping
+			resource="map/OrganPriceHistory.hbm.xml" /> <mapping
+			resource="map/OrganPriceii.hbm.xml" />
+		-->
+		<mapping resource="map/OrganProduct.hbm.xml" />
+		<mapping resource="map/OrganRole.hbm.xml" />
+		<mapping resource="map/OrganSafetyIntercalate.hbm.xml" />
+		<mapping resource="map/OrganScan.hbm.xml" />
+		<!--
+			<mapping resource="map/OrganTarget.hbm.xml" /> <mapping
+			resource="map/OrganTrades.hbm.xml" /> <mapping
+			resource="map/OrganTradesDetail.hbm.xml" /> <mapping
+			resource="map/OrganTradesPIdcode.hbm.xml" /> <mapping
+			resource="map/OrganTradesTIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/OrganVisit.hbm.xml" />
+		<mapping resource="map/OrganWithdraw.hbm.xml" />
+		<mapping resource="map/OrganWithdrawDetail.hbm.xml" />
+		<mapping resource="map/OrganWithdrawIdcode.hbm.xml" />
+
+		<mapping resource="map/OtherIncome.hbm.xml" />
+		<mapping resource="map/OtherIncomeAll.hbm.xml" />
+		<mapping resource="map/OtherIncomeDetail.hbm.xml" />
+		<mapping resource="map/OtherIncomeDetailAll.hbm.xml" />
+		<mapping resource="map/OtherIncomeIdcode.hbm.xml" />
+		<mapping resource="map/OtherShipmentBill.hbm.xml" />
+		<mapping resource="map/OtherShipmentBillAll.hbm.xml" />
+		<mapping resource="map/OtherShipmentBillDAll.hbm.xml" />
+		<mapping resource="map/OtherShipmentBillDetail.hbm.xml" />
+		<mapping resource="map/OtherShipmentBillIdcode.hbm.xml" />
+
+
+
+		<!--
+			<mapping resource="map/Outlay.hbm.xml" /> <mapping
+			resource="map/OutlayDetail.hbm.xml" /> <mapping
+			resource="map/Pact.hbm.xml" /> <mapping
+			resource="map/Payable.hbm.xml" /> <mapping
+			resource="map/PayableObject.hbm.xml" /> <mapping
+			resource="map/PaymentApply.hbm.xml" /> <mapping
+			resource="map/PaymentLog.hbm.xml" /> <mapping
+			resource="map/PaymentLogDetail.hbm.xml" />
+		-->
+		<mapping resource="map/PaymentMode.hbm.xml" />
+		<!--
+			<mapping resource="map/Paysrc.hbm.xml" /> <mapping
+			resource="map/Pbank.hbm.xml" /> <mapping
+			resource="map/PeddleBalance.hbm.xml" /> <mapping
+			resource="map/PeddleBalanceDetail.hbm.xml" /> <mapping
+			resource="map/PeddleOrder.hbm.xml" /> <mapping
+			resource="map/PeddleOrderDetail.hbm.xml" /> <mapping
+			resource="map/PeddleOrderIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/PhoneBook.hbm.xml" />
+		<mapping resource="map/PhoneBookSort.hbm.xml" />
+		<mapping resource="map/Plinkman.hbm.xml" />
+		<!--
+			<mapping resource="map/PorganTradesIdcodeP.hbm.xml" /> <mapping
+			resource="map/PorganTradesIdcodeT.hbm.xml" /> <mapping
+			resource="map/PriceOrganLog.hbm.xml" />
+		-->
+		<mapping resource="map/PrimaryCode.hbm.xml" />
+		<mapping resource="map/PrintJob.hbm.xml" />
+		<mapping resource="map/PrintLog.hbm.xml" />
+		<mapping resource="map/Product.hbm.xml" />
+		<mapping resource="map/ProductIncome.hbm.xml" />
+		<mapping resource="map/ProductIncomeDetail.hbm.xml" />
+		<mapping resource="map/ProductIncomeIdcode.hbm.xml" />
+
+		<!--
+			<mapping resource="map/ProductIntegral.hbm.xml" /> <mapping
+			resource="map/ProductInterconvert.hbm.xml" /> <mapping
+			resource="map/ProductInterconvertDetail.hbm.xml" /> <mapping
+			resource="map/ProductInterconvertIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/ProductPicture.hbm.xml" />
+		<mapping resource="map/ProductPrice.hbm.xml" />
+		<!-- 
+			<mapping resource="map/ProductPriceHistory.hbm.xml" />
+		-->
+		<mapping resource="map/ProductPriceii.hbm.xml" />
+		<!--
+			<mapping resource="map/ProductProperty.hbm.xml" /> <mapping
+			resource="map/ProductRedeploy.hbm.xml" /> <mapping
+			resource="map/ProductRedeployDetail.hbm.xml" />
+		-->
+		<mapping resource="map/ProductStockpile.hbm.xml" />
+		<mapping resource="map/ProductStockpileAll.hbm.xml" />
+		<mapping resource="map/ProductStruct.hbm.xml" />
+
+		<!--
+			<mapping resource="map/Project.hbm.xml" />
+		-->
+		<mapping resource="map/Provider.hbm.xml" />
+		<mapping resource="map/ProviderProduct.hbm.xml" />
+		<!--
+			<mapping resource="map/PurchaseBill.hbm.xml" /> <mapping
+			resource="map/PurchaseBillDetail.hbm.xml" /> <mapping
+			resource="map/PurchaseIncome.hbm.xml" /> <mapping
+			resource="map/PurchaseIncomeDetail.hbm.xml" /> <mapping
+			resource="map/PurchaseIncomeIdcode.hbm.xml" /> <mapping
+			resource="map/PurchaseInquire.hbm.xml" /> <mapping
+			resource="map/PurchaseInquireDetail.hbm.xml" /> <mapping
+			resource="map/PurchaseInvoice.hbm.xml" /> <mapping
+			resource="map/PurchaseInvoiceDetail.hbm.xml" /> <mapping
+			resource="map/PurchaseOrder.hbm.xml" /> <mapping
+			resource="map/PurchaseOrderDetail.hbm.xml" /> <mapping
+			resource="map/PurchasePlan.hbm.xml" /> <mapping
+			resource="map/PurchasePlanDetail.hbm.xml" />
+		-->
+		<mapping resource="map/PurchaseSalesReport.hbm.xml" />
+		<!--
+			<mapping resource="map/PurchaseTrades.hbm.xml" /> <mapping
+			resource="map/PurchaseTradesDetail.hbm.xml" /> <mapping
+			resource="map/PurchaseTradesIdcode.hbm.xml" /> <mapping
+			resource="map/PurchaseWithdraw.hbm.xml" /> <mapping
+			resource="map/PurchaseWithdrawDetail.hbm.xml" />
+		-->
+		<mapping resource="map/Query.hbm.xml" />
+		<mapping resource="map/Questions.hbm.xml" />
+
+		<!--
+			<mapping resource="map/Receivable.hbm.xml" /> <mapping
+			resource="map/ReceivableObject.hbm.xml" /> <mapping
+			resource="map/ReceiveIncome.hbm.xml" /> <mapping
+			resource="map/ReceiveIncomeDetail.hbm.xml" /> <mapping
+			resource="map/ReceiveIncomeIdcode.hbm.xml" /> <mapping
+			resource="map/Reckoning.hbm.xml" />   <mapping
+			resource="map/RegionTarget.hbm.xml" /> <mapping
+			resource="map/RegionUsers.hbm.xml" /> <mapping
+			resource="map/Repository.hbm.xml" /> <mapping
+			resource="map/RepositoryFile.hbm.xml" /> <mapping
+			resource="map/RepositoryProduct.hbm.xml" /> <mapping
+			resource="map/RepositoryType.hbm.xml" /> <mapping
+			resource="map/Respond.hbm.xml" />
+		-->
+		<mapping resource="map/RegionArea.hbm.xml" />
+		<mapping resource="map/Region.hbm.xml" />
+		<mapping resource="map/RegionItem.hbm.xml" />
+		<mapping resource="map/Role.hbm.xml" />
+		<mapping resource="map/RoleLeftMenu.hbm.xml" />
+		<mapping resource="map/RoleMenu.hbm.xml" />
+		<mapping resource="map/RuleUserWh.hbm.xml" />
+		<!--
+			<mapping resource="map/SaleForecast.hbm.xml" /> <mapping
+			resource="map/SaleForecastDetail.hbm.xml" /> <mapping
+			resource="map/SaleIndent.hbm.xml" /> <mapping
+			resource="map/SaleIndentDetail.hbm.xml" /> <mapping
+			resource="map/SaleInvoice.hbm.xml" /> <mapping
+			resource="map/SaleInvoiceApply.hbm.xml" /> <mapping
+			resource="map/SaleInvoiceDetail.hbm.xml" /> <mapping
+			resource="map/SaleOrder.hbm.xml" /> <mapping
+			resource="map/SaleOrderDetail.hbm.xml" /> <mapping
+			resource="map/SaleRepair.hbm.xml" /> <mapping
+			resource="map/SaleRepairDetail.hbm.xml" /> <mapping
+			resource="map/SaleRepairIdcode.hbm.xml" /> <mapping
+			resource="map/SaleTrades.hbm.xml" /> <mapping
+			resource="map/SaleTradesDetail.hbm.xml" /> <mapping
+			resource="map/SaleTradesIdcode.hbm.xml" /> <mapping
+			resource="map/SampleBill.hbm.xml" /> <mapping
+			resource="map/SampleBillDetail.hbm.xml" /> <mapping
+			resource="map/ScanConf.hbm.xml" />
+		-->
+		<mapping resource="map/Scanner.hbm.xml" />
+		<mapping resource="map/ScannerUser.hbm.xml" />
+		<mapping resource="map/ScannerWarehouse.hbm.xml" />
+
+		<!--
+			<mapping resource="map/SendTime.hbm.xml" /> <mapping
+			resource="map/ServiceAgreement.hbm.xml" /> <mapping
+			resource="map/ServiceDetail.hbm.xml" /> <mapping
+			resource="map/ServiceExecute.hbm.xml" /> <mapping
+			resource="map/ShipmentBill.hbm.xml" /> <mapping
+			resource="map/ShipmentBillDetail.hbm.xml" />
+		-->
+		<mapping resource="map/StockAlterMove.hbm.xml" />
+		<mapping resource="map/StockAlterMoveDetail.hbm.xml" />
+		<mapping resource="map/StockAlterMoveIdcode.hbm.xml" />
+		<!--
+			<mapping resource="map/StockCheck.hbm.xml" /> <mapping
+			resource="map/StockCheckDetail.hbm.xml" /> <mapping
+			resource="map/StockCheckIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/StockMove.hbm.xml" />
+		<mapping resource="map/StockMoveDetail.hbm.xml" />
+		<mapping resource="map/StockMoveIdcode.hbm.xml" />
+		<mapping resource="map/StockPileAgeing.hbm.xml" />
+		<mapping resource="map/StockWasteBook.hbm.xml" />
+		<mapping resource="map/SuggestInspect.hbm.xml" />
+		<mapping resource="map/SuggestInspectDetail.hbm.xml" />
+		<!--
+			<mapping resource="map/Suit.hbm.xml" /> <mapping
+			resource="map/SupplySaleApply.hbm.xml" /> <mapping
+			resource="map/SupplySaleApplyDetail.hbm.xml" /> <mapping
+			resource="map/SupplySaleMove.hbm.xml" /> <mapping
+			resource="map/SupplySaleMoveDetail.hbm.xml" /> <mapping
+			resource="map/SupplySaleMoveIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/SystemResource.hbm.xml" />
+		<!--
+			<mapping resource="map/TakeBill.hbm.xml" />
+		-->
+		<mapping resource="map/TakeTicket.hbm.xml" />
+		<mapping resource="map/TakeTicketDetail.hbm.xml" />
+		<mapping resource="map/TakeTicketDetailBatchBit.hbm.xml" />
+		<mapping resource="map/TakeTicketIdcode.hbm.xml" />
+		<!--
+			<mapping resource="map/Task.hbm.xml" /> <mapping
+			resource="map/TaskExecute.hbm.xml" />
+		-->
+		<mapping resource="map/TaskQuartz.hbm.xml" />
+		<mapping resource="map/TrackApply.hbm.xml" />
+		<mapping resource="map/UploadPrLog.hbm.xml" />
+		<!--
+			<mapping resource="map/UploadProduceReport.hbm.xml" />
+		-->
+		<mapping resource="map/UploadSAPLog.hbm.xml" />
+		<!--
+			<mapping resource="map/UserArea.hbm.xml" />
+		-->
+		<mapping resource="map/UserCallEvent.hbm.xml" />
+		<!--
+			<mapping resource="map/UserGrade.hbm.xml" />
+		-->
+		<mapping resource="map/UserLeftMenu.hbm.xml" />
+		<mapping resource="map/UserLog.hbm.xml" />
+		<mapping resource="map/UserRole.hbm.xml" />
+		<mapping resource="map/Users.hbm.xml" />
+		<!--
+			<mapping resource="map/UserSort.hbm.xml" /> <mapping
+			resource="map/UserTarget.hbm.xml" />
+		-->
+		<mapping resource="map/UserVisit.hbm.xml" />
+
+		<!--
+			<mapping resource="map/ViewCIntegralDeal.hbm.xml" /> <mapping
+			resource="map/ViewCIntegralDetail.hbm.xml" /> <mapping
+			resource="map/ViewCIntegralDuihuanDetail.hbm.xml" /> <mapping
+			resource="map/ViewCIntegralDuihuanTotal.hbm.xml" /> <mapping
+			resource="map/ViewCIntegralTotal.hbm.xml" /> <mapping
+			resource="map/ViewOIntegralDeal.hbm.xml" /> <mapping
+			resource="map/ViewOIntegralTotal.hbm.xml" /> <mapping
+			resource="map/ViewPayoutWaste.hbm.xml" /> <mapping
+			resource="map/ViewProductCost.hbm.xml" /> <mapping
+			resource="map/ViewRevenueWaste.hbm.xml" /> <mapping
+			resource="map/ViewSaleBill.hbm.xml" /> <mapping
+			resource="map/ViewSaleCustomerTotal.hbm.xml" /> <mapping
+			resource="map/ViewSaleProductTotal.hbm.xml" /> <mapping
+			resource="map/ViewWithdrawProduct.hbm.xml" />
+		-->
+
+		<mapping resource="map/ViewWlmIdcode.hbm.xml" />
+
+		<!--
+			<mapping resource="map/VocationOrder.hbm.xml" /> <mapping
+			resource="map/VocationOrderDetail.hbm.xml" />
+		-->
+		<mapping resource="map/Warehouse.hbm.xml" />
+		<mapping resource="map/WarehouseBit.hbm.xml" />
+		<mapping resource="map/WarehouseVisit.hbm.xml" />
+		<!--
+			<mapping resource="map/WebIndent.hbm.xml" /> <mapping
+			resource="map/WebIndentDetail.hbm.xml" /> <mapping
+			resource="map/Withdraw.hbm.xml" /> <mapping
+			resource="map/WithdrawDetail.hbm.xml" /> <mapping
+			resource="map/WithdrawIdcode.hbm.xml" />
+		-->
+		<mapping resource="map/WlmIdcodeLog.hbm.xml" />
+		<!--
+			<mapping resource="map/WorkReport.hbm.xml" /> <mapping
+			resource="map/WorkReportApprove.hbm.xml" />
+		-->
+
+		<mapping resource="map/Notification.hbm.xml" />
+		<mapping resource="map/NotificationDetail.hbm.xml" />
+
+		<mapping resource="map/AppUpdate.hbm.xml" />
+		<mapping resource="map/Sms.hbm.xml" />
+		<mapping resource="map/ProductionLine.hbm.xml" />
+		<mapping resource="map/CovertUploadReport.hbm.xml" />
+		<mapping resource="map/CovertErrorLog.hbm.xml" />
+		<mapping resource="map/IdcodeUploadLog.hbm.xml" />
+		<mapping resource="map/AppUpdateLog.hbm.xml" />
+		<mapping resource="map/InventoryUploadLog.hbm.xml" />
+		<mapping resource="map/InventoryUpload.hbm.xml" />
+
+		<mapping resource="map/ScannerDownload.hbm.xml" />
+
+		<mapping resource="map/FIFOAlertReport.hbm.xml" />
+
+		<mapping resource="map/ProductConfig.hbm.xml" />
+		<mapping resource="map/UnitInfo.hbm.xml" />
+		<mapping resource="map/ProductPlan.hbm.xml" />
+		<mapping resource="map/PrepareCode.hbm.xml" />
+
+		<mapping resource="map/BillImportConfig.hbm.xml" />
+		<mapping resource="map/Wlinkman.hbm.xml" />
+		<!--start modified by ryan.xi 20150614-->
+		<mapping resource="map/Member.hbm.xml" />
+		<mapping resource="map/PackSeparate.hbm.xml" />
+		<mapping resource="map/PackSeparateDetail.hbm.xml" />
+		<mapping resource="map/BatchCompleteMail.hbm.xml" />
+		<mapping resource="map/SalesConsumHistory.hbm.xml" />
+
+		<mapping resource="map/OrganUploadLog.hbm.xml" />
+		<mapping resource="map/SBonusSetting.hbm.xml" />
+		<mapping resource="map/SBonusAccount.hbm.xml" />
+		<mapping resource="map/SBonusTarget.hbm.xml" /> 
+		<mapping resource="map/STransferRelation.hbm.xml" />
+		<mapping resource="map/SUserArea.hbm.xml" />
+		<mapping resource="map/SBonusAppraise.hbm.xml" />
+		<mapping resource="map/SBonusDetail.hbm.xml" />
+		<mapping resource="map/SBonusLog.hbm.xml" />
+		<mapping resource="map/UserCustomer.hbm.xml" />
+		<mapping resource="map/SalesAreaCountry.hbm.xml" />
+		
+		<mapping resource="map/SBonusConfig.hbm.xml" />
+		
+		<mapping resource="map/DupontCodeUploadLog.hbm.xml" />
+		<mapping resource="map/DupontPrimaryCode.hbm.xml" />
+		<mapping resource="map/UserGroup.hbm.xml" />
+		<mapping resource="map/UserGroupApp.hbm.xml" /> 
+		<mapping resource="map/UserApply.hbm.xml" />  
+		<mapping resource="map/Seed.hbm.xml" />  
+		<mapping resource="map/UploadProduceLog.hbm.xml" />  
+		<mapping resource="map/QualityInspection.hbm.xml" /> 
+		<mapping resource="map/TransferLog.hbm.xml" />  
+		<mapping resource="map/ApplyQrCode.hbm.xml" />  
+		<mapping resource="map/CartonSeq.hbm.xml" />  
+		<mapping resource="map/CartonSeqLog.hbm.xml" />  
+		<!--end modified by ryan.xi 20150614-->
+		
+		<!--start modified by zhuchaoyang 20180410-->
+<!-- 		<mapping resource="map/ProductGroup2.hbm.xml" /> -->
+		<mapping resource="map/PopularProduct.hbm.xml" />
+		<mapping resource="map/Manufacturer.hbm.xml" />
+<!-- 		<mapping resource="map/ManufacturerContact.hbm.xml" /> --> 
+		<mapping resource="map/ManufacturerNews.hbm.xml" />
+		<mapping resource="map/ProductFeedback.hbm.xml" />
+		<mapping resource="map/MediaVideo.hbm.xml" />
+		<mapping resource="map/MediaImg.hbm.xml" />
+		<mapping resource="map/MediaImageGroup.hbm.xml" />
+		<mapping resource="map/UploadCartonSeqLog.hbm.xml" />
+		
+		<mapping resource="map/ApplyQrCodeHz.hbm.xml" />
+		
+		<mapping resource="map/NotificationLog.hbm.xml" />
+		<mapping resource="map/ApplyScratchCode.hbm.xml" />
+	</session-factory>
+</hibernate-configuration>

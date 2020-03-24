@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.IdcodeDetail" table="idcode_detail">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="ProductName" length="128" name="productname" type="java.lang.String"/>
+<property column="Specmode" length="64" name="specmode" type="java.lang.String"/>
+<property column="BillID" length="32" name="billid" type="java.lang.String"/>
+<property column="IDCode" length="32" name="idcode" type="java.lang.String"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeUser" length="64" name="makeuser" type="java.lang.String"/>
+<property column="IdBillType" length="10" name="idbilltype" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="EquipOrganID" length="32" name="equiporganid" type="java.lang.String"/>
+<property column="WarehouseID" length="19" name="warehouseid" type="java.lang.Long"/>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="64" name="cname" type="java.lang.String"/>
+<property column="CMobile" length="64" name="cmobile" type="java.lang.String"/>
+<property column="ProvideID" length="32" name="provideid" type="java.lang.String"/>
+<property column="ProvideName" length="256" name="providename" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

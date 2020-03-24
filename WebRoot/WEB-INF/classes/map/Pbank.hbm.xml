@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Pbank" table="pbank">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="PID" length="32" name="pid" type="java.lang.String"/>
+<property column="BankName" length="128" name="bankname" type="java.lang.String"/>
+<property column="DoorName" length="128" name="doorname" type="java.lang.String"/>
+<property column="BankAccount" length="32" name="bankaccount" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="19" name="makedeptid" type="java.lang.Long"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

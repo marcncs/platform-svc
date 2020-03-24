@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PaymentLogDetail" table="payment_log_detail">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="PLID" length="32" name="plid" type="java.lang.String"/>
+<property column="PID" length="32" name="pid" type="java.lang.String"/>
+<property column="PayableSum" length="18" name="payablesum" type="java.lang.Double"/>
+<property column="PayMode" length="10" name="paymode" type="java.lang.Integer"/>
+<property column="BillNo" length="32" name="billno" type="java.lang.String"/>
+<property column="ThisPayableSum" length="18" name="thispayablesum" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

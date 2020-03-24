@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CIntegralDeal" table="c_integral_deal">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="BillNo" length="32" name="billno" type="java.lang.String"/>
+<property column="OrganID" length="32" name="organid" type="java.lang.String"/>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="ISort" length="10" name="isort" type="java.lang.Integer"/>
+<property column="DealIntegral" length="18" name="dealintegral" type="java.lang.Double"/>
+<property column="CompleteIntegral" length="18" name="completeintegral" type="java.lang.Double"/>
+<property column="IsSettlement" length="10" name="issettlement" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

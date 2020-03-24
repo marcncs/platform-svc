@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.SaleInvoiceApply" table="sale_invoice_apply">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="256" name="cname" type="java.lang.String"/>
+<property column="Addr" length="256" name="addr" type="java.lang.String"/>
+<property column="Linkman" length="64" name="linkman" type="java.lang.String"/>
+<property column="Tel" length="26" name="tel" type="java.lang.String"/>
+<property column="TaxCode" length="64" name="taxcode" type="java.lang.String"/>
+<property column="BankName" length="64" name="bankname" type="java.lang.String"/>
+<property column="BankAccount" length="32" name="bankaccount" type="java.lang.String"/>
+<property column="InvoiceSort" length="10" name="invoicesort" type="java.lang.Integer"/>
+<property column="InvoiceSum" length="18" name="invoicesum" type="java.lang.Double"/>
+<property column="InvoiceContent" length="128" name="invoicecontent" type="java.lang.String"/>
+<property column="SettlementSum" length="18" name="settlementsum" type="java.lang.Double"/>
+<property column="ReplaceSum" length="18" name="replacesum" type="java.lang.Double"/>
+<property column="ShouldReceiveTax" length="18" name="shouldreceivetax" type="java.lang.Double"/>
+<property column="ShouldReceiveInvoiceSum" length="18" name="shouldreceiveinvoicesum" type="java.lang.Double"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="Memo" length="256" name="memo" type="java.lang.String"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Long"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="IsBlankOut" length="10" name="isblankout" type="java.lang.Integer"/>
+<property column="BlankOutID" length="19" name="blankoutid" type="java.lang.Long"/>
+<property column="BlankOutDate" length="23" name="blankoutdate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

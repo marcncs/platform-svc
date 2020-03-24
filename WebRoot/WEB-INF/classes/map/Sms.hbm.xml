@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sms.pojo.Sms" table="SMS">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="MOBILENO" length="20" name="mobileNo" type="com.winsafe.hbm.entity.type.EncryptedMobile"/>
+<property column="CONTENT" length="512" name="content" type="java.lang.String"/>
+<property column="SENDTIME" name="sendTime" type="java.util.Date"/>
+<property column="SENDSTATUS" name="sendStatus" type="java.lang.Integer"/>
+<property column="CREATEDATE" name="createDate" type="java.util.Date"/>
+<property column="TYRCOUNT" name="tryCount" type="java.lang.Integer"/>
+<property column="RETURNVAL" name="returnVal" type="java.lang.Integer"/>
+<property column="CREATEID" name="createId" type="java.lang.Integer"/>
+<property column="TYPE" name="type" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

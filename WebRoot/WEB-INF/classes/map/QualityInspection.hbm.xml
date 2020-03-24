@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.QualityInspection" table="Quality_Inspection">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="sequence">
+	<param name="sequence">QUALITY_INSPECTION_SEQ</param>
+</generator>
+</id> 
+<property column="mCode" name="mCode" type="java.lang.String"/>
+<property column="filePath" name="filePath" type="java.lang.String"/>
+<property column="batch" name="batch" type="java.lang.String"/>
+<property column="inspector" name="inspector" type="java.lang.String"/>
+<property column="inspectDate" name="inspectDate" type="java.util.Date"/>
+<property column="MAKEDATE" name="makeDate" type="java.util.Date"/>
+<property column="MAKEID" name="makeId" type="java.lang.Integer"/>
+<property column="isQualified" name="isQualified" type="java.lang.Integer"/>
+</class> 
+</hibernate-mapping>

@@ -1,0 +1,10 @@
+eclipse.preferences.version=1
+encoding//WebRoot/WEB-INF/reports/TakeTicket.jrxml=UTF-8
+encoding//WebRoot/WEB-INF/windrp.properties=UTF-8
+encoding//src/com/winsafe/drp/util/FileUtil.java=UTF-8
+encoding//src/com/winsafe/drp/util/fileListener/UFIDA/ImportDataFormat.properties=UTF-8
+encoding//src/global/app/ApplicationResource.properties=UTF-8
+encoding//src/global/sys/SystemResource.properties=ISO-8859-1
+encoding//src/global/sys/SystemResource_zh.properties=UTF-8
+encoding//src/oscache.properties=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.TaskExecute" table="task_execute">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="TPID" length="10" name="tpid" type="java.lang.Integer"/>
+<property column="UserID" length="10" name="userid" type="java.lang.Integer"/>
+<property column="IsAffirm" length="10" name="isaffirm" type="java.lang.Integer"/>
+<property column="IsOver" length="10" name="isover" type="java.lang.Integer"/>
+<property column="OverDate" length="23" name="overdate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

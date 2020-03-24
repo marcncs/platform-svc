@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.OrganUploadLog" table="ORGAN_UPLOAD_LOG">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="sequence">
+<param name="sequence">seq_organ_upload_log</param>
+</generator>
+</id>
+<property column="ISDEAL" name="isDeal" type="java.lang.Integer"/>
+<property column="FILENAME" length="256" name="fileName" type="java.lang.String"/>
+<property column="FILEPATH" length="256" name="filePath" type="java.lang.String"/>
+<property column="LOGFILEPATH" length="256" name="logFilePath" type="java.lang.String"/>
+<property column="ERRORCOUNT"  name="errorCount" type="java.lang.Integer"/>
+<property column="TOTALCOUNT"  name="totalCount" type="java.lang.Integer"/>
+<property column="MAKEID" name="makeId" type="java.lang.Integer"/>
+<property column="MAKEORGANID" length="50" name="makeOrganId" type="java.lang.String"/>
+<property column="MAKEDATE" name="makeDate" type="java.util.Date"/>
+<property column="FILEHASHCODE" length="512" name="fileHaseCode" type="java.lang.String"/>
+<property column="TYPE"  name="type" type="java.lang.Integer"/>
+</class> 
+</hibernate-mapping>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+	<form-bean name="sapUploadForm" type="com.winsafe.sap.action.form.SapUploadForm"/>
+	<form-bean name="sapDataForm" type="com.winsafe.sap.action.form.SapDataForm"/>
+	<form-bean name="appUploadForm" type="com.winsafe.app.action.form.AppUploadForm"/>
+</form-beans> 
+
+<action-mappings>
+
+
+<action path="/sap/uploadSapOrderAction"  scope="request" forward="/sap/uploadSapOrder.jsp"></action>
+
+<action name="sapUploadForm"  path="/sap/importSapPlantPoAction" type="com.winsafe.sap.action.UploadSapOrderAction" scope="request" validate="false">
+<forward name="success" path="/sap/uploadmsg.jsp"/>
+<forward name="failure" path="/sap/uploadmsg.jsp"/>
+</action>
+
+
+<action  path="/sap/listSapUploadLogAction" type="com.winsafe.sap.action.ListSapUploadLogAction" scope="request" validate="false">
+<forward name="list" path="/sap/listSapUploadLog.jsp"/>
+</action>
+
+<action  path="/sap/listSapDeliveryLogAction" type="com.winsafe.sap.action.ListSapDeliveryLogAction" scope="request" validate="false">
+<forward name="list" path="/sap/listSapDeliveryLog.jsp"/>
+</action>
+
+<!--SAP打印任务 -->
+<action  path="/sap/listPrintJobAction" type="com.winsafe.sap.action.ListPrintJobAction" scope="request" validate="false">
+<forward name="list" path="/sap/listPrintJob.jsp"/>
+</action>
+
+<action  path="/sap/listPrintJobDetailAction" type="com.winsafe.sap.action.ListPrintJobDetailAction" scope="request" validate="false">
+<forward name="detail" path="/sap/listPrintJobDetail.jsp"/>
+<forward name="printHistory" path="/sap/listPrintJobHistory.jsp"/>
+<forward name="commonCode" path="/sap/generateCommonCode.jsp"/>
+<forward name="cartonCodeList" path="/sap/cartonCodeList.jsp"/>
+<forward name="covertCodeList" path="/sap/covertCodeList.jsp"/>
+</action> 
+
+<action  path="/sap/delPrintJobAction" type="com.winsafe.sap.action.DelPrintJobAction" scope="request" validate="false">
+<forward name="delPrintJob" path="/sap/operatorclose.jsp"/>	
+</action>
+
+<action name="productform"  path="/sap/selectProductAction" type="com.winsafe.sap.action.SelectProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/sap/selectproduct.jsp"/>
+</action>
+
+<!--SAP文件上传接口设置  -->
+<action name="sapDataForm"  path="/SAP_Interface/SAPData" type="com.winsafe.sap.interfaces.SapDataAction" scope="request" validate="false">
+</action>
+
+<action  path="/sap/selectPlantAction" type="com.winsafe.sap.action.SelectOrganAction" scope="request" validate="false">
+<forward name="success" path="/sap/selectorgan.jsp"/>
+<forward name="keyretailer" path="/keyretailer/selectorgan.jsp"/>
+</action>
+
+<action  path="/sap/listCodeDetailAction" type="com.winsafe.sap.action.ListCodeDetailsAction" scope="request" validate="false">
+<forward name="detail" path="/sap/listCodeDetails.jsp"/>
+</action>
+
+<action  path="/sap/reProcessSapFileAction" type="com.winsafe.sap.action.ReProcessSapFileAction" scope="request" validate="false">
+<forward name="listsapupload" path="/sap/listSapUploadLog.jsp"/>
+<forward name="listsapdelivery" path="/sap/listSapDeliveryLog.jsp"/>
+</action>
+
+<action path="/sap/toGenerateCommonCode" type="com.winsafe.sap.action.ToGenerateCommonCode"  scope="request" validate="false">
+<forward name="gencomcode" path="/sap/generateCommonCode.jsp"/>
+</action>
+
+<action  path="/sap/generateCommonCode" type="com.winsafe.sap.action.GenCommonCodeAction" scope="request" validate="false">
+<forward name="result" path="/sap/resultmsg.jsp"/>
+</action>
+
+<action  path="/sap/listCommonCodeLogAction" type="com.winsafe.sap.action.ListCommonCodeLogAction" scope="request" validate="false">
+<forward name="list" path="/sap/listCommonCodeLog.jsp"/>
+</action>
+<!--导出打印任务  -->
+<action  path="/sap/excPutPrintJobAction" type="com.winsafe.sap.action.ExcPutPrintJobAction" scope="request" validate="false">
+</action>
+<!--物流信息  -->
+<action  path="/notification/listNotificationAction" type="com.winsafe.notification.action.ListNotificationAction" scope="request" validate="false">
+<forward name="list" path="/notification/listNotification.jsp"/>
+</action>
+
+<action  path="/notification/listNotificationDetailAction" type="com.winsafe.notification.action.ListNotificationDetailAction" scope="request" validate="false">
+<forward name="list" path="/notification/listNotificationDetails.jsp"/>
+</action>
+
+<action  path="/notification/listNotificationSmsAction" type="com.winsafe.notification.action.ListNotificationSmsAction" scope="request" validate="false">
+<forward name="list" path="/notification/listNotificationSms.jsp"/>
+</action>
+
+<action  path="/notification/listSmsAction" type="com.winsafe.notification.action.ListSmsAction" scope="request" validate="false">
+<forward name="list" path="/notification/listSms.jsp"/>
+</action>
+
+<!--2016-2-22 添加短信信息导出功能 -->
+<action  path="/notification/exputlistSmsAction" type="com.winsafe.notification.action.ExputListSmsAction" scope="request" validate="false">
+</action>
+
+
+<!--发票信息  -->
+<action  path="/sap/listInvoicesAction" type="com.winsafe.sap.action.ListInvoicesAction" scope="request" validate="false">
+<forward name="list" path="/sap/listInvoices.jsp"/>
+</action>
+
+<action  path="/sap/excPutInvoiceAction" type="com.winsafe.sap.action.ExcPutInvoiceAction" scope="request" validate="false">
+</action>
+<!--APP更新  -->
+<action  path="/app/listAppUpdateAction" type="com.winsafe.app.action.ListAppUpdateAction" scope="request" validate="false">
+<forward name="list" path="/appUpdate/listAppUpdate.jsp"/>
+</action>
+
+<action path="/app/toUploadAppUpdateAction"  scope="request" forward="/appUpdate/uploadAppUpdate.jsp"></action>
+
+<action name="appUploadForm"  path="/app/uploadAppUpdateAction" type="com.winsafe.app.action.UploadAppUpdateAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<action  path="/app/listAppUpdateLogAction" type="com.winsafe.app.action.ListAppUpdateLogAction" scope="request" validate="false">
+<forward name="list" path="/appUpdate/listAppUpdateLog.jsp"/>
+</action>
+
+<action path="/app/toUploadAppImageAction"  scope="request" forward="/appUpdate/uploadAppImage.jsp"></action>
+<action name="appUploadForm"  path="/app/uploadAppImageAction" type="com.winsafe.app.action.UploadAppImageAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<!--暗码关联统计报表  -->
+<action  path="/sap/listCovertUploadReportAction" type="com.winsafe.sap.action.ListCovertUploadReportAction" scope="request" validate="false">
+<forward name="list" path="/sap/listCovertUploadReport.jsp"/>
+</action>
+<!--暗码关联统计报表导出 -->
+<action  path="/sap/excputCovertUploadReportAction" type="com.winsafe.sap.action.ExcputCovertUploadReportAction" scope="request" validate="false">
+</action>
+
+<!--暗码上传质量报告  -->
+<action  path="/sap/listCovertErrorLogAction" type="com.winsafe.sap.action.ListCovertErrorLogAction" scope="request" validate="false">
+<forward name="list" path="/sap/listCovertErrorLog.jsp"/>
+</action>
+
+<!--暗码上传质量报告导出  -->
+<action  path="/sap/excputCovertErrorLogAction" type="com.winsafe.sap.action.ExcputCovertErrorLogAction" scope="request" validate="false">
+</action>
+
+<action  path="/sap/toSelectCartonSeqAction" type="com.winsafe.sap.action.ToSelectCartonSeqAction" scope="request" validate="false">
+<forward name="success" path="/sap/selectCartonSeq.jsp"/>
+<forward name="update" path="/sap/toUpdSelectedCartonSeq.jsp"/>
+</action> 
+
+<action  path="/sap/selectCartonSeqAction" type="com.winsafe.sap.action.SelectCartonSeqAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+
+</action-mappings>
+
+
+<message-resources parameter="global.app.ApplicationResource" />
+
+</struts-config>

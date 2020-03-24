@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ReceivableObject" table="receivable_object">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="OID" length="32" name="oid" type="java.lang.String"/>
+<property column="ObjectSort" length="10" name="objectsort" type="java.lang.Integer"/>
+<property column="Payer" length="256" name="payer" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="PromiseDate" length="23" name="promisedate" type="java.util.Date"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

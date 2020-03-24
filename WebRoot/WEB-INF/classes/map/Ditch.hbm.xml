@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Ditch" table="ditch">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="DName" length="128" name="dname" type="java.lang.String"/>
+<property column="TelOne" length="26" name="telone" type="java.lang.String"/>
+<property column="TelTwo" length="26" name="teltwo" type="java.lang.String"/>
+<property column="Fax" length="26" name="fax" type="java.lang.String"/>
+<property column="Province" length="10" name="province" type="java.lang.Integer"/>
+<property column="City" length="10" name="city" type="java.lang.Integer"/>
+<property column="Areas" length="10" name="areas" type="java.lang.Integer"/>
+<property column="DetailAddr" length="256" name="detailaddr" type="java.lang.String"/>
+<property column="PostCode" length="12" name="postcode" type="java.lang.String"/>
+<property column="Email" length="128" name="email" type="java.lang.String"/>
+<property column="HomePage" length="128" name="homepage" type="java.lang.String"/>
+<property column="DitchRank" length="10" name="ditchrank" type="java.lang.Integer"/>
+<property column="Prestige" length="10" name="prestige" type="java.lang.Integer"/>
+<property column="Scale" length="128" name="scale" type="java.lang.String"/>
+<property column="Vocation" length="10" name="vocation" type="java.lang.Integer"/>
+<property column="TaxCode" length="32" name="taxcode" type="java.lang.String"/>
+<property column="BankName" length="128" name="bankname" type="java.lang.String"/>
+<property column="DoorName" length="128" name="doorname" type="java.lang.String"/>
+<property column="BankAccount" length="32" name="bankaccount" type="java.lang.String"/>
+<property column="Memo" length="512" name="memo" type="java.lang.String"/>
+<property column="UserID" length="19" name="userid" type="java.lang.Long"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

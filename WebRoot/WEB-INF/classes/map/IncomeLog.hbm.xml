@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.IncomeLog" table="income_log">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="ROID" length="32" name="roid" type="java.lang.String"/>
+<property column="Drawee" length="64" name="drawee" type="java.lang.String"/>
+<property column="FundAttach" length="10" name="fundattach" type="java.lang.Integer"/>
+<property column="IncomeSum" length="18" name="incomesum" type="java.lang.Double"/>
+<property column="AlreadySpend" length="18" name="alreadyspend" type="java.lang.Double"/>
+<property column="SpendDate" length="23" name="spenddate" type="java.util.Date"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="BillNum" length="24" name="billnum" type="java.lang.String"/>
+<property column="Voucher" length="32" name="voucher" type="java.lang.String"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="10" name="auditid" type="java.lang.Integer"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="IsReceive" length="10" name="isreceive" type="java.lang.Integer"/>
+<property column="ReceiveID" length="10" name="receiveid" type="java.lang.Integer"/>
+<property column="ReceiveDate" length="23" name="receivedate" type="java.util.Date"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

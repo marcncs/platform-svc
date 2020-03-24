@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ContactDitch" table="contact_ditch">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="DID" length="64" name="did" type="java.lang.String"/>
+<property column="ContactDate" length="23" name="contactdate" type="java.util.Date"/>
+<property column="ContactMode" length="10" name="contactmode" type="java.lang.Integer"/>
+<property column="ContactProperty" length="10" name="contactproperty" type="java.lang.Integer"/>
+<property column="ContactContent" length="1024" name="contactcontent" type="java.lang.String"/>
+<property column="FeedBack" length="1024" name="feedback" type="java.lang.String"/>
+<property column="Linkman" length="64" name="linkman" type="java.lang.String"/>
+<property column="NextContact" length="23" name="nextcontact" type="java.util.Date"/>
+<property column="NextGoal" length="256" name="nextgoal" type="java.lang.String"/>
+<property column="UserID" length="19" name="userid" type="java.lang.Long"/>
+</class>
+</hibernate-mapping>

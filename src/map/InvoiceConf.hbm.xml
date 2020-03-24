@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.InvoiceConf" table="invoice_conf">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="IvName" length="32" name="ivname" type="java.lang.String"/>
+<property column="IvRate" length="18" name="ivrate" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

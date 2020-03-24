@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.winsafe.drp.dao.RegionUsers" table="region_users">
+		<id column="id" name="id" type="java.lang.Long">
+			<generator class="native"></generator>
+		</id>
+		<property column="rid" name="rid" length="64" type="java.lang.Long"></property>
+		<property column="userid" name="userid" length="64"
+			type="java.lang.String"></property>
+		<property column="username" name="username" length="64"
+			type="java.lang.String"></property>
+
+		<property column="rname" name="rname" length="64"
+			type="java.lang.String"></property>
+		<property column="usercode" name="usercode" length="64"
+			type="java.lang.String"></property>
+
+		<property column="userlogin" name="userlogin" length="128"
+			type="java.lang.String"></property>
+	</class>
+</hibernate-mapping>

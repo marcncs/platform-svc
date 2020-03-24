@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CodeUnit" table="code_unit">
+<id column="UCode" name="ucode" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="UnitID" length="10" name="unitid" type="java.lang.Integer"/>
+<property column="UName" length="32" name="uname" type="java.lang.String"/>
+<property column="Remark" length="32" name="remark" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

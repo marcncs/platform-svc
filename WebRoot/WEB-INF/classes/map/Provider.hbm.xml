@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Provider" table="provider">
+<id column="PID" name="pid" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="PName" length="256" name="pname" type="java.lang.String"/>
+<property column="Vocation" length="10" name="vocation" type="java.lang.Integer"/>
+<property column="TaxCode" length="32" name="taxcode" type="java.lang.String"/>
+<property column="Corporation" length="32" name="corporation" type="java.lang.String"/>
+<property column="BankAccount" length="24" name="bankaccount" type="java.lang.String"/>
+<property column="BankName" length="128" name="bankname" type="java.lang.String"/>
+<property column="Genre" length="10" name="genre" type="java.lang.Integer"/>
+<property column="Tel" length="26" name="tel" type="java.lang.String"/>
+<property column="Fax" length="26" name="fax" type="java.lang.String"/>
+<property column="Mobile" length="26" name="mobile" type="java.lang.String"/>
+<property column="Email" length="128" name="email" type="java.lang.String"/>
+<property column="PostCode" length="6" name="postcode" type="java.lang.String"/>
+<property column="Addr" length="256" name="addr" type="java.lang.String"/>
+<property column="AbcSort" length="10" name="abcsort" type="java.lang.Integer"/>
+<property column="Prompt" length="10" name="prompt" type="java.lang.Integer"/>
+<property column="TaxRate" length="16" name="taxrate" type="java.lang.Double"/>
+<property column="PayCondition" length="64" name="paycondition" type="java.lang.String"/>
+<property column="HomePage" length="128" name="homepage" type="java.lang.String"/>
+<property column="Province" length="10" name="province" type="java.lang.Integer"/>
+<property column="City" length="10" name="city" type="java.lang.Integer"/>
+<property column="Areas" length="10" name="areas" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="19" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="UpdateID" length="19" name="updateid" type="java.lang.Integer"/>
+<property column="ModifyDate" length="23" name="modifydate" type="java.util.Date"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="IsActivate" length="10" name="isactivate" type="java.lang.Integer"/>
+<property column="ActivateID" length="19" name="activateid" type="java.lang.Integer"/>
+<property column="ActivateDate" length="23" name="activatedate" type="java.util.Date"/>
+<property column="IsDel" length="10" name="isdel" type="java.lang.Integer"/>
+<property column="NCcode" length="32" name="nccode" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+	<form-bean name="repositoryForm" type="com.winsafe.drp.dao.RepositoryForm"/>
+	<form-bean name="msgForm" type="com.winsafe.drp.dao.MsgForm"/>
+</form-beans> 
+
+<action-mappings> 
+
+
+<action  path="/assistant/toSearchMobileAreaAction" type="com.winsafe.drp.action.assistant.ToSearchMobileAreaAction" scope="request" validate="false">
+<forward name="tosearch" path="/assistant/mobilesearch.jsp"/>
+</action>
+
+
+<action  path="/assistant/searchMobileAreaAction" type="com.winsafe.drp.action.assistant.SearchMobileAreaAction" scope="request" validate="false">
+
+</action>
+
+<!-- msg start -->
+<action  path="/assistant/listMsgAction" type="com.winsafe.drp.action.assistant.ListMsgAction" scope="request" validate="false">
+<forward name="list" path="/assistant/msglist.jsp"/>
+</action>
+
+<action  path="/assistant/msgDetailAction" type="com.winsafe.drp.action.assistant.MsgDetailAction" scope="request" validate="false">
+<forward name="success" path="/assistant/msgdetail.jsp"/>
+</action>
+
+<action  path="/assistant/delMsgAction" type="com.winsafe.drp.action.assistant.DelMsgAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toAddMsgAction" type="com.winsafe.drp.action.assistant.ToAddMsgAction" scope="request" validate="false">
+<forward name="toadd" path="/assistant/addmsg.jsp"/>
+</action>
+
+<action name="msgForm" path="/assistant/addMsgAction" type="com.winsafe.drp.action.assistant.AddMsgAction" scope="request" validate="false" input="/assistant/addmsg.jsp">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toUpdMsgAction" type="com.winsafe.drp.action.assistant.ToUpdMsgAction" scope="request" validate="false">
+<forward name="toupd" path="/assistant/updmsg.jsp"/>
+</action>
+
+<action name="msgForm" path="/assistant/updMsgAction" type="com.winsafe.drp.action.assistant.UpdMsgAction" scope="request" validate="false" input="/assistant/updmsg.jsp">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/auditMsgAction" type="com.winsafe.drp.action.assistant.AuditMsgAction" scope="request" validate="false" input="/assistant/addmsg.jsp">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/cancelAuditMsgAction" type="com.winsafe.drp.action.assistant.CancelAuditMsgAction" scope="request" validate="false" >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- msg end -->
+
+
+<!-- repository start -->
+<action  path="/assistant/listRepositoryTypeAction" type="com.winsafe.drp.action.assistant.ListRepositoryTypeAction" scope="request" validate="false">
+<forward name="list" path="/assistant/repositorytypelist.jsp"/>
+</action>
+
+<action path="/assistant/ajaxUpdRepositoryTypeAction" type="com.winsafe.drp.action.assistant.AjaxUpdRepositoryTypeAction" scope="request" validate="false">
+</action>
+
+<action path="/assistant/ajaxAddRepositoryTypeAction" type="com.winsafe.drp.action.assistant.AjaxAddRepositoryTypeAction" scope="request" validate="false">
+</action>
+
+<action path="/assistant/ajaxDelRepositoryTypeAction" type="com.winsafe.drp.action.assistant.AjaxDelRepositoryTypeAction" scope="request" validate="false">
+</action>
+
+<action path="/assistant/ajaxListRepositoryTypeAction" type="com.winsafe.drp.action.assistant.AjaxListRepositoryTypeAction" scope="request" validate="false">
+</action>
+
+<action  path="/assistant/listRepositoryAction" type="com.winsafe.drp.action.assistant.ListRepositoryAction" scope="request" validate="false">
+<forward name="list" path="/assistant/repositorylist.jsp"/>
+</action>
+
+<action  path="/assistant/toAddRepositoryAction" type="com.winsafe.drp.action.assistant.ToAddRepositoryAction" scope="request" validate="false">
+<forward name="toadd" path="/assistant/addrepository.jsp"/>
+</action>
+
+<action name="repositoryForm" path="/assistant/addRepositoryAction" type="com.winsafe.drp.action.assistant.AddRepositoryAction" scope="request" validate="false"  input="/assistant/addrepository.jsp">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toUpdRepositoryAction" type="com.winsafe.drp.action.assistant.ToUpdRepositoryAction" scope="request" validate="false">
+<forward name="toupd" path="/assistant/updrepository.jsp"/>
+</action>
+
+<action name="repositoryForm" path="/assistant/updRepositoryAction" type="com.winsafe.drp.action.assistant.UpdRepositoryAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/repositoryDetailAction" type="com.winsafe.drp.action.assistant.RepositoryDetailAction" scope="request" validate="false">
+<forward name="info" path="/assistant/repositorydetail.jsp"/>
+</action>
+
+<action path="/assistant/delRepositoryAction" type="com.winsafe.drp.action.assistant.DelRepositoryAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/delRepositoryFileAction" type="com.winsafe.drp.action.assistant.DelRepositoryFileAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- repository end -->
+
+
+<!-- adjustcintegral start -->
+<action  path="/assistant/listAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.ListAdjustCIntegralAction" scope="request" validate="false">
+<forward name="list" path="/assistant/listadjustcintegral.jsp"/>
+</action>
+
+<action  path="/assistant/toAddAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.ToAddAdjustCIntegralAction" scope="request" validate="false">
+<forward name="toadd" path="/assistant/addadjustcintegral.jsp"/>
+</action>
+
+<action path="/assistant/addAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.AddAdjustCIntegralAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toUpdAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.ToUpdAdjustCIntegralAction" scope="request" validate="false">
+<forward name="toupd" path="/assistant/updadjustcintegral.jsp"/>
+</action>
+
+<action path="/assistant/updAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.UpdAdjustCIntegralAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/delAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.DelAdjustCIntegralAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/adjustCIntegralDetailAction" type="com.winsafe.drp.action.assistant.AdjustCIntegralDetailAction" scope="request" validate="false">
+<forward name="info" path="/assistant/adjustcintegraldetail.jsp"/>
+</action>
+
+<action path="/assistant/auditAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.AuditAdjustCIntegralAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/cancalAuditAdjustCIntegralAction" type="com.winsafe.drp.action.assistant.CancalAuditAdjustCIntegralAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- adjustcintegral end -->
+
+
+<!-- adjustointegral start -->
+<action  path="/assistant/listAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.ListAdjustOIntegralAction" scope="request" validate="false">
+<forward name="list" path="/assistant/listadjustointegral.jsp"/>
+</action>
+
+<action  path="/assistant/toAddAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.ToAddAdjustOIntegralAction" scope="request" validate="false">
+<forward name="toadd" path="/assistant/addadjustointegral.jsp"/>
+</action>
+
+<action path="/assistant/addAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.AddAdjustOIntegralAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toUpdAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.ToUpdAdjustOIntegralAction" scope="request" validate="false">
+<forward name="toupd" path="/assistant/updadjustointegral.jsp"/>
+</action>
+
+<action path="/assistant/updAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.UpdAdjustOIntegralAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/delAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.DelAdjustOIntegralAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/adjustOIntegralDetailAction" type="com.winsafe.drp.action.assistant.AdjustOIntegralDetailAction" scope="request" validate="false">
+<forward name="info" path="/assistant/adjustointegraldetail.jsp"/>
+</action>
+
+<action path="/assistant/auditAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.AuditAdjustOIntegralAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/cancalAuditAdjustOIntegralAction" type="com.winsafe.drp.action.assistant.CancalAuditAdjustOIntegralAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- adjustointegral end -->
+
+
+<!-- ointegralsett start -->
+<action  path="/assistant/listOIntegralSettAction" type="com.winsafe.drp.action.assistant.ListOIntegralSettAction" scope="request" validate="false">
+<forward name="list" path="/assistant/listointegralsett.jsp"/>
+</action>
+
+<action  path="/assistant/toAddOIntegralSettAction" type="com.winsafe.drp.action.assistant.ToAddOIntegralSettAction" scope="request" validate="false">
+<forward name="toadd" path="/assistant/addointegralsett.jsp"/>
+</action>
+
+<action path="/assistant/addOIntegralSettAction" type="com.winsafe.drp.action.assistant.AddOIntegralSettAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toUpdOIntegralSettAction" type="com.winsafe.drp.action.assistant.ToUpdOIntegralSettAction" scope="request" validate="false">
+<forward name="toupd" path="/assistant/updointegralsett.jsp"/>
+</action>
+
+<action path="/assistant/updOIntegralSettAction" type="com.winsafe.drp.action.assistant.UpdOIntegralSettAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/delOIntegralSettAction" type="com.winsafe.drp.action.assistant.DelOIntegralSettAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/oIntegralSettDetailAction" type="com.winsafe.drp.action.assistant.OIntegralSettDetailAction" scope="request" validate="false">
+<forward name="info" path="/assistant/ointegralsettdetail.jsp"/>
+</action>
+
+<action path="/assistant/auditOIntegralSettAction" type="com.winsafe.drp.action.assistant.AuditOIntegralSettAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/cancalAuditOIntegralSettAction" type="com.winsafe.drp.action.assistant.CancalAuditOIntegralSettAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- ointegralsett start -->
+
+<action  path="/assistant/cIntegralTotalAction" type="com.winsafe.drp.action.assistant.CIntegralTotalAction" scope="request" validate="false">
+<forward name="show" path="/assistant/cintegraltotal.jsp"/>
+</action>
+
+<action  path="/assistant/excPutCIntegralTotalAction" type="com.winsafe.drp.action.assistant.ExcPutCIntegralTotalAction" scope="request" validate="false">
+<forward name="show" path="/assistant/excputcintegraltotal.jsp"/>
+</action>
+
+<action  path="/assistant/cIntegralDetailAction" type="com.winsafe.drp.action.assistant.CIntegralDetailAction" scope="request" validate="false">
+<forward name="show" path="/assistant/cintegraldetail.jsp"/>
+</action>
+
+<action  path="/assistant/excPutCIntegralDetailAction" type="com.winsafe.drp.action.assistant.ExcPutCIntegralDetailAction" scope="request" validate="false">
+<forward name="show" path="/assistant/excputcintegraldetail.jsp"/>
+</action>
+
+<action  path="/assistant/cIntegralDuihuanTotalAction" type="com.winsafe.drp.action.assistant.CIntegralDuihuanTotalAction" scope="request" validate="false">
+<forward name="show" path="/assistant/cintegralduihuantotal.jsp"/>
+</action>
+
+<action  path="/assistant/excPutCIntegralDuihuanTotalAction" type="com.winsafe.drp.action.assistant.ExcPutCIntegralDuihuanTotalAction" scope="request" validate="false">
+<forward name="show" path="/assistant/excputcintegralduihuantotal.jsp"/>
+</action>
+
+<action  path="/assistant/cIntegralDuihuanDetailAction" type="com.winsafe.drp.action.assistant.CIntegralDuihuanDetailAction" scope="request" validate="false">
+<forward name="show" path="/assistant/cintegralduihuandetail.jsp"/>
+</action>
+
+<action  path="/assistant/excPutCIntegralDuihuanDetailAction" type="com.winsafe.drp.action.assistant.ExcPutCIntegralDuihuanDetailAction" scope="request" validate="false">
+<forward name="show" path="/assistant/excputcintegralduihuandetail.jsp"/>
+</action>
+
+<action  path="/assistant/listCIntegralDealAllAction" type="com.winsafe.drp.action.assistant.ListCIntegralDealAllAction" scope="request" validate="false">
+<forward name="list" path="/assistant/cintegraldeallist.jsp"/>
+</action>
+
+<action  path="/assistant/excPutCIntegralDealAllAction" type="com.winsafe.drp.action.assistant.ExcPutCIntegralDealAllAction" scope="request" validate="false">
+<forward name="list" path="/assistant/excputcintegraldeallist.jsp"/>
+</action>
+
+<action  path="/assistant/listOIntegralDealOutlineAction" type="com.winsafe.drp.action.assistant.ListOIntegralDealOutlineAction" scope="request" validate="false">
+<forward name="list" path="/assistant/ointegraldealoutlinelist.jsp"/>
+</action>
+
+<action  path="/assistant/oIntegralTotalAction" type="com.winsafe.drp.action.assistant.OIntegralTotalAction" scope="request" validate="false">
+<forward name="show" path="/assistant/ointegraltotal.jsp"/>
+</action>
+
+<action  path="/assistant/excPutOIntegralTotalAction" type="com.winsafe.drp.action.assistant.ExcPutOIntegralTotalAction" scope="request" validate="false">
+<forward name="show" path="/assistant/excputointegraltotal.jsp"/>
+</action>
+
+<action  path="/assistant/listOIntegralDealAllAction" type="com.winsafe.drp.action.assistant.ListOIntegralDealAllAction" scope="request" validate="false">
+<forward name="list" path="/assistant/ointegraldeallist.jsp"/>
+</action>
+
+ <action  path="/assistant/selectMultiOrganAction" type="com.winsafe.drp.action.assistant.SelectMultiOrganAction" scope="request" validate="false">
+<forward name="list" path="/assistant/selectmultiorgan.jsp"/>
+</action>
+
+
+<!-- idcode reset start -->
+ <action  path="/assistant/listIdcodeDetailAction" type="com.winsafe.drp.action.assistant.ListIdcodeDetailAction" scope="request" validate="false">
+<forward name="list" path="/assistant/listidcodedetail.jsp"/>
+</action>
+
+ <action  path="/assistant/idcodeDetailAction" type="com.winsafe.drp.action.assistant.IdcodeDetailAction" scope="request" validate="false">
+<forward name="info" path="/assistant/idcodedetail.jsp"/>
+</action>
+
+ <action  path="/assistant/listIdcodeAction" type="com.winsafe.drp.action.assistant.ListIdcodeAction" scope="request" validate="false">
+<forward name="list" path="/assistant/listidcode.jsp"/>
+</action>
+
+ <action  path="/assistant/excPutIdcodeAction" type="com.winsafe.drp.action.assistant.ExcPutIdcodeAction" scope="request" validate="false">
+</action>
+
+ <action  path="/assistant/listIdcodeResetAction" type="com.winsafe.drp.action.assistant.ListIdcodeResetAction" scope="request" validate="false">
+<forward name="list" path="/assistant/listidcodereset.jsp"/>
+</action>
+
+<action  path="/assistant/toAddIdcodeResetAction" type="com.winsafe.drp.action.assistant.ToAddIdcodeResetAction" scope="request" validate="false">
+<forward name="toadd" path="/assistant/addidcodereset.jsp"/>
+</action>
+
+<action path="/assistant/addIdcodeResetAction" type="com.winsafe.drp.action.assistant.AddIdcodeResetAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/assistant/toUpdIdcodeResetAction" type="com.winsafe.drp.action.assistant.ToUpdIdcodeResetAction" scope="request" validate="false">
+<forward name="toupd" path="/assistant/updidcodereset.jsp"/>
+</action>
+
+<action path="/assistant/updIdcodeResetAction" type="com.winsafe.drp.action.assistant.UpdIdcodeResetAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/delIdcodeDetailAction" type="com.winsafe.drp.action.assistant.DelIdcodeDetailAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/idcodeResetDetailAction" type="com.winsafe.drp.action.assistant.IdcodeResetDetailAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/idcoderesetdetail.jsp"/>
+</action>
+
+<action path="/assistant/toAddIdcodeResetIdcodeAction" type="com.winsafe.drp.action.assistant.ToAddIdcodeResetIdcodeAction" scope="request" validate="false"  >
+<forward name="toadd" path="/assistant/addidcoderesetidcode.jsp"/>
+</action>
+
+<action path="/assistant/addIdcodeResetIdcodeAction" type="com.winsafe.drp.action.assistant.AddIdcodeResetIdcodeAction" scope="request" validate="false"  >
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/auditIdcodeResetAction" type="com.winsafe.drp.action.assistant.AuditIdcodeResetAction" scope="request" validate="false"  >
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/assistant/selectIdcodeProductAction" type="com.winsafe.drp.action.assistant.SelectIdcodeProductAction" scope="request" validate="false"  >
+<forward name="selectproduct" path="/assistant/selectidcodeproduct.jsp"/>
+</action>
+<!-- idcode reset end -->
+
+
+<!-- wlm idcode start -->
+<action path="/assistant/listViewWlmIdcodeMailAction" type="com.winsafe.drp.action.assistant.ListViewWlmIdcodeMailAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listviewwlmidcodemail.jsp"/>
+</action>
+
+<!-- 查看物流码查询申请by jason.huang -->
+<action path="/assistant/listViewTrackApplyAction" type="com.winsafe.drp.action.assistant.ListViewTrackApplyAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listViewTrackApply.jsp"/>
+</action>
+
+<!-- 配置物流码查询的ajax -->
+<action path="/assistant/ajaxViewTrackApply" type="com.winsafe.drp.action.assistant.AjaxViewTrackApply" scope="request" validate="false">
+</action>
+
+<!-- 增加物流码查询申请by jason.huang -->
+<action path="/assistant/toAddTrackApplyAction" type="com.winsafe.drp.action.assistant.ToAddTrackApplyAction" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 配置物流码全链查询 by jason.huang -->
+<action path="/assistant/listViewWlmIdcodeAction" type="com.winsafe.drp.action.assistant.ListViewWlmIdcodeAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/listviewwlmidcode.jsp"/>
+</action>
+
+<!-- 物流码全链查询 by jason.huang -->
+<action path="/assistant/viewWlmIdcodeAction" type="com.winsafe.drp.action.assistant.ViewWlmIdcodeAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/listwlmidcode.jsp"/>
+</action>
+
+<!-- 物流码全链查询详情 by jason.huang -->
+<action path="/assistant/wlmIdcodeDetailAction" type="com.winsafe.drp.action.assistant.WlmIdcodeDetailAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/wlmidcodeDetail.jsp"/>
+</action>
+
+<!-- 物流码全链查询  产品跟踪显示 by jason.huang -->
+<action path="/assistant/trackDetailAction" type="com.winsafe.drp.action.assistant.TrackDetailAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/trackDetail.jsp"/>
+</action>
+
+<action path="/assistant/listWlmIdcodeLogAction" type="com.winsafe.drp.action.assistant.ListWlmIdcodeLogAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listwlmidcodelog.jsp"/>
+</action>
+
+<action path="/assistant/excPutViewWlmIdcodeAction" type="com.winsafe.drp.action.assistant.ExcPutViewWlmIdcodeAction" scope="request" validate="false"  >
+</action>
+
+<action path="/assistant/excPutWlmIdcodeLogAction" type="com.winsafe.drp.action.assistant.ExcPutWlmIdcodeLogAction" scope="request" validate="false"  >
+</action>
+
+<!-- 追溯申请记录详情 by jason.huang -->
+<action path="/assistant/viewTrackApplyDetailAction" type="com.winsafe.drp.action.assistant.ViewTrackApplyDetailAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/listviewtrackapplydetail.jsp"/>
+</action>
+
+<action path="/assistant/listFleeProductAction" type="com.winsafe.drp.action.assistant.ListFleeProductAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listfleeproduct.jsp"/>
+</action>
+
+<action path="/assistant/delFleeProductAction" type="com.winsafe.drp.action.assistant.DelFleeProductAction" scope="request" validate="false"  >
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/assistant/excPutFleeProductAction" type="com.winsafe.drp.action.assistant.ExcPutFleeProductAction" scope="request" validate="false"  >
+</action>
+<!-- wlm idcodeend -->
+
+<!-- fwn start -->
+<action path="/assistant/listFWNInitAction" type="com.winsafe.drp.action.assistant.ListFWNInitAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listfwn.jsp"/>
+</action>
+
+
+<action path="/assistant/listFWNAction" type="com.winsafe.drp.action.assistant.ListFWNAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listfwn.jsp"/>
+</action>
+
+<action path="/assistant/listFWNReportInitAction" type="com.winsafe.drp.action.assistant.ListFWNReportInitAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listfwnreport.jsp"/>
+</action>
+
+<action path="/assistant/listFWNReportAction" type="com.winsafe.drp.action.assistant.ListFWNReportAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listfwnreport.jsp"/>
+</action>
+<action path="/assistant/ecxPutFWNReportAction" type="com.winsafe.drp.action.assistant.ExcPutFWNReportAction" scope="request" validate="false"  >
+</action>
+<!-- fwn end -->
+
+<action path="/assistant/listPointsNumberAction" type="com.winsafe.drp.action.assistant.ListPointsNumberAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listPointsNumber.jsp"/>
+</action>
+
+<action path="/assistant/exportPointsNumberAction" type="com.winsafe.drp.action.assistant.ExportPointsNumberAction" scope="request" validate="false"  >
+</action>
+
+<action path="/assistant/ajaxGetTotalNumberAction" type="com.winsafe.drp.action.assistant.AjaxGetTotalNumberAction" scope="request" validate="false"  >
+</action>
+
+<action path="/assistant/listViewIdcodeTrendAction" type="com.winsafe.drp.action.assistant.ListViewIdcodeTrendAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listViewIdcodeTrend.jsp"/>
+</action>
+
+<!-- 物流码溯源查询 ADD WEI.LI 13-7-26 -->
+<action path="/assistant/listViewIdcodeRetrospectAction" type="com.winsafe.drp.action.assistant.ListViewIdcodeRetrospectAction" scope="request" validate="false"  >
+<forward name="list" path="/assistant/listviewidcoderetrospect.jsp"/>
+</action>
+<action path="/assistant/excPutViewIdcodeRetrospectAction" type="com.winsafe.drp.action.assistant.ExcPutViewIdcodeRetrospectAction" scope="request" validate="false"  >
+</action>
+
+<action path="/assistant/trace" type="com.winsafe.drp.action.assistant.TraceAction" scope="request" validate="false"  >
+<forward name="success" path="/assistant/trace.jsp"/>
+</action> 
+
+</action-mappings>
+
+<message-resources parameter="global.app.sys.ApplicationResource" />
+
+</struts-config>

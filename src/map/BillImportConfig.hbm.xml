@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.erp.pojo.BillImportConfig" table="BILL_IMPORT_CONFIG">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+<param name="sequence">BILL_IMPORT_CONFIG_SEQ</param>
+</generator>
+</id>
+<property column="ORGANID" name="organId" type="java.lang.String"/>
+<property column="TEMPLATENO" name="templateNo" type="java.lang.String"/>
+<property column="FIELDNAME" name="fieldName" type="java.lang.String"/>
+<property column="COLUMNNAME" name="columnName" type="java.lang.String"/>
+<property column="DEFAULTVALUE" name="defaultValue" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Car" table="car">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="CarBrand" length="32" name="carbrand" type="java.lang.String"/>
+<property column="CarSort" length="10" name="carsort" type="java.lang.Integer"/>
+<property column="PurchaseDate" length="23" name="purchasedate" type="java.util.Date"/>
+<property column="Worth" length="16" name="worth" type="java.lang.Double"/>
+<property column="IsLeisure" length="10" name="isleisure" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

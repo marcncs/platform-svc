@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.notification.pojo.NotificationDetail" table="Notification_Detail">
+<id column="id" name="id" type="java.lang.Long">
+<generator class="native">
+<!--<param name="seq_notification"></param>-->
+</generator>
+</id>
+<property column="DELIVERYNO" length="32" name="deliveryNo" type="java.lang.String"/>
+<property column="MATERIALCODE" length="8" name="materialCode" type="java.lang.String"/>
+<property column="PRODUCTS" length="128" name="products" type="java.lang.String"/>
+<property column="PACKSIZE" length="10" name="packSize" type="java.lang.String"/>
+<property column="QUANTITY" length="10" name="quantity" type="java.lang.String"/>
+<property column="CASESNO" name="casesNo" type="java.lang.Integer"/>
+<property column="LINEITEM" length="10" name="lineItem" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.CovertErrorLog" table="COVERT_ERROR_LOG">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+<param name="seq_covert_error_log"></param>
+</generator>
+</id>
+<property column="TDCODE" length="53" name="tdCode" type="java.lang.String"/>
+<property column="COVERT_CODE" length="20" name="covertCode" type="java.lang.String"/>
+<property column="ERROR_TYPE" name="errorType" type="java.lang.Integer"/>
+<property column="UPLOAD_PR_ID" name="uploadPrId" type="java.lang.Long"/>
+<property column="UPLOAD_DATE" name="uploadDate" type="java.util.Date"/>
+<property column="UPLOAD_USER" name="uploadUser" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+.top {
+	background:#313a3d;
+}
+.eight-menu img {
+	background-color: #e3000f;
+    border-radius:0;
+}
+
+.BackTop .fa {
+	color: #b3b4b5;
+    border:1px solid #b3b4b5;
+}
+
+/*
+a#menu_antifake span {display:none;}
+a#menu_antifake:after {content:'Anti-Fake Checking';}
+
+a#menu_manufacturer_news span {display:none;}
+a#menu_manufacturer_news:after {content:'Henkel News';}
+
+a#menu_product_list span {display:none;}
+a#menu_product_list:after {content:'Buy it Now';}
+
+a#menu_customer_tel span {display:none;}
+a#menu_customer_tel:after {content:'Contact Us';}
+
+a#menu_product_content span {display:none;}
+a#menu_product_content:after {content:'Product Flyer';}
+
+a#menu_product_videos span {display:none;}
+a#menu_product_videos:after {content:'Product Vedio';}
+
+a#menu_product_cases span {display:none;}
+a#menu_product_cases:after {content:'Application Case';}
+
+a#menu_product_feedbacks span {display:none;}
+a#menu_product_feedbacks:after {content:'Henkel Homepage';}
+*/
+
+.top ul li:first-child {
+    content: '.';
+    background: url(henkel-logo-standalone-svg.png) scroll left 0 no-repeat transparent;
+    background-size: auto 30px;
+    height: 40px;
+    margin: 4px 0 0 30px;
+}
+
+.back{margin-left:-20px !important;margin-top:6px !important;}
+
+.snap-content {
+    margin-top: 210px;
+}

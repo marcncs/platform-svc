@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.SupplySaleApplyDetail" table="supply_sale_apply_detail">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="SSID" length="32" name="ssid" type="java.lang.String"/>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="ProductName" length="128" name="productname" type="java.lang.String"/>
+<property column="SpecMode" length="64" name="specmode" type="java.lang.String"/>
+<property column="UnitID" length="10" name="unitid" type="java.lang.Integer"/>
+<property column="PUnitPrice" length="16" name="punitprice" type="java.lang.Double"/>
+<property column="SUnitPrice" length="16" name="sunitprice" type="java.lang.Double"/>
+<property column="Quantity" length="16" name="quantity" type="java.lang.Double"/>
+<property column="CanQuantity" length="16" name="canquantity" type="java.lang.Double"/>
+<property column="AlreadyQuantity" length="16" name="alreadyquantity" type="java.lang.Double"/>
+<property column="PSubSum" length="16" name="psubsum" type="java.lang.Double"/>
+<property column="SSubSum" length="16" name="ssubsum" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

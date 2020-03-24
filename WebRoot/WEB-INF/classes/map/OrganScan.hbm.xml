@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.OrganScan" table="organ_scan">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="SCB" length="2" name="scb" type="java.lang.String"/>
+<property column="OrganID" length="32" name="organid" type="java.lang.String"/>
+<property column="IsScan" length="10" name="isscan" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

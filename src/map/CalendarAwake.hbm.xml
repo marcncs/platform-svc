@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CalendarAwake" table="calendar_awake">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="AwakeContent" length="512" name="awakecontent" type="java.lang.String"/>
+<property column="AwakeDateTime" length="23" name="awakedatetime" type="java.util.Date"/>
+<property column="AwakeModel" length="10" name="awakemodel" type="java.lang.Integer"/>
+<property column="IsAwake" length="10" name="isawake" type="java.lang.Integer"/>
+<property column="IsDel" length="10" name="isdel" type="java.lang.Integer"/>
+<property column="UserID" length="10" name="userid" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.FwmCreate" table="fwmcreate">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="FwmClientName" length="256" name="fwmClientName" type="java.lang.String"/>
+<property column="FwmClientCode" length="512" name="fwmClientCode" type="java.lang.String"/>
+<property column="FwmProductName" length="128" name="fwmProductName" type="java.lang.String"/>
+<property column="FwmProductCode" length="128" name="fwmProductCode" type="java.lang.String"/>
+<property column="FwmSellArea" length="32" name="fwmSellArea" type="java.lang.String"/>
+<property column="FwmDaoFormat" length="32" name="fwmDaoFormat" type="java.lang.String"/>
+<property column="FwmCreateDate" length="32" name="fwmCreateDate" type="java.util.Date"/>
+<property column="FwmLength" length="32" name="fwmLength" type="java.lang.Integer"/>
+<property column="FwmNum" length="32" name="fwmNum" type="java.lang.Integer"/>
+<property column="FwmBuMaLv" length="512" name="fwmBuMaLv" type="java.lang.Integer"/>
+<property column="IsDeal" length="128" name="isDeal" type="java.lang.Integer"/>
+<property column="FwmCodeFile" length="256" name="fwmCodeFile" type="java.lang.String"/>
+<property column="ProductBrand" length="512" name="productbrand" type="java.lang.String"/>
+<property column="OrderCode" length="128" name="ordercode" type="java.lang.String"/>
+<property column="ATYPE" length="32" name="atype" type="java.lang.String"/>
+<property column="IsApply" length="128" name="isApply" type="java.lang.Integer"/>
+<property column="IsApprove" length="128" name="isApprove" type="java.lang.Integer"/>
+<property column="CodeRuleId" length="128" name="codeRuleId" type="java.lang.Integer"/>
+<property column="Icode" length="32" name="icode" type="java.lang.String"/>
+<property column="Relation" length="128" name="relation" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

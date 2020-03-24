@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ProductIncomeDetail" table="product_income_detail">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="PIID" length="32" name="piid" not-null="true" type="java.lang.String"/>
+<property column="ProductID" length="32" name="productid" not-null="true" type="java.lang.String"/>
+<property column="ProductName" length="128" name="productname" type="java.lang.String"/>
+<property column="SpecMode" length="64" name="specmode" type="java.lang.String"/>
+<property column="UnitID" length="10" name="unitid" not-null="true" type="java.lang.Integer"/>
+<property column="Quantity" length="16" name="quantity" type="java.lang.Double"/>
+<property column="FactQuantity" length="16" name="factquantity" type="java.lang.Double"/>
+<property column="CostPrice" length="16" name="costprice" type="java.lang.Double"/>
+<property column="CostSum" length="16" name="costsum" type="java.lang.Double"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="NCcode" length="32" name="nccode" type="java.lang.String"/>
+<property column="Batch" length="32" name="batch" type="java.lang.String"/>
+<property column="ConfirmQuantity" length="16" name="confirmQuantity" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PurchasePlanDetail" table="purchase_plan_detail">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="PPID" length="32" name="ppid" type="java.lang.String"/>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="ProductName" length="128" name="productname" type="java.lang.String"/>
+<property column="SpecMode" length="64" name="specmode" type="java.lang.String"/>
+<property column="UnitID" length="10" name="unitid" type="java.lang.Integer"/>
+<property column="UnitPrice" length="16" name="unitprice" type="java.lang.Double"/>
+<property column="Quantity" length="18" name="quantity" type="java.lang.Double"/>
+<property column="ChangeQuantity" length="18" name="changequantity" type="java.lang.Double"/>
+<property column="RequireDate" length="23" name="requiredate" type="java.util.Date"/>
+<property column="AdviceDate" length="23" name="advicedate" type="java.util.Date"/>
+<property column="RequireExplain" length="64" name="requireexplain" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.erp.pojo.ProductPlan" table="ProductPlan">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+<param name="sequence">ProductPlan_SEQ</param>
+</generator>
+</id> 
+<version column="version" name="version" type="java.lang.Integer"/>
+<property column="PONO" name="PONO" type="java.lang.String"/>
+<property column="organid" name="organId" type="java.lang.String"/>
+<property column="makeid" name="makeId" type="java.lang.Integer"/>
+<property column="productid" name="productId" type="java.lang.String"/>
+<property column="mbatch" name="mbatch" type="java.lang.String"/>
+<property column="pbatch" name="pbatch" type="java.lang.String"/>
+<property column="proDate" name="proDate" type="java.util.Date"/>
+<property column="packDate" name="packDate" type="java.util.Date"/>
+<property column="boxnum" name="boxnum" type="java.lang.Integer"/>
+<property column="copys" name="copys" type="java.lang.Integer"/>
+<property column="approvalMan" name="approvalMan" type="java.lang.Integer"/>
+<property column="approvalFlag" name="approvalFlag" type="java.lang.Integer"/>
+<property column="temp" name="temp" type="java.lang.String"/>
+<property column="msg" name="msg" type="java.lang.String"/>
+<property column="closeMan" name="closeMan" type="java.lang.Integer"/>
+<property column="closeFlag" name="closeFlag" type="java.lang.Integer"/>
+<!--2016-3-18 是否上传标记位置  --> 
+<property column="isUpload" name="isUpload" type="java.lang.Integer"/>
+<property column="codeFrom" name="codeFrom" type="java.lang.String"/>
+<property column="codeTo" name="codeTo" type="java.lang.String"/>
+<property column="printJobId" name="printJobId" type="java.lang.Integer"/>
+<property column="cartonSeqFlag" name="cartonSeqFlag" type="java.lang.Integer"/>
+</class> 
+</hibernate-mapping>

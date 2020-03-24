@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.PrintLog" table="print_log">
+<id column="PRINT_LOG_ID" name="printLogId" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="PRINT_DATE" name="printDate" type="java.util.Date"/>
+<property column="PRINT_USER" name="printUser" type="java.lang.Integer"/>
+<property column="PRINT_JOB_ID" name="printJobId" type="java.lang.Integer"/>
+<property column="PRINT_CONTENT" length="200" name="printContent" type="java.lang.String"/>
+<property column="REPRINT_REASON" length="50" name="printReason" type="java.lang.String"/>
+<property column="REPRINT_FLAG" name="printFlag" type="java.lang.Integer"/>
+<property column="PRINT_LANG" length="20" name="printlang" type="java.lang.String"/>
+
+</class>
+</hibernate-mapping>

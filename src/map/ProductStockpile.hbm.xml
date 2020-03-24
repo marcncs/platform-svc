@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ProductStockpile" table="product_stockpile">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="CountUnit" length="10" name="countunit" type="java.lang.Integer"/>
+<property column="Batch" length="32" name="batch" type="java.lang.String"/>
+<property column="ProduceDate" length="32" name="producedate" type="java.lang.String"/>
+<property column="Vad" length="32" name="vad" type="java.lang.String"/>
+<property column="Cost" length="18" name="cost" type="java.lang.Double"/>
+<property column="WarehouseID" length="12" name="warehouseid" type="java.lang.String"/>
+<property column="WarehouseBit" length="12" name="warehousebit" type="java.lang.String"/>
+<property column="Stockpile" length="18" name="stockpile" type="java.lang.Double"/>
+<property column="PrepareOut" length="18" name="prepareout" type="java.lang.Double"/>
+<property column="IsLock" length="10" name="islock" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="VerifyStatus" length="10" name="verifyStatus" type="java.lang.Integer"/>
+<property column="Remark" length="512" name="remark" type="java.lang.String"/>
+<property column="Verifydate" length="23" name="verifydate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

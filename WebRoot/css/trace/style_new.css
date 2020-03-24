@@ -1,0 +1,105 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td,a,img{ 
+    padding: 0; 
+    margin: 0; 
+    border: none;
+    font-family: "Microsoft YaHei", "微软雅黑";
+} 
+ol,ul,li{
+    list-style: none;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+} 
+.tx-l{
+	text-align:left;
+}
+.tx-c{
+	text-align:center;
+}
+.tx-r{
+	text-align:right;
+}
+body{
+	position:absolute;
+	width:100%;
+	height:100%;
+	background:#f9f9f9;
+}
+.logo{width:25%;margin:0.825rem auto;}
+.logo img{width:100%;}
+.result p{
+	color:#2196dc;
+	font-size:1.25rem;
+	margin-bottom:0.45rem;
+}
+.result span{
+	font-size:0.825rem;
+	color:#848888;
+}
+.contentBox{
+	width:94%;
+	margin:1rem auto;
+	box-sizing:border-box;
+	font-size:0.9rem;	
+	padding:0.1rem 0 0.625rem 0;
+	border-top:1px solid #333;
+	border-bottom:1px solid #333;
+	position:relative;
+}
+.contentBox button{
+	display:block;
+	width:60%;
+	margin:1rem auto 0;
+	height:2rem;
+	line-height:2rem;
+	background:#2196DC;
+	color:#fff;
+	border:none;
+}
+.active{
+	font-size:1.025rem;
+	color:#D61B1B;
+ }
+ .error{
+ 	color:#D61B1B;
+ }
+.contentBox p{
+	margin-top:0.55rem;
+	word-break:normal;
+	word-wrap:break-word;
+	overflow: hidden;
+	line-height:1.25rem;
+}
+.contentBox label{
+	display:inline-block;
+	float:left;
+	width:34%;
+	text-align:right;
+}
+.contentBox span{
+    float:left;
+	display:block;
+	width:65%;
+	vertical-align:top;
+	padding-left:0.3rem;
+	width:calc(65% - 0.3rem);
+}
+.company{
+	color:#848888;
+	font-size:0.825rem;
+}
+
+.faq{
+	margin:1rem auto 0;
+}

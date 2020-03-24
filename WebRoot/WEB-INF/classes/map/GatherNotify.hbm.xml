@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.GatherNotify" table="gather_notify">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="128" name="cname" type="java.lang.String"/>
+<property column="Clinkman" length="64" name="clinkman" type="java.lang.String"/>
+<property column="Tel" length="26" name="tel" type="java.lang.String"/>
+<property column="SaleID" length="19" name="saleid" type="java.lang.Long"/>
+<property column="SaleDept" length="19" name="saledept" type="java.lang.Long"/>
+<property column="BillNo" length="32" name="billno" type="java.lang.String"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="BankAccount" length="32" name="bankaccount" type="java.lang.String"/>
+<property column="TotalSum" length="18" name="totalsum" type="java.lang.Double"/>
+<property column="Memo" length="128" name="memo" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="19" name="makedeptid" type="java.lang.Long"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsEndcase" length="10" name="isendcase" type="java.lang.Integer"/>
+<property column="EndcaseID" length="19" name="endcaseid" type="java.lang.Long"/>
+<property column="EndcaseDate" length="23" name="endcasedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

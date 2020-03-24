@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Equip" table="equip">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="ObjectSort" length="10" name="objectsort" type="java.lang.Integer"/>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="128" name="cname" type="java.lang.String"/>
+<property column="CLinkman" length="64" name="clinkman" type="java.lang.String"/>
+<property column="Tel" length="64" name="tel" type="java.lang.String"/>
+<property column="Addr" length="256" name="addr" type="java.lang.String"/>
+<property column="TransportMode" length="10" name="transportmode" type="java.lang.Integer"/>
+<property column="TransportNum" length="32" name="transportnum" type="java.lang.String"/>
+<property column="Transit" length="10" name="transit" type="java.lang.Integer"/>
+<property column="Piece" length="16" name="piece" type="java.lang.Double"/>
+<property column="EraTotalSum" length="16" name="eratotalsum" type="java.lang.Double"/>
+<property column="EquipDate" length="23" name="equipdate" type="java.util.Date"/>
+<property column="Motorman" length="10" name="motorman" type="java.lang.Integer"/>
+<property column="CarBrand" length="32" name="carbrand" type="java.lang.String"/>
+<property column="RushDesc" length="64" name="rushdesc" type="java.lang.String"/>
+<property column="RushSum" length="16" name="rushsum" type="java.lang.Double"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

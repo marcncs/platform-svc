@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.MobileArea" table="mobile_area">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="MobileNum" length="12" name="mobilenum" type="java.lang.String"/>
+<property column="Areas" length="32" name="areas" type="java.lang.String"/>
+<property column="CardType" length="24" name="cardtype" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

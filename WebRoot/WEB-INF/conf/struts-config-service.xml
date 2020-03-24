@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+	
+	<form-bean name="vClientServiceLog" type="com.winsafe.drp.dao.VCientServiceLog"/>
+</form-beans> 
+
+<action-mappings> 
+
+
+<action  input="/service/toUpdMaintainLogAction.do"  name="mlf" path="/service/updMaintainLogAction" type="com.winsafe.drp.action.service.UpdMaintainLogAction" scope="request" >
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/service/maintainLogDetailAction" type="com.winsafe.drp.action.service.MaintainLogDetailAction" scope="request" validate="false">
+<forward name="toinfo" path="/service/infomaintainlog.jsp"/>
+</action>
+ 
+<action  path="/service/toUpdMaintainLogAction" type="com.winsafe.drp.action.service.ToUpdMaintainLogAction" scope="request" validate="false">
+<forward name="toupd" path="/service/updmaintainlog.jsp"/>
+</action>
+ 
+<action  input="/service/toAddMaintainLogAction.do"  name="mlf" path="/service/addMaintainLogAction" type="com.winsafe.drp.action.service.AddMaintainLogAction" scope="request" >
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+ 
+<action  path="/service/toAddMaintainLogAction" type="com.winsafe.drp.action.service.ToAddMaintainLogAction" scope="request" validate="false">
+<forward name="toadd" path="/service/addmaintainlog.jsp"/>
+</action>
+
+<action  path="/service/listMaintainLogAction" type="com.winsafe.drp.action.service.ListMaintainLogAction" scope="request" validate="false">
+<forward name="list" path="/service/maintainloglist.jsp"/>
+</action>
+ 
+<action  path="/service/completeChangeBillAction" type="com.winsafe.drp.action.service.CompleteChangeBillAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/service/toReferChangeBillAction" type="com.winsafe.drp.action.service.ToReferChangeBillAction" scope="request" validate="false">
+<forward name="toselect" path="/service/referchangebill.jsp"/>
+</action>
+
+<action  path="/service/referChangeBillAction" type="com.winsafe.drp.action.service.ReferChangeBillAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  input="/service/toUpdChangeBillAction.do"  name="cbf" path="/service/updChangeBillAction" type="com.winsafe.drp.action.service.UpdChangeBillAction" scope="request" >
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/service/changeBillDetailAction" type="com.winsafe.drp.action.service.ChangeBillDetailAction" scope="request" validate="false">
+<forward name="toinfo" path="/service/infochangebill.jsp"/>
+</action>
+ 
+<action  path="/service/toUpdChangeBillAction" type="com.winsafe.drp.action.service.ToUpdChangeBillAction" scope="request" validate="false">
+<forward name="toupd" path="/service/updchangebill.jsp"/>
+</action>
+  
+<action  input="/service/toAddChangeBillAction.do"  name="changebill" path="/service/addChangeBillAction" type="com.winsafe.drp.action.service.AddChangeBillAction" scope="request" >
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+ 
+<action  path="/service/toAddChangeBillAction" type="com.winsafe.drp.action.service.ToAddChangeBillAction" scope="request" validate="false">
+<forward name="toadd" path="/service/addchangebill.jsp"/>
+</action>
+
+
+<action  path="/service/listChangeBillAction" type="com.winsafe.drp.action.service.ListChangeBillAction" scope="request" validate="false">
+<forward name="list" path="/service/changebilllist.jsp"/>
+</action>
+
+<action path="/service/toSelectProductAction1" type="com.winsafe.drp.action.purchase.ToSelectProductAction" scope="request" validate="false">
+<forward name="toselect" path="/service/selectproductiframe1.jsp"/>
+</action>
+<action path="/service/selectProductAction1" type="com.winsafe.drp.action.purchase.SelectProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/service/selectproduct1.jsp"/>
+</action> 
+
+
+
+
+<action  path="/service/listWithdrawAction" type="com.winsafe.drp.action.service.ListWithdrawAction" scope="request" validate="false">
+<forward name="list" path="/service/withdrawlist.jsp"/>
+</action>
+
+<action  path="/service/toAddWithdrawAction" type="com.winsafe.drp.action.service.ToAddWithdrawAction" scope="request" validate="false">
+<forward name="toadd" path="/service/addwithdraw.jsp"/>
+</action>
+
+<action  path="/service/addWithdrawAction" type="com.winsafe.drp.action.service.AddWithdrawAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/service/withdrawDetailAction" type="com.winsafe.drp.action.service.WithdrawDetailAction" scope="request" validate="false">
+<forward name="detail" path="/service/withdrawdetail.jsp"/>
+</action>
+
+<action path="/service/toUpdWithdrawAction" type="com.winsafe.drp.action.service.ToUpdWithdrawAction" scope="request" validate="false">
+<forward name="toupd" path="/service/updwithdraw.jsp"/> 
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+
+<action path="/service/updWithdrawAction" type="com.winsafe.drp.action.service.UpdWithdrawAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/service/toSelectWithdrawProductAction" type="com.winsafe.drp.action.service.ToSelectWithdrawProductAction" scope="request" validate="false">
+<forward name="toselect" path="/service/selectwithdrawproductiframe.jsp"/>
+</action>
+
+<action path="/service/selectWithdrawProductAction" type="com.winsafe.drp.action.service.SelectWithdrawProductAction" scope="request" validate="false">
+<forward name="selectwithdraw" path="/service/selectwithdrawproduct.jsp"/>
+</action>
+
+<action  path="/service/toReferWithdrawAction" type="com.winsafe.drp.action.service.ToReferWithdrawAction" scope="request" validate="false">
+<forward name="toselect" path="/service/referwithdraw.jsp"/>
+</action>
+
+<action  path="/service/referWithdrawAction" type="com.winsafe.drp.action.service.ReferWithdrawAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/service/completeWithdrawAction" type="com.winsafe.drp.action.service.CompleteWithdrawAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/service/toSelectCustomerAction" type="com.winsafe.drp.action.service.ToSelectCustomerAction" scope="request" validate="false">
+<forward name="toselect" path="/service/selectcustomeriframe.jsp"/>
+</action>
+
+<action path="/service/selectCustomerAction" type="com.winsafe.drp.action.service.SelectCustomerAction" scope="request" validate="false">
+<forward name="selectcustomer" path="/service/selectcustomer.jsp"/>
+</action>
+
+
+
+<action  path="/service/listClientServiceAction" type="com.winsafe.drp.action.service.ListClientServiceAction" scope="request" validate="false">
+<forward name="clientServiceList" path="/service/clientservicelist.jsp"/>
+</action>
+
+
+<action  path="/service/clientServiceDetailAction" type="com.winsafe.drp.action.service.ClientServiceDetailAction" scope="request" validate="false">
+<forward name="info" path="/service/infoClientService.jsp"/>
+</action>
+
+<action  path="/service/toAddClientServiceAction" type="com.winsafe.drp.action.service.ToAddClientServiceAction" scope="request" validate="false">
+<forward name="add" path="/service/addclientservice.jsp"/>
+</action>
+
+<action input="/service/toAddClientServiceAction.do" name="vClientServiceLog" path="/service/addClientServiceAction" type="com.winsafe.drp.action.service.AddClientServiceAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/service/updClientServiceAction" type="com.winsafe.drp.action.service.UpdClientServiceAction" scope="request" validate="false">
+<forward name="edit" path="/service/updclientservice.jsp"/>
+</action>
+
+
+<action  name="vClientServiceLog" path="/service/updClientServiceExecuteAction" type="com.winsafe.drp.action.service.UpdClientServiceExecuteAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/service/listOutLayAction" type="com.winsafe.drp.action.service.ListOutLayAction" scope="request" validate="false">
+<forward name="outlayList" path="/service/outlaylist.jsp"/>
+</action>
+
+<action  path="/service/toAddOutlayAction" type="com.winsafe.drp.action.service.ToAddOutlayAction" scope="request" validate="false">
+<forward name="toadd" path="/service/addoutlay.jsp"/>
+</action>
+
+<action  path="/service/addOutlayAction" type="com.winsafe.drp.action.service.AddOutlayAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action input="/service/listOutLayDetailAction.do" path="/service/listOutLayDetailAction" type="com.winsafe.drp.action.service.ListOutLayDetailAction" scope="request" validate="false">
+<forward name="list" path="/service/outlaydetailList.jsp"/>
+</action>
+
+<action  path="/service/toReferOutlayAction" type="com.winsafe.drp.action.service.ToReferOutlayAction" scope="request" validate="false">
+<forward name="toselect" path="/service/referoutlay.jsp"/>
+</action>
+
+<action  path="/service/referOutlayAction" type="com.winsafe.drp.action.service.ReferOutlayAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+</action-mappings>
+
+<message-resources parameter="global.app.sales.ApplicationResource" />
+
+</struts-config>

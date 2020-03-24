@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.EquipDetail" table="equip_detail">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="EID" length="32" name="eid" type="java.lang.String"/>
+<property column="SBID" length="32" name="sbid" type="java.lang.String"/>
+<property column="EraSum" length="16" name="erasum" type="java.lang.Double"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="InvMsg" length="10" name="invmsg" type="java.lang.Integer"/>
+<property column="BillSum" length="16" name="billsum" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

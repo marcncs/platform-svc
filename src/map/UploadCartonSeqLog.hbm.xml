@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.erp.pojo.UploadCartonSeqLog" table="UPLOAD_CARTON_SEQ_LOG">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+	<param name="sequence">CARTON_SEQ_SEQ</param>
+</generator>
+</id> 
+<property column="ISDEAL" name="isDeal" type="java.lang.Integer"/>
+<property column="FILENAME" name="fileName" type="java.lang.String"/>
+<property column="FILEPATH" name="filePath" type="java.lang.String"/>
+<property column="LOGFILEPATH" name="logFilePath" type="java.lang.String"/>
+<property column="ERRORCOUNT" name="errorCount" type="java.lang.Integer"/>
+<property column="TOTALCOUNT" name="totalCount" type="java.lang.Integer"/>
+<property column="MAKEID" name="makeId" type="java.lang.Integer"/>
+<property column="MAKEDATE" name="makeDate" type="java.util.Date"/>
+<property column="FILEHASHCODE" name="fileHaseCode" type="java.lang.String"/>
+<property column="PLNO" name="plNo" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

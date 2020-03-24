@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.OIntegral" table="o_integral">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="PowerOrganID" length="32" name="powerorganid" type="java.lang.String"/>
+<property column="EquipOrganID" length="32" name="equiporganid" type="java.lang.String"/>
+<property column="ISort" length="10" name="isort" type="java.lang.Integer"/>
+<property column="OIntegral" length="18" name="ointegral" type="java.lang.Double"/>
+<property column="IYear" length="32" name="iyear" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

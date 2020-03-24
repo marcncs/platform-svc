@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.AdsumGoods" table="adsum_goods">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="POID" length="32" name="poid" type="java.lang.String"/>
+<property column="PID" length="32" name="pid" type="java.lang.String"/>
+<property column="PLinkman" length="64" name="plinkman" type="java.lang.String"/>
+<property column="Tel" length="26" name="tel" type="java.lang.String"/>
+<property column="ObtainCode" length="32" name="obtaincode" type="java.lang.String"/>
+<property column="PurchaseDept" length="19" name="purchasedept" type="java.lang.Long"/>
+<property column="PurchaseID" length="19" name="purchaseid" type="java.lang.Long"/>
+<property column="TotalSum" length="18" name="totalsum" type="java.lang.Double"/>
+<property column="ReceiveDate" length="23" name="receivedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Long"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="Remark" length="512" name="remark" type="java.lang.String"/>
+<property column="PrintTimes" length="10" name="printtimes" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

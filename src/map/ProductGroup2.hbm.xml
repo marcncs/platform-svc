@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ProductGroup2" table="product_group2">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="Group1_ID" length="11" name="group1Id" type="java.lang.Integer"/>
+<property column="Name" length="255" name="name" type="java.lang.String"/>
+<property column="Name_Eng" length="255" name="nameEng" type="java.lang.String"/>
+<property column="Rank" length="11" name="rank" type="java.lang.Integer"/>
+<property column="Create_Time" name="createTime" type="java.util.Date"/>
+<property column="Last_Modify_Time" name="lastModifyTime" type="java.util.Date"/>
+<property column="Is_Deleted" length="3" name="isDeleted" type="java.lang.Integer"/>
+<property column="Delete_Time" name="deleteTime" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

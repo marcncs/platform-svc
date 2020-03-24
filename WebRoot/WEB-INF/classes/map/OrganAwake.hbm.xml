@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.OrganAwake" table="organ_awake">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="OrganID" length="32" name="organid" type="java.lang.String"/>
+<property column="UserID" length="10" name="userid" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

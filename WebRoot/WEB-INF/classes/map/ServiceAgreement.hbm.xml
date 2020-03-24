@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ServiceAgreement" table="service_agreement">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="ObjSort" length="10" name="objsort" type="java.lang.Integer"/>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="256" name="cname" type="java.lang.String"/>
+<property column="Linkman" length="64" name="linkman" type="java.lang.String"/>
+<property column="Tel" length="26" name="tel" type="java.lang.String"/>
+<property column="SContent" length="10" name="scontent" type="java.lang.Integer"/>
+<property column="SFee" length="18" name="sfee" type="java.lang.Double"/>
+<property column="SStatus" length="10" name="sstatus" type="java.lang.Integer"/>
+<property column="Rank" length="10" name="rank" type="java.lang.Integer"/>
+<property column="SDate" length="23" name="sdate" type="java.util.Date"/>
+<property column="Question" length="256" name="question" type="java.lang.String"/>
+<property column="Memo" length="512" name="memo" type="java.lang.String"/>
+<property column="IsAllot" length="10" name="isallot" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

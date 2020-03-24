@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/nopurview.do" location="297,282" dimension="247,88" />
+  <StrutsActivity path="/forwardIndexAction.do" location="326,0" dimension="254,88" />
+  <StrutsActivity path="/exitAction.do" location="0,564" dimension="204,88" />
+  <StrutsActivity path="/initsysAction.do" location="15,0" dimension="239,88" />
+  <StrutsActivity path="/checkNumber.do" location="249,564" dimension="252,88" />
+  <StrutsActivity path="/addTrialApplyAction.do" location="0,282" dimension="252,88" />
+  <StrutsActivity path="/getMNAction.do" location="589,282" dimension="238,88" />
+  <StrutsActivity path="/productStrutsAction.do" location="546,564" dimension="252,88" />
+  <StrutsActivity path="/organStrutsAction.do" location="0,846" dimension="245,88" />
+  <StrutsActivity path="/nopurview.jsp" location="370,470" dimension="101,49" />
+  <StrutsActivity path="/sys/common.jsp" location="398,188" dimension="110,49" />
+  <StrutsActivity path="/sys/index.jsp" location="53,752" dimension="97,49" />
+  <StrutsActivity path="/initfail.jsp" location="0,188" dimension="79,49" />
+  <StrutsActivity path="/initsuccess.jsp" location="179,188" dimension="102,49" />
+  <StrutsActivity path="/freetrialapplysuccess.jsp" location="50,470" dimension="152,49" />
+  <StrutsActivity path="/sys/javamn.jsp" location="655,470" dimension="106,49" />
+  <StrutsTransition id="/getMNAction.do,success,/sys/javamn.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="708,370" />
+      <AbsolutePoint location="708,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/nopurview.do,forward,/nopurview.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="420,370" />
+      <AbsolutePoint location="420,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/initsysAction.do,fail,/initfail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="75,88" />
+      <AbsolutePoint location="75,138" />
+      <AbsolutePoint location="39,138" />
+      <AbsolutePoint location="39,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/initsysAction.do,success,/initsuccess.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="194,88" />
+      <AbsolutePoint location="194,138" />
+      <AbsolutePoint location="230,138" />
+      <AbsolutePoint location="230,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addTrialApplyAction.do,success,/freetrialapplysuccess.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="126,370" />
+      <AbsolutePoint location="126,470" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/exitAction.do,exit,/sys/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="102,652" />
+      <AbsolutePoint location="102,752" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/forwardIndexAction.do,forward,/sys/common.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="453,88" />
+      <AbsolutePoint location="453,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

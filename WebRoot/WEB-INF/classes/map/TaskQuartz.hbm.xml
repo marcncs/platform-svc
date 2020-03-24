@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.quartz.task.pojo.TaskQuartz" table="task_quartz">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="TASK_NAME" length="10" name="taskName" type="java.lang.String"/>
+<property column="START_DATETIME" length="32" name="startDateTime" type="java.util.Date"/>
+<property column="END_DATETIME" length="128" name="endDateTime" type="java.util.Date"/>
+<property column="STATUS" length="256" name="status" type="java.lang.Integer"/>
+<property column="DEPEND_ON_TASK_ID" length="23" name="dependOnTaskId" type="java.lang.Integer"/>
+<property column="OPERATION" length="32" name="operation" type="java.lang.Integer"/>
+<property column="PARENT_JOB" length="10" name="parentJob" type="java.lang.Integer"/>
+<property column="CHILD_JOB" length="10" name="childJob" type="java.lang.Integer"/>
+<property column="TYPE" length="10" name="type" type="java.lang.Integer"/>
+<property column="REMARK" length="512" name="remark" type="java.lang.String"/>
+<property column="PERFORM_CLASS" length="32" name="performClass" type="java.lang.String"/>
+<property column="IS_BIND_PERFORM_THREAD" length="10" name="isBindPerformThread" type="java.lang.Integer"/>
+<property column="CYCLE_JOB_INTERVAL" length="10" name="cycleJobInterval" type="java.lang.Integer"/>
+<property column="DELAY_TYPE" length="23" name="delayType" type="java.lang.Integer"/>
+<property column="CRON_EXPRESSION" length="10" name="cronExpression" type="java.lang.String"/>
+
+<property column="CREATE_USER_ID" length="23" name="createUserID" type="java.lang.Integer"/>
+<property column="create_Date" length="23" name="createDate" type="java.util.Date"/>
+<property column="UPDATE_USER_ID" length="23" name="updateUserID" type="java.lang.Integer"/>
+<property column="update_Date" length="23" name="updateDate" type="java.util.Date"/>
+<property column="IS_DELETE" length="23" name="isDelete" type="java.lang.Integer"/>
+<property column="create_Organ_Id" length="23" name="createOrganID" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

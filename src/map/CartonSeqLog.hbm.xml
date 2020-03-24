@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.CartonSeqLog" table="CARTON_SEQ_LOG">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="sequence">
+	<param name="sequence">CARTON_SEQ_LOG_SEQ</param>
+</generator>
+</id> 
+<property column="organId" name="organId" type="java.lang.String"/>
+<property column="productId" name="productId" type="java.lang.String"/>
+<property column="MAKEID" name="makeId" type="java.lang.Integer"/>
+<property column="MAKEDATE" name="makeDate" type="java.util.Date"/>
+<property column="range" name="range" type="java.lang.String"/>
+<property column="batch" name="batch" type="java.lang.String"/>
+<property column="productionDate" name="productionDate" type="java.util.Date"/>
+<property column="packingDate" name="packingDate" type="java.util.Date"/>
+<property column="inspectionDate" name="inspectionDate" type="java.util.Date"/>
+<property column="inspectionInstitution" name="inspectionInstitution" type="java.lang.String"/>
+</class>
+</hibernate-mapping>
