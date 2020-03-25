@@ -1,3 +1,0 @@
-version:0.0.2
-allowDownload:/test/test.txt
-allowDownload:WinPOS.exe
