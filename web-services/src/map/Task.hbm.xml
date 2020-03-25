@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Task" table="task">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="ObjSort" length="10" name="objsort" type="java.lang.Integer"/>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="128" name="cname" type="java.lang.String"/>
+<property column="TPTitle" length="256" name="tptitle" type="java.lang.String"/>
+<property column="ConclusionDate" length="23" name="conclusiondate" type="java.util.Date"/>
+<property column="EndTime" length="32" name="endtime" type="java.lang.String"/>
+<property column="Priority" length="10" name="priority" type="java.lang.Integer"/>
+<property column="TaskSort" length="10" name="tasksort" type="java.lang.Integer"/>
+<property column="Status" length="10" name="status" type="java.lang.Integer"/>
+<property column="TPContent" length="512" name="tpcontent" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAllot" length="10" name="isallot" type="java.lang.Integer"/>
+<property column="OverStatus" length="10" name="overstatus" type="java.lang.Integer"/>
+<property column="OverDate" length="23" name="overdate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

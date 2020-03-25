@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ViewWlmIdcode" table="view_wlm_idcode">
+<id column="id" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="warehouseid" length="12" name="warehouseid" type="java.lang.String"/>
+<property column="cid" length="32" name="cid" type="java.lang.String"/>
+<property column="syncode" length="32" name="syncode" type="java.lang.String"/>
+<property column="cname" length="128" name="cname" type="java.lang.String"/>
+<property column="province" length="10" name="province" type="java.lang.Integer"/>
+<property column="city" length="10" name="city" type="java.lang.Integer"/>
+<property column="areas" length="10" name="areas" type="java.lang.Integer"/>
+<property column="productid" length="32" name="productid" type="java.lang.String"/>
+<property column="productname" length="128" name="productname" type="java.lang.String"/>
+<property column="specmode" length="64" name="specmode" type="java.lang.String"/>
+<property column="billname" length="10" name="billname" type="java.lang.String"/>
+<property column="billtype" length="1" name="billtype" type="java.lang.String"/>
+<property column="makedate" length="23" name="makedate" type="java.util.Date"/>
+<property column="producedate" length="32" name="producedate" type="java.lang.String"/>
+<property column="batch" length="32" name="batch" type="java.lang.String"/>
+<property column="startno" length="32" name="startno" type="java.lang.String"/>
+<property column="endno" length="32" name="endno" type="java.lang.String"/>
+<property column="packquantity" length="18" name="packquantity" type="java.lang.Double"/>
+<property column="organid" length="32" name="organid" type="java.lang.String"/>
+<property column="email" length="32" name="email" type="java.lang.String"/>
+<!--
+<property column="nccode" length="32" name="nccode" type="java.lang.String"/>
+<property column="auditdate" length="23" name="auditdate" type="java.util.Date"/>
+--></class>
+</hibernate-mapping>

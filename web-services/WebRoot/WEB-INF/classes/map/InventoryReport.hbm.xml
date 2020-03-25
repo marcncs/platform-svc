@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.InventoryReport" table="Inventory_Report">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="Batch" length="32" name="batch" type="java.lang.String"/>
+<property column="WarehouseID" length="12" name="warehouseid" type="java.lang.String"/>
+<property column="WarehouseBit" length="12" name="warehousebit" type="java.lang.String"/>
+<property column="BillCode" length="32" name="billcode" type="java.lang.String"/>
+<property column="Memo" length="128" name="memo" type="java.lang.String"/>
+<property column="CycleFirstQuantity" length="18" name="cyclefirstquantity" type="java.lang.Double"/>
+<property column="CycleInQuantity" length="18" name="cycleinquantity" type="java.lang.Double"/>
+<property column="CycleOutQuantity" length="18" name="cycleoutquantity" type="java.lang.Double"/>
+<property column="CycleBalanceQuantity" length="18" name="cyclebalancequantity" type="java.lang.Double"/>
+<property column="RecordDate" length="23" name="recorddate" type="java.util.Date"/>
+<property column="isDelete" length="10" name="isDelete" type="java.lang.Integer"></property>
+</class>
+</hibernate-mapping>

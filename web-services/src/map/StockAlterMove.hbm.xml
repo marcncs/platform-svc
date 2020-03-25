@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.StockAlterMove" table="stock_alter_move">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<version column="version" name="version" type="java.lang.Integer"/>
+<property column="MoveDate" length="23" name="movedate" type="java.util.Date"/>
+<property column="OutWarehouseID" length="19" name="outwarehouseid" type="java.lang.String"/>
+<property column="InWarehouseID" length="19" name="inwarehouseid" type="java.lang.String"/>
+<property column="TotalSum" length="16" name="totalsum" type="java.lang.Double"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="InvMsg" length="10" name="invmsg" type="java.lang.Integer"/>
+<property column="TransportMode" length="10" name="transportmode" type="java.lang.Integer"/>
+<property column="TransportAddr" length="128" name="transportaddr" type="java.lang.String"/>
+<property column="OLinkman" length="64" name="olinkman" type="java.lang.String"/>
+<property column="OTel" length="64" name="otel" type="com.winsafe.hbm.entity.type.EncryptedMobile"/>
+<property column="IsMakeTicket" length="10" name="ismaketicket" type="java.lang.Integer"/>
+<property column="IsReceiveTicket" length="10" name="isreceiveticket" type="java.lang.Integer"/>
+<property column="TicketTitle" length="128" name="tickettitle" type="java.lang.String"/>
+<property column="MoveCause" length="256" name="movecause" type="java.lang.String"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Integer"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeOrganIDName" length="64" name="makeorganidname" type="java.lang.String"/>
+<property column="MakeDeptID" length="19" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsShipment" length="10" name="isshipment" type="java.lang.Integer"/>
+<property column="ShipmentID" length="19" name="shipmentid" type="java.lang.Integer"/>
+<property column="ShipmentDate" length="23" name="shipmentdate" type="java.util.Date"/>
+<property column="IsTally" length="10" name="istally" type="java.lang.Integer"/>
+<property column="TallyID" length="19" name="tallyid" type="java.lang.Integer"/>
+<property column="TallyDate" length="23" name="tallydate" type="java.util.Date"/>
+<property column="IsBlankOut" length="10" name="isblankout" type="java.lang.Integer"/>
+<property column="BlankOutID" length="19" name="blankoutid" type="java.lang.Integer"/>
+<property column="BlankOutDate" length="23" name="blankoutdate" type="java.util.Date"/>
+<property column="BlankOutReason" length="128" name="blankoutreason" type="java.lang.String"/>
+<property column="ReceiveOrganID" length="32" name="receiveorganid" type="java.lang.String"/>
+<property column="ReceiveOrganIDName" length="64" name="receiveorganidname" type="java.lang.String"/>
+<property column="ReceiveDeptID" length="19" name="receivedeptid" type="java.lang.Integer"/>
+<property column="IsComplete" length="10" name="iscomplete" type="java.lang.Integer"/>
+<property column="ReceiveID" length="19" name="receiveid" type="java.lang.Integer"/>
+<property column="ReceiveDate" length="23" name="receivedate" type="java.util.Date"/>
+<property column="PrintTimes" length="10" name="printtimes" type="java.lang.Integer"/>
+<property column="TakeStatus" length="10" name="takestatus" type="java.lang.Integer"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+<property column="NCcode" length="1000" name="nccode" type="java.lang.String"/>
+<property column="NCcode2" length="1000" name="nccode2" type="java.lang.String"/>
+<property column="Bus_No" length="20" name="busNo" type="java.lang.String"/>
+<property column="Bus_Way" length="200" name="busWay" type="java.lang.String"/>
+<property column="IsMove" length="10" name="ismove" type="java.lang.Integer"/>
+<property column="ttid" length="32" name="ttid" type="java.lang.String"/>
+<property column="Bsort" length="10" name="Bsort" type="java.lang.Integer"/>
+<property column="outOrganId" length="32" name="outOrganId" type="java.lang.String"/>
+<property column="outOrganName" length="32" name="outOrganName" type="java.lang.String"/>
+<property column="OLDINWAREHOUSEID" length="12" name="oldInwarehouseId" type="java.lang.String"/>
+<property column="ChangeReason" length="256" name="changeReason" type="java.lang.String"/>
+<property column="ISTRANSFERRED" name="isTransferred" type="java.lang.Integer"/>
+<property column="bonusStatus" name="bonusStatus" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,2453 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+
+<form-bean name="validateStockMove" type="com.winsafe.drp.dao.ValidateStockMove"/>
+<form-bean name="validateCheckImport" type="com.winsafe.drp.dao.ValidateCheckImport"/>
+<form-bean name="fileForm" type="com.winsafe.drp.dao.IdcodeUploadForm"/>
+</form-beans> 
+<!-- 全局跳转页面 Author: wenping -->
+<global-forwards>
+	<forward name="operateresult" path="/sys/lockrecordclose.jsp"></forward>
+</global-forwards>
+<action-mappings> 
+<action  path="/warehouse/toTxtPutFwcodeAction" type="com.winsafe.drp.action.warehouse.ToTxtPutFwcodeAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/txtPutFwcode.jsp"/>
+</action>
+<action path="/warehouse/txtPutFwcodeAction" type="com.winsafe.drp.action.warehouse.TxtPutFwcodeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toStockAlterMoveImportAction" type="com.winsafe.drp.action.warehouse.ToStockAlterMoveImportAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/stockAlterMoveImport.jsp"/>
+</action>
+<action name="idcodeUploadForm" path="/warehouse/stockAlterMoveImportAction" type="com.winsafe.drp.action.warehouse.StockAlterMoveImportAction" scope="request" validate="false">
+<forward name="fail" path="/warehouse/stockAlterMoveImport.jsp"/>
+</action>
+
+<action  path="/warehouse/toSelectUsersAction" type="com.winsafe.drp.action.finance.ToSelectUsersAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectusersiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectUsersAction" type="com.winsafe.drp.action.finance.SelectUsersAction" scope="request" validate="false">
+<forward name="selectusers" path="/warehouse/selectusers.jsp"/>
+</action>
+
+<action  path="/warehouse/txtPutPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.TxtPutPurchaseIncomeAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printListPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.PrintListPurchaseIncomeAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistpurchaseincome.jsp"></forward>
+</action>
+<action  path="/warehouse/excPutPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ExcPutPurchaseIncomeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ListPurchaseIncomeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/purchaseincomelist.jsp"/>
+</action>
+
+<action  path="/warehouse/completePurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.CompletePurchaseIncomeAction" scope="request" validate="false">
+<forward name="complete" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/listStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.ListStuffShipmentBillAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/stuffshipmentbilllist.jsp"/>
+</action>
+
+<action  path="/warehouse/stuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.StuffShipmentBillAction" scope="request" validate="false">
+
+</action>
+
+
+<action  path="/warehouse/toTransPurchanseIncomeAction" type="com.winsafe.drp.action.warehouse.ToTransPurchanseIncomeAction" scope="request" validate="false">
+<forward name="totrans" path="/warehouse/transpurchanseincome.jsp"/>
+</action>
+
+<action  path="/warehouse/transPurchanseIncomeAction" type="com.winsafe.drp.action.warehouse.TransPurchanseIncomeAction" scope="request" validate="false">
+<forward name="input" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/stuffShipmentBillDetailAction" type="com.winsafe.drp.action.warehouse.StuffShipmentBillDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/stuffshipmentbilldetail.jsp"/>
+</action>
+
+<action  path="/warehouse/toReferStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToReferStuffShipmentBillAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/referstuffshipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/referStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.ReferStuffShipmentBillAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toSaleOrderControlAction" type="com.winsafe.drp.action.warehouse.ToSaleOrderControlAction" scope="request" validate="false">
+<forward name="tocontrol" path="/warehouse/disposesaleorder.jsp"/>
+</action>
+
+<action  path="/warehouse/getCurrentRequireAjax" type="com.winsafe.drp.action.warehouse.GetCurrentRequireAjax" scope="request" validate="false">
+
+</action>
+
+<action  path="/warehouse/toMakeSaleShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToMakeSaleShipmentBillAction" scope="request" validate="false">
+<forward name="tomake" path="/warehouse/tomakeshipment.jsp"/>
+</action>
+
+<action  path="/warehouse/makeSaleShipmentBillAction" type="com.winsafe.drp.action.warehouse.MakeSaleShipmentBillAction" scope="request" validate="false">
+<forward name="make" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toMakePurchasePlanAction" type="com.winsafe.drp.action.warehouse.ToMakePurchasePlanAction" scope="request" validate="false">
+<forward name="topurchase" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/completeControlAction" type="com.winsafe.drp.action.warehouse.CompleteControlAction" scope="request" validate="false">
+<forward name="hidden" path="/sys/operatorclose.jsp"/>
+</action>
+<action  path="/warehouse/listShipmentBillAction" type="com.winsafe.drp.action.warehouse.ListShipmentBillAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/saleshipmentlist.jsp"/>
+</action>
+<action  path="/warehouse/printListShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintListShipmentBillAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistsaleshipment.jsp"/>
+</action>
+<action  path="/warehouse/excPutShipmentBillAction" type="com.winsafe.drp.action.warehouse.ExcPutShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toAddSaleShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToAddSaleShipmentBillAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addsaleshipment.jsp"/>
+</action>
+
+<action  path="/warehouse/toSelectWarehouseProductAction" type="com.winsafe.drp.action.warehouse.ToSelectWarehouseProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectwarehouseproductiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectWarehouseProductAction" type="com.winsafe.drp.action.warehouse.SelectWarehouseProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectwarehouseproduct.jsp"/>
+</action>
+
+<action  path="/warehouse/toSelectSaleOrderAction" type="com.winsafe.drp.action.warehouse.ToSelectSaleOrderAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectsaleorderiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectSaleOrderAction" type="com.winsafe.drp.action.warehouse.SelectSaleOrderAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectsaleorder.jsp"/>
+</action>
+
+<action  path="/warehouse/getStockQuantityAjax" type="com.winsafe.drp.action.warehouse.GetStockQuantityAjax" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/getCodeQuantityAjax" type="com.winsafe.drp.action.warehouse.GetCodeQuantityAjax" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/getTakeTicketIdCodeQuantityAjax" type="com.winsafe.drp.action.warehouse.GetTakeTicketIdCodeQuantityAjax" scope="request" validate="false">
+</action>
+
+<!-- BarcodeInventory -->
+<action  path="/warehouse/getBarcodeQuantityAjax" type="com.winsafe.drp.action.warehouse.GetBarcodeQuantityAjax" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/toAddBarcodeAction" type="com.winsafe.drp.action.warehouse.ToAddBarcodeAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addbarcode.jsp"/>
+</action>
+
+<action path="/warehouse/listBarcodeDetailAction" type="com.winsafe.drp.action.warehouse.ListBarcodeDetailAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listbarcodedetail.jsp"/>
+</action>
+
+<!-- by shoshana -->
+<action  path="/warehouse/getWarehouseBitAjax" type="com.winsafe.drp.action.warehouse.GetWarehouseBitAjax" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/addSaleShipmentBillAction" type="com.winsafe.drp.action.warehouse.AddSaleShipmentBillAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdSaleShipmentAction" type="com.winsafe.drp.action.warehouse.ToUpdSaleShipmentAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updsaleshipment.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updSaleShipmentAction" type="com.winsafe.drp.action.warehouse.UpdSaleShipmentAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/shipmentBillAction" type="com.winsafe.drp.action.warehouse.ShipmentBillAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/warehouse/printShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/printSendGoodsAction" type="com.winsafe.drp.action.warehouse.PrintSendGoodsAction" scope="request" validate="false">
+</action>
+
+
+
+<action  path="/warehouse/toSelectCustomerAction" type="com.winsafe.drp.action.warehouse.ToSelectCustomerAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectcustomeriframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectCustomerAction" type="com.winsafe.drp.action.warehouse.SelectCustomerAction" scope="request" validate="false">
+<forward name="selectcustomer" path="/warehouse/selectcustomer.jsp"/>
+</action>
+
+<action  path="/warehouse/shipmentBillDetailAction" type="com.winsafe.drp.action.warehouse.ShipmentBillDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/saleshipmentdetail.jsp"/>
+</action>
+
+<action  path="/warehouse/auditShipmentBillAction" type="com.winsafe.drp.action.warehouse.AuditShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelAuditShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/delShipmentBillAction" type="com.winsafe.drp.action.warehouse.DelShipmentBillAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toBlankoutShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToBlankoutShipmentBillAction" scope="request" validate="false">
+<forward name="toblankout" path="/warehouse/toblankoutshipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/blankoutShipmentBillAction" type="com.winsafe.drp.action.warehouse.BlankoutShipmentBillAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+<!-- other shipment bill start -->
+<action  path="/warehouse/listOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ListOtherShipmentBillAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listothershipmentbill.jsp"/>
+</action>
+<action  path="/warehouse/printListOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintListOtherShipmentBillAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistothershipmentbill.jsp"/>
+</action>
+<action  path="/warehouse/excPutOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ExcPutOtherShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/txtPutOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.TxtPutOtherShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/otherShipmentBillAction" type="com.winsafe.drp.action.warehouse.OtherShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toAddOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToAddOtherShipmentBillAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addothershipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/addOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.AddOtherShipmentBillAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToUpdOtherShipmentBillAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updothershipmentbill.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.UpdOtherShipmentBillAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/otherShipmentBillDetailAction" type="com.winsafe.drp.action.warehouse.OtherShipmentBillDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailothershipmentbill.jsp"/>
+</action>
+
+<action path="/warehouse/delOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.DelOtherShipmentBillAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/auditOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.AuditOtherShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelAuditOtherShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/endcaseOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.EndcaseOtherShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelEndcaseOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelEndcaseOtherShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/ratifyOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.RatifyOtherShipmentBillAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelRatifyOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelRatifyOtherShipmentBillAction" scope="request" validate="false">
+<forward name="noratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOtherShipmentBillIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddOtherShipmentBillIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addothershipmentbillidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addOtherShipmentBillIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddOtherShipmentBillIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOtherShipmentBillIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddOtherShipmentBillIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addothershipmentbillidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addOtherShipmentBillIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddOtherShipmentBillIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/listOtherShipmentBillIdcode" type="com.winsafe.drp.action.warehouse.ListOtherShipmentBillIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listothershipmentbillidcode.jsp"/>
+</action>
+
+<action path="/warehouse/delOtherShipmentBillIdcodeAction" type="com.winsafe.drp.action.warehouse.DelOtherShipmentBillIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- other shipment bill start -->
+
+
+<action  path="/warehouse/toSelectProductAction" type="com.winsafe.drp.action.warehouse.ToSelectProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectproductiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectProductAction" type="com.winsafe.drp.action.warehouse.SelectProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectproduct.jsp"/>
+</action>
+
+
+<action  path="/warehouse/toReferOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToReferOtherShipmentBillAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/referothershipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/referOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ReferOtherShipmentBillAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- purchase income start -->
+<action path="/warehouse/listPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ListPurchaseIncomeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/purchaseincomelist.jsp"/>
+</action>
+
+<action  path="/warehouse/purchaseIncomeAction" type="com.winsafe.drp.action.warehouse.PurchaseIncomeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/qualityPassToPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.QualityPassToPurchaseIncomeAction" scope="request" validate="false">
+<forward name="select" path="/warehouse/qualitypasstopurchaseincome.jsp"/>
+</action>
+
+<action  path="/warehouse/toQualityPassToPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ToQualityPassToPurchaseIncomeAction" scope="request" validate="false">
+<forward name="toaffirm" path="/warehouse/toqualitypasstopurchaseincome.jsp"/>
+</action>
+
+<action  path="/warehouse/affirmQualityPassToProductIncomeAction" type="com.winsafe.drp.action.warehouse.AffirmQualityPassToProductIncomeAction" scope="request" validate="false">
+<forward name="input" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ToAddPurchaseIncomeAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addpurchaseincome.jsp"/>
+</action>
+
+<action path="/warehouse/addPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.AddPurchaseIncomeAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toUpdPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ToUpdPurchaseIncomeAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updpurchaseincome.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action path="/warehouse/updPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.UpdPurchaseIncomeAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/purchaseIncomeDetailAction" type="com.winsafe.drp.action.warehouse.PurchaseIncomeDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/purchaseincomedetail.jsp"/>
+</action>
+
+<action path="/warehouse/printPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.PrintPurchaseIncomeAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.DelPurchaseIncomeAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/warehouse/auditPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.AuditPurchaseIncomeAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAuditPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.CancelAuditPurchaseIncomeAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/warehouse/tallyPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.TallyPurchaseIncomeAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toReferPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ToReferPurchaseIncomeAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/referpurchaseincome.jsp"/>
+</action>
+
+<action path="/warehouse/referPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ReferPurchaseIncomeAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddPurchaseIncomeIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddPurchaseIncomeIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addpurchaseincomeidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addPurchaseIncomeIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddPurchaseIncomeIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddPurchaseIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddPurchaseIncomeIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addpurchaseincomeidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addPurchaseIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddPurchaseIncomeIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delPurchaseIncomeIdcodeAction" type="com.winsafe.drp.action.warehouse.DelPurchaseIncomeIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listPurchaseIncomeIdcode" type="com.winsafe.drp.action.warehouse.ListPurchaseIncomeIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listpurchaseincomeidcode.jsp"/>
+</action>
+
+<action path="/warehouse/toSelectPurchaseIncomeProductAction" type="com.winsafe.drp.action.warehouse.ToSelectPurchaseIncomeProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectpurchaseincomeproductiframe.jsp"/>
+</action>
+
+<action path="/warehouse/selectPurchaseIncomeProductAction" type="com.winsafe.drp.action.warehouse.SelectPurchaseIncomeProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectpurchaseincomeproduct.jsp"/>
+</action>
+
+<action  path="/warehouse/selectPurchaseOrderAction" type="com.winsafe.drp.action.warehouse.SelectPurchaseOrderAction" scope="request" validate="false">
+<forward name="toinput" path="/warehouse/frompurchaseorderinput.jsp"/>
+</action>
+
+<action  path="/warehouse/purchaseOrderProductListAction" type="com.winsafe.drp.action.warehouse.PurchaseOrderProductListAction" scope="request" validate="false">
+<forward name="productlist" path="/warehouse/purchaseorderproductlist.jsp"/>
+</action>
+
+<action  path="/warehouse/makePurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.MakePurchaseIncomeAction" scope="request" validate="false">
+<forward name="make" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- purchase income end -->
+
+
+<!-- product income start -->
+<action path="/warehouse/toSelectAllProviderProductAction" type="com.winsafe.drp.action.warehouse.ToSelectAllProviderProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectallproviderproductiframe.jsp"/>
+</action>
+
+<action path="/warehouse/selectAllProviderProductAction" type="com.winsafe.drp.action.warehouse.SelectAllProviderProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectallproviderproduct.jsp"/>
+</action>
+
+<action  path="/warehouse/listProductIncomeAction" type="com.winsafe.drp.action.warehouse.ListProductIncomeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductincome.jsp"/>
+</action>
+
+<action  path="/warehouse/productIncomeAction" type="com.winsafe.drp.action.warehouse.ProductIncomeAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printListProductIncomeAction" type="com.winsafe.drp.action.warehouse.PrintListProductIncomeAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistproductincome.jsp"></forward>
+</action>
+<action  path="/warehouse/excPutProductIncomeAction" type="com.winsafe.drp.action.warehouse.ExcPutProductIncomeAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/txtPutProductIncomeAction" type="com.winsafe.drp.action.warehouse.TxtPutProductIncomeAction" scope="request" validate="false">
+</action>
+<!-- 获取单据条码 -->
+<action  path="/warehouse/getCheckBillIdcodeAction" type="com.winsafe.drp.action.warehouse.GetCheckBillIdcodeAction" scope="request" validate="false">
+</action>
+<!-- 验货上传 -->
+<action  path="/warehouse/checkBillAction" type="com.winsafe.drp.action.warehouse.CheckBillAction" scope="request" validate="false">
+</action>
+<!-- 检货上传 -->
+<action  path="/warehouse/pickBillAction" type="com.winsafe.drp.action.warehouse.PickBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toAddProductIncomeAction" type="com.winsafe.drp.action.warehouse.ToAddProductIncomeAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addproductincome.jsp"/>
+</action>
+
+<action  path="/warehouse/toSelectFinishProductAction" type="com.winsafe.drp.action.warehouse.ToSelectFinishProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectfinishproductiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/toSelectFinishProductAction" type="com.winsafe.drp.action.warehouse.ToSelectFinishProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectfinishproductiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectFinishProductAction" type="com.winsafe.drp.action.warehouse.SelectFinishProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectfinishproduct.jsp"/>
+</action>
+
+<action  path="/warehouse/addProductIncomeAction" type="com.winsafe.drp.action.warehouse.AddProductIncomeAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdProductIncomeAction" type="com.winsafe.drp.action.warehouse.ToUpdProductIncomeAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updproductincome.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updProductIncomeAction" type="com.winsafe.drp.action.warehouse.UpdProductIncomeAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/delProductIncomeAction" type="com.winsafe.drp.action.warehouse.DelProductIncomeAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/productIncomeDetailAction" type="com.winsafe.drp.action.warehouse.ProductIncomeDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailproductincome.jsp"/>
+</action>
+
+
+<action path="/warehouse/auditProductIncomeAction" type="com.winsafe.drp.action.warehouse.AuditProductIncomeAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+<forward name="confirmQuantity" path="/warehouse/productIncomeConfirmQuantity.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAuditProductIncomeAction" type="com.winsafe.drp.action.warehouse.CancelAuditProductIncomeAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddProductIncomeIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddProductIncomeIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addproductincomeidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addProductIncomeIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddProductIncomeIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddProductIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddProductIncomeIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addproductincomeidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addProductIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddProductIncomeIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delProductIncomeIdcodeAction" type="com.winsafe.drp.action.warehouse.DelProductIncomeIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listProductIncomeIdcode" type="com.winsafe.drp.action.warehouse.ListProductIncomeIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductincomeidcode.jsp"/>
+</action>
+<!-- product income end -->
+
+
+<!-- other income start -->
+<action  path="/warehouse/listOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ListOtherIncomeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listotherincome.jsp"/>
+</action>
+<action  path="/warehouse/printListOtherIncomeAction" type="com.winsafe.drp.action.warehouse.PrintListOtherIncomeAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistotherincome.jsp"/>
+</action>
+<action  path="/warehouse/excPutOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ExcPutOtherIncomeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/txtPutOtherIncomeAction" type="com.winsafe.drp.action.warehouse.TxtPutOtherIncomeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/otherIncomeAction" type="com.winsafe.drp.action.warehouse.OtherIncomeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toAddOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ToAddOtherIncomeAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addotherincome.jsp"/>
+</action>
+
+<action  path="/warehouse/addOtherIncomeAction" type="com.winsafe.drp.action.warehouse.AddOtherIncomeAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ToUpdOtherIncomeAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updotherincome.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updOtherIncomeAction" type="com.winsafe.drp.action.warehouse.UpdOtherIncomeAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toRemarkTakeTicketAction" type="com.winsafe.drp.action.warehouse.ToRemarkTakeTicketAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/remarkTakeTicket.jsp"/>
+</action>
+<action  path="/warehouse/remarkTakeTicketAction" type="com.winsafe.drp.action.warehouse.RemarkTakeTicketAction" scope="request" validate="false">
+</action>
+
+
+<action  path="/warehouse/otherIncomeDetailAction" type="com.winsafe.drp.action.warehouse.OtherIncomeDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailotherincome.jsp"/>
+</action>
+
+<action  path="/warehouse/delOtherIncomeAction" type="com.winsafe.drp.action.warehouse.DelOtherIncomeAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/auditOtherIncomeAction" type="com.winsafe.drp.action.warehouse.AuditOtherIncomeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditOtherIncomeAction" type="com.winsafe.drp.action.warehouse.CancelAuditOtherIncomeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/ratifyOtherIncomeAction" type="com.winsafe.drp.action.warehouse.RatifyOtherIncomeAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelRatifyOtherIncomeAction" type="com.winsafe.drp.action.warehouse.CancelRatifyOtherIncomeAction" scope="request" validate="false">
+<forward name="noratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<action  path="/warehouse/toReferOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ToReferOtherIncomeAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/referotherincome.jsp"/>
+</action>
+
+<action  path="/warehouse/referOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ReferOtherIncomeAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOtherIncomeIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddOtherIncomeIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addotherincomeidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addOtherIncomeIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddOtherIncomeIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOtherIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddOtherIncomeIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addotherincomeidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addOtherIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddOtherIncomeIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delOtherIncomeIdcodeAction" type="com.winsafe.drp.action.warehouse.DelOtherIncomeIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listOtherIncomeIdcode" type="com.winsafe.drp.action.warehouse.ListOtherIncomeIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listotherincomeidcode.jsp"/>
+</action>
+<!-- other income end -->
+
+<!-- 新增数量盘点 by jason.huang -->
+<action  path="/warehouse/addAmountInventoryAction" type="com.winsafe.drp.action.warehouse.AddAmountInventoryAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/listProductStockpileAllAction" type="com.winsafe.drp.action.warehouse.ListProductStockpileAllAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductstockpileall.jsp"/>
+</action>
+<!-- 数量盘点 by jason.huang -->
+<action  path="/warehouse/listProductStockingAction" type="com.winsafe.drp.action.warehouse.ListProductStockingAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductstocking.jsp"/>
+</action>
+
+<!-- 增加盘点 by jason.huang -->
+<action path="/warehouse/toAddListProductStockingAction" type="com.winsafe.drp.action.warehouse.ToAddListProductStockingAction" scope="request" validate="false"  >
+<forward name="success" path="/warehouse/addListProductStocking.jsp"/>
+</action>
+
+<action path="/warehouse/toAuditAmountInventoryAction" type="com.winsafe.drp.action.warehouse.ToAuditAmountInventoryAction" scope="request" validate="false"  >
+<forward name="success" path="/warehouse/auditAmountInventory.jsp"/>
+</action>
+
+<action  path="/warehouse/auditAmountInventoryAction" type="com.winsafe.drp.action.warehouse.AuditAmountInventoryAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<!-- 数量盘点明细 by jason.huang -->
+<action  path="/warehouse/amountInventoryDetailAction" type="com.winsafe.drp.action.warehouse.AmountInventoryDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/amountinventorydetail.jsp"/>
+</action>
+<!-- 复核数据盘点 -->
+<action  path="/warehouse/toConfirmProductStockDifference" type="com.winsafe.drp.action.warehouse.ToConfirmProductStockDifference" scope="request" validate="false">
+<forward name="audit" path="/warehouse/confirmAmountInventory.jsp"></forward>
+</action>
+
+<action  path="/warehouse/ConfirmProductStockDifference" type="com.winsafe.drp.action.warehouse.ConfirmProductStockDifference" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action>
+<!--审核条码盘点-->
+<action  path="/warehouse/toApproveBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.ToApproveBarcodeInventoryAction" scope="request" validate="false">
+<forward name="audit" path="/warehouse/confirmBarcodeInventory.jsp"></forward>
+</action>
+
+<action  path="/warehouse/approveBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.ApproveBarcodeInventoryAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action>
+<!-- 选择产品信息-->
+<action path="/warehouse/toSelectProductIdAction" type="com.winsafe.drp.action.warehouse.ToSelectProductIdAction" scope="request" validate="false"  >
+<forward name="selectproduct" path="/warehouse/toselectproductid.jsp"/>
+</action>
+
+<!-- 盘点差异处理 by jason.huang -->
+<action  path="/warehouse/dealProductStockDifference" type="com.winsafe.drp.action.warehouse.DealProductStockDifference" scope="request" validate="false"  >
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 条码盘点 by jason.huang -->
+<action  path="/warehouse/listBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.ListBarcodeInventoryAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listbarcodeinventory.jsp"/>
+</action>
+
+<!-- 跳转新增条码盘点 by jason.huang -->
+<action  path="/warehouse/toAddBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.ToAddBarcodeInventoryAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/addbarcodeinventory.jsp"/>
+</action>
+
+<!-- 新增条码盘点 by jason.huang -->
+<action  path="/warehouse/addBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.AddBarcodeInventoryAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 条码盘点明细 by jason.huang -->
+<action  path="/warehouse/barcodeInventoryDetailAction" type="com.winsafe.drp.action.warehouse.BarcodeInventoryDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/barcodeinventorydetail.jsp"/>
+</action>
+<!-- 条码盘点审核by jason.huang -->
+<action  path="/warehouse/auditBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.AuditBarcodeInventoryAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<!-- 条码盘点取消审核by jason.huang -->
+<action  path="/warehouse/cancelAuditBarcodeInventoryAction" type="com.winsafe.drp.action.warehouse.CancelAuditBarcodeInventoryAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 盘库上传日志by jason.huang -->
+<action  path="/warehouse/listBarcodeUploadAction" type="com.winsafe.drp.action.warehouse.ListBarcodeUploadAction" scope="request" validate="false">
+	<forward name="list" path="/warehouse/listbarcodeupload.jsp"/>
+</action>
+
+<action  path="/warehouse/printProductStockpileAllAction" type="com.winsafe.drp.action.warehouse.PrintProductStockpileAllAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printproductstockpileall.jsp"/>
+</action>
+<action  path="/warehouse/excPutProductStockpileAllAction" type="com.winsafe.drp.action.warehouse.ExcPutProductStockpileAllAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listProductStockpileCostAction" type="com.winsafe.drp.action.warehouse.ListProductStockpileCostAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductstockpilecost.jsp"/>
+</action>
+
+<action  path="/warehouse/printProductStockpileCostAction" type="com.winsafe.drp.action.warehouse.PrintProductStockpileCostAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printproductstockpilecost.jsp"/>
+</action>
+
+<action  path="/warehouse/excPutProductStockpileCostAction" type="com.winsafe.drp.action.warehouse.ExcPutProductStockpileCostAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/stockStatAction" type="com.winsafe.drp.action.warehouse.StockStatAction" scope="request" validate="false">
+<forward name="liststock" path="/warehouse/stockstat.jsp"/>
+</action>
+<action  path="/warehouse/printStockStatAction" type="com.winsafe.drp.action.warehouse.PrintStockStatAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printstockstat.jsp"/>
+</action>
+
+<action  path="/warehouse/excPutStockStatAction" type="com.winsafe.drp.action.warehouse.ExcPutStockStatAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listProductStockpileIdcodeAction" type="com.winsafe.drp.action.warehouse.ListProductStockpileIdcodeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductstockpileidcode.jsp"/>
+</action>
+<action  path="/warehouse/printProductStockpileIdcodeAction" type="com.winsafe.drp.action.warehouse.PrintProductStockpileIdcodeAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printproductstockpileidcode.jsp"/>
+</action>
+<action  path="/warehouse/excPutProductStockpileIdcodeAction" type="com.winsafe.drp.action.warehouse.ExcPutProductStockpileIdcodeAction" scope="request" validate="false">
+</action>
+
+
+<action  path="/warehouse/viewProductAction" type="com.winsafe.drp.action.warehouse.ViewProductAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/viewproduct.jsp"/>
+</action>
+
+
+
+<action  path="/warehouse/toUpdProductStockpileAction" type="com.winsafe.drp.action.warehouse.ToUpdProductStockpileAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updproductstockpile.jsp"/>
+</action>
+
+<action  path="/warehouse/updProductStockpileAction" type="com.winsafe.drp.action.warehouse.UpdProductStockpileAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/listStockWasteBookInitAction" type="com.winsafe.drp.action.warehouse.ListStockWasteBookInitAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/stockwastebooklist.jsp"/>
+</action>
+
+<action  path="/warehouse/listStockWasteBookAction" type="com.winsafe.drp.action.warehouse.ListStockWasteBookAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/stockwastebooklist.jsp"/>
+</action>
+
+<action  path="/warehouse/printStockWasteBookAction" type="com.winsafe.drp.action.warehouse.PrintStockWasteBookAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printstockwastebook.jsp"/>
+</action>
+
+<action  path="/warehouse/excPutStockWasteBookAction" type="com.winsafe.drp.action.warehouse.ExcPutStockWasteBookAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockWasteBookTotalInitAction" type="com.winsafe.drp.action.warehouse.ListStockWasteBookTotalInitAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockwastebooktotalinit.jsp"/>
+</action>
+
+<action  path="/warehouse/listStockWasteBookTotalAction" type="com.winsafe.drp.action.warehouse.ListStockWasteBookTotalAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockwastebooktotal.jsp"/>
+</action>
+
+<action  path="/warehouse/excPutStockWasteBookTotalAction" type="com.winsafe.drp.action.warehouse.ExcPutStockWasteBookTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/printStockWasteBookTotalAction" type="com.winsafe.drp.action.warehouse.PrintStockWasteBookTotalAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/printstockwastebooktotal.jsp"/>
+</action>
+
+<!-- stock move start -->
+<action  path="/warehouse/txtPutStockMoveAction" type="com.winsafe.drp.action.warehouse.TxtPutStockMoveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockMoveAction" type="com.winsafe.drp.action.warehouse.ListStockMoveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/stockmovelist.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddStockMoveAction" type="com.winsafe.drp.action.warehouse.ToAddStockMoveAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockmove.jsp"/>
+</action>
+
+<action  path="/warehouse/addStockMoveAction" type="com.winsafe.drp.action.warehouse.AddStockMoveAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdStockMoveAction" type="com.winsafe.drp.action.warehouse.ToUpdStockMoveAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updstockmove.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updStockMoveAction" type="com.winsafe.drp.action.warehouse.UpdStockMoveAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toReferStockMoveAction" type="com.winsafe.drp.action.warehouse.ToReferStockMoveAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/referstockmove.jsp"/>
+</action>
+
+<action  path="/warehouse/stockMoveDetailAction" type="com.winsafe.drp.action.warehouse.StockMoveDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/stockmovedetail.jsp"/>
+</action>
+
+<action  path="/warehouse/delStockMoveAction" type="com.winsafe.drp.action.warehouse.DelStockMoveAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/referStockMoveAction" type="com.winsafe.drp.action.warehouse.ReferStockMoveAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/auditStockMoveAction" type="com.winsafe.drp.action.warehouse.AuditStockMoveAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAuditStockMoveAction" type="com.winsafe.drp.action.warehouse.CancelAuditStockMoveAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action  path="/warehouse/completeStockMoveShipmentAction" type="com.winsafe.drp.action.warehouse.CompleteStockMoveShipmentAction" scope="request" validate="false">
+<forward name="move" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelCompleteStockMoveShipmentAction" type="com.winsafe.drp.action.warehouse.CancelCompleteStockMoveShipmentAction" scope="request" validate="false">
+<forward name="move" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/listStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ListStockMoveReceiveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockmovereceive.jsp"/>
+</action>
+<action  path="/warehouse/printListStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListStockMoveReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printliststockmovereceive.jsp"/>
+</action>
+<action  path="/warehouse/excPutStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutStockMoveReceiveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/stockMoveReceiveDetailAction" type="com.winsafe.drp.action.warehouse.StockMoveDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailstockmovereceive.jsp"/>
+</action>
+
+<action  path="/warehouse/toCompleteStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ToCompleteStockMoveReceiveAction" scope="request" validate="false">
+<forward name="tocomplete" path="/warehouse/stockmovereceive.jsp"/>
+</action>
+
+
+
+<action  path="/warehouse/completeStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteStockMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/cancelCompleteStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteStockMoveReceiveAction" scope="request" validate="false">
+<forward name="movein" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddStockMoveIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddStockMoveIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockmoveidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addStockMoveIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddStockMoveIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddStockMoveIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddStockMoveIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockmoveidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addStockMoveIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddStockMoveIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delStockMoveIdcodeAction" type="com.winsafe.drp.action.warehouse.DelStockMoveIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listStockMoveIdcode" type="com.winsafe.drp.action.warehouse.ListStockMoveIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockmoveidcode.jsp"/>
+</action>
+<action  path="/warehouse/printListStockMoveAction" type="com.winsafe.drp.action.warehouse.PrintListStockMoveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printliststockmove.jsp"></forward>
+</action>
+<action  path="/warehouse/excPutStockMoveAction" type="com.winsafe.drp.action.warehouse.ExcPutStockMoveAction" scope="request" validate="false">
+</action>
+
+<!-- stock move end -->
+
+<action  path="/warehouse/listAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.ListAlterMoveApplyAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/altermoveapplylist.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.ToAddAlterMoveApplyAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addaltermoveapply.jsp"/>
+</action>
+
+<action  path="/warehouse/addAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.AddAlterMoveApplyAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/blankOutMoveApplyAction" type="com.winsafe.drp.action.warehouse.BlankOutMoveApplyAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/alterMoveApplyDetailAction" type="com.winsafe.drp.action.warehouse.AlterMoveApplyDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/altermoveapplydetail.jsp"/>
+</action>
+
+<action  path="/warehouse/auditAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.AuditAlterMoveApplyAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.CancelAuditAlterMoveApplyAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/toUpdAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.ToUpdAlterMoveApplyAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updaltermoveapply.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.UpdAlterMoveApplyAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toRatifyAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.ToRatifyAlterMoveApplyAction" scope="request" validate="false">
+<forward name="toratify" path="/warehouse/ratifyaltermoveapply.jsp"/>
+</action>
+
+<action  path="/warehouse/ratifyAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.RatifyAlterMoveApplyAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelRatifyAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.CancelRatifyAlterMoveApplyAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/delAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.DelAlterMoveApplyAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<action  path="/warehouse/listMoveApplyAction" type="com.winsafe.drp.action.warehouse.ListMoveApplyAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/moveapplylist.jsp"/>
+</action>
+
+<action  path="/warehouse/moveApplyDetailAction" type="com.winsafe.drp.action.warehouse.MoveApplyDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/moveapplydetail.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddMoveApplyAction" type="com.winsafe.drp.action.warehouse.ToAddMoveApplyAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addmoveapply.jsp"/>
+</action>
+
+<action  path="/warehouse/addMoveApplyAction" type="com.winsafe.drp.action.warehouse.AddMoveApplyAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdMoveApplyAction" type="com.winsafe.drp.action.warehouse.ToUpdMoveApplyAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updmoveapply.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updMoveApplyAction" type="com.winsafe.drp.action.warehouse.UpdMoveApplyAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/delMoveApplyAction" type="com.winsafe.drp.action.warehouse.DelMoveApplyAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/auditMoveApplyAction" type="com.winsafe.drp.action.warehouse.AuditMoveApplyAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditMoveApplyAction" type="com.winsafe.drp.action.warehouse.CancelAuditMoveApplyAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/selectMoveApplyAction" type="com.winsafe.drp.action.warehouse.SelectMoveApplyAction" scope="request" validate="false">
+<forward name="toinput" path="/warehouse/frommoveapplyinput.jsp"/>
+</action>
+
+<action  path="/warehouse/toTransStockMoveAction" type="com.winsafe.drp.action.warehouse.ToTransStockMoveAction" scope="request" validate="false">
+<forward name="totrans" path="/warehouse/transstockmove.jsp"/>
+</action>
+
+<action  path="/warehouse/transStockMoveAction" type="com.winsafe.drp.action.warehouse.TransStockMoveAction" scope="request" validate="false">
+<forward name="input" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toRatifyMoveApplyAction" type="com.winsafe.drp.action.warehouse.ToRatifyMoveApplyAction" scope="request" validate="false">
+<forward name="toratify" path="/warehouse/ratifymoveapply.jsp"/>
+</action>
+
+<action  path="/warehouse/ratifyMoveApplyAction" type="com.winsafe.drp.action.warehouse.RatifyMoveApplyAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelRatifyMoveApplyAction" type="com.winsafe.drp.action.warehouse.CancelRatifyMoveApplyAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+<action  path="/warehouse/printMoveApplyAction" type="com.winsafe.drp.action.warehouse.PrintMoveApplyAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printStockMoveAction" type="com.winsafe.drp.action.warehouse.PrintStockMoveAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printStockMoveReceiveAction" type="com.winsafe.drp.action.warehouse.PrintStockMoveReceiveAction" scope="request" validate="false">
+</action>                 
+
+<action  path="/warehouse/listRatifyAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.ListRatifyAlterMoveApplyAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/ratifyaltermoveapplylist.jsp"/>
+</action>
+
+<action  path="/warehouse/ratifyAlterMoveApplyDetailAction" type="com.winsafe.drp.action.warehouse.AlterMoveApplyDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/ratifyaltermoveapplydetail.jsp"/>
+</action>
+
+<action  path="/warehouse/listRatifyMoveApplyAction" type="com.winsafe.drp.action.warehouse.ListRatifyMoveApplyAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/ratifymoveapplylist.jsp"/>
+</action>
+
+<action  path="/warehouse/ratifyMoveApplyDetailAction" type="com.winsafe.drp.action.warehouse.MoveApplyDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/ratifymoveapplydetail.jsp"/>
+</action>
+
+<action  path="/warehouse/printListMoveApplyAction" type="com.winsafe.drp.action.warehouse.PrintListMoveApplyAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistmoveapply.jsp"></forward>
+</action>
+<action  path="/warehouse/excPutMoveApplyAction" type="com.winsafe.drp.action.warehouse.ExcPutMoveApplyAction" scope="request" validate="false">
+</action>
+
+
+<action  path="/warehouse/selectAlterMoveApplyAction" type="com.winsafe.drp.action.warehouse.SelectAlterMoveApplyAction" scope="request" validate="false">
+<forward name="toinput" path="/warehouse/fromaltermoveapplyinput.jsp"/>
+</action>
+
+
+<action  path="/warehouse/toTransStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.ToTransStockAlterMoveAction" scope="request" validate="false">
+<forward name="totrans" path="/warehouse/transstockaltermove.jsp"/>
+</action>
+
+
+<action  path="/warehouse/transStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.TransStockAlterMoveAction" scope="request" validate="false">
+<forward name="input" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/warehouse/getProductByRPIDWarehouseIDAjax" type="com.winsafe.drp.action.warehouse.GetProductByRPIDWarehouseIDAjax" scope="request" validate="false">
+
+</action>
+
+<action  path="/warehouse/listStockCheckAction" type="com.winsafe.drp.action.warehouse.ListStockCheckAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockcheck.jsp"/>
+</action>
+<action  path="/warehouse/printListStockCheckAction" type="com.winsafe.drp.action.warehouse.PrintListStockCheckAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printliststockcheck.jsp"/>
+</action>
+<action  path="/warehouse/excPutStockCheckAction" type="com.winsafe.drp.action.warehouse.ExcPutStockCheckAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockCheckBarAction" type="com.winsafe.drp.action.warehouse.ListStockCheckAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockcheckbar.jsp"/>
+</action>
+
+<action  path="/warehouse/txtPurStockCheckAction" type="com.winsafe.drp.action.warehouse.TxtPurStockCheckAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockCheckIdcodeAction" type="com.winsafe.drp.action.warehouse.ListStockCheckIdcodeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockcheckidcode.jsp"/>
+</action>
+
+<action  path="/warehouse/listStockCheckDetailAction" type="com.winsafe.drp.action.warehouse.ListStockCheckDetailAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/detailstockcheckbar.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddStockCheckIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddStockCheckIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockcheckidcodeii.jsp"/>
+</action>
+
+
+<action  path="/warehouse/addStockCheckIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddStockCheckIdcodeiiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/delStockCheckIdcodeiiAction" type="com.winsafe.drp.action.warehouse.DelStockCheckIdcodeiiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toOutPutCheckEmptyAction" type="com.winsafe.drp.action.warehouse.ToOutPutCheckEmptyAction" scope="request" validate="false">
+<forward name="tooutput" path="/warehouse/tostockcheckempty.jsp"/>
+</action>
+
+<action  path="/warehouse/outPutCheckEmptyAction" type="com.winsafe.drp.action.warehouse.OutPutCheckEmptyAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toAddStockCheckAction" type="com.winsafe.drp.action.warehouse.ToAddStockCheckAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockcheck.jsp"/>
+<forward name="toaddbar" path="/warehouse/addstockcheckbar.jsp"/>
+</action>
+
+<action  path="/warehouse/addStockCheckAction" type="com.winsafe.drp.action.warehouse.AddStockCheckAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/addStockCheckBarAction" type="com.winsafe.drp.action.warehouse.AddStockCheckBarAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUploadCheckTableAction" type="com.winsafe.drp.action.warehouse.ToUploadCheckTableAction" scope="request" validate="false">
+<forward name="toupload" path="/warehouse/uploadchecktable.jsp"/>
+</action>
+
+<action  path="/warehouse/importCheckTableAction" type="com.winsafe.drp.action.warehouse.ImportCheckTableAction" name="validateCheckImport" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdStockCheckAction" type="com.winsafe.drp.action.warehouse.ToUpdStockCheckAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updstockcheck.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updStockCheckAction" type="com.winsafe.drp.action.warehouse.UpdStockCheckAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdStockCheckBarAction" type="com.winsafe.drp.action.warehouse.ToUpdStockCheckBarAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updstockcheckbar.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updStockCheckBarAction" type="com.winsafe.drp.action.warehouse.UpdStockCheckBarAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/stockCheckDetailAction" type="com.winsafe.drp.action.warehouse.StockCheckDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailstockcheck.jsp"/>
+</action>
+
+<action  path="/warehouse/delStockCheckAction" type="com.winsafe.drp.action.warehouse.DelStockCheckAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/printStockCheckEmptyAction" type="com.winsafe.drp.action.warehouse.PrintStockCheckEmptyAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/auditStockCheckAction" type="com.winsafe.drp.action.warehouse.AuditStockCheckAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditStockCheckAction" type="com.winsafe.drp.action.warehouse.CancelAuditStockCheckAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/stockCheckCreateBillAction" type="com.winsafe.drp.action.warehouse.StockCheckCreateBillAction" scope="request" validate="false">
+<forward name="create" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/stockCheckBarCreateBillAction" type="com.winsafe.drp.action.warehouse.StockCheckBarCreateBillAction" scope="request" validate="false">
+<forward name="create" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toSelectCheckProductAction" type="com.winsafe.drp.action.warehouse.ToSelectCheckProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectcheckproductiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectCheckProductAction" type="com.winsafe.drp.action.warehouse.SelectCheckProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectcheckproduct.jsp"/>
+</action>
+
+<action  path="/warehouse/selectSingleCheckProductAction" type="com.winsafe.drp.action.warehouse.SelectSingleCheckProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectsinglecheckproduct.jsp"/>
+</action>
+
+
+<!-- approve -->
+<action  path="/warehouse/waitApproveAction" type="com.winsafe.drp.action.warehouse.WaitApproveAction" scope="request" validate="false">
+<forward name="waitapprove" path="/warehouse/warehousewaitapprovemsg.jsp"/>
+</action>
+
+<action  path="/warehouse/waitStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.WaitStuffShipmentBillAction" scope="request" validate="false">
+<forward name="stuffshipment" path="/warehouse/waitapprovestuffshipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/toApproveStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToApproveStuffShipmentBillAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approvestuffshipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/approveStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.ApproveStuffShipmentBillAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelApproveStuffShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelApproveStuffShipmentBillAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/warehouse/waitPurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.WaitPurchaseIncomeAction" scope="request" validate="false">
+<forward name="purchaseincome" path="/warehouse/waitapprovepurchaseincome.jsp"/>
+</action>
+
+<action path="/warehouse/toApprovePurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ToApprovePurchaseIncomeAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approvepurchaseincome.jsp"/>
+</action>
+
+<action path="/warehouse/approvePurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.ApprovePurchaseIncomeAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelApprovePurchaseIncomeAction" type="com.winsafe.drp.action.warehouse.CancelApprovePurchaseIncomeAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/waitProductIncomeAction" type="com.winsafe.drp.action.warehouse.WaitProductIncomeAction" scope="request" validate="false">
+<forward name="productincome" path="/warehouse/waitapproveproductincome.jsp"/>
+</action>
+
+<action  path="/warehouse/toApproveProductIncomeAction" type="com.winsafe.drp.action.warehouse.ToApproveProductIncomeAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approveproductincome.jsp"/>
+</action>
+
+<action  path="/warehouse/approveProductIncomeAction" type="com.winsafe.drp.action.warehouse.ApproveProductIncomeAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelApproveProductIncomeAction" type="com.winsafe.drp.action.warehouse.CancelApproveProductIncomeAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/waitOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.WaitOtherShipmentBillAction" scope="request" validate="false">
+<forward name="othershipment" path="/warehouse/waitapproveothershipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/toApproveOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToApproveOtherShipmentBillAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approveothershipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/approveOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.ApproveOtherShipmentBillAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelApproveOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelApproveOtherShipmentBillAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/waitOtherIncomeAction" type="com.winsafe.drp.action.warehouse.WaitOtherIncomeAction" scope="request" validate="false">
+<forward name="otherincome" path="/warehouse/waitapproveotherincome.jsp"/>
+</action>
+
+<action  path="/warehouse/toApproveOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ToApproveOtherIncomeAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approveotherincome.jsp"/>
+</action>
+
+<action  path="/warehouse/approveOtherIncomeAction" type="com.winsafe.drp.action.warehouse.ApproveOtherIncomeAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelApproveOtherIncomeAction" type="com.winsafe.drp.action.warehouse.CancelApproveOtherIncomeAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/printOtherShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintOtherShipmentBillAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintDrawShipmentBillAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintHarmShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/printListDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintListDrawShipmentBillAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistdrawshipmentbill.jsp"></forward>
+</action>
+<action  path="/warehouse/excPutDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.ExcPutDrawShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/printListHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.PrintListHarmShipmentBillAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistharmshipmentbill.jsp"></forward>
+</action>
+<action  path="/warehouse/excPutHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.ExcPutHarmShipmentBillAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/printOtherIncomeAction" type="com.winsafe.drp.action.warehouse.PrintOtherIncomeAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/waitStockMoveAction" type="com.winsafe.drp.action.warehouse.WaitStockMoveAction" scope="request" validate="false">
+<forward name="stockmove" path="/warehouse/waitapprovestockmove.jsp"/>
+</action>
+
+<!-- 获取仓库信息ajax -->
+<action path="/warehouse/ajaxGetWarehouseAction" type="com.winsafe.drp.action.warehouse.AjaxGetWarehouseAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toApproveStockMoveAction" type="com.winsafe.drp.action.warehouse.ToApproveStockMoveAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approvestockmove.jsp"/>
+</action>
+
+<action  path="/warehouse/approveStockMoveAction" type="com.winsafe.drp.action.warehouse.ApproveStockMoveAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelApproveStockMoveAction" type="com.winsafe.drp.action.warehouse.CancelApproveStockMoveAction" scope="request" validate="false">
+<forward name="cancelapprove" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/waitStockCheckAction" type="com.winsafe.drp.action.warehouse.WaitStockCheckAction" scope="request" validate="false">
+<forward name="stockcheck" path="/warehouse/waitapprovestockcheck.jsp"/>
+</action>
+
+<action  path="/warehouse/toApproveStockCheckAction" type="com.winsafe.drp.action.warehouse.ToApproveStockCheckAction" scope="request" validate="false">
+<forward name="toapprove" path="/warehouse/approvestockcheck.jsp"/>
+</action>
+
+<action  path="/warehouse/approveStockCheckAction" type="com.winsafe.drp.action.warehouse.ApproveStockCheckAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+
+
+
+
+<action  path="/warehouse/toSelectStuffProductAction" type="com.winsafe.drp.action.warehouse.ToSelectStuffProductAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectstuffproductiframe.jsp"/>
+</action>
+
+<action  path="/warehouse/selectStuffProductAction" type="com.winsafe.drp.action.warehouse.SelectStuffProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectstuffproduct.jsp"/>
+</action>
+
+
+
+<!-- stock alter move start -->
+<action  path="/warehouse/txtPutStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.TxtPutStockAlterMoveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/printStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.PrintStockAlterMoveAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printListStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.PrintListStockAlterMoveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printliststockaltermove.jsp"/>
+</action>
+<action  path="/warehouse/excPutStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.ExcPutStockAlterMoveAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/printStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.PrintStockAlterMoveReceiveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.ListStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/stockaltermovelist.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.ToAddStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/addstockaltermove.jsp"/>
+</action>
+
+<action  path="/warehouse/ajaxCheckStockpile" type="com.winsafe.drp.action.warehouse.AjaxCheckStockpile" scope="request" validate="false">
+</action>
+
+<action input="/warehouse/addstockaltermove.jsp" path="/warehouse/addStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.AddStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.ToUpdStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/updstockaltermove.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.UpdStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/stockAlterMoveDetailAction" type="com.winsafe.drp.action.warehouse.StockAlterMoveDetailAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/stockaltermovedetail.jsp"/>
+</action>
+
+<action  path="/warehouse/delStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.DelStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/warehouse/auditStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.AuditStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+<action path="/warehouse/moveAndAuditStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.MoveAndAuditStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAuditStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.CancelAuditStockAlterMoveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action  path="/warehouse/completeStockAlterMoveShipmentAction" type="com.winsafe.drp.action.warehouse.CompleteStockAlterMoveShipmentAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelCompleteStockAlterMoveShipmentAction" type="com.winsafe.drp.action.warehouse.CancelCompleteStockAlterMoveShipmentAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action path="/warehouse/tallyStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.TallyStockAlterMoveAction" scope="request" validate="false">
+<forward name="tally" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action path="/warehouse/listStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ListStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/liststockaltermovereceive.jsp"/>
+</action>
+
+<action path="/warehouse/printListStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printliststockaltermovereceive.jsp"/>
+</action>
+<action path="/warehouse/excPutStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutStockAlterMoveReceiveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/stockAlterMoveReceiveDetailAction" type="com.winsafe.drp.action.warehouse.StockAlterMoveDetailAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/detailstockaltermovereceive.jsp"/>
+</action>
+
+<action  path="/warehouse/toCompleteStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ToCompleteStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="tocomplete" path="/warehouse/stockaltermovereceive.jsp"/>
+<!--<forward name="tocomplete" path="/warehouse/operatorclosereloadparent.jsp"/>-->
+</action>
+
+
+
+<action  path="/warehouse/completeStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+<!-- 拒签 -->
+<action  path="/warehouse/toRefuseStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ToRefuseStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="tocomplete" path="/warehouse/refusestockaltermovereceive.jsp"/>
+</action>
+<action  path="/warehouse/refuseStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.RefuseStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+
+<action  path="/warehouse/receiveTallyStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.ReceiveTallyStockAlterMoveAction" scope="request" validate="false">
+<forward name="tally" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/cancelCompleteStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddStockAlterMoveIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddStockAlterMoveIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockaltermoveidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addStockAlterMoveIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddStockAlterMoveIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddStockAlterMoveIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddStockAlterMoveIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addstockaltermoveidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addStockAlterMoveIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddStockAlterMoveIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delStockAlterMoveIdcodeAction" type="com.winsafe.drp.action.warehouse.DelStockAlterMoveIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listStockAlterMoveIdcode" type="com.winsafe.drp.action.warehouse.ListStockAlterMoveIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockaltermoveidcode.jsp"/>
+</action>
+<!-- stock alter move end -->
+
+
+<!-- supply sale move receive start -->
+<action path="/warehouse/listSupplySaleMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ListSupplySaleMoveReceiveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listsupplysalemovereceive.jsp"/>
+</action>
+<action path="/warehouse/printListSupplySaleMoveReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListSupplySaleMoveReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistsupplysalemovereceive.jsp"/>
+</action>
+<action path="/warehouse/excPutSupplySaleMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutSupplySaleMoveReceiveAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/txtPutSupplySaleMoveAction" type="com.winsafe.drp.action.warehouse.TxtPutSupplySaleMoveAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/detailSupplySaleMoveAction" type="com.winsafe.drp.action.ditch.DetailSupplySaleMoveAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailsupplysalemovereceive.jsp"/>
+</action>
+
+<action path="/warehouse/toAddSupplySaleMoveIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddSupplySaleMoveIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addsupplysalemoveidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addSupplySaleMoveIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddSupplySaleMoveIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddSupplySaleMoveIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddSupplySaleMoveIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addsupplysalemoveidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addSupplySaleMoveIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddSupplySaleMoveIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delSupplySaleMoveIdcodeAction" type="com.winsafe.drp.action.warehouse.DelSupplySaleMoveIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listSupplySaleMoveIdcode" type="com.winsafe.drp.action.warehouse.ListSupplySaleMoveIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listsupplysalemoveidcode.jsp"/>
+</action>
+
+<action path="/warehouse/completeSupplySaleMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteSupplySaleMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelCompleteSupplySaleMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteSupplySaleMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- supply sale move receive end -->
+
+<action  path="/warehouse/listTakeBillAction" type="com.winsafe.drp.action.warehouse.ListTakeBillAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/takebilllist.jsp"/>
+</action>
+<action  path="/warehouse/printTakeBillAction" type="com.winsafe.drp.action.warehouse.PrintTakeBillAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printtakebill.jsp"/>
+</action>
+<action  path="/warehouse/excPutTakeBillAction" type="com.winsafe.drp.action.warehouse.ExcPutTakeBillAction" scope="request" validate="false">
+</action>
+<!-- SAP发货码导出   tommy  License-in-->
+<action  path="/warehouse/sapLInTakeBillAction" type="com.winsafe.drp.action.warehouse.sapLInTakeBillAction" scope="request" validate="false">
+</action>
+<!-- 单据toller码导入 tommy  License-in-->
+<action  path="/warehouse/toImportLInTakeBillAction" type="com.winsafe.drp.action.warehouse.toImportLInTakeBillAction" scope="request" validate="false" >
+<forward name="success" path="/warehouse/toimportLIntakebill.jsp"></forward>
+</action>
+<!-- 单据toller码导入处理 tommy  License-in-->
+<action  path="/warehouse/importLInTakeBillAction" type="com.winsafe.drp.action.warehouse.importLInTakeBillAction" scope="request" validate="false" name="fileForm">
+<forward name="success" path="/warehouse/importtollerresult.jsp"></forward>
+</action>
+
+<!-- 发货单导入 -->
+<action  path="/warehouse/toImportTakeBillAction" type="com.winsafe.drp.action.warehouse.ToImportTakeBillAction" scope="request" validate="false" >
+<forward name="success" path="/warehouse/toimporttakebill.jsp"></forward>
+</action>
+
+<action  path="/warehouse/importTakeBillAction" type="com.winsafe.drp.action.warehouse.ImportTakeBillAction" scope="request" validate="false" name="fileForm">
+<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<action path="/warehouse/auditTakeBillAction" type="com.winsafe.drp.action.warehouse.AuditTakeBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAuditTakeBillAction" type="com.winsafe.drp.action.warehouse.CancelAuditTakeBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/listTakeTicketAction" type="com.winsafe.drp.action.warehouse.ListTakeTicketAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/taketicketlist.jsp"/>
+</action>
+
+
+<action  path="/warehouse/takeTicketDetailAction" type="com.winsafe.drp.action.warehouse.TakeTicketDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/taketicketdetail.jsp"/>
+</action>
+
+<action path="/warehouse/toAuditTakeTicketAction" type="com.winsafe.drp.action.warehouse.ToAuditTakeTicketAction" scope="request" validate="false">
+<forward name="audit" path="/warehouse/toAuditTakeTicketAction.jsp"/>
+</action>
+
+<action path="/warehouse/ajaxCheckTakeTicketIdcodeAction" type="com.winsafe.drp.action.warehouse.AjaxCheckTakeTicketIdcodeAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/auditTakeTicketAction" type="com.winsafe.drp.action.warehouse.AuditTakeTicketAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action path="/warehouse/ajaxAuditTakeTicketAction" type="com.winsafe.drp.action.warehouse.ajaxAuditTakeTicketAction" scope="request" validate="false">
+</action>
+
+<!-- 验证条码数量与订单数量是否一致 wei.li 2012-2-16 ADD -->
+<action path="/warehouse/ajaxQuantityAuditTakeTicketAction" type="com.winsafe.drp.action.warehouse.AjaxQuantityAuditTakeTicketAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/cancelAuditTakeTicketAction" type="com.winsafe.drp.action.warehouse.CancelAuditTakeTicketAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action path="/warehouse/blankoutTakeTicketAction" type="com.winsafe.drp.action.warehouse.BlankoutTakeTicketAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action path="/warehouse/toSelectIdcodeAction" type="com.winsafe.drp.action.warehouse.ToSelectIdcodeAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectidcodeiframe.jsp"/>
+</action>
+
+<action path="/warehouse/selectIdcodeAction" type="com.winsafe.drp.action.warehouse.SelectIdcodeAction" scope="request" validate="false">
+<forward name="selectidcode" path="/warehouse/selectidcode.jsp"/>
+</action>
+
+<action path="/warehouse/printTakeTicketAction" type="com.winsafe.drp.action.warehouse.PrintTakeTicketAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/toAddTakeTicketIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddTakeTicketIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addtaketicketidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addTakeTicketIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddTakeTicketIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddTakeTicketIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddTakeTicketIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addtaketicketidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addTakeTicketIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddTakeTicketIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/listTakeTicketIdcode" type="com.winsafe.drp.action.warehouse.ListTakeTicketIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listtaketicketidcode.jsp"/>
+</action>
+
+<action path="/warehouse/delTakeTicketIdcodeAction" type="com.winsafe.drp.action.warehouse.DelTakeTicketIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- take ticket end -->
+
+<!-- draw shipment bill start -->
+<action  path="/warehouse/listDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.ListDrawShipmentBillAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/drawshipmentbilllist.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToAddDrawShipmentBillAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/adddrawshipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/addDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.AddDrawShipmentBillAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/endcaseDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.EndcaseDrawShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelEndcaseDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelEndcaseDrawShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<!-- assemble start -->
+<action  path="/warehouse/listAssembleAction" type="com.winsafe.drp.action.warehouse.ListAssembleAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/assemblelist.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddAssembleAction" type="com.winsafe.drp.action.warehouse.ToAddAssembleAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addassemble.jsp"/>
+</action>
+
+<action  path="/warehouse/addAssembleAction" type="com.winsafe.drp.action.warehouse.AddAssembleAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdAssembleAction" type="com.winsafe.drp.action.warehouse.ToUpdAssembleAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updassemble.jsp"/>
+</action>
+
+<action  path="/warehouse/updAssembleAction" type="com.winsafe.drp.action.warehouse.UpdAssembleAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/delAssembleAction" type="com.winsafe.drp.action.warehouse.DelAssembleAction" scope="request" validate="false">
+<forward name="delresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/assembleDetailAction" type="com.winsafe.drp.action.warehouse.AssembleDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/assembledetail.jsp"/>
+</action>
+
+<action  path="/warehouse/auditAssembleAction" type="com.winsafe.drp.action.warehouse.AuditAssembleAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditAssembleAction" type="com.winsafe.drp.action.warehouse.CancelAuditAssembleAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/completeAssembleAction" type="com.winsafe.drp.action.warehouse.CompleteAssembleAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelCompleteAssembleAction" type="com.winsafe.drp.action.warehouse.CancelCompleteAssembleAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toSelectProductStockpileAction" type="com.winsafe.drp.action.sales.ToSelectProductStockpileAction" scope="request" validate="false">
+<forward name="toselect" path="/warehouse/selectproductstockpileiframe.jsp"/>
+</action>
+
+<action path="/warehouse/selectProductStockpileAction" type="com.winsafe.drp.action.sales.SelectProductStockpileAction" scope="request" validate="false">
+<forward name="selectproduct" path="/warehouse/selectproductstockpile.jsp"/>
+</action> 
+<!-- assemble end -->
+
+<action  path="/warehouse/toUpdDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToUpdDrawShipmentBillAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/upddrawshipmentbill.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.UpdDrawShipmentBillAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/drawShipmentBillDetailAction" type="com.winsafe.drp.action.warehouse.DrawShipmentBillDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/drawshipmentbilldetail.jsp"/>
+</action>
+
+<action path="/warehouse/delDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.DelDrawShipmentBillAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/auditDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.AuditDrawShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditDrawShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelAuditDrawShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- draw shipment bill end -->
+
+
+<!-- harm shipment bill start -->
+<action  path="/warehouse/listHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.ListHarmShipmentBillAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/harmshipmentbilllist.jsp"/>
+</action>
+
+<action  path="/warehouse/toAddHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToAddHarmShipmentBillAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addharmshipmentbill.jsp"/>
+</action>
+
+<action  path="/warehouse/addHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.AddHarmShipmentBillAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.ToUpdHarmShipmentBillAction" scope="request" validate="false">
+<forward name="toupd" path="/warehouse/updharmshipmentbill.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.UpdHarmShipmentBillAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/harmShipmentBillDetailAction" type="com.winsafe.drp.action.warehouse.HarmShipmentBillDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/harmshipmentbilldetail.jsp"/>
+</action>
+
+<action path="/warehouse/delHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.DelHarmShipmentBillAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/warehouse/auditHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.AuditHarmShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelAuditHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelAuditHarmShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/endcaseHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.EndcaseHarmShipmentBillAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelEndcaseHarmShipmentBillAction" type="com.winsafe.drp.action.warehouse.CancelEndcaseHarmShipmentBillAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- harm shipment bill end -->
+
+
+<!-- product interconvert start -->
+<action  path="/warehouse/listProductInterconvertAction" type="com.winsafe.drp.action.warehouse.ListProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/listproductinterconvert.jsp"/>
+</action>
+<action  path="/warehouse/printListProductInterconvertAction" type="com.winsafe.drp.action.warehouse.PrintListProductInterconvertAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistproductinterconvert.jsp"/>
+</action>
+<action  path="/warehouse/excPutProductInterconvertAction" type="com.winsafe.drp.action.warehouse.ExcPutProductInterconvertAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/toAddProductInterconvertAction" type="com.winsafe.drp.action.warehouse.ToAddProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/addproductinterconvert.jsp"/>
+</action>
+
+<action  path="/warehouse/addProductInterconvertAction" type="com.winsafe.drp.action.warehouse.AddProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toUpdProductInterconvertAction" type="com.winsafe.drp.action.warehouse.ToUpdProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/updproductinterconvert.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updProductInterconvertAction" type="com.winsafe.drp.action.warehouse.UpdProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/toReferProductInterconvertAction" type="com.winsafe.drp.action.warehouse.ToReferProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/referstockmove.jsp"/>
+</action>
+
+<action  path="/warehouse/productInterconvertDetailAction" type="com.winsafe.drp.action.warehouse.ProductInterconvertDetailAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/detailproductinterconvert.jsp"/>
+</action>
+
+<action  path="/warehouse/delProductInterconvertAction" type="com.winsafe.drp.action.warehouse.DelProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/referProductInterconvertAction" type="com.winsafe.drp.action.warehouse.ReferProductInterconvertAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/auditProductInterconvertAction" type="com.winsafe.drp.action.warehouse.AuditProductInterconvertAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAuditProductInterconvertAction" type="com.winsafe.drp.action.warehouse.CancelAuditProductInterconvertAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+<action  path="/warehouse/printProductInterconvertAction" type="com.winsafe.drp.action.warehouse.PrintProductInterconvertAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listProductInterconvertReceiveAction" type="com.winsafe.drp.action.warehouse.ListProductInterconvertReceiveAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/listproductinterconvertreceive.jsp"/>
+</action>
+
+<action  path="/warehouse/printListProductInterconvertReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListProductInterconvertReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistproductinterconvertreceive.jsp"/>
+</action>
+<action  path="/warehouse/excPutProductInterconvertReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutProductInterconvertReceiveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/txtPurProductInterconvertAction" type="com.winsafe.drp.action.warehouse.TxtPurProductInterconvertAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/productInterconvertDetailReceiveAction" type="com.winsafe.drp.action.warehouse.ProductInterconvertDetailAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/detailproductinterconvertreceive.jsp"/>
+</action>
+
+<action  path="/warehouse/completeProductInterconvertShipmentAction" type="com.winsafe.drp.action.warehouse.CompleteProductInterconvertShipmentAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelCompleteProductInterconvertShipmentAction" type="com.winsafe.drp.action.warehouse.CancelCompleteProductInterconvertShipmentAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/completeProductInterconvertReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteProductInterconvertReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+<forward name="lock" path="/sys/lockrecordclose.jsp"/>
+</action>
+
+<action  path="/warehouse/cancelCompleteProductInterconvertReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteProductInterconvertReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddProductInterconvertIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddProductInterconvertIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addproductinterconvertidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addProductInterconvertIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddProductInterconvertIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddProductInterconvertIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddProductInterconvertIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addproductinterconvertidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addProductInterconvertIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddProductInterconvertIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delProductInterconvertIdcodeAction" type="com.winsafe.drp.action.warehouse.DelProductInterconvertIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listProductInterconvertIdcode" type="com.winsafe.drp.action.warehouse.ListProductInterconvertIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listproductinterconvertidcode.jsp"/>
+</action>
+<!-- ********product interconvert end**************** -->
+<!-- 工厂退回签收 -->
+<action path="/warehouse/listPlantWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.ListPlantWithdrawReceiveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listplantwithdrawreceive.jsp"/>
+</action>
+<action path="/warehouse/detailPlantWithdrawReceiveAction" type="com.winsafe.drp.action.ditch.DetailPlantWithdrawAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailplantwithdrawreceive.jsp"/>
+</action>
+<action path="/warehouse/completePlantWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.CompletePlantWithdrawReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+<action path="/warehouse/cancelCompletePlantWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompletePlantWithdrawReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+<action path="/warehouse/excPutPlantWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutPlantWithdrawReceiveAction" scope="request" validate="false">
+</action>
+<action path="/warehouse/printListPlantWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListPlantWithdrawReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistplantwithdrawreceive.jsp"/>
+</action>
+
+
+
+<!-- Organ Withdraw start -->
+<action path="/warehouse/listOrganWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.ListOrganWithdrawReceiveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listorganwithdrawreceive.jsp"/>
+</action>
+<action path="/warehouse/printListOrganWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListOrganWithdrawReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistorganwithdrawreceive.jsp"/>
+</action>
+<action path="/warehouse/excPutOrganWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutOrganWithdrawReceiveAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/txtPurOrganWithdrawAction" type="com.winsafe.drp.action.warehouse.TxtPurOrganWithdrawAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/detailOrganWithdrawReceiveAction" type="com.winsafe.drp.action.ditch.DetailOrganWithdrawAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailorganwithdrawreceive.jsp"/>
+</action>
+
+<action path="/warehouse/completeOrganWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteOrganWithdrawReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action path="/warehouse/cancelCompleteOrganWithdrawReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteOrganWithdrawReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclosereloadparent.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOrganWithdrawIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddOrganWithdrawIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addorganwithdrawidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addOrganWithdrawIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddOrganWithdrawIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOrganWithdrawIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddOrganWithdrawIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addorganwithdrawidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addOrganWithdrawIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddOrganWithdrawIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delOrganWithdrawIdcodeAction" type="com.winsafe.drp.action.warehouse.DelOrganWithdrawIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listOrganWithdrawIdcode" type="com.winsafe.drp.action.warehouse.ListOrganWithdrawIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listorganwithdrawidcode.jsp"/>
+<forward name="listPw" path="/warehouse/listplantwithdrawidcode.jsp"/>
+</action>
+<!-- Organ Withdraw end -->
+
+
+<!-- Organ trades start -->
+<action path="/warehouse/listOrganTradesReceiveAction" type="com.winsafe.drp.action.warehouse.ListOrganTradesReceiveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listorgantradesreceive.jsp"/>
+</action>
+<action path="/warehouse/printListOrganTradesReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListOrganTradesReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistorgantradesreceive.jsp"/>
+</action>
+<action path="/warehouse/excPutOrganTradesReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutOrganTradesReceiveAction" scope="request" validate="false">
+</action>
+
+
+<action path="/warehouse/txtPurOrganTradesPAction" type="com.winsafe.drp.action.warehouse.TxtPurOrganTradesPAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/detailOrganTradesReceiveAction" type="com.winsafe.drp.action.ditch.DetailOrganTradesAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailorgantradesreceive.jsp"/>
+</action>
+
+<action path="/warehouse/completeOrganTradePReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteOrganTradePReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelCompleteOrganTradePReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteOrganTradePReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAffirmOrganTradesAction" type="com.winsafe.drp.action.warehouse.ToAffirmOrganTradesAction" scope="request" validate="false">
+<forward name="success" path="/warehouse/affirmorgantrades.jsp"/>
+</action>
+
+<action path="/warehouse/affirmOrganTradesAction" type="com.winsafe.drp.action.warehouse.AffirmOrganTradesAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelAffirmOrganTradesAction" type="com.winsafe.drp.action.warehouse.CancelAffirmOrganTradesAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOrganTradesPIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddOrganTradesPIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addorgantradespidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addOrganTradesPIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddOrganTradesPIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOrganTradesPIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddOrganTradesPIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addorgantradespidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addOrganTradesPIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddOrganTradesPIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delOrganTradesPIdcodeAction" type="com.winsafe.drp.action.warehouse.DelOrganTradesPIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listOrganTradesPIdcode" type="com.winsafe.drp.action.warehouse.ListOrganTradesPIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listorgantradespidcode.jsp"/>
+</action>
+
+
+<action path="/warehouse/listOrganTradesTReceiveAction" type="com.winsafe.drp.action.warehouse.ListOrganTradesTReceiveAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listottreceive.jsp"/>
+</action>
+<action path="/warehouse/printListOrganTradesTReceiveAction" type="com.winsafe.drp.action.warehouse.PrintListOrganTradesTReceiveAction" scope="request" validate="false">
+<forward name="toprint" path="/warehouse/printlistottreceive.jsp"/>
+</action>
+<action path="/warehouse/excPutOrganTradesTReceiveAction" type="com.winsafe.drp.action.warehouse.ExcPutOrganTradesTReceiveAction" scope="request" validate="false">
+</action>
+<action path="/warehouse/txtPurOrganTradesTAction" type="com.winsafe.drp.action.warehouse.TxtPurOrganTradesTAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/detailOrganTradesTReceiveAction" type="com.winsafe.drp.action.ditch.DetailOrganTradesAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailottreceive.jsp"/>
+</action>
+
+<action path="/warehouse/completeOrganTradeTReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteOrganTradeTReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/cancelCompleteOrganTradeTReceiveAction" type="com.winsafe.drp.action.warehouse.CancelCompleteOrganTradeTReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOrganTradesTIdcodeiAction" type="com.winsafe.drp.action.warehouse.ToAddOrganTradesTIdcodeiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addorgantradestidcodei.jsp"/>
+</action>
+
+<action path="/warehouse/addOrganTradesTIdcodeiAction" type="com.winsafe.drp.action.warehouse.AddOrganTradesTIdcodeiAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/toAddOrganTradesTIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddOrganTradesTIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addorgantradestidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/addOrganTradesTIdcodeiiAction" type="com.winsafe.drp.action.warehouse.AddOrganTradesTIdcodeiiAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/delOrganTradesTIdcodeAction" type="com.winsafe.drp.action.warehouse.DelOrganTradesTIdcodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/warehouse/listOrganTradesTIdcode" type="com.winsafe.drp.action.warehouse.ListOrganTradesTIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listorgantradestidcode.jsp"/>
+</action>
+<!-- Organ trades end -->
+
+<action  path="/warehouse/toAddEquipAction" type="com.winsafe.drp.action.warehouse.ToAddEquipAction" scope="request" validate="false">
+	<forward name="success" path="/warehouse/addequip.jsp"/>
+</action>
+
+<action  path="/warehouse/addEquipAction" type="com.winsafe.drp.action.warehouse.AddEquipAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/listIdcodeUploadAction" type="com.winsafe.drp.action.warehouse.ListIdcodeUploadAction" scope="request" validate="false">
+	<forward name="list" path="/warehouse/listidcodeupload.jsp"/>
+</action>
+
+<action  path="/warehouse/listIdcodeUploadLogAction" type="com.winsafe.drp.action.warehouse.ListIdcodeUploadLogAction" scope="request" validate="false">
+	<forward name="list" path="/warehouse/listidcodeuploadlog.jsp"/>
+</action>
+
+<!-- 重新处理条码上传日志-->
+<action  path="/warehouse/reProcessIdcodeUploadAction" type="com.winsafe.drp.action.warehouse.ReProcessIdcodeUploadAction" scope="request" validate="false">
+	<forward name="list" path="/warehouse/listidcodeupload.jsp"/>
+</action>
+
+<!-- 检货出库时重置TT单号 start 20100602-->
+<action  path="/warehouse/selectAndResetTT" type="com.winsafe.drp.action.warehouse.SelectAndResetTTAction" scope="request" validate="false">
+	<forward name="list" path="/warehouse/selectResetTT.jsp"/>
+</action>
+<action  path="/warehouse/replaceTTidcode" type="com.winsafe.drp.action.warehouse.ReplaceTTidcodeAction" scope="request" validate="false">
+</action>
+<!-- 检货出库时重置TT单号 end -->
+
+<!-- 采集器实时扫描 start 20111007 -->
+<action path="/uploadIdcodeTimelyAction" type="com.winsafe.drp.action.warehouse.UploadIdcodeTimelyAction" scope="request" validate="false">
+</action>
+<!-- 采集器实时扫描  end -->
+
+<!-- 采集器下载条码上传日志 start 20111112 -->
+<action path="/downloadIdcodeUploadLogToScannerAction" type="com.winsafe.drp.action.warehouse.DownloadIdcodeUploadLogToScannerAction" scope="request" validate="false">
+</action>
+<!-- 采集器下载条码上传日志  end -->
+
+<!-- 转仓文件导入 界面 Author:wenping-->
+<action path="/warehouse/toStockMoveImportAction" type="com.winsafe.drp.action.warehouse.ToStockMoveImportAction"> 
+<forward name="success" path="/warehouse/stockMoveImport.jsp"/>
+</action>
+<!-- 处理转仓文件导入 Author:wenping -->
+<action name="fileForm" path="/warehouse/stockMoveImportAction" type="com.winsafe.drp.action.warehouse.StockMoveImportAction"> 
+<forward name="fail" path="/warehouse/stockMoveImport.jsp"/>
+</action>
+
+<!--  修改出库数量复核 -->
+<action path="/warehouse/toResetRealQuantityAction" type="com.winsafe.drp.action.warehouse.ToResetAuditTTRealQuantity" scope="request" validate="false">
+<forward name="success" path="/warehouse/resetRealQuantity.jsp"></forward>
+</action>
+<action path="/warehouse/ProductBatchQuantityAction" type="com.winsafe.drp.action.warehouse.ProductBatchQuantityAction" scope="request" validate="false">
+<forward name="calculate" path="/warehouse/productbatchquantity.jsp"></forward>
+<forward name="calculateNoQuantity" path="/warehouse/productbatchquantity2.jsp"></forward>
+</action>
+<action path="/warehouse/cancalTakeTicketDetailPicked" type="com.winsafe.drp.action.warehouse.CancalTakeTicketDetailPickedAction" scope="request" validate="false">
+</action>
+<action path="/warehouse/checkTakeTicketDetailPick" type="com.winsafe.drp.action.warehouse.CheckTakeTicketDetailPick" scope="request" validate="false">
+</action>
+
+<!-- 修改单据的采集器编号  -->
+<action path="/warehouse/setTakeTicketScannerNoAction" type="com.winsafe.drp.action.warehouse.SetTakeTicketScannerNoAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/redispatchTakeTicketDetailAction" type="com.winsafe.drp.action.warehouse.RedispatchTakeTicketDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/taketicketdetail.jsp"></forward>
+<forward name="success" path="/warehouse/productbatchquantity.jsp"></forward>
+</action>
+<action path="/warehouse/auditTakeTicketRealQuantity" type="com.winsafe.drp.action.warehouse.AuditTakeTicketRealQuantity" scope="request" validate="false">
+</action>
+<action  path="/warehouse/excPutPickTakeBillAction" type="com.winsafe.drp.action.warehouse.excPutPickTakeBillAction" scope="request" validate="false">
+</action>
+<action path="/warehouse/ajaxQuantityCompleteStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.AjaxQuantityCompleteStockAlterMoveAction" scope="request" validate="false">
+</action>
+<action path="/warehouse/ajaxQuantityCompleteStockMoveAction" type="com.winsafe.drp.action.warehouse.AjaxQuantityCompleteStockMoveAction" scope="request" validate="false">
+</action>
+<action path="/warehouse/ajaxQuantityCompleteOrganWithdrawAction" type="com.winsafe.drp.action.warehouse.AjaxQuantityCompleteOrganWithdrawAction" scope="request" validate="false">
+</action>
+<!--库存导入-->
+<action path="/warehouse/toProductStockPileImportAction" type="com.winsafe.drp.action.warehouse.ToProductStockpileImportAction"> 
+<forward name="success" path="/warehouse/productstockpileImport.jsp"/>
+</action>
+<!-- 处理库存文件导入 -->
+<action name="fileForm" path="/warehouse/productStockPileImportAction" type="com.winsafe.drp.action.warehouse.ProductStockPileImportAction"> 
+<forward name="fail" path="/warehouse/productstockpileImport.jsp"/>
+</action>
+<!--库存产品检验-->
+<action path="/warehouse/toProductStockPileVerifyAction" type="com.winsafe.drp.action.warehouse.ToProductStockpileVerifyAction"> 
+<forward name="toverify" path="/warehouse/productstockpileverify.jsp"/>
+</action>
+<action path="/warehouse/productStockPileVerifyAction" type="com.winsafe.drp.action.warehouse.ProductStockPileVerifyAction"> 
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+<!--验证入库单详情数量与条码数量是否相等-->
+<action path="/warehouse/ajaxQuantityAuditProductIncomeAction" type="com.winsafe.drp.action.warehouse.AjaxQuantityAuditProductIncomeAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/multiAddIdcodeAction" forward="/warehouse/multiaddidcode.jsp"></action>
+
+<action path="/warehouse/checkAndGenerateIdcode" type="com.winsafe.drp.action.warehouse.CheckAndGenerateIdcode" scope="request" validate="false">
+</action>
+<action path="/warehouse/multiInsertIdcodeAction" type="com.winsafe.drp.action.warehouse.MultiInsertIdcodeAction" scope="request" validate="false">
+
+</action>
+<action path="/warehouse/toShowMsgAction" forward="/warehouse/lockrecordclose.jsp"></action>
+<!--经销商入库签收-->
+<action  path="/warehouse/listReceiveIncomeAction" type="com.winsafe.drp.action.warehouse.ListReceiveIncomeAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listreceiveincome.jsp"/>
+</action>
+
+<action  path="/warehouse/receiveIncomeDetailAction" type="com.winsafe.drp.action.warehouse.ReceiveIncomeDetailAction" scope="request" validate="false">
+<forward name="detail" path="/warehouse/detailreceiveincome.jsp"/>
+</action>
+
+<action path="/warehouse/toAddReceiveIncomeIdcodeiiAction" type="com.winsafe.drp.action.warehouse.ToAddReceiveIncomeIdcodeiiAction" scope="request" validate="false">
+<forward name="toadd" path="/warehouse/addreceiveincomeidcodeii.jsp"/>
+</action>
+
+<action path="/warehouse/listReceiveIncomeIdcode" type="com.winsafe.drp.action.warehouse.ListReceiveIncomeIdcode" scope="request" validate="false">
+<forward name="list" path="/warehouse/listreceiveincomeidcode.jsp"/>
+</action>
+
+
+<action path="/warehouse/idcodeProduceCountAction" type="com.winsafe.drp.action.warehouse.IdcodeProduceCountAction"> 
+<forward name="success" path="/warehouse/idcodeProduceCount.jsp"/>
+</action>
+
+<action path="/warehouse/ajaxQuantityCompleteAllStockAlterMoveAction" type="com.winsafe.drp.action.warehouse.AjaxQuantityCompleteAllStockAlterMoveAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/completeAllStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.CompleteAllStockAlterMoveReceiveAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/warehouse/listWaitProductStockAction" type="com.winsafe.drp.action.warehouse.ListWaitProductStockAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listwaitproductstock.jsp"/>
+</action>
+
+<action  path="/warehouse/excPutWaitProductStockAction" type="com.winsafe.drp.action.warehouse.ExcPutWaitProductStockAction" scope="request" validate="false">
+</action>
+
+<!-- 仓库手工上传 -->
+<action  path="/warehouse/toReloadIdcodeByFailAction" forward="/warehouse/index_ck_manual.jsp">
+</action>
+
+<action name="idcodeUploadForm"  path="/warehouse/reloadIdcodeByFailAction" type="com.winsafe.drp.action.warehouse.ReloadIdcodeByFailAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorcloseidcode.jsp"/>
+<forward name="failure" path="/common/operatorfailure.jsp"/>
+<forward name="error" path="/common/uploadInputErrorList.jsp"/>
+<forward name="uploadmsg" path="/sys/uploadmsg.jsp"/>
+</action>
+
+<!-- 打印装箱单 -->
+<action path="/warehouse/printPackingBillAction" type="com.winsafe.drp.action.warehouse.PrintPackingBillAction" scope="request" validate="false">
+<forward name="print" path="/warehouse/printpackingbill.jsp"/>
+<forward name="toprint" path="/warehouse/toprintpackingbill.jsp"></forward>
+</action>
+
+<!-- 生产确认 -->
+<action path="/warehouse/confimProductIncomeAction" type="com.winsafe.drp.action.warehouse.ConfimProductIncomeAction"> 
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 进销存报表 -->
+<action  path="/warehouse/listPurchaseReportAction" type="com.winsafe.drp.action.warehouse.ListPurchaseReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listpurchasereport.jsp"/>
+</action>
+<action  path="/warehouse/listSalesReportAction" type="com.winsafe.drp.action.warehouse.ListSalesReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listsalesreport.jsp"/>
+</action>
+<action  path="/warehouse/listInventoryReportAction" type="com.winsafe.drp.action.warehouse.ListInventoryReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listinventoryreport.jsp"/>
+</action>
+<action  path="/warehouse/excPutPurchaseReportAction" type="com.winsafe.drp.action.warehouse.ExcPutPurchaseReportAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/excPutSalesReportAction" type="com.winsafe.drp.action.warehouse.ExcPutSalesReportAction" scope="request" validate="false">
+</action>
+<action  path="/warehouse/excPutInventoryReportAction" type="com.winsafe.drp.action.warehouse.ExcPutInventoryReportAction" scope="request" validate="false">
+</action>
+<!-- 库存报表 -->
+<action  path="/warehouse/listStockPileAgeingTotalReportAction" type="com.winsafe.drp.action.warehouse.ListStockPileAgeingTotalReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockpileageingtotalreport.jsp"/>
+</action>
+<action  path="/warehouse/excPutAgeingTotalReportAction" type="com.winsafe.drp.action.warehouse.ExcPutAgeingTotalReportAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listSalesDailyAverageReportAction" type="com.winsafe.drp.action.warehouse.ListSalesDailyAverageReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listsalesdailyaveragereport.jsp"/>
+</action>
+<action  path="/warehouse/excPutSalesDailyAverageReportAction" type="com.winsafe.drp.action.warehouse.ExcPutSalesDailyAverageReportAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockPileDaysReportAction" type="com.winsafe.drp.action.warehouse.ListStockPileDaysReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockpiledaysreport.jsp"/>
+</action>
+<action  path="/warehouse/excPutStockPileDaysReportAction" type="com.winsafe.drp.action.warehouse.ExcPutStockPileDaysReportAction" scope="request" validate="false">
+</action>
+
+<action  path="/warehouse/listStockPileTurnoverRateReportAction" type="com.winsafe.drp.action.warehouse.ListStockPileTurnoverRateReportAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/liststockpileturnoverratereport.jsp"/>
+</action>
+<action  path="/warehouse/excPutStockPileTurnoverRateReportAction" type="com.winsafe.drp.action.warehouse.ExcPutStockPileTurnoverRateReportAction" scope="request" validate="false">
+</action>
+
+<action path="/warehouse/toTransferStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.ToTransferStockAlterMoveAction" scope="request" validate="false">
+<forward name="result" path="/warehouse/transferstockaltermove.jsp"/>
+</action>
+<action  path="/warehouse/transferStockAlterMoveReceiveAction" type="com.winsafe.drp.action.warehouse.TransferStockAlterMoveAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- 盘库数据 -->
+<action  path="/warehouse/listInventoryUploadLogAction" type="com.winsafe.drp.action.warehouse.ListInventoryUploadLogAction" scope="request" validate="false">
+<forward name="list" path="/warehouse/listInventoryUploadLog.jsp"/>
+</action>
+
+<action path="/warehouse/toUploadInitialInventoryAction"  scope="request" forward="/warehouse/uploadInitialInventory.jsp"></action>
+<action name="fileForm" path="/warehouse/uploadInitialInventoryAction" type="com.winsafe.drp.action.warehouse.UploadInitialInventoryAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<action path="/warehouse/toUploadInventoryAction"  scope="request" forward="/warehouse/uploadInventory.jsp"></action>
+<action name="fileForm" path="/warehouse/uploadInventoryAction" type="com.winsafe.drp.action.warehouse.UploadInventoryAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<!-- 导入条码（不在系统中的码） -->
+<action  path="/warehouse/toImportIdcodeAction" type="com.winsafe.drp.action.warehouse.ToImportIdcodeAction" scope="request" validate="false" >
+<forward name="success" path="/warehouse/toimportIdcode.jsp"></forward>
+</action>
+
+<action  path="/warehouse/importIdcodeAction" type="com.winsafe.drp.action.warehouse.ImportIdcodeAction" scope="request" validate="false" name="fileForm">
+<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+
+<!-- 导入条码（单据已复核，但是还有码未入TTID表中） -->
+<action  path="/warehouse/toImportTtidForIdcodeAction" type="com.winsafe.drp.action.warehouse.ToImportTtidForIdcodeAction" scope="request" validate="false" >
+<forward name="success" path="/warehouse/toimportttidforidcode.jsp"></forward>
+</action>
+
+<action  path="/warehouse/importTtidForIdcodeAction" type="com.winsafe.drp.action.warehouse.ImportTtidForIdcodeAction" scope="request" validate="false" name="fileForm">
+<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<!-- 分包管理  -->
+<action  path="/warehouse/listPackSeparateAction" type="com.winsafe.drp.packseparate.action.ListPackSeparateAction" scope="request" validate="false">
+<forward name="list" path="/packageSeparate/listPackageSeparate.jsp"></forward>
+</action>
+<action  path="/warehouse/toAddPackSeparateAction" type="com.winsafe.drp.packseparate.action.ToAddPackSeparateAction" scope="request" validate="false">
+<forward name="toadd" path="/packageSeparate/addPackageSeparate.jsp"></forward>
+</action>
+<action  path="/warehouse/addPackSeparateAction" type="com.winsafe.drp.packseparate.action.AddPackSeparateAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<action  path="/warehouse/packSeparateDetailAction" type="com.winsafe.drp.packseparate.action.PackSeparateDetailAction" scope="request" validate="false">
+<forward name="detail" path="/packageSeparate/packageSeparateDetail.jsp"></forward>
+</action>
+
+<action  path="/warehouse/auditPackSeparateAction" type="com.winsafe.drp.packseparate.action.AuditPackSeparateAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclosereloadparent.jsp"/>	
+</action>
+
+<action  path="/warehouse/delPackSeparateAction" type="com.winsafe.drp.packseparate.action.DelPackSeparateAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>	
+</action>
+
+<action  path="/warehouse/toUpdPackSeparateAction" type="com.winsafe.drp.packseparate.action.ToUpdPackSeparateAction" scope="request" validate="false">
+<forward name="toupd" path="/packageSeparate/updPackageSeparate.jsp"/>	
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/warehouse/updPackSeparateAction" type="com.winsafe.drp.packseparate.action.UpdPackSeparateAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<!-- 条码盘点条码导入 -->
+<action  path="/warehouse/toUploadBarcodeIdcodeAction" type="com.winsafe.drp.action.warehouse.ToUploadBarcodeIdcodeAction" scope="request" validate="false" >
+<forward name="success" path="/warehouse/toUploadBarcodeIdcodeAction.jsp"></forward>
+</action>
+<action  path="/warehouse/uploadBarcodeIdcodeAction" type="com.winsafe.drp.action.warehouse.UploadBarcodeIdcodeAction" scope="request" validate="false" name="fileForm">
+<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<!--数据传输日志  -->
+<action  path="/warehouse/listTransferLogAction" type="com.winsafe.drp.action.warehouse.ListTransferLogAction" scope="request" validate="false">
+	<forward name="list" path="/warehouse/listTransferLog.jsp"/>
+</action> 
+
+<action path="/warehouse/toAddTransferLogAction" type="com.winsafe.drp.action.warehouse.ToAddTransferLogAction" scope="request" validate="false"  >
+<forward name="success" path="/warehouse/addTransferLog.jsp"/>
+</action>
+
+<action  path="/warehouse/addTransferLogAction" type="com.winsafe.drp.action.warehouse.AddTransferLogAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose3.jsp"/>	
+</action>
+
+<!--SAP单据条码导入-->
+<action  path="/warehouse/toImportSapIdcodeAction" type="com.winsafe.drp.action.warehouse.ToImportSapIdcodeAction" scope="request" validate="false" >
+<forward name="success" path="/warehouse/toImportSapIdcode.jsp"></forward>
+</action>
+<!--SAP单据条码导入-->
+<action  path="/warehouse/importSapIdcodeAction" type="com.winsafe.drp.action.warehouse.ImportSapIdcodeAction" scope="request" validate="false" name="fileForm">
+<forward name="success" path="/warehouse/importSapIdcodeResult.jsp"></forward>
+</action>
+
+</action-mappings>
+
+<message-resources  key="warehouse" parameter="global.app.purchase.ApplicationResource" />
+
+</struts-config>

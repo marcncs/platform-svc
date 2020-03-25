@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ViewRevenueWaste" table="view_revenue_waste">
+<composite-id name="vstidPK" class="com.winsafe.drp.dao.VSTIDPK">
+<key-property column="id" length="32" name="id" type="java.lang.String"/>
+</composite-id>
+<property column="makedate" length="23" name="makedate" type="java.util.Date"/>
+<property column="roid" length="32" name="roid" type="java.lang.String"/>
+<property column="makeid" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="paymentmode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="memo" length="10" name="memo" type="java.lang.String"/>
+<property column="receivablesum" length="18" name="receivablesum" type="java.lang.Double"/>
+<property column="incomesum" length="18" name="incomesum" type="java.lang.Double"/>
+<property column="makeorganid" length="32" name="makeorganid" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

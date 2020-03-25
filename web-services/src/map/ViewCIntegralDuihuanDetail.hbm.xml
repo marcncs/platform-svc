@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ViewCIntegralDuihuanDetail" table="view_c_integral_duihuan_detail">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="cid" length="32" name="cid" type="java.lang.String"/>
+<property column="organid" length="32" name="organid" type="java.lang.String"/>
+<property column="makedate" length="23" name="makedate" type="java.util.Date"/>
+<property column="billno" length="32" name="billno" type="java.lang.String"/>
+<property column="dealIntegral" length="18" name="dealintegral" type="java.lang.Double"/>
+<property column="cname" length="256" name="cname" type="java.lang.String"/>
+<property column="Mobile" length="26" name="mobile" type="java.lang.String"/>
+<property column="makeorganid" length="32" name="makeorganid" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CodeRuleUpload" table="code_rule_upload">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="CRUProperty" length="10" name="cruproperty" type="java.lang.Integer"/>
+<property column="StartNo" length="10" name="startno" type="java.lang.Integer"/>
+<property column="LNo" length="10" name="lno" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

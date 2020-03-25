@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.StockAlterMoveDetail" table="stock_alter_move_detail">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="native"/>
+</id>
+<property column="SAMID" length="32" name="samid" type="java.lang.String"/>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="ProductName" length="128" name="productname" type="java.lang.String"/>
+<property column="SpecMode" length="64" name="specmode" type="java.lang.String"/>
+<property column="UnitID" length="10" name="unitid" type="java.lang.Integer"/>
+<property column="Batch" length="32" name="batch" type="java.lang.String"/>
+<property column="UnitPrice" length="18" name="unitprice" type="java.lang.Double"/>
+<property column="Quantity" length="18" name="quantity" type="java.lang.Double"/>
+<property column="TakeQuantity" length="18" name="takequantity" type="java.lang.Double"/>
+<property column="SubSum" length="18" name="subsum" type="java.lang.Double"/>
+<property column="Cost" length="18" name="cost" type="java.lang.Double"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="NCcode" length="32" name="nccode" type="java.lang.String"/>
+<property column="BoxNum" length="20" name="boxnum" type="java.lang.Integer"/>
+<property column="ScatterNum" length="18" name="scatternum" type="java.lang.Double"/>
+<property column="receiveQuantity" length="18" name="receiveQuantity" type="java.lang.Double"/>
+<property column="receiveRemark" length="128" name="receiveRemark" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

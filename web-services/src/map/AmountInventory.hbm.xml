@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.AmountInventory" table="AMOUNT_INVENTORY">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="WarehouseID" length="12" name="warehouseid" type="java.lang.String"/>
+<property column="ShipmentSort" length="10" name="shipmentsort" type="java.lang.Integer"/>
+<property column="BillNo" length="32" name="billno" type="java.lang.String"/>
+<property column="UserID" length="10" name="userid" type="java.lang.Integer"/>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="128" name="cname" type="java.lang.String"/>
+<property column="Clinkman" length="64" name="clinkman" type="java.lang.String"/>
+<property column="RequireDate" length="23" name="requiredate" type="java.util.Date"/>
+<property column="TotalSum" length="18" name="totalsum" type="java.lang.Double"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="10" name="auditid" type="java.lang.Integer"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="IsEndcase" length="10" name="isendcase" type="java.lang.Integer"/>
+<property column="EndcaseID" length="10" name="endcaseid" type="java.lang.Integer"/>
+<property column="EndcaseDate" length="23" name="endcasedate" type="java.util.Date"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsBlankOut" length="10" name="isblankout" type="java.lang.Integer"/>
+<property column="BlankOutID" length="10" name="blankoutid" type="java.lang.Integer"/>
+<property column="BlankOutDate" length="23" name="blankoutdate" type="java.util.Date"/>
+<property column="PrintTimes" length="10" name="printtimes" type="java.lang.Integer"/>
+<property column="TakeStaus" length="10" name="takestaus" type="java.lang.Integer"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+<property column="ISACCOUNT" length="10" name="isaccount" type="java.lang.Integer"/>
+<property column="Organid" length="32" name="organid" type="java.lang.String"/>
+<property column="isapprove" length="10" name="isapprove" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

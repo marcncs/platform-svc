@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+
+
+</form-beans> 
+
+<action-mappings> 
+
+<action  path="/finance/listReceivableObjectAction" type="com.winsafe.drp.action.finance.ListReceivableObjectAction" scope="request" validate="false">
+<forward name="list" path="/finance/receivableobjectlist.jsp"/>
+</action>
+<action  path="/finance/printListReceivableObjectAction" type="com.winsafe.drp.action.finance.PrintListReceivableObjectAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printreceivableobjectlist.jsp"/>
+</action>
+<action  path="/finance/excPutListReceivableObjectAction" type="com.winsafe.drp.action.finance.ExcPutListReceivableObjectAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/toAddReceivableObjectAction" type="com.winsafe.drp.action.finance.ToAddReceivableObjectAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addreceivableobject.jsp"/>
+</action>
+
+<action  path="/finance/addReceivableObjectAction" type="com.winsafe.drp.action.finance.AddReceivableObjectAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toUpdReceivableObjectAction" type="com.winsafe.drp.action.finance.ToUpdReceivableObjectAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updreceivableobject.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/finance/updReceivableObjectAction" type="com.winsafe.drp.action.finance.UpdReceivableObjectAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toSetReceiveAwakeAction" type="com.winsafe.drp.action.finance.ToSetReceiveAwakeAction" scope="request" validate="false">
+<forward name="toset" path="/finance/setreceiveawake.jsp"/>
+</action>
+
+<action  path="/finance/setReceiveAwakeAction" type="com.winsafe.drp.action.finance.SetReceiveAwakeAction" scope="request" validate="false">
+<forward name="setawake" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/delReceivableObjectAction" type="com.winsafe.drp.action.finance.DelReceivableObjectAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/listReceivableDetailAction" type="com.winsafe.drp.action.finance.ListReceivableDetailAction" scope="request" validate="false">
+<forward name="list" path="/finance/listreceivabledetail.jsp"/>
+</action>
+
+
+
+<action  path="/finance/listReceivableAction" type="com.winsafe.drp.action.finance.ListReceivableAction" scope="request" validate="false">
+<forward name="receivable" path="/finance/receivablelist.jsp"/>
+</action>
+
+<action  path="/finance/listReceivableAllAction" type="com.winsafe.drp.action.finance.ListReceivableAllAction" scope="request" validate="false">
+<forward name="receivableall" path="/finance/receivablealllist.jsp"/>
+</action>
+<action  path="/finance/printListReceivableAllAction" type="com.winsafe.drp.action.finance.PrintListReceivableAllAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printreceivablealllist.jsp"/>
+</action>
+<action  path="/finance/excPutListReceivableAllAction" type="com.winsafe.drp.action.finance.ExcPutListReceivableAllAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/toAddReceivableAction" type="com.winsafe.drp.action.finance.ToAddReceivableAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addreceivable.jsp"/>
+</action>
+
+<action  path="/finance/addReceivableAction" type="com.winsafe.drp.action.finance.AddReceivableAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/toUpdReceivableAction" type="com.winsafe.drp.action.finance.ToUpdReceivableAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updreceivable.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/finance/updReceivableAction" type="com.winsafe.drp.action.finance.UpdReceivableAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/receivableDetailAction" type="com.winsafe.drp.action.finance.ReceivableDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/receivabledetail.jsp"/>
+</action>
+
+<action  path="/finance/delReceivableAction" type="com.winsafe.drp.action.finance.DelReceivableAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditReceivableAction" type="com.winsafe.drp.action.finance.AuditReceivableAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditReceivableAction" type="com.winsafe.drp.action.finance.CancelAuditReceivableAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toReferReceivableAction" type="com.winsafe.drp.action.finance.ToReferReceivableAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/referreceivable.jsp"/>
+</action>
+
+<action  path="/finance/referReceivableAction" type="com.winsafe.drp.action.finance.ReferReceivableAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<!-- income_log -->
+<action  path="/finance/listIncomeLogAction" type="com.winsafe.drp.action.finance.ListIncomeLogAction" scope="request" validate="false">
+<forward name="list" path="/finance/incomeloglist.jsp"/>
+</action>
+<action  path="/finance/printListIncomeLogAction" type="com.winsafe.drp.action.finance.PrintListIncomeLogAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printincomeloglist.jsp"/>
+</action>
+<action  path="/finance/excPutListIncomeLogAction" type="com.winsafe.drp.action.finance.ExcPutListIncomeLogAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/listIncomeLogByReceivableObjectAction" type="com.winsafe.drp.action.finance.ListIncomeLogByReceivableObjectAction" scope="request" validate="false">
+<forward name="list" path="/finance/incomeloglistbyreceivableobject.jsp"/>
+</action>
+
+<action  path="/finance/toAddIncomeLogAction" type="com.winsafe.drp.action.finance.ToAddIncomeLogAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addincomelog.jsp"/>
+</action>
+
+<action  path="/finance/addIncomeLogAction" type="com.winsafe.drp.action.finance.AddIncomeLogAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toSelectReceivableAction" type="com.winsafe.drp.action.finance.ToSelectReceivableAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectreceivableiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectReceivableAction" type="com.winsafe.drp.action.finance.SelectReceivableAction" scope="request" validate="false">
+<forward name="selectreceivable" path="/finance/selectreceivable.jsp"/>
+</action>
+
+
+<action  path="/finance/toSelectReceivableDetailAction" type="com.winsafe.drp.action.finance.ToSelectReceivableDetailAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectreceivabledetailiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectReceivableDetailAction" type="com.winsafe.drp.action.finance.SelectReceivableDetailAction" scope="request" validate="false">
+<forward name="selectrd" path="/finance/selectreceivabledetail.jsp"/>
+</action>
+
+<action  path="/finance/toSelectReceivableObjectAction" type="com.winsafe.drp.action.finance.ToSelectReceivableObjectAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectreceivableobjectiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectReceivableObjectAction" type="com.winsafe.drp.action.finance.SelectReceivableObjectAction" scope="request" validate="false">
+<forward name="selectobject" path="/finance/selectreceivableobject.jsp"/>
+</action>
+
+<action  path="/finance/toUpdIncomeLogAction" type="com.winsafe.drp.action.finance.ToUpdIncomeLogAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updincomelog.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/finance/updIncomeLogAction" type="com.winsafe.drp.action.finance.UpdIncomeLogAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/incomeLogDetailAction" type="com.winsafe.drp.action.finance.IncomeLogDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/incomelogdetail.jsp"/>
+</action>
+
+<action  path="/finance/delIncomeLogAction" type="com.winsafe.drp.action.finance.DelIncomeLogAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/blankoutIncomeLogAction" type="com.winsafe.drp.action.finance.BlankoutIncomeLogAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditIncomeLogAction" type="com.winsafe.drp.action.finance.AuditIncomeLogAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditIncomeLogAction" type="com.winsafe.drp.action.finance.CancelAuditIncomeLogAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/receiveIncomeLogAction" type="com.winsafe.drp.action.finance.ReceiveIncomeLogAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelReceiveIncomeLogAction" type="com.winsafe.drp.action.finance.CancelReceiveIncomeLogAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/toReferIncomeLogAction" type="com.winsafe.drp.action.finance.ToReferIncomeLogAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/referincomelog.jsp"/>
+</action>
+
+<action  path="/finance/referIncomeLogAction" type="com.winsafe.drp.action.finance.ReferIncomeLogAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toTransIncomeLogAction" type="com.winsafe.drp.action.finance.ToTransIncomeLogAction" scope="request" validate="false">
+<forward name="totrans" path="/finance/transincomelog.jsp"/>
+</action>
+
+<action  path="/finance/transIncomeLogAction" type="com.winsafe.drp.action.finance.TransIncomeLogAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toDestoryIncomeLogAction" type="com.winsafe.drp.action.finance.ToDestoryIncomeLogAction" scope="request" validate="false">
+<forward name="totrans" path="/finance/destoryincomelog.jsp"/>
+</action>
+
+<action  path="/finance/destoryIncomeLogAction" type="com.winsafe.drp.action.finance.DestoryIncomeLogAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- income_log end -->
+
+
+<!--
+<action  path="/finance/listSettlementAction" type="com.winsafe.drp.action.finance.ListSettlementAction" scope="request" validate="false">
+<forward name="list" path="/finance/settlementlist.jsp"/>
+</action>
+
+<action  path="/finance/handworkSettlementAction" type="com.winsafe.drp.action.finance.HandworkSettlementAction" scope="request" validate="false">
+<forward name="handwork" path="/finance/handworksettlement.jsp"/>
+</action>
+
+<action  path="/finance/selectPurchaseInvoiceAjax" type="com.winsafe.drp.action.finance.SelectPurchaseInvoiceAjax" scope="request" validate="false">
+
+</action>
+
+<action  path="/finance/selectPurchaseIncomeAjax" type="com.winsafe.drp.action.finance.SelectPurchaseIncomeAjax" scope="request" validate="false">
+
+</action>
+
+<action  path="/finance/affirmSettlementAction" type="com.winsafe.drp.action.finance.AffirmSettlementAction" scope="request" validate="false">
+<forward name="affirm" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/settlementDetailAction" type="com.winsafe.drp.action.finance.SettlementDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/settlementdetail.jsp"/>
+</action>
+
+<action  path="/finance/auditSettlementAction" type="com.winsafe.drp.action.finance.AuditSettlementAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditSettlementAction" type="com.winsafe.drp.action.finance.CancelAuditSettlementAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/ratifySettlementAction" type="com.winsafe.drp.action.finance.RatifySettlementAction" scope="request" validate="false">
+<forward name="ratify" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toReferSettlementAction" type="com.winsafe.drp.action.finance.ToReferSettlementAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/refersettlement.jsp"/>
+</action>
+
+<action  path="/finance/referSettlementAction" type="com.winsafe.drp.action.finance.ReferSettlementAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/delSettlementAction" type="com.winsafe.drp.action.finance.DelSettlementAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+ 
+ -->
+
+
+
+
+
+<!-- payment -->
+<action  path="/finance/listPayableObjectAction" type="com.winsafe.drp.action.finance.ListPayableObjectAction" scope="request" validate="false">
+<forward name="payableobject" path="/finance/payableobjectlist.jsp"/>
+</action>
+<action  path="/finance/printListPayableObjectAction" type="com.winsafe.drp.action.finance.PrintListPayableObjectAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printpayableobjectlist.jsp"/>
+</action>
+<action  path="/finance/excPutListPayableObjectAction" type="com.winsafe.drp.action.finance.ExcPutListPayableObjectAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/toAddPayableObjectAction" type="com.winsafe.drp.action.finance.ToAddPayableObjectAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addpayableobject.jsp"/>
+</action>
+
+<action  path="/finance/addPayableObjectAction" type="com.winsafe.drp.action.finance.AddPayableObjectAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toUpdPayableObjectAction" type="com.winsafe.drp.action.finance.ToUpdPayableObjectAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updpayableobject.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/finance/updPayableObjectAction" type="com.winsafe.drp.action.finance.UpdPayableObjectAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/delPayableObjectAction" type="com.winsafe.drp.action.finance.DelPayableObjectAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/listPayableAction" type="com.winsafe.drp.action.finance.ListPayableAction" scope="request" validate="false">
+<forward name="payable" path="/finance/payablelist.jsp"/>
+</action>
+
+<action  path="/finance/listPayableAllAction" type="com.winsafe.drp.action.finance.ListPayableAllAction" scope="request" validate="false">
+<forward name="payableall" path="/finance/payablealllist.jsp"/>
+</action>
+
+<action  path="/finance/printListPayableAllAction" type="com.winsafe.drp.action.finance.PrintListPayableAllAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printpayablealllist.jsp"/>
+</action>
+
+<action  path="/finance/excPutListPayableAllAction" type="com.winsafe.drp.action.finance.ExcPutListPayableAllAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/toAddPayableAction" type="com.winsafe.drp.action.finance.ToAddPayableAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addpayable.jsp"/>
+</action>
+
+<action  path="/finance/addPayableAction" type="com.winsafe.drp.action.finance.AddPayableAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toUpdPayableAction" type="com.winsafe.drp.action.finance.ToUpdPayableAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updpayable.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/finance/updPayableAction" type="com.winsafe.drp.action.finance.UpdPayableAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/payableDetailAction" type="com.winsafe.drp.action.finance.PayableDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/payabledetail.jsp"/>
+</action>
+
+<action  path="/finance/delPayableAction" type="com.winsafe.drp.action.finance.DelPayableAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditPayableAction" type="com.winsafe.drp.action.finance.AuditPayableAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditPayableAction" type="com.winsafe.drp.action.finance.CancelAuditPayableAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toReferPayableAction" type="com.winsafe.drp.action.finance.ToReferPayableAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/referpayable.jsp"/>
+</action>
+
+<action  path="/finance/referPayableAction" type="com.winsafe.drp.action.finance.ReferPayableAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/listPaymentLogByPayableObjectAction" type="com.winsafe.drp.action.finance.ListPaymentLogByPayableObjectAction" scope="request" validate="false">
+<forward name="list" path="/finance/paymentloglistbypayableobject.jsp"/>
+</action>
+
+
+
+<action  path="/finance/listPaymentLogAction" type="com.winsafe.drp.action.finance.ListPaymentLogAction" scope="request" validate="false">
+<forward name="list" path="/finance/paymentloglist.jsp"/>
+</action>
+<action  path="/finance/printListPaymentLogAction" type="com.winsafe.drp.action.finance.PrintListPaymentLogAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printpaymentloglist.jsp"/>
+</action>
+<action  path="/finance/excPutListPaymentLogAction" type="com.winsafe.drp.action.finance.ExcPutListPaymentLogAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/waitPaymentLogAction" type="com.winsafe.drp.action.finance.WaitPaymentLogAction" scope="request" validate="false">
+<forward name="wait" path="/finance/waitapprovepaymentlog.jsp"/>
+</action>
+
+<action  path="/finance/toApprovePaymentLogAction" type="com.winsafe.drp.action.finance.ToApprovePaymentLogAction" scope="request" validate="false">
+<forward name="toapprove" path="/finance/approvepaymentlog.jsp"/>
+</action>
+
+<action  path="/finance/approvePaymentLogAction" type="com.winsafe.drp.action.finance.ApprovePaymentLogAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toAddPaymentLogAction" type="com.winsafe.drp.action.finance.ToAddPaymentLogAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addpaymentlog.jsp"/>
+</action>
+
+<action  path="/finance/addPaymentLogAction" type="com.winsafe.drp.action.finance.AddPaymentLogAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toUpdPaymentLogAction" type="com.winsafe.drp.action.finance.ToUpdPaymentLogAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updpaymentlog.jsp"/>
+<forward name="lock" path="/sys/lockrecord.jsp"/>
+</action>
+
+<action  path="/finance/updPaymentLogAction" type="com.winsafe.drp.action.finance.UpdPaymentLogAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/paymentLogDetailAction" type="com.winsafe.drp.action.finance.PaymentLogDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/paymentlogdetail.jsp"/>
+</action>
+
+<action  path="/finance/delPaymentLogAction" type="com.winsafe.drp.action.finance.DelPaymentLogAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditPaymentLogAction" type="com.winsafe.drp.action.finance.AuditPaymentLogAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditPaymentLogAction" type="com.winsafe.drp.action.finance.CancelAuditPaymentLogAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/payPaymentLogAction" type="com.winsafe.drp.action.finance.PayPaymentLogAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelPayPaymentLogAction" type="com.winsafe.drp.action.finance.CancelPayPaymentLogAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/toDestoryPaymentLogAction" type="com.winsafe.drp.action.finance.ToDestoryPaymentLogAction" scope="request" validate="false">
+<forward name="totrans" path="/finance/destorypaymentlog.jsp"/>
+</action>
+
+<action  path="/finance/destoryPaymentLogAction" type="com.winsafe.drp.action.finance.DestoryPaymentLogAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/toReferPaymentLogAction" type="com.winsafe.drp.action.finance.ToReferPaymentLogAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/referpaymentlog.jsp"/>
+</action>
+
+<action  path="/finance/referPaymentLogAction" type="com.winsafe.drp.action.finance.ReferPaymentLogAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toTransPaymentLogAction" type="com.winsafe.drp.action.finance.ToTransPaymentLogAction" scope="request" validate="false">
+<forward name="totrans" path="/finance/transpaymentlog.jsp"/>
+</action>
+
+<action  path="/finance/transPaymentLogAction" type="com.winsafe.drp.action.finance.TransPaymentLogAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/toSelectPayableObjectAction" type="com.winsafe.drp.action.finance.ToSelectPayableObjectAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectpayableobjectiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectPayableObjectAction" type="com.winsafe.drp.action.finance.SelectPayableObjectAction" scope="request" validate="false">
+<forward name="selectpo" path="/finance/selectpayableobject.jsp"/>
+</action>
+
+<action  path="/finance/toSelectPayableDetailAction" type="com.winsafe.drp.action.finance.ToSelectPayableDetailAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectpayabledetailiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectPayableDetailAction" type="com.winsafe.drp.action.finance.SelectPayableDetailAction" scope="request" validate="false">
+<forward name="selectrd" path="/finance/selectpayabledetail.jsp"/>
+</action>
+
+
+
+
+
+
+
+
+
+<!--loan-->
+<action  path="/finance/listLoanObjectAction" type="com.winsafe.drp.action.finance.ListLoanObjectAction" scope="request" validate="false">
+<forward name="listobj" path="/finance/loanobjectlist.jsp"/>
+</action>
+
+<action  path="/finance/toAddLoanObjectAction" type="com.winsafe.drp.action.finance.ToAddLoanObjectAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addloanobject.jsp"/>
+</action>
+
+<action  path="/finance/addLoanObjectAction" type="com.winsafe.drp.action.finance.AddLoanObjectAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/delLoanObjectAction" type="com.winsafe.drp.action.finance.DelLoanObjectAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<action  path="/finance/toSetLoanAwakeAction" type="com.winsafe.drp.action.finance.ToSetLoanAwakeAction" scope="request" validate="false">
+<forward name="toset" path="/finance/setloanawake.jsp"/>
+</action>
+
+<action  path="/finance/setLoanAwakeAction" type="com.winsafe.drp.action.finance.SetLoanAwakeAction" scope="request" validate="false">
+<forward name="setawake" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/finance/listLoanAction" type="com.winsafe.drp.action.finance.ListLoanAction" scope="request" validate="false">
+<forward name="list" path="/finance/loanlist.jsp"/>
+</action>
+
+<action  path="/finance/toSelectLoanObjectAction" type="com.winsafe.drp.action.finance.ToSelectLoanObjectAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectloanobjectiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectLoanObjectAction" type="com.winsafe.drp.action.finance.SelectLoanObjectAction" scope="request" validate="false">
+<forward name="selectobject" path="/finance/selectloanobject.jsp"/>
+</action>
+
+
+<action  path="/finance/toAddLoanAction" type="com.winsafe.drp.action.finance.ToAddLoanAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addloan.jsp"/>
+</action>
+
+<action  path="/finance/addLoanAction" type="com.winsafe.drp.action.finance.AddLoanAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/loanDetailAction" type="com.winsafe.drp.action.finance.LoanDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/loandetail.jsp"/>
+</action>
+
+<action  path="/finance/toUpdLoanAction" type="com.winsafe.drp.action.finance.ToUpdLoanAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updloan.jsp"/>
+</action>
+
+<action  path="/finance/updLoanAction" type="com.winsafe.drp.action.finance.UpdLoanAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditLoanAction" type="com.winsafe.drp.action.finance.AuditLoanAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditLoanAction" type="com.winsafe.drp.action.finance.CancelAuditLoanAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/endcaseLoanAction" type="com.winsafe.drp.action.finance.EndcaseLoanAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelEndcaseLoanAction" type="com.winsafe.drp.action.finance.CancelEndcaseLoanAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/delLoanAction" type="com.winsafe.drp.action.finance.DelLoanAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/waitLoanAction" type="com.winsafe.drp.action.finance.WaitLoanAction" scope="request" validate="false">
+<forward name="wait" path="/finance/waitapproveloan.jsp"/>
+</action>
+
+<action  path="/finance/toApproveLoanAction" type="com.winsafe.drp.action.finance.ToApproveLoanAction" scope="request" validate="false">
+<forward name="toapprove" path="/finance/approveloan.jsp"/>
+</action>
+
+<action  path="/finance/approveLoanAction" type="com.winsafe.drp.action.finance.ApproveLoanAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- loan end -->
+
+<action  path="/finance/listReckoningAction" type="com.winsafe.drp.action.finance.ListReckoningAction" scope="request" validate="false">
+<forward name="list" path="/finance/reckoninglist.jsp"/>
+</action>
+
+
+<action  path="/finance/toAddReckoningAction" type="com.winsafe.drp.action.finance.ToAddReckoningAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addreckoning.jsp"/>
+</action>
+
+<action  path="/finance/addReckoningAction" type="com.winsafe.drp.action.finance.AddReckoningAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/reckoningDetailAction" type="com.winsafe.drp.action.finance.ReckoningDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/reckoningdetail.jsp"/>
+</action>
+
+<action  path="/finance/toUpdReckoningAction" type="com.winsafe.drp.action.finance.ToUpdReckoningAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updreckoning.jsp"/>
+</action>
+
+<action  path="/finance/updReckoningAction" type="com.winsafe.drp.action.finance.UpdReckoningAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/delReckoningAction" type="com.winsafe.drp.action.finance.DelReckoningAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditReckoningAction" type="com.winsafe.drp.action.finance.AuditReckoningAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditReckoningAction" type="com.winsafe.drp.action.finance.CancelAuditReckoningAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<!-- outlay start -->
+<action  path="/finance/listOutlayAction" type="com.winsafe.drp.action.finance.ListOutlayAction" scope="request" validate="false">
+<forward name="list" path="/finance/outlaylist.jsp"/>
+</action>
+
+<action  path="/finance/toAddOutlayAction" type="com.winsafe.drp.action.finance.ToAddOutlayAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addoutlay.jsp"/>
+</action>
+
+<action  path="/finance/addOutlayAction" type="com.winsafe.drp.action.finance.AddOutlayAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toUpdOutlayAction" type="com.winsafe.drp.action.finance.ToUpdOutlayAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updoutlay.jsp"/>
+</action>
+
+<action  path="/finance/updOutlayAction" type="com.winsafe.drp.action.finance.UpdOutlayAction" scope="request" validate="false">
+<forward name="result" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toSelectOutlayProductAction" type="com.winsafe.drp.action.finance.ToSelectOutlayProductAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectoutlayproductiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectOutlayProductAction" type="com.winsafe.drp.action.finance.SelectOutlayProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/finance/selectoutlayproduct.jsp"/>
+</action>
+
+<action  path="/finance/toSelectAllCustomerAction" type="com.winsafe.drp.action.finance.ToSelectAllCustomerAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectallcustomeriframe.jsp"/>
+</action>
+
+<action  path="/finance/selectAllCustomerAction" type="com.winsafe.drp.action.finance.SelectAllCustomerAction" scope="request" validate="false">
+<forward name="selectcustomer" path="/finance/selectallcustomer.jsp"/>
+</action>
+
+<action  path="/finance/outlayDetailAction" type="com.winsafe.drp.action.finance.OutlayDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/outlaydetail.jsp"/>
+</action>
+
+<action  path="/finance/delOutlayAction" type="com.winsafe.drp.action.finance.DelOutlayAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditOutlayAction" type="com.winsafe.drp.action.finance.AuditOutlayAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditOutlayAction" type="com.winsafe.drp.action.finance.CancelAuditOutlayAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toEndCaseOutlayAction" type="com.winsafe.drp.action.finance.ToEndCaseOutlayAction" scope="request" validate="false">
+<forward name="toendcase" path="/finance/toendcaseoutlay.jsp"/>
+</action>
+
+<action  path="/finance/endcaseOutlayAction" type="com.winsafe.drp.action.finance.EndcaseOutlayAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelEndcaseOutlayAction" type="com.winsafe.drp.action.finance.CancelEndcaseOutlayAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toAuditOutlayAction" type="com.winsafe.drp.action.finance.ToAuditOutlayAction" scope="request" validate="false">
+<forward name="toaudit" path="/finance/toauditoutlay.jsp"/>
+</action>
+
+<action  path="/finance/waitOutlayAction" type="com.winsafe.drp.action.finance.WaitOutlayAction" scope="request" validate="false">
+<forward name="wait" path="/finance/waitapproveoutlay.jsp"/>
+</action>
+
+<!-- outlay end -->
+
+
+
+
+<action  path="/finance/toSelectCustomerAction" type="com.winsafe.drp.action.finance.ToSelectCustomerAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectcustomeriframe.jsp"/>
+</action>
+
+<action  path="/finance/selectCustomerAction" type="com.winsafe.drp.action.finance.SelectCustomerAction" scope="request" validate="false">
+<forward name="selectcustomer" path="/finance/selectcustomer.jsp"/>
+</action>
+
+<action  path="/finance/toSelectProvideAction" type="com.winsafe.drp.action.finance.ToSelectProvideAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectprovideiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectProvideAction" type="com.winsafe.drp.action.finance.SelectProvideAction" scope="request" validate="false">
+<forward name="selectprovide" path="/finance/selectprovide.jsp"/>
+</action>
+
+<action  path="/finance/toSelectOrganAction" type="com.winsafe.drp.action.finance.ToSelectOrganAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectorganiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectOrganAction" type="com.winsafe.drp.action.finance.SelectOrganAction" scope="request" validate="false">
+<forward name="selectorgan" path="/finance/selectorgan.jsp"/>
+</action>
+
+<action  path="/finance/listProductStructAction" type="com.winsafe.drp.action.finance.ListProductStructAction" scope="request" validate="false">
+<forward name="success" path="/finance/productstructlist.jsp"/>
+</action>
+
+<action  path="/finance/listProductAction" type="com.winsafe.drp.action.finance.ListProductAction" scope="request" validate="false">
+<forward name="success" path="/finance/productlist.jsp"/>
+</action>
+
+
+<action  path="/finance/toUpdProductAction" type="com.winsafe.drp.action.finance.ToUpdProductAction" scope="request" validate="false">
+<forward name="success" path="/finance/updproduct.jsp"/>
+</action>
+
+<action  path="/finance/updProductAction" type="com.winsafe.drp.action.finance.UpdProductAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<action  path="/finance/completeTallyAction" type="com.winsafe.drp.action.finance.CompleteTallyAction" scope="request" validate="false">
+<forward name="complete" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+
+
+
+
+
+<action  path="/finance/listProductRedeployAction" type="com.winsafe.drp.action.finance.ListProductRedeployAction" scope="request" validate="false">
+<forward name="success" path="/finance/productredeploylist.jsp"/>
+</action>
+
+
+<action  path="/finance/toAddProductRedeployAction" type="com.winsafe.drp.action.finance.ToAddProductRedeployAction" scope="request" validate="false">
+<forward name="success" path="/finance/addproductredeploy.jsp"/>
+</action>
+
+<action  path="/finance/addProductRedeployAction" type="com.winsafe.drp.action.finance.AddProductRedeployAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/productRedeployDetailAction" type="com.winsafe.drp.action.finance.ProductRedeployDetailAction" scope="request" validate="false">
+<forward name="success" path="/finance/productredeploydetail.jsp"/>
+</action>
+
+
+<action  path="/finance/toUpdProductRedeployAction" type="com.winsafe.drp.action.finance.ToUpdProductRedeployAction" scope="request" validate="false">
+<forward name="success" path="/finance/updproductredeploy.jsp"/>
+</action>
+
+<action  path="/finance/updProductRedeployAction" type="com.winsafe.drp.action.finance.UpdProductRedeployAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<action  path="/finance/auditProductRedeployAction" type="com.winsafe.drp.action.finance.AuditProductRedeployAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toSelectProductAction" type="com.winsafe.drp.action.finance.ToSelectProductAction" scope="request" validate="false">
+<forward name="toselect" path="/finance/selectproductiframe.jsp"/>
+</action>
+
+<action  path="/finance/selectProductAction" type="com.winsafe.drp.action.finance.SelectProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/finance/selectproduct.jsp"/>
+</action>
+
+
+
+<!-- cash_bank-->
+<action  path="/finance/listCashBankAction" type="com.winsafe.drp.action.finance.ListCashBankAction" scope="request" validate="false">
+<forward name="list" path="/finance/cashbanklist.jsp"/>
+</action>
+
+<action  path="/finance/toAddCashBankAction" type="com.winsafe.drp.action.finance.ToAddCashBankAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addcashbank.jsp"/>
+</action>
+
+<action  path="/finance/addCashBankAction" type="com.winsafe.drp.action.finance.AddCashBankAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/toUpdCashBankAction" type="com.winsafe.drp.action.finance.ToUpdCashBankAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updcashbank.jsp"/>
+</action>
+
+<action  path="/finance/updCashBankAction" type="com.winsafe.drp.action.finance.UpdCashBankAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/listCashBankAdjustAction" type="com.winsafe.drp.action.finance.ListCashBankAdjustAction" scope="request" validate="false">
+<forward name="list" path="/finance/cashbankadjustlist.jsp"/>
+</action>
+
+<action  path="/finance/toAddCashBankAdjustAction" type="com.winsafe.drp.action.finance.ToAddCashBankAdjustAction" scope="request" validate="false">
+<forward name="toadd" path="/finance/addcashbankadjust.jsp"/>
+</action>
+
+<action  path="/finance/addCashBankAdjustAction" type="com.winsafe.drp.action.finance.AddCashBankAdjustAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cashBankAdjustDetailAction" type="com.winsafe.drp.action.finance.CashBankAdjustDetailAction" scope="request" validate="false">
+<forward name="detail" path="/finance/cashbankadjustdetail.jsp"/>
+</action>
+
+<action  path="/finance/toUpdCashBankAdjustAction" type="com.winsafe.drp.action.finance.ToUpdCashBankAdjustAction" scope="request" validate="false">
+<forward name="toupd" path="/finance/updcashbankadjust.jsp"/>
+</action>
+
+<action  path="/finance/updCashBankAdjustAction" type="com.winsafe.drp.action.finance.UpdCashBankAdjustAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/delCashBankAdjustAction" type="com.winsafe.drp.action.finance.DelCashBankAdjustAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/auditCashBankAdjustAction" type="com.winsafe.drp.action.finance.AuditCashBankAdjustAction" scope="request" validate="false">
+<forward name="audit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/cancelAuditCashBankAdjustAction" type="com.winsafe.drp.action.finance.CancelAuditCashBankAdjustAction" scope="request" validate="false">
+<forward name="noaudit" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/finance/listCashWasteBookAction" type="com.winsafe.drp.action.finance.ListCashWasteBookAction" scope="request" validate="false">
+<forward name="list" path="/finance/cashwastebooklist.jsp"/>
+</action>
+
+<action  path="/finance/printListCashWasteBookAction" type="com.winsafe.drp.action.finance.PrintListCashWasteBookAction" scope="request" validate="false">
+<forward name="toprint" path="/finance/printcashwastebooklist.jsp"/>
+</action>
+<action  path="/finance/excPutListCashWasteBookAction" type="com.winsafe.drp.action.finance.ExcPutListCashWasteBookAction" scope="request" validate="false">
+</action>
+
+<action  path="/finance/listFeeWasteBookAction" type="com.winsafe.drp.action.finance.ListFeeWasteBookAction" scope="request" validate="false">
+<forward name="list" path="/finance/feewastebooklist.jsp"/>
+</action>
+
+
+<!-- peddle order start -->
+<action  path="/finance/listPeddleOrderCheckAction" type="com.winsafe.drp.action.finance.ListPeddleOrderCheckAction" scope="request" validate="false">
+<forward name="list" path="/finance/peddleorderchecklist.jsp"/>
+</action>
+
+<action  path="/finance/toCheckPeddleOrderAction" type="com.winsafe.drp.action.finance.ToCheckPeddleOrderAction" scope="request" validate="false">
+<forward name="list" path="/finance/checkpeddleorder.jsp"/>
+</action>
+
+<action  path="/finance/checkPeddleOrderAction" type="com.winsafe.drp.action.finance.CheckPeddleOrderAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- peddle order end-->
+
+</action-mappings>
+
+<message-resources key="finance" parameter="global.app.finance.ApplicationResource" />
+
+</struts-config>

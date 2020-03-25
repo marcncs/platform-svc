@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ProductStruct" table="product_struct">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="StructCode" length="64" name="structcode" type="java.lang.String"/>
+<property column="SortName" length="64" name="sortname" not-null="true" type="java.lang.String"/>
+<property column="SortNameEn" length="64" name="sortnameen"  type="java.lang.String"/>
+<property column="Remark" length="128" name="remark" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

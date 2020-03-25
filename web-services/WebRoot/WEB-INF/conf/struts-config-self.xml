@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+
+	<form-bean name="calendarawake" type="com.winsafe.drp.dao.CalendarAwake"/>
+	<form-bean name="task" type="com.winsafe.drp.dao.Task"/>
+	<form-bean name="taskform" type="com.winsafe.drp.dao.TaskForm"/>
+	<form-bean name="taskplanexecute" type="com.winsafe.drp.dao.TaskPlanExecute"/>
+	<form-bean name="validatePhoneBook" type="com.winsafe.drp.dao.ValidatePhoneBook"/>
+	<form-bean name="affiche" type="com.winsafe.drp.dao.Affiche"/>
+	<form-bean name="validateWorkReport" type="com.winsafe.drp.dao.ValidateWorkReport"/>
+	<form-bean name="validateDoc" type="com.winsafe.drp.dao.ValidateDoc"/>
+
+</form-beans> 
+
+<action-mappings> 
+
+
+<action  path="/self/addnewcalendar" type="com.winsafe.drp.action.self.AddNewCalendarAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addnewcalendar.jsp"/>
+</action>
+
+<action  path="/self/listcurdaycalendar" type="com.winsafe.drp.action.self.ListCurDayCalendarAction" scope="request" validate="false">
+<forward name="listcurday" path="/self/calendarlist.jsp"/>
+</action>
+
+<action  path="/self/listAllCalendarAction" type="com.winsafe.drp.action.self.ListAllCalendarAction" scope="request" validate="false">
+<forward name="listall" path="/self/allcalendarlist.jsp"/>
+</action>
+
+<action name="calendarawake" path="/self/addnewcalendarresult" type="com.winsafe.drp.action.self.AddNewCalendarResultAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/updCalendarAction" type="com.winsafe.drp.action.self.UpdCalendarAction" scope="request" validate="false">
+<forward name="edit" path="/self/updcalendar.jsp"/>
+</action>
+
+<action path="/self/updCalendarExecuteAction" type="com.winsafe.drp.action.self.UpdCalendarExecuteAction" scope="request" validate="false">
+<forward name="list" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/delCalendarAction" type="com.winsafe.drp.action.self.DelCalendarAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/awakeAction" type="com.winsafe.drp.action.self.AwakeAction" scope="request" validate="false">
+<forward name="info" path="/sys/awake.jsp"/>
+</action>
+
+<action  input="/sys/awake.jsp" path="/self/affrieAwakeAction" type="com.winsafe.drp.action.self.AffrieAwakeAction" scope="request" validate="false">
+</action>
+
+
+<action   path="/self/afficheDetailAction" type="com.winsafe.drp.action.self.AfficheDetailAction" scope="request" validate="false">
+<forward name="afffichedetail" path="/self/affichedetail.jsp"/>
+</action>
+
+<!-- 旧的修改公告方法 -->
+<action  input="/self/updaffiche.jsp" name="affiche" path="/self/updAfficheAction" type="com.winsafe.drp.action.self.UpdAfficheAction" scope="request" validate="false">
+<forward name="updresult" path="/common/referInfoAction.do"/>
+</action>
+
+<!-- 新的修改公告方法 -->
+<action  path="/self/updateAfficheAction" type="com.winsafe.drp.action.self.UpdateAfficheAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"></forward>
+</action>
+
+<action   path="/self/toUpdAfficheAction" type="com.winsafe.drp.action.self.ToUpdAfficheAction" scope="request" validate="false">
+<forward name="toupd" path="/self/updaffiche.jsp"/>
+</action>
+
+<!-- 旧的新增公告方法 -->
+<action  input="/self/addnewaffiche.jsp" name="affiche" path="/self/addNewAfficheAction" type="com.winsafe.drp.action.self.AddNewAfficheAction" scope="request" validate="false">
+<forward name="addresult" path="/common/referInfoAction.do"/>
+</action>
+
+<!-- 新的新增公告的方法 -->
+<action path="/self/addAfficheAction" type="com.winsafe.drp.action.self.AddAfficheAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"></forward>
+</action>
+
+
+<action  path="/self/toAddAfficheAction" type="com.winsafe.drp.action.self.ToAddAfficheAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addnewaffiche.jsp"/>
+</action>
+
+<action  path="/self/listAfficheAction" type="com.winsafe.drp.action.self.ListAfficheAction" scope="request" validate="false">
+<forward name="list" path="/self/listaffiche.jsp"/>
+</action>
+
+<action  path="/self/listAfficheBrowseAction" type="com.winsafe.drp.action.self.ListAfficheBrowseAction" scope="request" validate="false">
+<forward name="list" path="/self/listaffichebrowser.jsp"/>
+</action>
+
+<action  path="/self/listAffichePublisthAction" type="com.winsafe.drp.action.self.ListAffichePublisthAction" scope="request" validate="false">
+<forward name="list" path="/self/listaffichepublish.jsp"/>
+</action>
+
+<!-- 投诉意见 -->
+<action  path="/self/listSuggestionAction" type="com.winsafe.drp.action.self.ListSuggestionAction" scope="request" validate="false">
+<forward name="list" path="/self/listsuggestion.jsp"/>
+</action>
+
+<action   path="/self/delAfficheAction" type="com.winsafe.drp.action.self.DelAfficheAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+<action  path="/self/toaddTaskAction" type="com.winsafe.drp.action.self.ToAddTaskAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addtask.jsp"/>
+</action>
+
+<action  path="/self/addTaskAction" type="com.winsafe.drp.action.self.AddTaskAction" scope="request" validate="false">
+<forward name="addresult" path="/common/referInfoAction.do"/>
+</action>
+
+<action  path="/self/toUpdTaskAction" type="com.winsafe.drp.action.self.ToUpdTaskAction" scope="request" validate="false">
+<forward name="toupd" path="/self/updtask.jsp"/>
+</action>
+
+<action  path="/self/updTaskAction" type="com.winsafe.drp.action.self.UpdTaskAction" scope="request" validate="false">
+<forward name="updresult" path="/common/referInfoAction.do"/>
+</action>
+
+<action path="/self/listTaskDetialAction" type="com.winsafe.drp.action.self.TaskDetailAction" scope="request" validate="false">
+<forward name="listdetail" path="/self/taskdetail.jsp"/>
+</action>
+
+<action  path="/self/delTaskAction" type="com.winsafe.drp.action.self.DelTaskAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/listTaskExecuterAction" type="com.winsafe.drp.action.self.ListTaskExecuterAction" scope="request" validate="false">
+<forward name="list" path="/self/listtaskexecuter.jsp"/>
+</action>
+
+<action  path="/self/toAllotTaskAction" type="com.winsafe.drp.action.self.ToAllotTaskAction" scope="request" validate="false">
+<forward name="toselect" path="/self/allottask.jsp"/>
+</action>
+
+<action  path="/self/allotTaskAction" type="com.winsafe.drp.action.self.AllotTaskAction" scope="request" validate="false">
+<forward name="allot" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/receiptTaskAction" type="com.winsafe.drp.action.self.ReceiptTaskAction" scope="request" validate="false">
+<forward name="list" path="/self/receipttasklist.jsp"/>
+</action>
+
+<action  path="/self/overTaskAction" type="com.winsafe.drp.action.self.OverTaskAction" scope="request" validate="false">
+<forward name="over" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/receiptServiceAction" type="com.winsafe.drp.action.self.ReceiptServiceAction" scope="request" validate="false">
+<forward name="list" path="/self/receiptservicelist.jsp"/>
+</action>
+<action  path="/self/toAddNewWorkReportAction" type="com.winsafe.drp.action.self.ToAddNewWorkReportAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addnewworkreport.jsp"/>
+</action>
+
+<action name="validateWorkReport" path="/self/addNewWorkReportAction" type="com.winsafe.drp.action.self.AddNewWorkReportAction" scope="request" validate="false">
+<forward name="addresult" path="/common/referInfoAction.do"/>
+</action>
+
+<action  path="/self/updWorkReportAction" type="com.winsafe.drp.action.self.UpdWorkReportAction" scope="request" validate="false">
+<forward name="toedit" path="/self/updworkreport.jsp"/>
+</action>
+
+<action name="validateWorkReport" path="/self/updWorkReportExecuteAction" type="com.winsafe.drp.action.self.UpdWorkReportExecuteAction" scope="request" validate="false">
+<forward name="modify" path="/common/referInfoAction.do"/>
+</action>
+
+<action  path="/self/delWorkReportAction" type="com.winsafe.drp.action.self.DelWorkReportAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/toReferWorkReportAction" type="com.winsafe.drp.action.self.ToReferWorkReportAction" scope="request" validate="false">
+<forward name="toselect" path="/self/referworkreport.jsp"/>
+</action>
+
+<action  path="/self/referWorkReportAction" type="com.winsafe.drp.action.self.ReferWorkReportAction" scope="request" validate="false">
+<forward name="refer" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/workReportDetailAction" type="com.winsafe.drp.action.self.WorkReportDetailAction" scope="request" validate="false">
+<forward name="reportdetail" path="/self/workreportdetail.jsp"/>
+</action>
+
+
+<action  path="/self/waitApproveWorkReportAction" type="com.winsafe.drp.action.self.WaitApproveWorkReportAction" scope="request" validate="false">
+<forward name="workreport" path="/self/waitapproveworkreport.jsp"/>
+</action>
+
+<action  path="/self/toApproveWorkReportAction" type="com.winsafe.drp.action.self.ToApproveWorkReportAction" scope="request" validate="false">
+<forward name="toapprove" path="/self/approveworkreport.jsp"/>
+</action>
+
+<action  path="/self/approveWorkReportAction" type="com.winsafe.drp.action.self.ApproveWorkReportAction" scope="request" validate="false">
+<forward name="approve" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+<action  path="/self/listPhoneBookSortAction" type="com.winsafe.drp.action.self.ListPhoneBookSortAction" scope="request" validate="false">
+<forward name="listsort" path="/self/phonebooksortlist.jsp"/>
+</action>
+
+<action  path="/self/toAddPhoneBookSortAction" type="com.winsafe.drp.action.self.ToAddPhoneBookSortAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addnewphonebooksort.jsp"/>
+</action>
+
+<action  path="/self/addPhoneBookSortAction" type="com.winsafe.drp.action.self.AddPhoneBookSortAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/listUpdPhoneBookSortAction" type="com.winsafe.drp.action.self.ListPhoneBookSortAction" scope="request" validate="false">
+<forward name="listsort" path="/self/updphonebooksort.jsp"/>
+</action>
+
+<action  path="/self/listPhoneBookSortDetailAction" type="com.winsafe.drp.action.self.ListPhoneBookSortDetailAction" scope="request" validate="false">
+<forward name="listphonedetail" path="/self/updphonebooksortdetail.jsp"/>
+</action>
+
+<action  path="/self/updPhoneBookSortAction" type="com.winsafe.drp.action.self.UpdPhoneBookSortAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/delPhoneBokSortAction" type="com.winsafe.drp.action.self.DelPhoneBokSortAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/listPhoneBookAction" type="com.winsafe.drp.action.self.ListPhoneBookAction" scope="request" validate="false">
+<forward name="listphonebook" path="/self/phonebooklist.jsp"/>
+</action>
+
+<action  path="/self/toAddNewPhoneBookAction" type="com.winsafe.drp.action.self.ToAddNewPhoneBookAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addnewphonebook.jsp"/>
+</action>
+
+
+<action name="validatePhoneBook" path="/self/addPhoneBookAction" type="com.winsafe.drp.action.self.AddPhoneBookAction" scope="request" validate="false">
+<forward name="addresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/toUpdPhoneBookAction" type="com.winsafe.drp.action.self.ToUpdPhoneBookAction" scope="request" validate="false">
+<forward name="toupd" path="/self/updphonebook.jsp"/>
+</action>
+
+<action name="validatePhoneBook" path="/self/updPhoneBookAction" type="com.winsafe.drp.action.self.UpdPhoneBookAction" scope="request" validate="false">
+<forward name="updresult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/phoneBookDetailAction" type="com.winsafe.drp.action.self.PhoneBookDetailAction" scope="request" validate="false">
+<forward name="phonebookdetail" path="/self/phonebookdetail.jsp"/>
+</action>
+
+<action path="/self/delPhoneBookAction" type="com.winsafe.drp.action.self.DelPhoneBookAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+
+
+
+<!--alex文档管理================================================-->
+<action  path="/self/listDocSortAction" type="com.winsafe.drp.action.self.ListDocSortAction" scope="request" validate="false">
+<forward name="success" path="/self/docsortlist.jsp"/>
+</action>
+
+<action  path="/self/toAddDocSortAction" type="com.winsafe.drp.action.self.ToAddDocSortAction" scope="request" validate="false">
+<forward name="success" path="/self/adddocsort.jsp"/>
+</action>
+
+<action  path="/self/addDocSortAction" type="com.winsafe.drp.action.self.AddDocSortAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/addDocAction" name="validateDoc" type="com.winsafe.drp.action.self.AddDocAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/listUpdDocSortAction" type="com.winsafe.drp.action.self.ListDocSortAction" scope="request" validate="false">
+<forward name="success" path="/self/upddocsort.jsp"/>
+</action>
+
+<action  path="/self/listDocSortDetailAction" type="com.winsafe.drp.action.self.ListDocSortDetailAction" scope="request" validate="false">
+<forward name="success" path="/self/upddocsortdetail.jsp"/>
+</action>
+
+
+<action  path="/self/updDocSortAction" type="com.winsafe.drp.action.self.UpdDocSortAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/listDocAction" type="com.winsafe.drp.action.self.ListDocAction" scope="request" validate="false">
+<forward name="success" path="/self/doclist.jsp"/>
+</action>
+
+<action  path="/self/toAddDocAction" type="com.winsafe.drp.action.self.ToAddDocAction" scope="request" validate="false">
+<forward name="success" path="/self/adddoc.jsp"/>
+</action>
+
+<action path="/self/delDocAction" type="com.winsafe.drp.action.self.DelDocAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<action path="/self/delDocSortAction" type="com.winsafe.drp.action.self.DelDocSortAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/toVisitDocSortAction" type="com.winsafe.drp.action.self.ToVisitDocSortAction" scope="request" validate="false">
+<forward name="toselect" path="/self/visitdocsort.jsp"/>
+</action>
+<action path="/self/visitDocSortAction" type="com.winsafe.drp.action.self.VisitDocSortAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!--alex文档管理================================================-->
+
+
+<!-- ==================服务预约================================= -->
+<action  path="/self/listServiceAgreementAction" type="com.winsafe.drp.action.self.ListServiceAgreementAction" scope="request" validate="false">
+<forward name="list" path="/self/serviceagreementlist.jsp"/>
+</action>
+
+<action  path="/self/listServiceAgreementAllAction" type="com.winsafe.drp.action.self.ListServiceAgreementAllAction" scope="request" validate="false">
+<forward name="list" path="/self/serviceagreementalllist.jsp"/>
+</action>
+
+<action  path="/self/serviceAgreementDetailAction" type="com.winsafe.drp.action.self.ServiceAgreementDetailAction" scope="request" validate="false">
+<forward name="detail" path="/self/serviceagreementdetail.jsp"/>
+</action>
+
+
+<action  path="/self/toAddServiceAgreementAction" type="com.winsafe.drp.action.self.ToAddServiceAgreementAction" scope="request" validate="false">
+<forward name="toadd" path="/self/addserviceagreement.jsp"/>
+</action>
+
+<action  path="/self/addServiceAgreementAction" type="com.winsafe.drp.action.self.AddServiceAgreementAction" scope="request" validate="false">
+<forward name="success" path="/common/referInfoAction.do"/>
+</action>
+
+<action  path="/self/toUpdServiceAgreementAction" type="com.winsafe.drp.action.self.ToUpdServiceAgreementAction" scope="request" validate="false">
+<forward name="toupd" path="/self/updserviceagreement.jsp"/>
+</action>
+
+<action  path="/self/updServiceAgreementAction" type="com.winsafe.drp.action.self.UpdServiceAgreementAction" scope="request" validate="false">
+<forward name="success" path="/common/referInfoAction.do"/>
+</action>
+
+<action  path="/self/delServiceAgreementAction" type="com.winsafe.drp.action.self.DelServiceAgreementAction" scope="request" validate="false">
+<forward name="del" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/self/toAllotServiceAction" type="com.winsafe.drp.action.self.ToAllotServiceAction" scope="request" validate="false">
+<forward name="toselect" path="/self/allotservice.jsp"/>
+</action>
+
+<action  path="/self/allotServiceAction" type="com.winsafe.drp.action.self.AllotServiceAction" scope="request" validate="false">
+<forward name="allot" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- ==================服务预约================================= -->
+
+
+
+<!-- =======================常见问题======================================= -->
+<action path="/self/listQuestionsAction" type="com.winsafe.drp.action.self.ListQuestionsAction" scope="request">
+	<forward name="list" path="/self/listquestions.jsp"></forward>
+</action>
+
+<action path="/self/toAddQuestionsAction" type="com.winsafe.drp.action.self.ToAddQuestionsAction" scope="request">
+	<forward name="toadd" path="/self/addquestions.jsp"/>
+</action>
+<action path="/self/addQuestionsAction" type="com.winsafe.drp.action.self.AddQuestionsAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/toUpdQuestionsAction" type="com.winsafe.drp.action.self.ToUpdQuestionsAction" scope="request">
+	<forward name="toupd" path="/self/updquestions.jsp"/>
+</action>
+
+<action path="/self/updQuestionsAction" type="com.winsafe.drp.action.self.UpdQuestionsAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/detailQuestionsAction" type="com.winsafe.drp.action.self.DetailQuestionsAction" scope="request">
+	<forward name="detail" path="/self/detailquestions.jsp"/>
+</action>
+
+<action path="/self/delQuestionsAction" type="com.winsafe.drp.action.self.DelQuestionsAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+<!-- =======================常见问题======================================= -->
+
+<!-- =======================常见问题回复======================================= -->
+
+<action path="/self/listRespondAction" type="com.winsafe.drp.action.self.ListRespondAction" scope="request">
+	<forward name="list" path="/self/listrespond.jsp"></forward>
+</action>
+
+<action path="/self/toAddRespondAction" type="com.winsafe.drp.action.self.ToAddRespondAction" scope="request">
+	<forward name="toadd" path="/self/addrespond.jsp"/>
+</action>
+<action path="/self/addRespondAction" type="com.winsafe.drp.action.self.AddRespondAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/toUpdRespondAction" type="com.winsafe.drp.action.self.ToUpdRespondAction" scope="request">
+	<forward name="toupd" path="/self/updrespond.jsp"/>
+</action>
+
+<action path="/self/updRespondAction" type="com.winsafe.drp.action.self.UpdRespondAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action path="/self/detailRespondAction" type="com.winsafe.drp.action.self.DetailRespondAction" scope="request">
+	<forward name="detail" path="/self/detailrespond.jsp"/>
+</action>
+
+<action path="/self/delRespondAction" type="com.winsafe.drp.action.self.DelRespondAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- =======================常见问题回复======================================= -->
+
+<action path="/common/saveReferInfoAction" type="com.winsafe.drp.action.common.SaveReferInfoAction" scope="request">
+	<forward name="success" path="/sys/operatorclose.jsp"></forward>
+</action>
+<action path="/common/referInfoAction" type="com.winsafe.drp.action.common.ReferInfoAction" scope="request">
+	<forward name="list" path="/common/referinfo.jsp"></forward>
+</action>
+
+<action  path="/self/xMLAwakeAction" type="com.winsafe.drp.action.self.XMLAwakeAction" scope="request" validate="false">
+</action>
+
+</action-mappings>
+
+<message-resources key="self" parameter="global.app.self.ApplicationResource" />
+
+</struts-config>

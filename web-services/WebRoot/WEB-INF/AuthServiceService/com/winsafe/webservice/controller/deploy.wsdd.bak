@@ -1,0 +1,30 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from AuthServiceService WSDL service -->
+
+  <service name="AuthService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://controller.webservice.winsafe.com"/>
+      <parameter name="wsdlServiceElement" value="AuthServiceService"/>
+      <parameter name="schemaQualified" value="http://controller.webservice.winsafe.com"/>
+      <parameter name="wsdlServicePort" value="AuthService"/>
+      <parameter name="className" value="com.winsafe.webservice.controller.AuthServiceSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="AuthService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="authenticate" qname="operNS:authenticate" xmlns:operNS="http://controller.webservice.winsafe.com" returnQName="retNS:authenticateReturn" xmlns:retNS="http://controller.webservice.winsafe.com" returnType="rtns:boolean" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:userName" xmlns:pns="http://controller.webservice.winsafe.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:password" xmlns:pns="http://controller.webservice.winsafe.com" type="tns:string" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="authenticate"/>
+
+  </service>
+</deployment>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ProductRedeploy" table="product_redeploy">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="RedeployId" length="19" name="redeployid" type="java.lang.Long"/>
+<property column="RedeployDept" length="19" name="redeploydept" type="java.lang.Long"/>
+<property column="RedeployMemo" length="256" name="redeploymemo" type="java.lang.String"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Long"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

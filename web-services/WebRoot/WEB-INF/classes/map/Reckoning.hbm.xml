@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Reckoning" table="reckoning">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="UID" length="10" name="uid" type="java.lang.Integer"/>
+<property column="LoanDate" length="23" name="loandate" type="java.util.Date"/>
+<property column="Purpose" length="128" name="purpose" type="java.lang.String"/>
+<property column="LoanSum" length="18" name="loansum" type="java.lang.Double"/>
+<property column="BackSum" length="18" name="backsum" type="java.lang.Double"/>
+<property column="Memo" length="128" name="memo" type="java.lang.String"/>
+<property column="IsCash" length="10" name="iscash" type="java.lang.Integer"/>
+<property column="FundAttach" length="10" name="fundattach" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="10" name="auditid" type="java.lang.Integer"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.UploadProduceReport" table="upload_produce_report">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="ProID" length="12" name="proId" type="java.lang.String"/>
+<property column="ProName" length="64" name="proName" type="java.lang.String"/>
+<property column="ProDT" length="23" name="proDt" type="java.util.Date"/>
+<property column="LotNo" length="32" name="lotNo" type="java.lang.String"/>
+<property column="proRule" length="32" name="proRule" type="java.lang.String"/>
+<property column="lineNo" length="32" name="lineNo" type="java.lang.String"/>
+<property column="proCode" length="32" name="proCode" type="java.lang.String"/>
+<property column="packCode" length="32" name="packCode" type="java.lang.String"/>
+<property column="boxCode" length="32" name="boxCode" type="java.lang.String"/>
+<property column="cartonCode" length="32" name="cartonCode" type="java.lang.String"/>
+<property column="palletCode" length="32" name="palletCode" type="java.lang.String"/>
+<property column="recType" length="32" name="recType" type="java.lang.String"/>
+<property column="itemCode" length="32" name="itemCode" type="java.lang.String"/>
+<property column="remark" length="255" name="remark" type="java.lang.String"/>
+<property column="optTime" length="32" name="optTime" type="java.util.Date"/>
+<property column="warehouseid" length="64" name="warehouseId" type="java.lang.String"/>
+<property column="makeDate" length="32" name="makeDate" type="java.util.Date"/>
+<property column="isInCome" length="10" name="isInCome" type="java.lang.Integer"/>
+<property column="ncLotNo" length="64" name="ncLotNo" type="java.lang.String"/>
+</class>
+</hibernate-mapping>
+    

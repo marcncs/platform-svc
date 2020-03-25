@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ProductRedeployDetail" table="product_redeploy_detail">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="PrID" length="16" name="prid" type="java.lang.Long"/>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="StandardPurchase" length="16" name="standardpurchase" type="java.lang.Double"/>
+<property column="StandardSale" length="16" name="standardsale" type="java.lang.Double"/>
+<property column="PriceI" length="16" name="pricei" type="java.lang.Double"/>
+<property column="PriceII" length="16" name="priceii" type="java.lang.Double"/>
+<property column="PriceIII" length="16" name="priceiii" type="java.lang.Double"/>
+<property column="PriceWholesale" length="16" name="pricewholesale" type="java.lang.Double"/>
+<property column="PriceIVS" length="16" name="priceivs" type="java.lang.Double"/>
+<property column="PriceUNI" length="16" name="priceuni" type="java.lang.Double"/>
+<property column="LeastSale" length="16" name="leastsale" type="java.lang.Double"/>
+<property column="Cost" length="16" name="cost" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

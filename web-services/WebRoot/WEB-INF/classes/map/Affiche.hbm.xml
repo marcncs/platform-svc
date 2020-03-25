@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Affiche" table="affiche">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="AfficheTitle" length="256" name="affichetitle" type="java.lang.String"/>
+<property column="AfficheContent" length="2147483647" name="affichecontent" type="java.lang.String"/>
+<property column="AfficheType" length="10" name="affichetype" type="java.lang.Integer"/>
+<property column="Ponderance" length="10" name="ponderance" type="java.lang.Integer"/>
+<property column="AfficheOrganID" length="32" name="afficheorganid" type="java.lang.String"/>
+<property column="AfficheDeptID" length="10" name="affichedeptid" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsPublish" length="10" name="isPublish" type="java.lang.String"/>
+<property column="endDate" length="10" name="endDate" type="java.util.Date"/>
+<property column="ISREAD" length="1" name="isread" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

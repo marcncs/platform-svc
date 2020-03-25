@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.Invoice" table="INVOICE">
+<id column="ID" name="id" type="java.lang.Long"> 
+<generator class="native"/>
+</id>
+<property column="INVOICE_NUMBER" name="invoiceNumber" type="java.lang.String"/>
+<property column="INVOICE_TYPE" length="1" name="invoiceType" type="java.lang.String"/>
+<property column="INVOICE_DATE" length="10" name="invoiceDate" type="java.lang.String"/>
+<property column="DELIVERY_NUMBER" length="32" name="deliveryNumber" type="java.lang.String"/>
+<property column="PARTN_SOLD" length="32" name="partnSold" type="java.lang.String"/>
+<property column="PARTN_SHIP" length="32" name="partnShip" type="java.lang.String"/>
+<property column="INVOICE_LINE_ITEM" length="32" name="invoiceLineItem" type="java.lang.String"/>
+<property column="MATERIAL_CODE" length="32" name="materialCode" type="java.lang.String"/>
+<property column="BATCH_NUMBER" length="32" name="batchNumber" type="java.lang.String"/>
+<property column="INVOICE_QTY" name="invoiceQty" type="java.lang.Double"/>
+<property column="NET_VAL" length="32" name="netVal" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

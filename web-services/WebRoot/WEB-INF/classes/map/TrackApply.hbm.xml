@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.winsafe.drp.dao.TrackApply" table='"TRACK_APPLY"'>
+		<id name="id" column="ID" type="java.lang.Integer">
+           <generator class="sequence" >
+           	<param name="sequence">TrackApply_Sequence</param>
+           </generator>
+        </id>
+		<property name="applyOrgId" type="java.lang.String">
+        	<column name="APPLYORGID" length="20" ></column>
+        </property>
+        <property name="applyUserId" type="java.lang.Integer">
+        	<column name="APPLYUSERID" length="20"></column>
+        </property>
+        <property name="idCode" type="java.lang.String">
+        	<column name="IDCODE" length="20" />
+        </property>
+        <property name="codeType" type="java.lang.Integer">
+        	<column name="CODETYPE" length="20"></column>
+        </property>
+        <property name="createDate" type="java.util.Date">
+        	<column name="CREATEDATE" length="7" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+        	<column name="STATUS" length="20"></column>
+        </property>
+        <property name="remark" type="java.lang.String">
+        	<column name="REMARK" length="255" />
+        </property>
+        <property name="errorMsg" type="java.lang.String">
+        	<column name="ERRORMSG" length="255"></column>
+        </property>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<!--added by ryan.xi 20150614-->
+<class name="com.winsafe.drp.report.pojo.SalesConsumHistory" table="SALES_CONSUM_HISTORY" dynamic-update="true">
+<id column="id" name="id" type="java.lang.Integer">
+<generator class="sequence">
+<param name="sequence">SALES_CONSUM_HISTORY_SEQ</param>
+</generator>
+</id>
+<version column="version" name="version" type="java.lang.Integer"/>
+<property column="productId" name="productId" type="java.lang.String"/>
+<property column="organId" name="organId" type="java.lang.String"/>
+<property column="year" name="year" type="java.lang.Integer"/>
+<property column="month" name="month" type="java.lang.Integer"/>
+<property column="SALES_VOLUME" name="salesVolume" type="java.lang.Double"/>
+<property column="SALES_VALUE" name="salesValue" type="java.lang.Double"/>
+<property column="COMSUMPTION_VOLUME" name="consumVolume" type="java.lang.Double"/>
+<property column="PRICE" name="price" type="java.lang.Double"/>
+<!--<property column="MONTH_BEGIN_INVENTORY" name="monthBeginInventory" type="java.lang.Double"/>-->
+<!--<property column="MONTH_END_INVENTORY" name="monthEndInventory" type="java.lang.Double"/>-->
+<property column="HASINVOICE" name="hasInvoice" type="java.lang.Integer"/>
+<property column="MAKEDATE" name="makeDate" type="java.util.Date"/>
+<property column="WAREHOUSEID" name="warehouseId" type="java.lang.String"/>
+<property column="OTHER_CONSUM_VOLUME" name="otherConsumVolume" type="java.lang.Double"/>
+
+
+</class>
+</hibernate-mapping>

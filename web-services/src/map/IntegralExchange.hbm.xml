@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.IntegralExchange" table="integral_exchange">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="UnitID" length="10" name="unitid" type="java.lang.Integer"/>
+<property column="UnitIntegral" length="18" name="unitintegral" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

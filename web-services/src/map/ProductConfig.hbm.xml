@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.erp.pojo.ProductConfig" table="PRODUCT_CONFIG">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+<param name="sequence">PRODUCT_CONFIG_SEQ</param>
+</generator>
+</id>
+<property column="ORGANID" name="organId" type="java.lang.String"/>
+<property column="PRODUCTID" name="productId" type="java.lang.String"/>
+<property column="MCODE" name="mCode" type="java.lang.String"/>
+<property column="ERPPRODUCTID" name="erpProductId" type="java.lang.String"/>
+
+</class>
+</hibernate-mapping>

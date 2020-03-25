@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PaymentMode" table="payment_mode">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="IRID" length="10" name="irid" type="java.lang.Integer"/>
+<property column="PaymentName" length="64" name="paymentname" type="java.lang.String"/>
+<property column="IntegralRate" length="18" name="integralrate" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

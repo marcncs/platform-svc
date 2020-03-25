@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.winsafe.drp.dao.SuggestInspectDetail" table="suggestinspect_detail">
+  <id column="ID" name="id" type="java.lang.Long">
+   <generator class="native"/>
+  </id>
+  <property column="seqNumber" length="10" name="seqNumber" type="java.lang.Integer"/>
+  <property column="siid" length="64" name="siid" type="java.lang.String"/>
+  <property column="product_Id" length="64" name="productId" type="java.lang.String"/>
+  <property column="product_Name" length="64" name="productName" type="java.lang.String"/>
+  <property column="product_Code" length="64" name="productCode" type="java.lang.String"/>
+  <property column="unit" length="64" name="unit" type="java.lang.String"/>
+  <property column="quantity" length="10" name="quantity" type="java.lang.Integer"/>
+  <property column="isGift" length="10" name="isGift" type="java.lang.Integer"/>
+  <property column="isOut" length="10" name="isOut" type="java.lang.Integer"/>
+ </class>
+</hibernate-mapping>

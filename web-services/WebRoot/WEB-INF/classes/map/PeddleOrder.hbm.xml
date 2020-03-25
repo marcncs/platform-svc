@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PeddleOrder" table="peddle_order">
+<id column="ID" length="32" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="CID" length="32" name="cid" type="java.lang.String"/>
+<property column="CName" length="64" name="cname" type="java.lang.String"/>
+<property column="CMobile" length="64" name="cmobile" type="java.lang.String"/>
+<property column="Province" length="10" name="province" type="java.lang.Integer"/>
+<property column="City" length="10" name="city" type="java.lang.Integer"/>
+<property column="Areas" length="10" name="areas" type="java.lang.Integer"/>
+<property column="ReceiveMan" length="32" name="receiveman" type="java.lang.String"/>
+<property column="ReceiveTel" length="26" name="receivetel" type="java.lang.String"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="WarehouseID" length="19" name="warehouseid" type="java.lang.Long"/>
+<property column="TotalSum" length="18" name="totalsum" type="java.lang.Double"/>
+<property column="FactSum" length="18" name="factsum" type="java.lang.Double"/>
+<property column="InvMsg" length="10" name="invmsg" type="java.lang.Integer"/>
+<property column="IsMakeTicket" length="10" name="ismaketicket" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="19" name="makedeptid" type="java.lang.Long"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="EquipOrganID" length="19" name="equiporganid" type="java.lang.String"/>
+<property column="UpdateID" length="19" name="updateid" type="java.lang.Long"/>
+<property column="LastUpdate" length="23" name="lastupdate" type="java.util.Date"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Long"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="IsBlankOut" length="10" name="isblankout" type="java.lang.Integer"/>
+<property column="BlankOutID" length="19" name="blankoutid" type="java.lang.Long"/>
+<property column="BlankOutDate" length="23" name="blankoutdate" type="java.util.Date"/>
+<property column="BlankOutReason" length="128" name="blankoutreason" type="java.lang.String"/>
+<property column="PrintTimes" length="10" name="printtimes" type="java.lang.Integer"/>
+<property column="IsDayBalance" length="10" name="isdaybalance" type="java.lang.Integer"/>
+<property column="IsAccount" length="10" name="isaccount" type="java.lang.Integer"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

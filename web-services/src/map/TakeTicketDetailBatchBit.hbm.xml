@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.TakeTicketDetailBatchBit" table="take_ticket_detail_batch_bit">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="native"/>
+</id>
+<property column="TTID" name="ttid" type="java.lang.String"/>
+<property column="TTDID" name="ttdid" type="java.lang.Integer"/>
+<property column="ProductID" length="32" name="productid" type="java.lang.String"/>
+<property column="ProductName" length="128" name="productname" type="java.lang.String"/>
+<property column="Warehouse_bit" name="warehouseBit" type="java.lang.String"/>
+<property column="Batch" length="32" name="batch" type="java.lang.String"/>
+<property column="Quantity" length="16" name="quantity" type="java.lang.Double"/>
+<property column="RealQuantity" length="16" name="realQuantity" type="java.lang.Double"/>
+<property column="Unitid" name="unitid" type="java.lang.Integer"/>
+<property column="BoxNum" length="20" name="boxnum" type="java.lang.Integer"/>
+<property column="ScatterNum" length="18" name="scatternum" type="java.lang.Double"/>
+<property column="XtsQuantity" length="18" name="xtsQuantity" type="java.lang.Double"/>
+<property column="StsQuantity" length="18" name="stsQuantity" type="java.lang.Double"/>
+<property column="RealBoxNum" length="20" name="realboxnum" type="java.lang.Integer"/>
+<property column="RealScatterNum" length="18" name="realscatternum" type="java.lang.Double"/>
+</class>
+</hibernate-mapping>

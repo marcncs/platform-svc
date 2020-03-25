@@ -1,0 +1,197 @@
+html,body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td,a,img{ 
+    padding: 0; 
+    margin: 0; 
+    border: none;
+    font-family: "Microsoft YaHei", "微软雅黑";
+} 
+ol,ul,li{
+    list-style: none;
+}
+i{
+  font-style: normal !important;
+}
+a{
+	text-decoration: none;
+	cursor: pointer;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clearfix:after{
+	display:block;
+	clear:both;
+	content:"";
+	visibility:hidden;
+	height:0
+} 
+.tx-l{
+	text-align:left;
+}
+.tx-c{
+	text-align:center;
+}
+.tx-r{
+	text-align:right;
+}
+h1,h2,h3,h4,h5,h6{
+	font-weight:normal;
+	font-style:normal;	
+}
+.cf{
+	color:#fff;
+}
+html.indexHtml,.bodySearch{
+	position:absolute; 
+	width:100%;
+	height:100%;
+	background:url(../../images/trace/bj3.png) no-repeat center center;	
+	background-size:100% 100%;
+}
+.bodyResult,.resultHtml{
+	position:absolute; 
+	width:100%;
+	height:100%;
+	background:url(../../images/trace/bj3.png) no-repeat center center;	
+	background-size:100% 100%;
+	/* background-attachment:fixed; */
+	
+}
+.logoIcon{
+	width:6rem;
+	height:6rem;
+	background:url(../../images/trace/logo.png) no-repeat center center;
+	background-size:cover;
+	margin:2rem auto;
+}
+.logoTxt{
+	font-size:1.525rem;
+	color:#494949;	
+}
+.searchBtn>input{
+	margin:3rem auto 1.5rem;
+}
+.searchBtn>input,.searchBtn>button,.redSearchBtn{
+	display:block;
+	width:86%;
+	height:2.25rem;
+	line-height:2.25rem;
+	text-align:center;
+	border:none;
+	border-radius:5px;
+	background:rgba(255,255,255,.5);
+	color:#494949;
+	font-size:1rem;
+}
+.searchBtn>button,.redSearchBtn{
+	color:#fff;
+	margin:0 auto;
+	-webkit-background: -webkit-linear-gradient(left, #8ed140 ,#43b1d8);
+	-moz-background: -webkit-linear-gradient(left, #8ed140 ,#43b1d8);
+	-o-background: -webkit-linear-gradient(left, #8ed140 ,#43b1d8);
+	background: -webkit-linear-gradient(left, #8ed140 ,#43b1d8);
+}
+.redSearchBtn{
+	margin-top:2rem !important;
+}
+.bjTop{
+	width:100%;
+	height:8rem;
+	background: url(../../images/trace/topbj.png) no-repeat 0 top;
+	background-size:100% 100%;
+	padding-top:2rem;
+}
+.bjWhite{
+	width:6rem;
+	height:6rem;
+	line-height:6rem;
+	text-align:center;
+	margin:0 auto;
+	background:url(../../images/trace/bjwhite.png) center center;
+	background-size:cover;
+	border-radius:50%;
+}
+
+.bjWhiteU{
+	width:12rem;
+	height:6rem;
+	line-height:6rem;
+	text-align:center;
+	margin:0 auto;
+	background-size:cover;
+	border-radius:50%;
+}
+
+.green{
+	color:#5fb200 !important;
+}
+.red{
+	color:#ef5858 !important;
+}
+.contentBox{
+	width:90%;
+	margin:0 auto;
+	box-sizing:border-box;
+	font-size:0.965rem;
+}
+.contentBox p{
+	margin-top:0.55rem;
+	word-break:normal;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	overflow: hidden;
+	
+}
+.contentBox label{
+	display:inline-block;
+	width:40%;
+	text-align:right;
+	color:#666;
+}
+.contentBox span{
+    float:right;
+	display:block;
+	width:60%;
+	vertical-align:top;
+	color:#0090c5;
+}
+
+.contentBox1{
+	width:80%;
+	margin:0 auto;
+	box-sizing:border-box;
+	font-size:0.965rem;
+}
+.contentBox1 p{
+	margin-top:0.55rem;
+	word-break:normal;
+	white-space:pre-wrap;
+	word-wrap:break-word;
+	overflow: hidden;
+	
+}
+.contentBox1 label{
+	display:inline-block;
+	width:100%;
+	text-align:center;
+	color:#666;
+}
+.contentBox1 span{
+	display:block;
+	width:100%;
+	text-align:center;
+	vertical-align:top;
+	color:#0090c5;
+}
+
+.bjDown{
+	padding-top:2rem;
+}
+.error{
+	color:#666;
+	margin-top:1.25rem;
+}
+

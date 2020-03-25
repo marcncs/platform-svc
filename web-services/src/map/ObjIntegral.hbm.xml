@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ObjIntegral" table="obj_integral">
+<id column="OIID" name="oiid" type="java.lang.Integer">
+<generator class="native"/>
+</id>
+<property column="OID" length="32" name="oid" type="java.lang.String"/>
+<property column="OSort" length="10" name="osort" type="java.lang.Integer"/>
+<property column="OName" length="64" name="oname" type="java.lang.String"/>
+<property column="OMobile" length="64" name="omobile" type="java.lang.String"/>
+<property column="OrganID" length="32" name="organid" type="java.lang.String"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

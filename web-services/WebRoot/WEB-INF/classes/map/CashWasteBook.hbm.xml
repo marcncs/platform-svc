@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CashWasteBook" table="cash_waste_book">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="CBID" length="10" name="cbid" type="java.lang.Integer"/>
+<property column="BillNo" length="32" name="billno" type="java.lang.String"/>
+<property column="Memo" length="128" name="memo" type="java.lang.String"/>
+<property column="CycleFirstSum" length="18" name="cyclefirstsum" type="java.lang.Double"/>
+<property column="CycleInSum" length="18" name="cycleinsum" type="java.lang.Double"/>
+<property column="CycleOutSum" length="18" name="cycleoutsum" type="java.lang.Double"/>
+<property column="CycleBalanceSum" length="18" name="cyclebalancesum" type="java.lang.Double"/>
+<property column="RecordDate" length="23" name="recorddate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

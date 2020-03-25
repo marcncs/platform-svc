@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.DailyProductOut" table="daily_product_out">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+
+<property column="regionpid" length="64" name="regionpid" type="java.lang.String"/>
+<property column="regionpname" length="64" name="regionpname" type="java.lang.String"/>
+<property column="regionpuserid" length="64" name="regionpuserid" type="java.lang.String"/>
+<property column="regionpusername" length="64" name="regionpusername" type="java.lang.String"/>
+<property column="regionid" name="regionid" type="java.lang.Long"/>
+<property column="regionname" length="64" name="regionname" type="java.lang.String"/>
+<property column="regionuid" length="64" name="regionuid" type="java.lang.String"/>
+<property column="regionuname" length="64" name="regionuname" type="java.lang.String"/>
+<property column="price" length="38" name="price" type="java.lang.Double"/>
+<property column="dealdate" length="34" name="dealdate" type="java.lang.String"/>
+<property column="outorganid" length="32" name="outorganid" type="java.lang.String"/>
+<property column="outorganoecode" length="32" name="outorganoecode" type="java.lang.String"/>
+<property column="outorganname" length="128" name="outorganname" type="java.lang.String"/>
+<property column="inorganid" length="32" name="inorganid" type="java.lang.String"/>
+<property column="inorganoecode" length="32" name="inorganoecode" type="java.lang.String"/>
+<property column="inorganname" length="128" name="inorganname" type="java.lang.String"/>
+<property column="productid" length="32" name="productid" type="java.lang.String"/>
+<property column="productname" length="128" name="productname" type="java.lang.String"/>
+<property column="specmode" length="64" name="specmode" type="java.lang.String"/>
+<property column="unitid" length="10" name="unitid" type="java.lang.Integer"/>
+<property column="quantity" length="38" name="quantity" type="java.lang.Double"/>
+<property column="boxnum" length="10" name="boxnum" type="java.lang.Integer"/>
+<property column="scatternum" length="38" name="scatternum" type="java.lang.Double"/>
+<property column="salemanid" length="100" name="salemanid" type="java.lang.String"/>
+<property column="regionareaid" length="100" name="regionareaid" type="java.lang.String"/>
+<property column="makedate" length="23" name="makedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

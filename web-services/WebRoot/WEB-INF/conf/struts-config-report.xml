@@ -1,0 +1,1321 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+
+</form-beans> 
+
+<action-mappings> 
+
+<action  path="/report/toCustomerReportAction" type="com.winsafe.drp.action.report.ToCustomerReportAction" scope="request" validate="false">
+<forward name="listCount" path="/report/customerreport.jsp"/>
+</action>
+
+
+<action  path="/report/customerReportAction" type="com.winsafe.drp.action.report.CustomerReportAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/toCustomerAreasReportAction" type="com.winsafe.drp.action.report.ToCustomerAreasReportAction" scope="request" validate="false">
+<forward name="listCount" path="/report/customerareasreport.jsp"/>
+</action>
+
+<action  path="/report/customerAreasReportAction" type="com.winsafe.drp.action.report.CustomerAreasReportAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/customerExpandInitAction" type="com.winsafe.drp.action.report.CustomerExpandInitAction" scope="request" validate="false">
+<forward name="ce" path="/report/customerexpandinit.jsp"/>
+</action>
+
+<action  path="/report/customerExpandAction" type="com.winsafe.drp.action.report.CustomerExpandAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/customerSaleOrderOutlayAction" type="com.winsafe.drp.action.report.CustomerSaleOrderOutlayAction" scope="request" validate="false">
+<forward name="list" path="/report/customersaleorderoutlaylist.jsp"/>
+</action>
+
+<action  path="/report/saleTotalAction" type="com.winsafe.drp.action.report.SaleTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/saletotal.jsp"/>
+</action>
+
+<action  path="/report/saleProductTotalAction" type="com.winsafe.drp.action.report.SaleProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/saleproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleProductTotalAction" type="com.winsafe.drp.action.report.ExcPutSaleProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/excputsaleproducttotal.jsp"/>
+</action>
+
+
+<action  path="/report/saleProductOrderAction" type="com.winsafe.drp.action.report.SaleProductOrderAction" scope="request" validate="false">
+<forward name="show" path="/report/saleproductorder.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleProductOrderAction" type="com.winsafe.drp.action.report.ExcPutSaleProductOrderAction" scope="request" validate="false">
+<forward name="show" path="/report/excputsaleproductorder.jsp"/>
+</action>
+
+<action  path="/report/saleCustomerTotalAction" type="com.winsafe.drp.action.report.SaleCustomerTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/salecustomertotal.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleCustomerTotalAction" type="com.winsafe.drp.action.report.ExcPutSaleCustomerTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/excputsalecustomertotal.jsp"/>
+</action>
+
+<action  path="/report/saleBillTotalAction" type="com.winsafe.drp.action.report.SaleBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/salebilltotal.jsp"/>
+</action>
+
+<action  path="/report/toSaleOrderTrendAction" type="com.winsafe.drp.action.report.ToSaleOrderTrendAction" scope="request" validate="false">
+<forward name="show" path="/report/saleordertrendreport.jsp"/>
+</action>
+<action  path="/report/saleOrderTrendAction" type="com.winsafe.drp.action.report.SaleOrderTrendAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/excPutSaleBillTotalAction" type="com.winsafe.drp.action.report.ExcPutSaleBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/excputsalebilltotal.jsp"/>
+</action>
+
+<action  path="/report/saleOrderDetailAction" type="com.winsafe.drp.action.report.SaleOrderDetailAction" scope="request" validate="false">
+<forward name="saleordertotal" path="/report/saleorderdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleOrderDetailAction" type="com.winsafe.drp.action.report.ExcPutSaleOrderDetailAction" scope="request" validate="false">
+<forward name="saleordertotal" path="/report/excputsaleorderdetail.jsp"/>
+</action>
+
+<action  path="/report/vocationOrderDetailAction" type="com.winsafe.drp.action.report.VocationOrderDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/vocationorderdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutVocationOrderDetailAction" type="com.winsafe.drp.action.report.ExcPutVocationOrderDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/excputvocationorderdetail.jsp"/>
+</action>
+
+<action  path="/report/webIndentDetailAction" type="com.winsafe.drp.action.report.WebIndentDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/webindentdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutWebIndentDetailAction" type="com.winsafe.drp.action.report.ExcPutWebIndentDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/excputwebindentdetail.jsp"/>
+</action>
+
+
+<action  path="/report/peddleOrderDetailAction" type="com.winsafe.drp.action.report.PeddleOrderDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/peddleorderdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutPeddleOrderDetailAction" type="com.winsafe.drp.action.report.ExcPutPeddleOrderDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/excputpeddleorderdetail.jsp"/>
+</action>
+
+<action  path="/report/withdrawTotalAction" type="com.winsafe.drp.action.report.WithdrawTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/withdrawtotal.jsp"/>
+</action>
+
+<action  path="/report/excPutWithdrawTotalAction" type="com.winsafe.drp.action.report.ExcPutWithdrawTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/excputwithdrawtotal.jsp"/>
+</action>
+
+<action  path="/report/withdrawDetailAction" type="com.winsafe.drp.action.report.WithdrawDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/withdrawdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutWithdrawDetailAction" type="com.winsafe.drp.action.report.ExcPutWithdrawDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/excputwithdrawdetail.jsp"/>
+</action>
+
+<action  path="/report/saleOrderCustomerInitAction" type="com.winsafe.drp.action.report.SaleOrderCustomerInitAction" scope="request" validate="false">
+<forward name="saleordercustomer" path="/report/saleordercustomerinit.jsp"/>
+</action>
+
+<action  path="/report/saleOrderCustomerAction" type="com.winsafe.drp.action.report.SaleOrderCustomerAction" scope="request" validate="false">
+<forward name="saleordertotal" path="/report/saleordercustomer.jsp"/>
+</action>
+
+
+<action  path="/report/saleAreasReportAction" type="com.winsafe.drp.action.report.SaleAreasReportAction" scope="request" validate="false">
+<forward name="saleareas" path="/report/saleareasreport.jsp"/>
+</action>
+
+
+<action  path="/report/customerAreasAction" type="com.winsafe.drp.action.report.CustomerAreasAction" scope="request" validate="false">
+<forward name="customerareas" path="/report/customerareas.jsp"/>
+</action>
+
+
+<action  path="/report/perDaySaleReportAction" type="com.winsafe.drp.action.report.PerDaySaleReportAction" scope="request" validate="false">
+<forward name="dayreport" path="/report/perdaysalereport.jsp"/>
+</action>
+
+<action  path="/report/perDaySaleBarAction" type="com.winsafe.drp.action.report.PerDaySaleBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/perDaySaleSumBarAction" type="com.winsafe.drp.action.report.PerDaySaleSumBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/saleShipmentTotalInitAction" type="com.winsafe.drp.action.report.SaleShipmentTotalInitAction" scope="request" validate="false">
+<forward name="saleshipmenttotal" path="/report/saleshipmenttotalinit.jsp"/>
+</action>
+
+<action  path="/report/saleShipmentTotalAction" type="com.winsafe.drp.action.report.SaleShipmentTotalAction" scope="request" validate="false">
+<forward name="saleshipmenttotal" path="/report/saleshipmenttotal.jsp"/>
+</action>
+
+<action  path="/report/perDayShipmentReportAction" type="com.winsafe.drp.action.report.PerDayShipmentReportAction" scope="request" validate="false">
+<forward name="shipmentreport" path="/report/perdayshipmentreport.jsp"/>
+</action>
+
+<action  path="/report/perDayShipmentCountBarAction" type="com.winsafe.drp.action.report.PerDayShipmentCountBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/perDayShipmentSumBarAction" type="com.winsafe.drp.action.report.PerDayShipmentSumBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/stuffShipmentBillTotalInitAction" type="com.winsafe.drp.action.report.StuffShipmentBillTotalInitAction" scope="request" validate="false">
+<forward name="stuffshipmentbilltotal" path="/report/stuffshipmentbilltotalinit.jsp"/>
+</action>
+
+<action  path="/report/stuffShipmentBillTotalAction" type="com.winsafe.drp.action.report.StuffShipmentBillTotalAction" scope="request" validate="false">
+<forward name="stuffshipmentbilltotal" path="/report/stuffshipmentbilltotal.jsp"/>
+</action>
+
+<action  path="/report/perDayStuffShipmentReportAction" type="com.winsafe.drp.action.report.PerDayStuffShipmentReportAction" scope="request" validate="false">
+<forward name="stuffshipmentreport" path="/report/perdaystuffshipmentreport.jsp"/>
+</action>
+
+<action  path="/report/perDayStuffShipmentCountBarAction" type="com.winsafe.drp.action.report.PerDayStuffShipmentCountBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/otherShipmentBillTotalAction" type="com.winsafe.drp.action.report.OtherShipmentBillTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/othershipmentbilltotal.jsp"/>
+</action>
+
+<action  path="/report/excPutOtherShipmentBillTotalAction" type="com.winsafe.drp.action.report.ExcPutOtherShipmentBillTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/printOtherShipmentBillTotalAction" type="com.winsafe.drp.action.report.PrintOtherShipmentBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printothershipmentbilltotal.jsp"/>
+</action>
+
+<action  path="/report/otherShipmentBillDetailAction" type="com.winsafe.drp.action.report.OtherShipmentBillDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/othershipmentbilldetail.jsp"/>
+</action>
+
+<action  path="/report/excPutOtherShipmentBillDetailAction" type="com.winsafe.drp.action.report.ExcPutOtherShipmentBillDetailAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/printOtherShipmentBillDetailAction" type="com.winsafe.drp.action.report.PrintOtherShipmentBillDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printothershipmentbilldetail.jsp"/>
+</action>
+
+<action  path="/report/drawShipmentBillTotalAction" type="com.winsafe.drp.action.report.DrawShipmentBillTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/drawshipmentbilltotal.jsp"/>
+</action>
+<action  path="/report/excPutDrawShipmentBillTotalAction" type="com.winsafe.drp.action.report.ExcPutDrawShipmentBillTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/drawShipmentBillDetailAction" type="com.winsafe.drp.action.report.DrawShipmentBillDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/drawshipmentbilldetail.jsp"/>
+</action>
+<action  path="/report/excPutDrawShipmentBillDetailAction" type="com.winsafe.drp.action.report.ExcPutDrawShipmentBillDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printDrawShipmentBillDetailAction" type="com.winsafe.drp.action.report.PrintDrawShipmentBillDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printdrawshipmentbilldetail.jsp"/>
+</action>
+
+<action  path="/report/harmShipmentBillTotalAction" type="com.winsafe.drp.action.report.HarmShipmentBillTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/harmshipmentbilltotal.jsp"/>
+</action>
+
+<action  path="/report/excPutHarmShipmentBillTotalAction" type="com.winsafe.drp.action.report.ExcPutHarmShipmentBillTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/excputharmshipmentbilltotal.jsp"/>
+</action>
+
+
+<action  path="/report/harmShipmentBillDetailAction" type="com.winsafe.drp.action.report.HarmShipmentBillDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/harmshipmentbilldetail.jsp"/>
+</action> 
+
+<action  path="/report/excPutHarmShipmentBillDetailAction" type="com.winsafe.drp.action.report.ExcPutHarmShipmentBillDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/excputharmshipmentbilldetail.jsp"/>
+</action> 
+<action  path="/report/printHarmShipmentBillDetailAction" type="com.winsafe.drp.action.report.PrintHarmShipmentBillDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printharmshipmentbilldetail.jsp"/>
+</action> 
+
+<action  path="/report/stockMoveProductTotalAction" type="com.winsafe.drp.action.report.StockMoveProductTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/stockmoveproducttotal.jsp"/>
+</action>
+<action path="/report/printStockMoveProductTotalAction" type="com.winsafe.drp.action.report.PrintStockMoveProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockmoveproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutStockMoveProductTotalAction" type="com.winsafe.drp.action.report.ExcPutStockMoveProductTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/excputstockmoveproducttotal.jsp"/>
+</action>
+
+<action  path="/report/stockMoveDetailAction" type="com.winsafe.drp.action.report.StockMoveDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/stockmovedetail.jsp"/>
+</action>
+
+<action  path="/report/excPutStockMoveDetailAction" type="com.winsafe.drp.action.report.ExcPutStockMoveDetailAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockMoveDetailAction" type="com.winsafe.drp.action.report.PrintStockMoveDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockmovedetail.jsp"/>
+</action>
+
+<action  path="/report/stockMoveBillTotalAction" type="com.winsafe.drp.action.report.StockMoveBillTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/stockmovebilltotal.jsp"/>
+</action>
+
+<action  path="/report/excPutStockMoveBillTotalAction" type="com.winsafe.drp.action.report.ExcPutStockMoveBillTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockMoveBillTotalAction" type="com.winsafe.drp.action.report.PrintStockMoveBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockmovebilltotal.jsp"/>
+</action>
+
+<action  path="/report/stockMoveWarehouseTotalAction" type="com.winsafe.drp.action.report.StockMoveWarehouseTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/stockmovewarehousetotal.jsp"/>
+</action>
+
+<action  path="/report/excPutStockMoveWarehouseTotalAction" type="com.winsafe.drp.action.report.ExcPutStockMoveWarehouseTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockMoveWarehouseTotalAction" type="com.winsafe.drp.action.report.PrintStockMoveWarehouseTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockmovewarehousetotal.jsp"/>
+</action>
+
+<action  path="/report/stockAlterMoveTotalAction" type="com.winsafe.drp.action.report.StockAlterMoveTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/stockaltermovetotal.jsp"/>
+</action>
+
+<action  path="/report/excPutStockAlterMoveTotalAction" type="com.winsafe.drp.action.report.ExcPutStockAlterMoveTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/excputstockaltermovetotal.jsp"/>
+</action>
+
+<action  path="/report/stockAlterMoveDetailAction" type="com.winsafe.drp.action.report.StockAlterMoveDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/stockaltermovedetail.jsp"/>
+</action>
+
+<action  path="/report/excPutStockAlterMoveDetailAction" type="com.winsafe.drp.action.report.ExcPutStockAlterMoveDetailAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockAlterMoveDetailAction" type="com.winsafe.drp.action.report.PrintStockAlterMoveDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockaltermovedetail.jsp"/>
+</action>
+
+<action  path="/report/stockAlterMoveDetailFLiAction" type="com.winsafe.drp.action.report.StockAlterMoveDetailFLiAction" scope="request" validate="false">
+<forward name="success" path="/report/stockaltermovedetailfli.jsp"/>
+</action>
+
+<action path="/report/printStockAlterMoveDetailFLiAction" type="com.winsafe.drp.action.report.PrintStockAlterMoveDetailFLiAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockaltermovedetailfli.jsp"/>
+</action>
+
+<action  path="/report/excPutStockAlterMoveDetailFLiAction" type="com.winsafe.drp.action.report.ExcPutStockAlterMoveDetailFLiAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/stockAlterMoveOrganTotalAction" type="com.winsafe.drp.action.report.StockAlterMoveOrganTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/stockaltermoveorgantotal.jsp"/>
+</action>
+
+<action  path="/report/excPutStockAlterMoveOrganTotalAction" type="com.winsafe.drp.action.report.ExcPutStockAlterMoveOrganTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockAlterMoveOrganTotalAction" type="com.winsafe.drp.action.report.PrintStockAlterMoveOrganTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockaltermoveorgantotal.jsp"/>
+</action>
+
+<action  path="/report/stockAlterMoveProductTotalAction" type="com.winsafe.drp.action.report.StockAlterMoveProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/stockaltermoveproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutStockAlterMoveProductTotalAction" type="com.winsafe.drp.action.report.ExcPutStockAlterMoveProductTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockAlterMoveProductTotalAction" type="com.winsafe.drp.action.report.PrintStockAlterMoveProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockaltermoveproducttotal.jsp"/>
+</action>
+
+<action  path="/report/stockAlterMoveBillTotalAction" type="com.winsafe.drp.action.report.StockAlterMoveBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/stockaltermovebilltotal.jsp"/>
+</action>
+<action  path="/report/excPutStockAlterMoveBillTotalAction" type="com.winsafe.drp.action.report.ExcPutStockAlterMoveBillTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printStockAlterMoveBillTotalAction" type="com.winsafe.drp.action.report.PrintStockAlterMoveBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printstockaltermovebilltotal.jsp"/>
+</action>
+
+
+<action  path="/report/productInterconvertTotalAction" type="com.winsafe.drp.action.report.ProductInterconvertTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/productinterconverttotal.jsp"/>
+</action>
+<action  path="/report/excPutProductInterconvertTotalAction" type="com.winsafe.drp.action.report.ExcPutProductInterconvertTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printProductInterconvertTotalAction" type="com.winsafe.drp.action.report.PrintProductInterconvertTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printproductinterconverttotal.jsp"/>
+</action>
+
+<action  path="/report/productInterconvertDetailAction" type="com.winsafe.drp.action.report.ProductInterconvertDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/productinterconvertdetail.jsp"/>
+</action>
+<action  path="/report/excPutProductInterconvertDetailAction" type="com.winsafe.drp.action.report.ExcPutProductInterconvertDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printProductInterconvertDetailAction" type="com.winsafe.drp.action.report.PrintProductInterconvertDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printproductinterconvertdetail.jsp"/>
+</action>
+
+<action  path="/report/purchaseTotalAction" type="com.winsafe.drp.action.report.PurchaseTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasetotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseProviderTotalAction" type="com.winsafe.drp.action.report.PurchaseProviderTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchaseprovidertotal.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseProviderTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseProviderTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/excputpurchaseprovidertotal.jsp"/>
+</action>
+<action  path="/report/printPurchaseProviderTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseProviderTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchaseprovidertotal.jsp"/>
+</action>
+
+
+<action  path="/report/purchaseProductTotalAction" type="com.winsafe.drp.action.report.PurchaseProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchaseproducttotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseProductTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseProductTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseProductTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchaseproducttotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseBillTotalAction" type="com.winsafe.drp.action.report.PurchaseBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasebilltotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseBillTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseBillTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseBillTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasebilltotal.jsp"/>
+</action>
+
+
+<action  path="/report/purchaseBillDetailAction" type="com.winsafe.drp.action.report.PurchaseBillDetailAction" scope="request" validate="false">
+<forward name="purchasebilltotal" path="/report/purchasebilldetail.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseBillDetailAction" type="com.winsafe.drp.action.report.ExcPutPurchaseBillDetailAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/printPurchaseBillDetailAction" type="com.winsafe.drp.action.report.PrintPurchaseBillDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasebilldetail.jsp"/>
+</action>
+
+<action  path="/report/purchaseWithdrawProviderTotalAction" type="com.winsafe.drp.action.report.PurchaseWithdrawProviderTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasewithdrawprovidertotal.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseWithdrawProviderTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseWithdrawProviderTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseWithdrawProviderTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseWithdrawProviderTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasewithdrawprovidertotal.jsp"/>
+</action>
+
+
+
+<action  path="/report/purchaseWithdrawProductTotalAction" type="com.winsafe.drp.action.report.PurchaseWithdrawProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasewithdrawproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseWithdrawProductTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseWithdrawProductTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseWithdrawProductTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseWithdrawProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasewithdrawproducttotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseWithdrawBillTotalAction" type="com.winsafe.drp.action.report.PurchaseWithdrawBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasewithdrawbilltotal.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseWithdrawBillTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseWithdrawBillTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseWithdrawBillTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseWithdrawBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasewithdrawbilltotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseWithdrawDetailAction" type="com.winsafe.drp.action.report.PurchaseWithdrawDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/purchasewithdrawdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseWithdrawDetailAction" type="com.winsafe.drp.action.report.ExcPutPurchaseWithdrawDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseWithdrawDetailAction" type="com.winsafe.drp.action.report.PrintPurchaseWithdrawDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasewithdrawdetail.jsp"/>
+</action>
+
+<action  path="/report/purchaseTradesDetailAction" type="com.winsafe.drp.action.report.PurchaseTradesDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/purchasetradesdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutPurchaseTradesDetailAction" type="com.winsafe.drp.action.report.ExcPutPurchaseTradesDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseTradesDetailAction" type="com.winsafe.drp.action.report.PrintPurchaseTradesDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasetradesdetail.jsp"/>
+</action>
+
+<action  path="/report/purchaseTradesProviderTotalAction" type="com.winsafe.drp.action.report.PurchaseTradesProviderTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasetradesprovidertotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseTradesProviderTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseTradesProviderTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseTradesProviderTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseTradesProviderTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasetradesprovidertotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseTradesProductTotalAction" type="com.winsafe.drp.action.report.PurchaseTradesProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasetradesproducttotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseTradesProductTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseTradesProductTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseTradesProductTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseTradesProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasetradesproducttotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseTradesBillTotalAction" type="com.winsafe.drp.action.report.PurchaseTradesBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/purchasetradesbilltotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseTradesBillTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseTradesBillTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseTradesBillTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseTradesBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchasetradesbilltotal.jsp"/>
+</action>
+
+<action  path="/report/perDayOtherShipmentReportAction" type="com.winsafe.drp.action.report.PerDayOtherShipmentReportAction" scope="request" validate="false">
+<forward name="othershipmentreport" path="/report/perdayothershipmentreport.jsp"/>
+</action>
+
+<action  path="/report/perDayOtherShipmentCountBarAction" type="com.winsafe.drp.action.report.PerDayOtherShipmentCountBarAction" scope="request" validate="false">
+
+</action>
+
+
+<action  path="/report/purchaseIncomeProviderTotalAction" type="com.winsafe.drp.action.report.PurchaseIncomeProviderTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/purchaseincomeprovidertotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseIncomeProviderTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseIncomeProviderTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseIncomeProviderTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseIncomeProviderTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchaseincomeprovidertotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseIncomeProductTotalAction" type="com.winsafe.drp.action.report.PurchaseIncomeProductTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/purchaseincomeproducttotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseIncomeProductTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseIncomeProductTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseIncomeProductTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseIncomeProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchaseincomeproducttotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseIncomeBillTotalAction" type="com.winsafe.drp.action.report.PurchaseIncomeBillTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/purchaseincomebilltotal.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseIncomeBillTotalAction" type="com.winsafe.drp.action.report.ExcPutPurchaseIncomeBillTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseIncomeBillTotalAction" type="com.winsafe.drp.action.report.PrintPurchaseIncomeBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchaseincomebilltotal.jsp"/>
+</action>
+
+<action  path="/report/purchaseIncomeDetailAction" type="com.winsafe.drp.action.report.PurchaseIncomeDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/purchaseincomedetail.jsp"/>
+</action>
+<action  path="/report/excPutPurchaseIncomeDetailAction" type="com.winsafe.drp.action.report.ExcPutPurchaseIncomeDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printPurchaseIncomeDetailAction" type="com.winsafe.drp.action.report.PrintPurchaseIncomeDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpurchaseincomedetail.jsp"/>
+</action>
+
+
+<action  path="/report/otherIncomeTotalAction" type="com.winsafe.drp.action.report.OtherIncomeTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/otherincometotal.jsp"/>
+</action>
+
+<action  path="/report/excPutOtherIncomeTotalAction" type="com.winsafe.drp.action.report.ExcPutOtherIncomeTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printOtherIncomeTotalAction" type="com.winsafe.drp.action.report.PrintOtherIncomeTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printotherincometotal.jsp"/>
+</action>
+
+<action  path="/report/otherIncomeDetailAction" type="com.winsafe.drp.action.report.OtherIncomeDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/otherincomedetail.jsp"/>
+</action>
+<action  path="/report/excPutOtherIncomeDetailAction" type="com.winsafe.drp.action.report.ExcPutOtherIncomeDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printOtherIncomeDetailAction" type="com.winsafe.drp.action.report.PrintOtherIncomeDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printotherincomedetail.jsp"/>
+</action>
+
+<action  path="/report/receivableTotalAction" type="com.winsafe.drp.action.report.ReceivableTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/receivabletotal.jsp"/>
+</action>
+
+<action path="/report/printReceivableTotalAction" type="com.winsafe.drp.action.report.PrintReceivableTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printreceivabletotal.jsp"/>
+</action>
+
+<action  path="/report/excPutReceivableTotalAction" type="com.winsafe.drp.action.report.ExcPutReceivableTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/payableTotalAction" type="com.winsafe.drp.action.report.PayableTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/payabletotal.jsp"/>
+</action>
+
+<action  path="/report/printPayableTotalAction" type="com.winsafe.drp.action.report.PrintPayableTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpayabletotal.jsp"/>
+</action>
+
+<action  path="/report/excPutPayableTotalAction" type="com.winsafe.drp.action.report.ExcPutPayableTotalAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/revenueWasteInitAction" type="com.winsafe.drp.action.report.RevenueWasteInitAction" scope="request" validate="false">
+<forward name="success" path="/report/revenuewasteinit.jsp"/>
+</action>
+
+
+<action  path="/report/revenueWasteAction" type="com.winsafe.drp.action.report.RevenueWasteAction" scope="request" validate="false">
+<forward name="success" path="/report/revenuewaste.jsp"/>
+</action>
+
+<action  path="/report/printRevenueWasteAction" type="com.winsafe.drp.action.report.PrintRevenueWasteAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printrevenuewaste.jsp"/>
+</action>
+
+<action  path="/report/excPutRevenueWasteAction" type="com.winsafe.drp.action.report.ExcPutRevenueWasteAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/payoutWasteInitAction" type="com.winsafe.drp.action.report.PayoutWasteInitAction" scope="request" validate="false">
+<forward name="success" path="/report/payoutwasteinit.jsp"/>
+</action>
+
+
+<action  path="/report/payoutWasteAction" type="com.winsafe.drp.action.report.PayoutWasteAction" scope="request" validate="false">
+<forward name="success" path="/report/payoutwaste.jsp"/>
+</action>
+
+<action  path="/report/printPayoutWasteAction" type="com.winsafe.drp.action.report.PrintPayoutWasteAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpayoutwaste.jsp"/>
+</action>
+
+<action  path="/report/excPutPayoutWasteAction" type="com.winsafe.drp.action.report.ExcPutPayoutWasteAction" scope="request" validate="false">
+
+</action>
+
+
+
+<action  path="/report/perDayPurchaseReportAction" type="com.winsafe.drp.action.report.PerDayPurchaseReportAction" scope="request" validate="false">
+<forward name="purchasereport" path="/report/perdaypurchasereport.jsp"/>
+</action>
+
+<action  path="/report/perDayPurchaseCountBarAction" type="com.winsafe.drp.action.report.PerDayPurchaseCountBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/perDayPurchaseSumBarAction" type="com.winsafe.drp.action.report.PerDayPurchaseSumBarAction" scope="request" validate="false">
+
+</action>
+
+
+<action  path="/report/perDayPurchaseIncomeReportAction" type="com.winsafe.drp.action.report.PerDayPurchaseIncomeReportAction" scope="request" validate="false">
+<forward name="purchaseincomereport" path="/report/perdaypurchaseincomereport.jsp"/>
+</action>
+
+<action  path="/report/perDayPurchaseIncomeCountBarAction" type="com.winsafe.drp.action.report.PerDayPurchaseIncomeCountBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/perDayPurchaseIncomeSumBarAction" type="com.winsafe.drp.action.report.PerDayPurchaseIncomeSumBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/peddleOrderDayDealAction" type="com.winsafe.drp.action.report.PeddleOrderDayDealAction" scope="request" validate="false">
+<forward name="success" path="/report/peddleorderdaydeal.jsp"/>
+</action>
+
+<action  path="/report/excPutPeddleOrderDayDealAction" type="com.winsafe.drp.action.report.ExcPutPeddleOrderDayDealAction" scope="request" validate="false">
+<forward name="success" path="/report/excputpeddleorderdaydeal.jsp"/>
+</action>
+
+<action  path="/report/perDayIncomeReportAction" type="com.winsafe.drp.action.report.PerDayIncomeReportAction" scope="request" validate="false">
+<forward name="incomereport" path="/report/perdayincomereport.jsp"/>
+</action>
+
+<action  path="/report/perDayIncomeCountBarAction" type="com.winsafe.drp.action.report.PerDayIncomeCountBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/perDayIncomeSumBarAction" type="com.winsafe.drp.action.report.PerDayIncomeSumBarAction" scope="request" validate="false">
+
+</action>
+
+<action  path="/report/toSelectReceivableObjectAction" type="com.winsafe.drp.action.report.ToSelectReceivableObjectAction" scope="request" validate="false">
+<forward name="toselect" path="/report/selectreceivableobjectiframe.jsp"/>
+</action>
+
+<action  path="/report/selectReceivableObjectAction" type="com.winsafe.drp.action.report.SelectReceivableObjectAction" scope="request" validate="false">
+<forward name="selectobject" path="/report/selectreceivableobject.jsp"/>
+</action>
+
+
+<action  path="/report/perDayOtherIncomeReportAction" type="com.winsafe.drp.action.report.PerDayOtherIncomeReportAction" scope="request" validate="false">
+<forward name="otherincomereport" path="/report/perdayotherincomereport.jsp"/>
+</action>
+
+<action  path="/report/perDayOtherIncomeCountBarAction" type="com.winsafe.drp.action.report.PerDayOtherIncomeCountBarAction" scope="request" validate="false">
+
+</action>
+
+
+<action  path="/report/incomeLogTotalInitAction" type="com.winsafe.drp.action.report.IncomeLogTotalInitAction" scope="request" validate="false">
+<forward name="incomeloginittotal" path="/report/incomelogtotalinit.jsp"/>
+</action>
+
+<action  path="/report/incomeLogTotalAction" type="com.winsafe.drp.action.report.IncomeLogTotalAction" scope="request" validate="false">
+<forward name="incomelogtotal" path="/report/incomelogtotal.jsp"/>
+</action>
+
+<action  path="/report/printIncomeLogTotalAction" type="com.winsafe.drp.action.report.PrintIncomeLogTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printincomelogtotal.jsp"/>
+</action>
+
+<action  path="/report/excPutIncomeLogTotalAction" type="com.winsafe.drp.action.report.ExcPutIncomeLogTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/paymentLogTotalAction" type="com.winsafe.drp.action.report.PaymentLogTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/paymentlogtotal.jsp"/>
+</action>
+
+<action  path="/report/printPaymentLogTotalAction" type="com.winsafe.drp.action.report.PrintPaymentLogTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printpaymentlogtotal.jsp"/>
+</action>
+
+<action  path="/report/excPutPaymentLogTotalAction" type="com.winsafe.drp.action.report.ExcPutPaymentLogTotalAction" scope="request" validate="false">
+</action>
+
+
+<action  path="/report/toSelectCustomerAction" type="com.winsafe.drp.action.report.ToSelectCustomerAction" scope="request" validate="false">
+<forward name="toselect" path="/report/selectcustomeriframe.jsp"/>
+</action>
+
+<action  path="/report/selectCustomerAction" type="com.winsafe.drp.action.report.SelectCustomerAction" scope="request" validate="false">
+<forward name="selectcustomer" path="/report/selectcustomer.jsp"/>
+</action>
+
+
+<action path="/report/toSelectProvideAction" type="com.winsafe.drp.action.report.ToSelectProvideAction" scope="request" validate="false">
+<forward name="toselect" path="/report/selectprovideiframe.jsp"/>
+</action>
+
+<action path="/report/selectProvideAction" type="com.winsafe.drp.action.report.SelectProvideAction" scope="request" validate="false">
+<forward name="selectprovide" path="/report/selectprovide.jsp"/>
+</action>
+
+
+
+<action path="/report/toSelectSingleProductAction" type="com.winsafe.drp.action.report.ToSelectSingleProductAction" scope="request" validate="false">
+<forward name="toselect" path="/report/selectsingleproductiframe.jsp"/>
+</action>
+
+<action path="/report/selectSingleProductAction" type="com.winsafe.drp.action.report.SelectSingleProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/report/selectsingleproduct.jsp"/>
+</action>
+
+<action path="/report/integralOrderDetailAction" type="com.winsafe.drp.action.report.IntegralOrderDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/integralorderdetail.jsp"/>
+</action>
+
+<action path="/report/excPutIntegralOrderDetailAction" type="com.winsafe.drp.action.report.ExcPutIntegralOrderDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/excputintegralorderdetail.jsp"/>
+</action>
+
+<action path="/report/printSaleCustomerTotalAction" type="com.winsafe.drp.action.report.PrintSaleCustomerTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsalecustomertotal.jsp"/>
+</action>
+
+<action path="/report/printSaleProductTotalAction" type="com.winsafe.drp.action.report.PrintSaleProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsaleproducttotal.jsp"/>
+</action>
+
+<action path="/report/printSaleBillTotalAction" type="com.winsafe.drp.action.report.PrintSaleBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsalebilltotal.jsp"/>
+</action>
+<action path="/report/printSaleOrderDetailAction" type="com.winsafe.drp.action.report.PrintSaleOrderDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsaleorderdetail.jsp"/>
+</action>
+
+<action path="/report/printWithdrawDetailAction" type="com.winsafe.drp.action.report.PrintWithdrawDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printwithdrawdetail.jsp"/>
+</action>
+
+
+
+
+<action  path="/report/withdrawCustomerTotalAction" type="com.winsafe.drp.action.report.WithdrawCustomerTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/withdrawcustomertotal.jsp"/>
+</action>
+
+<action  path="/report/excPutWithdrawCustomerTotalAction" type="com.winsafe.drp.action.report.ExcPutWithdrawCustomerTotalAction" scope="request" validate="false">
+</action>
+
+<action path="/report/printWithdrawCustomerTotalAction" type="com.winsafe.drp.action.report.PrintWithdrawCustomerTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printwithdrawcustomertotal.jsp"/>
+</action>
+
+
+
+<action  path="/report/withdrawBillTotalAction" type="com.winsafe.drp.action.report.WithdrawBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/withdrawbilltotal.jsp"/>
+</action>
+
+<action  path="/report/excPutWithdrawBillTotalAction" type="com.winsafe.drp.action.report.ExcPutWithdrawBillTotalAction" scope="request" validate="false">
+</action>
+
+<action path="/report/printWithdrawBillTotalAction" type="com.winsafe.drp.action.report.PrintWithdrawBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printwithdrawbilltotal.jsp"/>
+</action>
+
+
+<action  path="/report/withdrawProductTotalAction" type="com.winsafe.drp.action.report.WithdrawProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/withdrawproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutWithdrawProductTotalAction" type="com.winsafe.drp.action.report.ExcPutWithdrawProductTotalAction" scope="request" validate="false">
+</action>
+
+<action path="/report/printWithdrawProductTotalAction" type="com.winsafe.drp.action.report.PrintWithdrawProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printwithdrawproducttotal.jsp"/>
+</action>
+
+
+<action  path="/report/saleTradesCustomerTotalAction" type="com.winsafe.drp.action.report.SaleTradesCustomerTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/saletradescustomertotal.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleTradesCustomerTotalAction" type="com.winsafe.drp.action.report.ExcPutSaleTradesCustomerTotalAction" scope="request" validate="false">
+</action>
+
+<action path="/report/printSaleTradesCustomerTotalAction" type="com.winsafe.drp.action.report.PrintSaleTradesCustomerTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsaletradescustomertotal.jsp"/>
+</action>
+
+
+<action  path="/report/saleTradesProductTotalAction" type="com.winsafe.drp.action.report.SaleTradesProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/saletradesproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleTradesProductTotalAction" type="com.winsafe.drp.action.report.ExcPutSaleTradesProductTotalAction" scope="request" validate="false">
+</action>
+
+<action path="/report/printSaleTradesProductTotalAction" type="com.winsafe.drp.action.report.PrintSaleTradesProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsaletradesproducttotal.jsp"/>
+</action>
+
+
+<action  path="/report/saleTradesDetailAction" type="com.winsafe.drp.action.report.SaleTradesDetailAction" scope="request" validate="false">
+<forward name="show" path="/report/saletradesdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutSaleTradesDetailAction" type="com.winsafe.drp.action.report.ExcPutSaleTradesDetailAction" scope="request" validate="false">
+</action>
+
+<action path="/report/printSaleTradesDetailAction" type="com.winsafe.drp.action.report.PrintSaleTradesDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsaletradesdetail.jsp"/>
+</action>
+
+
+
+<action  path="/report/organWithdrawOrganTotalAction" type="com.winsafe.drp.action.report.OrganWithdrawOrganTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/organwithdraworgantotal.jsp"/>
+</action>
+<action  path="/report/excPutOrganWithdrawOrganTotalAction" type="com.winsafe.drp.action.report.ExcPutOrganWithdrawOrganTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganWithdrawOrganTotalAction" type="com.winsafe.drp.action.report.PrintOrganWithdrawOrganTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorganwithdraworgantotal.jsp"/>
+</action>
+
+<action  path="/report/organWithdrawProductTotalAction" type="com.winsafe.drp.action.report.OrganWithdrawProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/organwithdrawproducttotal.jsp"/>
+</action>
+<action  path="/report/excPutOrganWithdrawProductTotalAction" type="com.winsafe.drp.action.report.ExcPutOrganWithdrawProductTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganWithdrawProductTotalAction" type="com.winsafe.drp.action.report.PrintOrganWithdrawProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorganwithdrawproducttotal.jsp"/>
+</action>
+
+<action  path="/report/organWithdrawBillTotalAction" type="com.winsafe.drp.action.report.OrganWithdrawBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/organwithdrawbilltotal.jsp"/>
+</action>
+<action  path="/report/excPutOrganWithdrawBillTotalAction" type="com.winsafe.drp.action.report.ExcPutOrganWithdrawBillTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganWithdrawBillTotalAction" type="com.winsafe.drp.action.report.PrintOrganWithdrawBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorganwithdrawbilltotal.jsp"/>
+</action>
+
+<action  path="/report/organWithdrawDetailAction" type="com.winsafe.drp.action.report.OrganWithdrawDetailAction" scope="request" validate="false">
+<forward name="show" path="/report/organwithdrawdetail.jsp"/>
+</action>
+<action  path="/report/excPutOrganWithdrawDetailAction" type="com.winsafe.drp.action.report.ExcPutOrganWithdrawDetailAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganWithdrawDetailAction" type="com.winsafe.drp.action.report.PrintOrganWithdrawDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorganwithdrawdetail.jsp"/>
+</action>
+
+<action  path="/report/organTradesDetailAction" type="com.winsafe.drp.action.report.OrganTradesDetailAction" scope="request" validate="false">
+<forward name="show" path="/report/organtradesdetail.jsp"/>
+</action>
+<action  path="/report/excPutOrganTradesDetailAction" type="com.winsafe.drp.action.report.ExcPutOrganTradesDetailAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganTradesDetailAction" type="com.winsafe.drp.action.report.PrintOrganTradesDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorgantradesdetail.jsp"/>
+</action>
+
+<action  path="/report/organTradesOrganTotalAction" type="com.winsafe.drp.action.report.OrganTradesOrganTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/organtradesorgantotal.jsp"/>
+</action>
+<action  path="/report/excPutOrganTradesOrganTotalAction" type="com.winsafe.drp.action.report.ExcPutOrganTradesOrganTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganTradesOrganTotalAction" type="com.winsafe.drp.action.report.PrintOrganTradesOrganTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorgantradesorgantotal.jsp"/>
+</action>
+
+<action  path="/report/organTradesProductTotalAction" type="com.winsafe.drp.action.report.OrganTradesProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/organtradesproducttotal.jsp"/>
+</action>
+<action  path="/report/excPutOrganTradesProductTotalAction" type="com.winsafe.drp.action.report.ExcPutOrganTradesProductTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganTradesProductTotalAction" type="com.winsafe.drp.action.report.PrintOrganTradesProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorgantradesproducttotal.jsp"/>
+</action>
+
+<action  path="/report/organTradesBillTotalAction" type="com.winsafe.drp.action.report.OrganTradesBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/organtradesbilltotal.jsp"/>
+</action>
+<action  path="/report/excPutOrganTradesBillTotalAction" type="com.winsafe.drp.action.report.ExcPutOrganTradesBillTotalAction" scope="request" validate="false">
+</action>
+<action path="/report/printOrganTradesBillTotalAction" type="com.winsafe.drp.action.report.PrintOrganTradesBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printorgantradesbilltotal.jsp"/>
+</action>
+
+
+<action  path="/report/productIncomeDetailAction" type="com.winsafe.drp.action.report.ProductIncomeDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/productincomedetail.jsp"/>
+</action>
+<action  path="/report/excPutProductIncomeDetailAction" type="com.winsafe.drp.action.report.ExcPutProductIncomeDetailAction" scope="request" validate="false">
+</action>
+<action  path="/report/printProductIncomeDetailAction" type="com.winsafe.drp.action.report.PrintProductIncomeDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printproductincomedetail.jsp"/>
+</action>
+
+<action  path="/report/productIncomeTotalAction" type="com.winsafe.drp.action.report.ProductIncomeTotalAction" scope="request" validate="false">
+<forward name="success" path="/report/productincometotal.jsp"/>
+</action>
+<action  path="/report/excPutProductIncomeTotalAction" type="com.winsafe.drp.action.report.ExcPutProductIncomeTotalAction" scope="request" validate="false">
+</action>
+<action  path="/report/printProductIncomeTotalAction" type="com.winsafe.drp.action.report.PrintProductIncomeTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printproductincometotal.jsp"/>
+</action>
+
+
+
+
+<action  path="/report/costProductTotalAction" type="com.winsafe.drp.action.report.CostProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/costbyproducttotal.jsp"/>
+</action>
+
+<action  path="/report/costProductDetailAction" type="com.winsafe.drp.action.report.CostProductDetailAction" scope="request" validate="false">
+<forward name="detail" path="/report/costproductdetail.jsp"/>
+</action>
+
+<action  path="/report/excPutCostProductTotalAction" type="com.winsafe.drp.action.report.ExcPutCostProductTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/printCostProductTotalAction" type="com.winsafe.drp.action.report.PrintCostProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printcostproducttotal.jsp"/>
+</action>
+
+<action  path="/report/excPutCostProductDetailAction" type="com.winsafe.drp.action.report.ExcPutCostProductDetailAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/printCostProductDetailAction" type="com.winsafe.drp.action.report.PrintCostProductDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printcostproductdetail.jsp"/>
+</action>
+
+
+<action  path="/report/supplySaleMoveOrganTotalAction" type="com.winsafe.drp.action.report.SupplySaleMoveOrganTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/supplysalemoveorgantotal.jsp"/>
+</action>
+<action  path="/report/printSupplySaleMoveOrganTotalAction" type="com.winsafe.drp.action.report.PrintSupplySaleMoveOrganTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsupplysalemoveorgantotal.jsp"/>
+</action>
+<action  path="/report/excPutSupplySaleMoveOrganTotalAction" type="com.winsafe.drp.action.report.ExcPutSupplySaleMoveOrganTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/supplySaleMoveProductTotalAction" type="com.winsafe.drp.action.report.SupplySaleMoveProductTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/supplysalemoveproducttotal.jsp"/>
+</action>
+<action  path="/report/printSupplySaleMoveProductTotalAction" type="com.winsafe.drp.action.report.PrintSupplySaleMoveProductTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsupplysalemoveproducttotal.jsp"/>
+</action>
+<action  path="/report/excPutSupplySaleMoveProductTotalAction" type="com.winsafe.drp.action.report.ExcPutSupplySaleMoveProductTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/supplySaleMoveBillTotalAction" type="com.winsafe.drp.action.report.SupplySaleMoveBillTotalAction" scope="request" validate="false">
+<forward name="show" path="/report/supplysalemovebilltotal.jsp"/>
+</action>
+<action  path="/report/printSupplySaleMoveBillTotalAction" type="com.winsafe.drp.action.report.PrintSupplySaleMoveBillTotalAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsupplysalemovebilltotal.jsp"/>
+</action>
+<action  path="/report/excPutSupplySaleMoveBillTotalAction" type="com.winsafe.drp.action.report.ExcPutSupplySaleMoveBillTotalAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/supplySaleMoveDetailAction" type="com.winsafe.drp.action.report.SupplySaleMoveDetailAction" scope="request" validate="false">
+<forward name="show" path="/report/supplysalemovedetail.jsp"/>
+</action>
+<action  path="/report/printSupplySaleMoveDetailAction" type="com.winsafe.drp.action.report.PrintSupplySaleMoveDetailAction" scope="request" validate="false">
+<forward name="toprint" path="/report/printsupplysalemovedetail.jsp"/>
+</action>
+<action  path="/report/excPutSupplySaleMoveDetailAction" type="com.winsafe.drp.action.report.ExcPutSupplySaleMoveDetailAction" scope="request" validate="false">
+</action>
+
+<action  path="/report/idcodeScanRateAction" type="com.winsafe.drp.action.report.IdcodeScanRateAction" scope="request" validate="false">
+<forward name="success" path="/report/idcodescanratelist.jsp"/>
+</action>
+<action  path="/report/exportIdcodeScanRateAction" type="com.winsafe.drp.action.report.ExportIdcodeScanRateAction" scope="request" validate="false">
+</action>
+
+<!-- 销售和消耗汇总报表 -->
+<action  path="/report/salesConsumeReportAction" type="com.winsafe.drp.action.report.SalesConsumeReportAction" scope="request" validate="false">
+<forward name="success" path="/report/salesConsumeReportList.jsp"/>
+</action>
+
+<!-- 销售和消耗汇总报表导出 -->
+<action  path="/report/excPutSalesConsumeReportAction" type="com.winsafe.drp.action.report.ExcPutSalesConsumeReportAction" scope="request" validate="false">
+</action>
+
+
+<!-- 销售明细报表 -->
+<action  path="/report/salesDetailReportAction" type="com.winsafe.drp.action.report.SalesDetailReportAction" scope="request" validate="false">
+<forward name="success" path="/report/salesDetailReportList.jsp"/>
+</action>
+
+<!-- 销售明细报表导出 -->
+<action  path="/report/excPutSalesDetailReportAction" type="com.winsafe.drp.action.report.ExcPutSalesDetailReportAction" scope="request" validate="false">
+</action>
+
+
+<!-- 消耗明细报表 -->
+<action  path="/report/consumeDetailReportAction" type="com.winsafe.drp.action.report.ConsumeDetailReportAction" scope="request" validate="false">
+<forward name="success" path="/report/consumeDetailReportList.jsp"/>
+</action>
+
+<!-- 消耗明细报表导出 -->
+<action  path="/report/excPutConsumeDetailReportAction" type="com.winsafe.drp.action.report.ExcPutConsumeDetailReportAction" scope="request" validate="false">
+</action>
+
+
+<!-- 产品分析验证报表 -->
+<action  path="/report/productValidateReportAction" type="com.winsafe.drp.action.report.ProductValidateReportAction" scope="request" validate="false">
+<forward name="success" path="/report/productValidateReportList.jsp"/>
+</action>
+<action  path="/report/productValidateDetailAction" type="com.winsafe.drp.action.report.ProductValidateDetailAction" scope="request" validate="false">
+<forward name="success" path="/report/productValidateDetailList.jsp"/>
+</action>
+
+
+<!-- 产品分析验证报表导出 -->
+<action  path="/report/excputProductValidateReportAction" type="com.winsafe.drp.action.report.ExcputProductValidateReportAction" scope="request" validate="false">
+</action>
+
+
+
+<!-- 扫描率按产品汇总 -->
+<action  path="/report/idcodeScanRateByProductAction" type="com.winsafe.drp.action.report.IdcodeScanRateByProductAction" scope="request" validate="false">
+<forward name="success" path="/report/idcodescanratebyproductlist.jsp"/>
+</action>
+<action  path="/report/exportIdcodeScanRateByProductAction" type="com.winsafe.drp.action.report.ExportIdcodeScanRateByProductAction" scope="request" validate="false">
+</action>
+
+<!-- 扫描率按仓库汇总 -->
+<action  path="/report/idcodeScanRateByWarehouseAction" type="com.winsafe.drp.action.report.IdcodeScanRateByWarehouseAction" scope="request" validate="false">
+<forward name="success" path="/report/idcodescanratebywarehouselist.jsp"/>
+</action>
+<action  path="/report/exportIdcodeScanRateByWarehouseAction" type="com.winsafe.drp.action.report.ExportIdcodeScanRateByWarehouseAction" scope="request" validate="false">
+</action>
+
+<!-- 销售报表 -->
+<action  path="/report/sellReportAction" type="com.winsafe.drp.action.report.SellReportAction" scope="request" validate="false">
+<forward name="success" path="/report/sellreportlist.jsp"/>
+</action>
+
+<!-- 销售报表导出 -->
+<action  path="/report/excputSellReportAction" type="com.winsafe.drp.action.report.ExcputSellReportAction" scope="request" validate="false">
+</action>
+
+<!-- 数量盘点差异报表 -->
+<action  path="/report/inventoryReportAction" type="com.winsafe.drp.action.report.InventoryReportAction" scope="request" validate="false">
+<forward name="success" path="/report/inventoryreportlist.jsp"/>
+</action>
+
+<!-- 数量盘点差异报表导出 -->
+<action  path="/report/excputInventoryReportAction" type="com.winsafe.drp.action.report.ExcputInventoryReportAction" scope="request" validate="false">
+</action>
+
+
+<!-- 库存短缺报表 -->
+<action  path="/report/stockShortageAlertReportAction" type="com.winsafe.drp.action.report.StockShortageAlertReportAction" scope="request" validate="false">
+<forward name="success" path="/report/stockshortagealertreportlist.jsp"/>
+</action>
+
+<!-- 库存短缺报表导出 -->
+<action  path="/report/excputStockShortageAlertReportAction" type="com.winsafe.drp.action.report.ExcputStockShortageAlertReportAction" scope="request" validate="false">
+</action>
+
+<!-- 有效期预警报表 -->
+<action  path="/report/productExpirationAlertReportAction" type="com.winsafe.drp.action.report.ProductExpirationAlertReportAction" scope="request" validate="false">
+<forward name="success" path="/report/productexpirationalertreportlist.jsp"/>
+</action>
+
+<!-- 有效期预警报表导出 -->
+<action  path="/report/excputProductExpirationAlertReportAction" type="com.winsafe.drp.action.report.ExcputProductExpirationAlertReportAction" scope="request" validate="false">
+</action>
+
+
+<!-- 库存预警 -->
+<action  path="/report/alarmByProductStockpileAllAction" type="com.winsafe.drp.action.report.AlarmByProductStockpileAllAction" scope="request" validate="false">
+<forward name="success" path="/report/alarmbyproductstockpilealllist.jsp"/>
+</action>
+<action  path="/report/exportAlarmByProductStockpileAllAction" type="com.winsafe.drp.action.report.ExportAlarmByProductStockpileAllAction" scope="request" validate="false">
+</action>
+<action  path="/report/toUpdateAlarmByRemarkAction" type="com.winsafe.drp.action.report.ToUpdateAlarmByRemarkAction" scope="request" validate="false">
+<forward name="toupdwarehouse" path="/report/updatealarmbyremarkllist.jsp"/>
+</action>
+<action  path="/report/updateAlarmByRemarkAction" type="com.winsafe.drp.action.report.UpdateAlarmByRemarkAction" scope="request" validate="false">
+<forward name="updResult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 库存保质期预警 -->
+<action  path="/report/protectDateByProductStockpileAllAction" type="com.winsafe.drp.action.report.ProtectDateByProductStockpileAllAction" scope="request" validate="false">
+<forward name="success" path="/report/protectDatebyproductstockpilealllist.jsp"/>
+</action>
+<action  path="/report/exportProtectDateByProductStockpileAllAction" type="com.winsafe.drp.action.report.ExportProtectDateByProductStockpileAllAction" scope="request" validate="false">
+</action>
+<action  path="/report/toUpdateProtectDateByRemarkAction" type="com.winsafe.drp.action.report.ToUpdateProtectDateByRemarkAction" scope="request" validate="false">
+<forward name="toupdwarehouse" path="/report/updateprotectdatebyremarkllist.jsp"/>
+</action>
+<action  path="/report/updateProtectDateByRemarkAction" type="com.winsafe.drp.action.report.UpdateProtectDateByRemarkAction" scope="request" validate="false">
+<forward name="updResult" path="/sys/operatorclose.jsp"/>
+</action>
+
+<!-- 补货报表 -->
+<action  path="/report/listRepairByTaketicketAction" type="com.winsafe.drp.action.report.ListRepairByTaketicketAction" scope="request" validate="false">
+<forward name="success" path="/report/repairByTaketicketllist.jsp"/>
+</action>
+<action  path="/report/excRepairByTaketicketAction" type="com.winsafe.drp.action.report.ExportRepairByTaketicketAction" scope="request" validate="false">
+</action>
+
+<!-- 数据源下载 -->
+<action path="/report/toDownLoadReportAction" type="com.winsafe.drp.action.report.ToDownLoadReportAction" scope="request" validate="false">
+<forward name="list" path="/report/downloadreport.jsp"/>
+ </action>
+<action path="/report/downLoadReportAction"  type="com.winsafe.drp.action.report.DownLoadReportAction" scope="request" validate="false" ></action> 
+
+<!-- PD货物签收状态 -->
+<action path="/report/pdGoodsReceivingStatusReportAction" type="com.winsafe.drp.action.report.PDGoodsReceivingStatusReportAction" scope="request" validate="false">
+<forward name="list" path="/report/pdGoodsReceivingStatusReport.jsp"/>
+ </action>
+ 
+ <!-- PD货物签收状态导出 -->
+<action path="/report/excputPDGoodsReceivingStatusReportAction" type="com.winsafe.drp.action.report.ExcputPDGoodsReceivingStatusReportAction" scope="request" validate="false">
+ </action>
+ 
+ 
+ <!-- 库存报表 -->
+<action path="/report/pdInventoryReportAction" type="com.winsafe.drp.action.report.PDInventoryReportAction" scope="request" validate="false">
+<forward name="list" path="/report/pdInventoryReport.jsp"/>
+ </action>
+ 
+  <!-- 库存报表导出 -->
+<action path="/report/excputPDInventoryReportAction" type="com.winsafe.drp.action.report.ExcputPDInventoryReportAction" scope="request" validate="false">
+ </action>
+ 
+<!-- PD调拨报表 -->
+<action path="/report/pdGoodsTransferReportAction" type="com.winsafe.drp.action.report.PDGoodsTransferReportAction" scope="request" validate="false">
+<forward name="list" path="/report/pdGoodsTransferReport.jsp"/>
+ </action>
+ 
+ <!-- PD调拨报表 导出-->
+<action path="/report/excputPDGoodsTransferReportAction" type="com.winsafe.drp.action.report.ExcputPDGoodsTransferReportAction" scope="request" validate="false">
+ </action>
+ 
+<!-- PD扫描率报表 -->
+<action path="/report/pdProductScanningRatioReportAction" type="com.winsafe.drp.action.report.PDProductScanningRatioReportAction" scope="request" validate="false">
+<forward name="list" path="/report/pdProductScanningRatioReport.jsp"/>
+ </action>
+ 
+ <!-- PD扫描率报表导出 -->
+<action path="/report/excputPDProductScanningRatioReportAction" type="com.winsafe.drp.action.report.ExcputPDProductScanningRatioReportAction" scope="request" validate="false">
+ </action>
+ 
+<!-- 先进先出警示 -->
+<action path="/report/fifoAlertReportAction" type="com.winsafe.drp.action.report.FIFOAlertReportAction" scope="request" validate="false">
+<forward name="list" path="/report/fifoAlertReport.jsp"/>
+</action>
+
+<!-- 先进先出警示导出 -->
+<action path="/report/excputFIFOAlertReportAction" type="com.winsafe.drp.action.report.ExcputFIFOAlertReportAction" scope="request" validate="false">
+</action>
+
+
+ <!-- 库存明细报表 -->
+<action path="/report/inventoryDetailReportAction" type="com.winsafe.drp.action.report.InventoryDetailReportAction" scope="request" validate="false">
+<forward name="list" path="/report/inventoryDetailReport.jsp"/>
+ </action>
+ 
+  <!-- 库存明细报表导出 -->
+<action path="/report/excputInventoryDetailReportAction" type="com.winsafe.drp.action.report.ExcputInventoryDetailReportAction" scope="request" validate="false">
+ </action>
+
+<!-- 下级经销商退货箱码报表 -->
+<action path="/report/bkdReturnSSCCCodeReportAction" type="com.winsafe.drp.action.report.BKDReturnSSCCCodeReportAction" scope="request" validate="false">
+<forward name="list" path="/report/bkdReturnSSCCCodeReport.jsp"/>
+</action>
+<!-- 下级经销商退货箱码报表导出 -->
+<action path="/report/exportBkdReturnSSCCCodeReportAction" type="com.winsafe.drp.action.report.ExportBkdReturnSSCCCodeReportAction" scope="request" validate="false">
+</action>
+
+<!-- 库存箱码报表 -->
+<action path="/report/inventorySSCCCodeReportAction" type="com.winsafe.drp.action.report.InventorySSCCCodeReportAction" scope="request" validate="false">
+<forward name="list" path="/report/inventorySSCCCodeReport.jsp"/>
+</action>
+<!-- 库存箱码报表导出 -->
+<action path="/report/exportInventorySSCCCodeReportAction" type="com.winsafe.drp.action.report.ExportInventorySSCCCodeReportAction" scope="request" validate="false">
+</action>
+
+<!-- 库存有效期预警报表 -->
+<action path="/report/inventoryExpiryDateAlertReportAction" type="com.winsafe.drp.action.report.InventoryExpiryDateAlertReportAction" scope="request" validate="false">
+<forward name="list" path="/report/inventoryExpiryDateAlertReport.jsp"/>
+</action>
+<!-- 库存有效期预警报表导出 -->
+<action path="/report/exportInventoryExpiryDateAlertReportAction" type="com.winsafe.drp.action.report.ExportInventoryExpiryDateAlertReportAction" scope="request" validate="false">
+</action>
+
+<!-- 销售消耗库存月数量报表 -->
+<action path="/report/salesConsumptionInventoryMonthlyVolumeReportAction" type="com.winsafe.drp.action.report.SalesConsumptionInventoryMonthlyVolumeReportAction" scope="request" validate="false">
+<forward name="list" path="/report/salesConsumptionInventoryMonthlyVolumeReport.jsp"/>
+</action>
+<!-- 销售消耗库存月数量报表导出 -->
+<action path="/report/exportSalesConsumptionInventoryMonthlyVolumeReportAction" type="com.winsafe.drp.action.report.ExportSalesConsumptionInventoryMonthlyVolumeReportAction" scope="request" validate="false">
+</action>
+ <!-- 销售消耗库存年月报表-->
+<action path="/report/SalesDetailsReportAction" type="com.winsafe.drp.action.newreport.SalesLnventoryReportAction" scope="request" validate="false">
+<forward name="success" path="/newreports/SalesLnventoryReportList.jsp"/>
+</action>
+<action path="/report/exportSalesConsumptionInventoryYearMonthlyReportAction" type="com.winsafe.drp.action.report.ExportSalesConsumptionInventoryYearMonthlyReportAction" scope="request" validate="false">
+</action>
+<!-- 销售消耗历史 -->
+<action path="/report/listSalesConsumHistoryAction" type="com.winsafe.drp.action.report.ListSalesConsumHistoryAction" scope="request" validate="false">
+<forward name="list" path="/report/salesConsumHistoryList.jsp"/>
+</action>
+<!-- 销售消耗历史上传 -->
+<action path="/report/toUploadSalesConsumHistoryAction"  type="com.winsafe.drp.action.report.ToUploadSalesConsumHistoryAction" scope="request">
+	<forward name="upload" path="/report/uploadSalesConsumHistory.jsp"></forward>
+</action>
+<action name="idcodeUploadForm" path="/report/uploadSalesConsumHistoryAction" type="com.winsafe.drp.action.report.UploadSalesConsumHistoryAction" scope="request">
+	<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<!-- 销售消耗库存月汇总报表 -->
+<action path="/report/salesInventoryMonthSummaryReport" type="com.winsafe.drp.action.newreport.SalesMonthlyReportAction" scope="request" validate="false">
+<forward name="list" path="/newreports/SalesMonthlyReportList.jsp"/>
+</action>
+<action path="/report/exportSalesInventoryMonthSummaryReport" type="com.winsafe.drp.action.report.ExportSalesInventoryMonthSummaryReport" scope="request" validate="false">
+</action>
+
+
+<!-- 销售明细历史 -->
+<action  path="/report/listSalesDetailHistoryAction" type="com.winsafe.drp.action.report.ListSalesDetailHistoryAction" scope="request" validate="false">
+<forward name="success" path="/report/salesDetailHistoryList.jsp"/>
+</action>
+
+<action path="/report/toUpdSalesDetailHistoryAction" type="com.winsafe.drp.action.report.ToUpdSalesDetailHistoryAction" scope="request" validate="false">
+<forward name="list" path="/report/updSalesDetailHistory.jsp"/>
+</action>
+
+<action path="/report/updSalesDetailHistoryAction" type="com.winsafe.drp.action.report.UpdSalesDetailHistoryAction" scope="request" validate="false">
+<forward name="updResult" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<!-- 销售明细历史导出 -->
+<action  path="/report/excputSalesDetailHistoryAction" type="com.winsafe.drp.action.report.ExcPutSalesDetailHistoryAction" scope="request" validate="false">
+</action>  
+
+
+<!-- 消耗明细历史 -->
+<action  path="/report/listConsumeDetailHistoryAction" type="com.winsafe.drp.action.report.ListConsumeDetailHistoryAction" scope="request" validate="false">
+<forward name="success" path="/report/consumeDetailHistoryList.jsp"/>
+</action>
+
+<action path="/report/toUpdConsumeDetailHistoryAction" type="com.winsafe.drp.action.report.ToUpdConsumeDetailHistoryAction" scope="request" validate="false">
+<forward name="list" path="/report/updConsumeDetailHistory.jsp"/>
+</action>
+
+<action path="/report/updConsumeDetailHistoryAction" type="com.winsafe.drp.action.report.UpdConsumeDetailHistoryAction" scope="request" validate="false">
+<forward name="updResult" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+
+<!-- 消耗明细历史导出 -->
+<action  path="/report/excputConsumeDetailHistoryAction" type="com.winsafe.drp.action.report.ExcPutConsumeDetailHistoryAction" scope="request" validate="false">
+</action>
+
+ <!-- 库存明细历史 -->
+<action path="/report/listInventoryDetailHistoryAction" type="com.winsafe.drp.action.report.ListInventoryDetailHistoryAction" scope="request" validate="false">
+<forward name="list" path="/report/inventoryDetailHistory.jsp"/>
+ </action>
+ 
+<!-- 重新计算库存明细历史 -->
+<action path="/report/toUpdInventoryDetailHistoryAction" type="com.winsafe.drp.action.report.ToUpdInventoryDetailHistoryAction" scope="request" validate="false">
+<forward name="list" path="/report/updInventoryDetailHistory.jsp"/>
+</action>
+
+<action path="/report/updInventoryDetailHistoryAction" type="com.winsafe.drp.action.report.UpdInventoryDetailHistoryAction" scope="request" validate="false">
+<forward name="updResult" path="/sys/importregionresult.jsp"></forward>
+</action>
+ 
+ <!-- 库存明细历史导出 -->
+<action  path="/report/excputInventoryDetailHistoryAction" type="com.winsafe.drp.action.report.ExcputInventoryDetailHistoryAction" scope="request" validate="false">
+</action>
+
+
+<!-- 重码统计报表 --> 
+<action  path="/report/dupDeliveryIdcodeReportAction" type="com.winsafe.drp.action.report.DupDeliveryIdcodeReportAction" scope="request" validate="false">
+<forward name="success" path="/report/dupDeliveryIdcodeReportList.jsp"/>
+</action>
+
+<!-- 重码统计报表导出 -->
+<action  path="/report/excPutDupDeliveryIdcodeReportAction" type="com.winsafe.drp.action.report.ExcPutDupDeliveryIdcodeReportAction" scope="request" validate="false">
+</action>
+
+</action-mappings>
+
+
+<message-resources parameter="global.app.sys.ApplicationResource" />
+
+</struts-config>

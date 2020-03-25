@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.MsgReceive" table="Msg_Receive">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="sequence">
+<param name="sequence">Msg_Receive_SEQ</param>
+</generator>
+</id>
+<property column="MOBILENO" length="32" name="mobileno" type="java.lang.String"/>
+<property column="CONTENT" length="512" name="content" type="java.lang.String"/>
+<property column="CREATEDATE" length="7" name="createdate" type="java.util.Date"/>
+<property column="TRYCOUNT" length="64" name="trycount" type="java.lang.Integer"/>
+<property column="SMSID" length="10" name="smsid" type="java.lang.String"/>
+<property column="RECEIVEDATE" length="32" name="receivedate" type="java.util.Date"/>
+<property column="MSGTYPE" length="16" name="msgtype" type="java.lang.String"/>
+<property column="LONGCODE" length="18" name="longcode" type="java.lang.String"/>
+<property column="ISSEND" length="16" name="issend" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

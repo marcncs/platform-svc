@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.UserLog" table="user_log">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="UserID" length="10" name="userid" type="java.lang.Integer"/>
+<property column="LogTime" length="23" name="logtime" type="java.util.Date"/>
+<property column="Detail" length="1024" name="detail" type="java.lang.String"/>
+<property column="ModelType" length="10" name="modeltype" type="java.lang.Integer"/>
+<property column="ModifyContent" length="4000" name="modifycontent" type="text"/>
+</class> 
+</hibernate-mapping>

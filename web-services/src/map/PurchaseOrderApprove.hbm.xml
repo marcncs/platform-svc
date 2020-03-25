@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PurchaseOrderApprove" table="purchase_order_approve">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="POID" length="32" name="poid" type="java.lang.String"/>
+<property column="ApproveID" length="19" name="approveid" type="java.lang.Long"/>
+<property column="ActID" length="10" name="actid" type="java.lang.Integer"/>
+<property column="ApproveContent" length="512" name="approvecontent" type="java.lang.String"/>
+<property column="Approve" length="10" name="approve" type="java.lang.Integer"/>
+<property column="ApproveDate" length="23" name="approvedate" type="java.util.Date"/>
+<property column="ApproveOrder" length="10" name="approveorder" type="java.lang.Integer"/>
+<property column="Operate" length="10" name="operate" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

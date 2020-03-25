@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PeddleBalance" table="peddle_balance">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="UserID" length="19" name="userid" type="java.lang.Long"/>
+<property column="BlcStartDate" length="23" name="blcstartdate" type="java.util.Date"/>
+<property column="BlcEndDate" length="23" name="blcenddate" type="java.util.Date"/>
+<property column="BlcTotalSum" length="18" name="blctotalsum" type="java.lang.Double"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="19" name="makedeptid" type="java.lang.Long"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Long"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

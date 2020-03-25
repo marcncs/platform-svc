@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Users" table="users">
+<id column="UserID" name="userid" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="LoginName" length="64" name="loginname" type="java.lang.String"/>
+<property column="Password" length="128" name="password" type="java.lang.String"/>
+<property column="ApprovePwd" length="128" name="approvepwd" type="java.lang.String"/>
+<property column="RealName" length="64" name="realname" type="java.lang.String"/>
+<property column="NameEN" length="64" name="nameen" type="java.lang.String"/>
+<property column="Sex" length="10" name="sex" type="java.lang.Integer"/>
+<property column="Birthday" length="23" name="birthday" type="java.util.Date"/>
+<property column="IdCard" length="24" name="idcard" type="java.lang.String"/>
+<property column="Mobile" length="26" name="mobile" type="com.winsafe.hbm.entity.type.EncryptedMobile"/>
+<property column="OfficeTel" length="26" name="officetel" type="java.lang.String"/>
+<property column="HomeTel" length="26" name="hometel" type="java.lang.String"/>
+<property column="Email" length="64" name="email" type="java.lang.String"/>
+<property column="Qq" length="24" name="qq" type="java.lang.String"/>
+<property column="Msn" length="64" name="msn" type="java.lang.String"/>
+<property column="Province" length="10" name="province" type="java.lang.Integer"/>
+<property column="City" length="10" name="city" type="java.lang.Integer"/>
+<property column="Areas" length="10" name="areas" type="java.lang.Integer"/>
+<property column="Addr" length="256" name="addr" type="java.lang.String"/>
+<property column="CreateDate" length="23" name="createdate" type="java.util.Date"/>
+<property column="VAD" length="23" name="validate" type="java.util.Date"/>
+<property column="ValKey" length="256" name="valkey" type="java.lang.String"/>
+<property column="LastLogin" length="23" name="lastlogin" type="java.util.Date"/>
+<property column="LoginTimes" length="10" name="logintimes" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="Status" length="10" name="status" type="java.lang.Integer"/>
+<property column="IsOnline" length="10" name="isonline" type="java.lang.Integer"/>
+<property column="IsLogin" length="10" name="islogin" type="java.lang.Integer"/>
+<property column="IsCall" length="10" name="iscall" type="java.lang.Integer"/>
+<property column="NCcode" length="32" name="nccode" type="java.lang.String"/>
+<property column="UserType" length="32" name="UserType" type="java.lang.Integer"/>
+<property column="IMGURL" length="250" name="imgurl" type="java.lang.String"/>
+<property column="iscwid" name="isCwid" type="java.lang.Integer"/>
+<property column="tryCount" name="tryCount" type="java.lang.Integer"/>
+<property column="isLocked" name="isLocked" type="java.lang.Integer"/>
+</class> 
+</hibernate-mapping>

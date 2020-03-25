@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.MemberGradeRule" table="member_grade_rule">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="StartPrice" length="18" name="startprice" type="java.lang.Double"/>
+<property column="EndPrice" length="18" name="endprice" type="java.lang.Double"/>
+<property column="StartIntegral" length="18" name="startintegral" type="java.lang.Double"/>
+<property column="EndIntegral" length="18" name="endintegral" type="java.lang.Double"/>
+<property column="MGID" length="19" name="mgid" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.sap.pojo.CartonSeq" table="CARTON_SEQ">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+	<param name="sequence">CARTON_SEQ_SEQ</param>
+</generator>
+</id> 
+<version column="version" name="version" type="java.lang.Integer"/>
+<property column="SEQ" name="seq" type="java.lang.String"/>
+<property column="productId" name="productId" type="java.lang.String"/>
+<property column="STATUS" name="status" type="java.lang.Integer"/>
+<property column="MAKEDATE" name="makeDate" type="java.util.Date"/>
+<property column="APPLYID" name="applyId" type="java.lang.Integer"/>
+<property column="CARTONCODE" name="cartonCode" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

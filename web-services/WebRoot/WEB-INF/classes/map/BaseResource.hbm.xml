@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.BaseResource" table="base_resource">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="TagName" length="24" name="tagname" type="java.lang.String"/>
+<property column="TagSubKey" length="10" name="tagsubkey" type="java.lang.Integer"/>
+<property column="TagSubValue" length="64" name="tagsubvalue" type="java.lang.String"/>
+<property column="IsDefault" length="10" name="isdefault" type="java.lang.Integer"/>
+<property column="IsUse" length="10" name="isuse" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

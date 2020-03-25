@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ConsignMachin" table="consign_machin">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="PID" length="32" name="pid" type="java.lang.String"/>
+<property column="PLinkman" length="64" name="plinkman" type="java.lang.String"/>
+<property column="Tel" length="64" name="tel" type="java.lang.String"/>
+<property column="PayMode" length="10" name="paymode" type="java.lang.Integer"/>
+<property column="CTotalSum" length="18" name="ctotalsum" type="java.lang.Double"/>
+<property column="CProductID" length="32" name="cproductid" type="java.lang.String"/>
+<property column="CProductName" length="512" name="cproductname" type="java.lang.String"/>
+<property column="CSpecMode" length="512" name="cspecmode" type="java.lang.String"/>
+<property column="CUnitID" length="10" name="cunitid" type="java.lang.Integer"/>
+<property column="CQuantity" length="18" name="cquantity" type="java.lang.Double"/>
+<property column="CUnitPrice" length="18" name="cunitprice" type="java.lang.Double"/>
+<property column="CompleteQuantity" length="18" name="completequantity" type="java.lang.Double"/>
+<property column="CompleteIntendDate" length="23" name="completeintenddate" type="java.util.Date"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="10" name="auditid" type="java.lang.Integer"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="IsEndcase" length="10" name="isendcase" type="java.lang.Integer"/>
+<property column="PrintTimes" length="10" name="printtimes" type="java.lang.Integer"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts-config PUBLIC 
+"-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd"> 
+<struts-config> 
+
+<form-beans> 
+<form-bean name="sapCodeForm" type="com.winsafe.erp.action.form.SapCodeForm"/>
+<form-bean name="validateStockMove" type="com.winsafe.drp.dao.ValidateStockMove"/>
+<form-bean name="validateCheckImport" type="com.winsafe.drp.dao.ValidateCheckImport"/>
+<form-bean name="fileForm" type="com.winsafe.drp.dao.IdcodeUploadForm"/>
+<form-bean name="csfileForm" type="com.winsafe.drp.dao.CartonSeqUploadForm"/>
+</form-beans> 
+<!-- 全局跳转页面 Author: wenping -->
+<global-forwards>
+	<forward name="operateresult" path="/sys/lockrecordclose.jsp"></forward>
+</global-forwards>
+<action-mappings> 
+
+<action  path="/erp/listBillImportConfigAction" type="com.winsafe.erp.action.ListBillImportConfigAction" scope="request" validate="false">
+<forward name="list" path="/erp/listBillImportConfig.jsp"/>
+</action>
+<action  path="/erp/listProductConfigAction" type="com.winsafe.erp.action.ListProductConfigAction" scope="request" validate="false">
+<forward name="list" path="/erp/listProductConfig.jsp"/>
+</action>
+
+<action  path="/erp/listUnitInfoAction" type="com.winsafe.erp.action.ListUnitInfoAction" scope="request" validate="false">
+<forward name="list" path="/erp/listUnitInfo.jsp"/>
+</action>
+
+<action  path="/erp/listProductPlanAction" type="com.winsafe.erp.action.ListProductPlanAction" scope="request" validate="false">
+<forward name="list" path="/erp/listProductPlan.jsp"/>
+</action>
+<action  path="/erp/listProductPlanDetailAction" type="com.winsafe.erp.action.ListProductPlanDetailAction" scope="request" validate="false">
+<forward name="detail" path="/erp/listProductPlanDetail.jsp"/>
+<forward name="toadd" path="/erp/releasecode.jsp"/>
+<forward name="close" path="/erp/releasecodeclose.jsp"/>
+</action>
+
+<action path="/erp/releaseCodeAction" type="com.winsafe.erp.action.ReleaseCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose.jsp"/>
+</action>
+
+<action  path="/erp/toSelectBillImportConfigAction" type="com.winsafe.erp.action.ToSelectBillImportConfigAction" scope="request" validate="false">
+<forward name="toselect" path="/erp/selectBillImportConfigIframe.jsp"/>
+</action>
+
+<action  path="/erp/selectBillImportConfigAction" type="com.winsafe.erp.action.SelectBillImportConfigAction" scope="request" validate="false">
+<forward name="selectfields" path="/erp/selectBillImportConfig.jsp"/>
+</action>
+
+<action  path="/erp/addBillImportConfigAction" type="com.winsafe.erp.action.AddBillImportConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<action  path="/erp/toUpdBillImportConfigAction" type="com.winsafe.erp.action.ToUpdBillImportConfigAction" scope="request" validate="false">
+<forward name="success" path="/erp/updBillImportConfig.jsp"/>
+</action>
+
+<action  path="/erp/toAddBillImportConfigAction" type="com.winsafe.erp.action.ToAddBillImportConfigAction" scope="request" validate="false">
+<forward name="success" path="/erp/addBillImportConfig.jsp"/>
+</action>
+
+<action  path="/erp/addBillImportConfigAction" type="com.winsafe.erp.action.AddBillImportConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!--生产计划导出 -->
+<action  path="/erp/exprotProductPlanAction" type="com.winsafe.erp.action.ExprotProductPlanAction" scope="request" validate="false">
+</action>
+
+<!--生产计划标记上传 -->
+<action  path="/erp/ajaxIsUploadProductPlanAction" type="com.winsafe.erp.action.AjaxIsUploadProductPlanAction" scope="request" validate="false">
+	<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+
+
+<!-- 删除ERP导入设置 -->
+<action  path="/erp/delBillImportConfigAction" type="com.winsafe.erp.action.DelBillImportConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 更新ERP导入设置 -->
+<action  path="/erp/updBillImportConfigAction" type="com.winsafe.erp.action.UpdBillImportConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+
+<!-- 新增ERP代码设置 -->
+<action  path="/erp/toAddProductConfigAction" type="com.winsafe.erp.action.ToAddProductConfigAction" scope="request" validate="false">
+<forward name="success" path="/erp/addProductConfig.jsp"/>
+</action>
+
+<action  path="/erp/addProductConfigAction" type="com.winsafe.erp.action.AddProductConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 修改ERP代码设置 -->
+<action  path="/erp/toUpdProductConfigAction" type="com.winsafe.erp.action.ToUpdProductConfigAction" scope="request" validate="false">
+<forward name="success" path="/erp/updProductConfig.jsp"/>
+</action>
+
+<action  path="/erp/updProductConfigAction" type="com.winsafe.erp.action.UpdProductConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+<!-- 删除ERP代码设置 -->
+<action  path="/erp/delProductConfigAction" type="com.winsafe.erp.action.DelProductConfigAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 新增托盘信息 -->
+<action  path="/erp/toAddUnitInfoAction" type="com.winsafe.erp.action.ToAddUnitInfoAction" scope="request" validate="false">
+<forward name="success" path="/erp/addUnitInfo.jsp"/>
+</action>
+
+<action  path="/erp/addUnitInfoAction" type="com.winsafe.erp.action.AddUnitInfoAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 修改托盘信息 -->
+<action  path="/erp/toUpdUnitInfoAction" type="com.winsafe.erp.action.ToUpdUnitInfoAction" scope="request" validate="false">
+<forward name="success" path="/erp/updUnitInfo.jsp"/>
+</action>
+
+<action  path="/erp/updUnitInfoAction" type="com.winsafe.erp.action.UpdUnitInfoAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+<!-- 删除托盘信息 -->
+<action  path="/erp/delUnitInfoAction" type="com.winsafe.erp.action.DelUnitInfoAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 新增生产计划 -->
+<action  path="/erp/toAddProductPlanAction" type="com.winsafe.erp.action.ToAddProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/erp/addProductPlan.jsp"/>
+</action>
+
+<action  path="/erp/addProductPlanAction" type="com.winsafe.erp.action.AddProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 修改生产计划 -->
+<action  path="/erp/toUpdProductPlanAction" type="com.winsafe.erp.action.ToUpdProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/erp/updProductPlan.jsp"/>
+</action>
+
+<action  path="/erp/updProductPlanAction" type="com.winsafe.erp.action.UpdProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+<!-- 删除生产计划 -->
+<action  path="/erp/delProductPlanAction" type="com.winsafe.erp.action.DelProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 审批生产计划 -->
+<action  path="/erp/approveProductPlanAction" type="com.winsafe.erp.action.ApproveProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action>
+
+<!-- 重新处理生产计划 -->
+<action  path="/erp/reApproveProductPlanAction" type="com.winsafe.erp.action.ApproveProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action>
+
+<!-- 结束生产计划 -->
+<action  path="/erp/closeProductPlanAction" type="com.winsafe.erp.action.CloseProductPlanAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose4.jsp"></forward>
+<!--<forward name="success" path="/sys/operatorclosereloadparent1.jsp"/>-->
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action>
+
+<!-- 下载生产计划实际使用条码 -->
+<action  path="/erp/downloadFinaCodeAction" type="com.winsafe.erp.action.DownloadFinaCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action>
+
+<!--上传SAP的码数据 -->
+<action path="/erp/uploadSapCodeAction"  scope="request" forward="/erp/uploadSapCode.jsp">
+</action>
+
+<action name="sapCodeForm"  path="/erp/importSapCodeAction" type="com.winsafe.erp.action.UploadSapCodeAction" scope="request" validate="false">
+<forward name="success" path="/sap/uploadmsg.jsp"/>
+<forward name="failure" path="/sap/uploadmsg.jsp"/>
+</action>
+
+<!--箱码托码转换 -->
+<action path="/erp/tollerChangeAction"  scope="request" forward="/erp/tollerchange.jsp">
+</action>
+
+<action name="sapCodeForm"  path="/erp/doTollerChangeAction" type="com.winsafe.erp.action.TollerChangeAction" scope="request" validate="false">
+<forward name="success" path="/erp/tollerchangeresult.jsp"/>
+<forward name="failure" path="/sap/uploadmsg.jsp"/>
+</action>
+
+<!--箱码托码转换 导入日志 -->
+<action  path="/erp/tollerChangeLogAction" type="com.winsafe.erp.action.TollerChangeLogAction" scope="request" validate="false">
+<forward name="list" path="/erp/tollerChangeLog.jsp"/>
+</action>
+
+<!--SAP导入日志 -->
+<action  path="/erp/listSapCodeAction" type="com.winsafe.erp.action.ListSapCodeAction" scope="request" validate="false">
+<forward name="list" path="/erp/listSapCode.jsp"/>
+<forward name="detail" path="/erp/tcodedetail.jsp"/>
+</action>
+<action  path="/erp/reProcessSapFileAction" type="com.winsafe.sap.action.ReProcessSapFileAction" scope="request" validate="false">
+<forward name="list" path="/erp/listSapCode.jsp"/>
+</action>
+
+
+
+<action path="/erp/ajaxTemplateNoAction" type="com.winsafe.erp.action.AjaxTemplateNoAction" scope="request" validate="false">
+</action>
+
+
+
+<action path="/warehouse/txtPutFwcodeAction" type="com.winsafe.drp.action.warehouse.TxtPutFwcodeAction" scope="request" validate="false">
+</action>
+
+<action  path="/erp/downloadCovertCodeAction" type="com.winsafe.erp.action.DownloadCovertCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+<forward name="error" path="/sys/operatorreturnnew.jsp"/>
+</action> 
+
+<action  path="/erp/toUpdCovertCodeAction" type="com.winsafe.erp.action.ToUpdCovertCodeAction" scope="request" validate="false">
+<!--<forward name="toUpd" path="/erp/updCovertCode.jsp"/>-->
+<forward name="toUpd" path="/erp/toUpdCovertCode.jsp"/>
+</action>
+
+<action  path="/erp/updCovertCodeAction" type="com.winsafe.erp.action.UpdCovertCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+<!--杜邦优福宽开始-->
+<action  path="/erp/listDupontCodeUploadLogAction" type="com.winsafe.erp.action.ListDupontCodeUploadLogAction" scope="request" validate="false">
+<forward name="list" path="/erp/listDupontCodeUploadLog.jsp"/>
+</action>
+<action path="/erp/toImportDupontPrimaryCode"  scope="request" forward="/erp/importDupontPrimaryCode.jsp"></action>
+
+<action name="fileForm"  path="/erp/importDupontPrimaryCode" type="com.winsafe.erp.action.ImportDupontPrimaryCode" scope="request" validate="false">
+<forward name="success" path="/sys/importregionresult.jsp"></forward>
+</action>
+
+<action path="/erp/listDupontPrimaryCode" type="com.winsafe.erp.action.ListDupontPrimaryCodeAction" scope="request">
+<forward name="list" path="/erp/listDupontPrimaryCode.jsp"></forward>
+</action>
+<!--杜邦优福宽结束-->
+
+<!--码申请开始-->
+<action  path="/erp/listApplyQrCodeAction" type="com.winsafe.erp.action.ListApplyQrCodeAction" scope="request" validate="false">
+<forward name="list" path="/erp/listApplyQrCode.jsp"/>
+</action>
+
+<action  path="/erp/toAddApplyQrCodeAction" type="com.winsafe.erp.action.ToAddApplyQrCodeAction" scope="request" validate="false">
+<forward name="success" path="/erp/addApplyQrCode.jsp"/>
+</action>
+
+<action  path="/erp/addApplyQrCodeAction" type="com.winsafe.erp.action.AddApplyQrCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose2.jsp"></forward>
+</action> 
+
+<action path="/common/selectTollerProductAction" type="com.winsafe.drp.action.common.SelectTollerProductAction" scope="request" validate="false">
+<forward name="selectproduct" path="/common/selecttollerproduct.jsp"/>
+</action>
+
+
+<action  path="/erp/toUpdApplyQrCodeAction" type="com.winsafe.erp.action.ToUpdApplyQrCodeAction" scope="request" validate="false">
+<forward name="success" path="/erp/updApplyQrCode.jsp"/>
+</action>
+
+<action  path="/erp/updApplyQrCodeAction" type="com.winsafe.erp.action.UpdApplyQrCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose2.jsp"/>
+</action>
+
+<action  path="/erp/delApplyQrCodeAction" type="com.winsafe.erp.action.DelApplyQrCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose2.jsp"></forward>
+</action>
+
+<action  path="/erp/auditApplyQrCodeAction" type="com.winsafe.erp.action.AuditApplyQrCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose2.jsp"></forward>
+</action>
+
+<!--关联箱码序号-->
+<action  path="/erp/toSelectCartonSeqAction" type="com.winsafe.erp.action.ToSelectCartonSeqAction" scope="request" validate="false">
+<forward name="success" path="/erp/selectCartonSeq.jsp"/>
+<forward name="update" path="/erp/toUpdSelectedCartonSeq.jsp"/>
+</action>
+
+<action  path="/erp/selectCartonSeqAction" type="com.winsafe.erp.action.SelectCartonSeqAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+
+<action  path="/erp/downloadSelectedCartonSeqAction" type="com.winsafe.erp.action.DownloadSelectedCartonSeqAction" scope="request" validate="false">
+</action> 
+
+<!--
+
+<action  path="/erp/toUpdCovertCodeAction" type="com.winsafe.erp.action.ToUpdCovertCodeAction" scope="request" validate="false">
+<forward name="toUpd" path="/erp/updCovertCode.jsp"/>
+<forward name="toUpd" path="/erp/toUpdSelectedCartonSeq.jsp"/>
+</action>
+-->
+<action  path="/erp/updSelectedCartonSeqAction" type="com.winsafe.erp.action.UpdSelectedCartonSeqAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"/>
+</action>
+
+<action  path="/erp/listCartonSeqLogAction" type="com.winsafe.erp.action.ListCartonSeqLogAction" scope="request" validate="false">
+<forward name="list" path="/erp/listCartonSeqLog.jsp"/>
+</action>
+
+<action  path="/erp/toAddCartonSeqLogAction" type="com.winsafe.erp.action.ToAddCartonSeqLogAction" scope="request" validate="false">
+<forward name="success" path="/erp/addCartonSeqLog.jsp"/>
+</action>
+
+<action  path="/erp/addCartonSeqLogAction" type="com.winsafe.erp.action.AddCartonSeqLogAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose2.jsp"></forward>
+</action>
+
+<action  path="/erp/ajaxGetAvailableRange" type="com.winsafe.erp.action.AjaxGetAvailableRange" scope="request" validate="false">
+</action>
+<!--码替换功能-->
+<action  path="/erp/listCodeReplaceAction" type="com.winsafe.erp.action.ListCodeReplaceAction" scope="request" validate="false">
+<forward name="list" path="/erp/listCodeReplace.jsp"/>
+</action>
+
+<action  path="/erp/reProcessReplaceCodeAction" type="com.winsafe.erp.action.ReProcessReplaceCodeAction" scope="request" validate="false">
+<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<action path="/erp/toUploadReplaceCodeAction" type="com.winsafe.erp.action.ToUploadReplaceCodeAction" scope="request">
+	<forward name="upload" path="/erp/uploadCodeReplace.jsp"></forward>
+</action>
+
+<action name="fileForm" path="/erp/uploadReplaceCodeAction" type="com.winsafe.erp.action.UploadReplaceCodeAction" scope="request">
+	<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 后关联 -->
+<action  path="/erp/toImportCartonSeqAction" type="com.winsafe.erp.action.ToImportCartonSeqAction" scope="request" validate="false">
+	<forward name="upload" path="/erp/importCartonSeq.jsp"></forward>
+</action>
+
+<action name="csfileForm" path="/erp/uploadCartonSeqAction" type="com.winsafe.erp.action.UploadCartonSeqAction" scope="request">
+	<forward name="success" path="/sys/operatorclose3.jsp"></forward>
+</action>
+
+<!-- 后关联处理日志 -->
+<action  path="/erp/listUploadCartonSeqLogAction" type="com.winsafe.erp.action.ListUploadCartonSeqLogAction" scope="request" validate="false">
+	<forward name="list" path="/erp/listUploadCartonSeqLog.jsp"></forward>
+</action>
+</action-mappings>
+
+<message-resources  key="warehouse" parameter="global.app.purchase.ApplicationResource" />
+
+</struts-config>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ApproveFlowLog" table="approve_flow_log">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="AFID" length="32" name="afid" type="java.lang.String"/>
+<property column="BillNO" length="32" name="billno" type="java.lang.String"/>
+<property column="ApproveID" length="19" name="approveid" type="java.lang.Integer"/>
+<property column="ApproveOrder" length="10" name="approveorder" type="java.lang.Integer"/>
+<property column="Operate" length="10" name="operate" type="java.lang.Integer"/>
+<property column="ActID" length="10" name="actid" type="java.lang.Integer"/>
+<property column="ApproveContent" length="512" name="approvecontent" type="java.lang.String"/>
+<property column="Approve" length="10" name="approve" type="java.lang.Integer"/>
+<property column="ApproveDate" length="23" name="approvedate" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

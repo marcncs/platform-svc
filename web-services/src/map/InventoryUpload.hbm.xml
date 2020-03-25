@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.InventoryUpload" table="Inventory_Upload">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="BILLNO" length="32" name="billNo" type="java.lang.String"/>
+<property column="MATERIALCODE" length="8" name="materialCode" type="java.lang.String"/>
+<property column="CARTONCODE" length="20" name="cartonCode" type="java.lang.String"/>
+<property column="BATCH" length="10" name="batch" type="java.lang.String"/>
+<property column="PRODUCEDATE" length="10" name="produceDate" type="java.lang.String"/>
+<property column="EXPIRYDATE" length="10" name="expiryDate" type="java.lang.String"/>
+<property column="FLAG" name="falg" type="java.lang.Integer"/>
+<property column="ORGANID" length="32" name="organId" type="java.lang.String"/>
+<property column="WAREHOUSEID" length="32" name="warehouseId" type="java.lang.String"/>
+<property column="ORGANOECODE" length="32" name="oecode" type="java.lang.String"/>
+<property column="WAREHOUSENCCODE" length="32" name="nccode" type="java.lang.String"/>
+<property column="INVENTORYUPLOADID" name="inventoryUploadLogId" type="java.lang.Integer"/>
+
+</class>
+</hibernate-mapping>

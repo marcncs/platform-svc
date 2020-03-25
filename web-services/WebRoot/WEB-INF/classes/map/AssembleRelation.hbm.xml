@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.AssembleRelation" table="assemble_relation">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="ARProductID" length="32" name="arproductid" type="java.lang.String"/>
+<property column="ARProductName" length="512" name="arproductname" type="java.lang.String"/>
+<property column="ARSpecMode" length="512" name="arspecmode" type="java.lang.String"/>
+<property column="ARUnitID" length="10" name="arunitid" type="java.lang.Integer"/>
+<property column="ARQuantity" length="18" name="arquantity" type="java.lang.Double"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="MakeOrganID" length="32" name="makeorganid" type="java.lang.String"/>
+<property column="MakeDeptID" length="10" name="makedeptid" type="java.lang.Integer"/>
+<property column="MakeID" length="10" name="makeid" type="java.lang.Integer"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="10" name="auditid" type="java.lang.Integer"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="KeysContent" length="1024" name="keyscontent" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

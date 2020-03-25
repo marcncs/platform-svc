@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CountryArea" table="country_area">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/>
+</id>
+<property column="AreaName" length="128" name="areaname" type="java.lang.String"/>
+<property column="ParentID" length="10" name="parentid" type="java.lang.Integer"/>
+<property column="Rank" length="10" name="rank" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.InventoryUploadLog" table="Inventory_Upload_Log">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="IsDeal" name="isDeal" type="java.lang.Integer"/>
+<property column="FileName" length="256" name="fileName" type="java.lang.String"/>
+<property column="FilePath" length="256" name="filePath" type="java.lang.String"/>
+<property column="MakeID" name="makeId" type="java.lang.Integer"/>
+<property column="MakeOrganID" length="32" name="makeOrganId" type="java.lang.String"/>
+<property column="MakeDeptID" name="makeDeptId" type="java.lang.Integer"/>
+<property column="MakeDate" name="makeDate" type="java.util.Date"/>
+<property column="logFilePath" length="256" name="logFilePath" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

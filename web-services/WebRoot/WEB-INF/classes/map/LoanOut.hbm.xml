@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.LoanOut" table="loan_out">
+<id column="ID" name="id" type="java.lang.String">
+<generator class="assigned"/>
+</id>
+<property column="UID" length="32" name="uid" type="java.lang.String"/>
+<property column="UName" length="64" name="uname" type="java.lang.String"/>
+<property column="ReceiveMan" length="32" name="receiveman" type="java.lang.String"/>
+<property column="Tel" length="26" name="tel" type="java.lang.String"/>
+<property column="SaleDept" length="10" name="saledept" type="java.lang.Integer"/>
+<property column="SaleID" length="19" name="saleid" type="java.lang.Long"/>
+<property column="ConsignmentDate" length="23" name="consignmentdate" type="java.util.Date"/>
+<property column="TotalSum" length="16" name="totalsum" type="java.lang.Double"/>
+<property column="TransportMode" length="10" name="transportmode" type="java.lang.Integer"/>
+<property column="Transit" length="10" name="transit" type="java.lang.Integer"/>
+<property column="TransportAddr" length="128" name="transportaddr" type="java.lang.String"/>
+<property column="MakeID" length="19" name="makeid" type="java.lang.Long"/>
+<property column="MakeDate" length="23" name="makedate" type="java.util.Date"/>
+<property column="Remark" length="256" name="remark" type="java.lang.String"/>
+<property column="IsAudit" length="10" name="isaudit" type="java.lang.Integer"/>
+<property column="AuditID" length="19" name="auditid" type="java.lang.Long"/>
+<property column="AuditDate" length="23" name="auditdate" type="java.util.Date"/>
+<property column="IsReceive" length="10" name="isreceive" type="java.lang.Integer"/>
+<property column="ReceiveID" length="19" name="receiveid" type="java.lang.Long"/>
+<property column="ReceiveDate" length="23" name="receivedate" type="java.util.Date"/>
+<property column="IsTransSale" length="10" name="istranssale" type="java.lang.Integer"/>
+<property column="TransSaleID" length="19" name="transsaleid" type="java.lang.Long"/>
+<property column="TransSaleDate" length="23" name="transsaledate" type="java.util.Date"/>
+<property column="PrintTimes" length="10" name="printtimes" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

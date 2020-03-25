@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.Manufacturer" table="manufacturer">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="assigned"/> 
+</id>
+<property column="fullName" name="fullName" type="java.lang.String"/>
+<property column="shortName" name="shortName" type="java.lang.String"/>
+<property column="auditStatus" name="auditStatus" type="java.lang.Integer"/>
+<property column="certifyStatus" name="certifyStatus" type="java.lang.Integer"/>
+<property column="address" name="address" type="java.lang.String"/>
+<property column="tel" name="tel" type="java.lang.String"/>
+<property column="businessLicenseNo" name="businessLicenseNo" type="java.lang.String"/>
+<property column="organizationNo" name="organizationNo" type="java.lang.String"/>
+<property column="businessLicenseCopyPic" name="businessLicenseCopyPic" type="java.lang.String"/>
+<property column="contactName" name="contactName" type="java.lang.String"/>
+<property column="contactPhone" name="contactPhone" type="java.lang.String"/>
+<property column="createTime" name="createTime" type="java.util.Date"/>
+<property column="lastModifyTime" name="lastModifyTime" type="java.util.Date"/>
+<property column="lvl" name="lvl" type="java.lang.Integer"/>
+<property column="serviceExpiredTime" name="serviceExpiredTime" type="java.util.Date"/>
+<property column="isDeleted" name="isDeleted" type="java.lang.Boolean"/>
+<property column="deleteTime" name="deleteTime" type="java.util.Date"/>
+</class>
+</hibernate-mapping>

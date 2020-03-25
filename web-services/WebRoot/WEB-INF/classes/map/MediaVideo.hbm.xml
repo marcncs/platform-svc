@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.MediaVideo" table="media_video">
+<id column="ID" name="id" type="java.lang.Integer">
+<generator class="sequence"> 
+<param name="sequence">MEDIA_VIDEO_SEQ</param>
+</generator>
+</id>
+<property column="manufacturerId" name="manufacturerId" type="java.lang.Integer"/>
+<property column="title" name="title" type="java.lang.String"/>
+<property column="url" name="url" type="java.lang.String"/>
+<property column="imgUrl" name="imgUrl" type="java.lang.String"/>
+<property column="digest" name="digest" type="java.lang.String"/>
+<property column="[SIZE]" name="size" type="java.lang.Integer"/>
+<property column="createTime" name="createTime" type="java.util.Date"/>
+<property column="lastModifyTime" name="lastModifyTime" type="java.util.Date"/>
+<property column="isDeleted" name="isDeleted" type="java.lang.Integer"/>
+<property column="deleteTime" name="deleteTime" type="java.util.Date"/>
+<property column="isPublish" name="isPublish" type="java.lang.Integer"/>
+<property column="hash" name="hash" type="java.lang.String"/>
+<property column="mimeType" name="mimeType" type="java.lang.String"/>
+<property column="imageHash" name="imageHash" type="java.lang.String"/>
+<property column="path" name="path" type="java.lang.String"/>
+<property column="imagePath" name="imagePath" type="java.lang.String"/>
+<property column="viewCount" name="viewCount" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

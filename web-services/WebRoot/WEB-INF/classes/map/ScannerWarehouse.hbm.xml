@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.ScannerWarehouse" table='"SCANNER_WAREHOUSE"'>
+	<id column="ID" name="id" type="java.lang.String">
+		<generator class="assigned"/>
+	</id>
+	 <property name="warehouseid" type="java.lang.String">
+	 	<column name="WAREHOUSEID" length="12" ></column>
+     </property>
+     <property name="scannerid" type="java.lang.String">
+	 	<column name="SCANNERID" length="20" ></column>
+     </property>
+     <property name="wareHouseName" type="java.lang.String">
+     	<column name="WAREHOUSENAME" length="128"></column>
+     </property>
+     <property name="orgName" type="java.lang.String">
+     	<column name="ORGNAME" length="128"></column>
+     </property>
+</class>
+</hibernate-mapping>

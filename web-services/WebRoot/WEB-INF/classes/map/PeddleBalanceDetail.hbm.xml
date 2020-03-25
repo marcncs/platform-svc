@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.PeddleBalanceDetail" table="peddle_balance_detail">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="assigned"/>
+</id>
+<property column="PBID" length="32" name="pbid" type="java.lang.String"/>
+<property column="PaymentMode" length="10" name="paymentmode" type="java.lang.Integer"/>
+<property column="SubSum" length="18" name="subsum" type="java.lang.Double"/>
+<property column="FundAttach" length="10" name="fundattach" type="java.lang.Integer"/>
+</class>
+</hibernate-mapping>

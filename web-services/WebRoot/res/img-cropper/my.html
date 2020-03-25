@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>基于HTML5的图片裁剪插</title>
+<!-- <link href="assets/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="/res/bracket/css/bootstrap.min.css" rel="stylesheet">
+<link href="dist/cropper.css" rel="stylesheet">
+<link href="css/main.css" rel="stylesheet">
+</head>
+<body>
+<div class="htmleaf-container">
+	<!-- Content -->
+<div class="container">
+
+	<div class="row">
+	  <div class="">
+		<!-- <h3 class="page-header">Demo:</h3> -->
+		<div class="img-container">
+		  <!-- <img src="assets/img/picture.jpg" alt="Picture"> -->
+		  <img src="/images/nopic.jpg" alt="Picture">
+		</div>
+	  </div>
+	</div>
+
+	<div class="row">
+	  <div class="col-md-9 docs-buttons">
+		<div class="btn-group">
+		  <button class="btn btn-primary" data-method="zoom" data-option="0.1" type="button" title="Zoom In">
+			<span class="docs-tooltip" data-toggle="tooltip" title="zoom.in">
+			  <span class="icon icon-zoom-in"></span>
+			</span>
+		  </button>
+		  <button class="btn btn-primary" data-method="zoom" data-option="-0.1" type="button" title="Zoom Out">
+			<span class="docs-tooltip" data-toggle="tooltip" title="zoom.out">
+			  <span class="icon icon-zoom-out"></span>
+			</span>
+		  </button>
+		  <button class="btn btn-primary" data-method="rotate" data-option="-90" type="button" title="Rotate Left">
+			<span class="docs-tooltip" data-toggle="tooltip" title="rotate.left.90">
+			  <span class="icon icon-rotate-left"></span>
+			</span>
+		  </button>
+		  <button class="btn btn-primary" data-method="rotate" data-option="90" type="button" title="Rotate Right">
+			<span class="docs-tooltip" data-toggle="tooltip" title="rotate.right.90">
+			  <span class="icon icon-rotate-right"></span>
+			</span>
+		  </button>
+		</div>
+	
+		<div class="btn-group">
+		  <button class="btn btn-primary" data-method="reset" type="button" title="Reset">
+			<span class="docs-tooltip" data-toggle="tooltip" title="reset">
+			  <span class="icon icon-refresh"></span>
+			</span>
+		  </button>
+		  <label class="btn btn-primary btn-upload" for="inputImage" title="Upload image file">
+			<input class="sr-only" id="inputImage" name="file" type="file" accept="image/*">
+			<span class="docs-tooltip" data-toggle="tooltip" title="select image">
+			  <span class="icon icon-upload"></span>
+			</span>
+		  </label>
+		</div>
+	
+		<div class="btn-group btn-group-crop">
+		  <button class="btn btn-primary" data-method="getCroppedCanvas" type="button">
+			<span class="docs-tooltip" data-toggle="tooltip" title="upload">上传图片</span>
+		  </button>
+		</div>
+	
+		<!-- Show the cropped image in modal -->
+		<div class="modal fade docs-cropped" id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1">
+		  <div class="modal-dialog">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button class="close" data-dismiss="modal" type="button" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="getCroppedCanvasTitle">Cropped</h4>
+			  </div>
+			  <div class="modal-body"></div>
+			  <!-- <div class="modal-footer">
+				<button class="btn btn-primary" data-dismiss="modal" type="button">Close</button>
+			  </div> -->
+			</div>
+		  </div>
+		</div><!-- /.modal -->
+	  </div><!-- /.docs-buttons -->
+	</div>
+
+</div>
+<!-- Alert -->
+</div>
+
+<!-- <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script> -->
+<script src="/res/bracket/js/jquery-1.11.1.min.js"></script>
+<script src="/res/bracket/js/bootstrap.min.js"></script>
+<script src="dist/cropper.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
+ 

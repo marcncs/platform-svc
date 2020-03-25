@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.drp.dao.CustomerMatchOrder" table="Customer_Match_Order">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="native"/>
+</id>
+<property column="siName" length="64" name="siname" type="java.lang.String"/>
+<property column="product_Line" length="64" name="productline" type="java.lang.String"/>
+<property column="organ_Name" length="255" name="organname" type="java.lang.String"/>
+<property column="customer_Level" length="10" name="customerlevel" type="java.lang.Integer"/>
+<property column="match_Order" length="10" name="matchorder" type="java.lang.Integer"/>
+<property column="out_Order" length="32" name="outorder" type="java.lang.String"/>
+<property column="remark" length="255" name="remark" type="java.lang.String"/>
+<property column="organ_Id" length="64" name="organid" type="java.lang.String"/>
+</class>
+</hibernate-mapping>

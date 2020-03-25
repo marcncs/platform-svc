@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.winsafe.erp.pojo.UnitInfo" table="UnitInfo">
+<id column="ID" name="id" type="java.lang.Long">
+<generator class="sequence">
+<param name="sequence">UnitInfo_SEQ</param>
+</generator>
+</id> 
+<version column="version" name="version" type="java.lang.Integer"/>
+<property column="organid" name="organId" type="java.lang.String"/>
+<property column="productid" name="productId" type="java.lang.String"/>
+<property column="unitid" name="unitId" type="java.lang.Integer"/>
+<property column="Unit_Count" name="unitCount" type="java.lang.Integer"/>
+<property column="Modified_date" name="modifiedDate" type="java.util.Date"/>
+<property column="Modified_userID" name="modifiedUserID" type="java.lang.Integer"/>
+<property column="Isactive" name="isactive" type="java.lang.Integer"/>
+<!--添加标签类型2016-3-16  -->
+<property column="LABELTYPE" name="labelType" type="java.lang.String"/>
+<property column="NEEDREPACKAGE" name="needRepackage" type="java.lang.Integer"/>
+<property column="needCovertCode" name="needCovertCode" type="java.lang.Integer"/>
+
+<property column="codeSeq" name="codeSeq" type="java.lang.String"/>
+</class>
+</hibernate-mapping>
