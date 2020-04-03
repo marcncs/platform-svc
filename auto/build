@@ -1,0 +1,98 @@
+#!/bin/bash
+
+set -e
+
+### echo "Build docker image file and deploy to ECR"
+
+readonly DEFAULT_APPENV="uat"
+readonly DEFAULT_APPNAME="rtci"
+readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+readonly SCRIPT_NAME="$(basename "$0")"
+readonly AWS_ECR_REPO="543378705537.dkr.ecr.cn-north-1.amazonaws.com.cn/rtci-web"
+
+
+function show_usage {
+  echo
+  echo "Usage: build [options]"
+  echo
+  echo "This script is used to build the docker image and upload to aws ecr accordingly"
+  echo "Options:"
+  echo
+  echo -e " --appenv\tThe environment to buiild. Valid values are uat or prod. Default: uat"
+  echo -e " --appname\tName of the web application. Default: rtci"
+  echo
+  echo "Examples:"
+  echo
+  echo "  build --appenv uat --appname rtci"
+}
+
+function log {
+  local -r level="$1"
+  local -r message="$2"
+  local -r timestamp=$(date +"%Y-%m-%d %H:%M:%S")
+  >&2 echo -e "${timestamp} [${level}] [$SCRIPT_NAME] ${message}"
+}
+
+function log_info {
+  local -r message="$1"
+  log "INFO" "$message"
+}
+
+function log_warn {
+  local -r message="$1"
+  log "WARN" "$message"
+}
+
+function log_error {
+  local -r message="$1"
+  log "ERROR" "$message"
+}
+
+function docker_build {
+  local -r image_tag="$1"
+  local -r appenv="$2"
+  local image_version=$(date +"%Y%m%d%H%M%S")
+
+  ### log_info "$(aws ecr get-login --no-include-email --region cn-north-1)"
+  log_info "docker build -t ${image_tag}:${image_version} ."
+
+  log_info "docker tag ${image_tag}:${appenv}-${image_version} ${AWS_ECR_REPO}:${appenv}-${image_version}"
+  log_info "docker push ${AWS_ECR_REPO}:${appenv}-${image_version}"
+
+}
+
+function build_and_release {
+  local appenv="$DEFAULT_APPENV"
+  local appname="$DEFAULT_APPNAME"
+
+  while [[ $# > 0 ]]; do
+    local key="$1"
+
+    case "$key" in
+      --appenv)
+        appenv="$2"
+        shift
+        ;;
+      --appname)
+        appname="$2"
+        shift
+        ;;
+      --help)
+        show_usage
+        exit
+        ;;
+      *)
+        log_error "Invalid argument: $key"
+        show_usage
+        exit 1
+        ;;
+    esac
+    shift
+  done
+
+docker_build "${appname}" "${appenv}"
+log_info "Web application ${appname} running in ${appenv} environment successfully built and released." 
+}
+
+
+build_and_release "$@"
